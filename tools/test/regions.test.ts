@@ -31,21 +31,21 @@ describe('regionOf', () => {
   });
 
   it('has nowhere to put something that is not a pokemon', () => {
-    expect(regionOf(0)).toBe('unknown');
-    expect(regionOf(9999)).toBe('unknown');
+    expect(regionOf(0)).toBe('misc');
+    expect(regionOf(9999)).toBe('misc');
   });
 
   it('names every region once, in the order the games came', () => {
     expect(new Set(REGIONS).size).toBe(REGIONS.length);
     expect(REGIONS[0]).toBe('kanto');
-    expect(REGIONS[REGIONS.length - 1]).toBe('unknown');
+    expect(REGIONS[REGIONS.length - 1]).toBe('misc');
   });
 
   it('gives the stretch a region covers, where it has one', () => {
     expect(spanOf('kanto')).toEqual([1, 151]);
     // Hisui is Sinnoh some centuries earlier, and has no dex of its own
     expect(spanOf('hisui')).toBeNull();
-    expect(spanOf('unknown')).toBeNull();
+    expect(spanOf('misc')).toBeNull();
   });
 
   it('leaves no gap between one region and the next', () => {

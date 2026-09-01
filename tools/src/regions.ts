@@ -28,7 +28,7 @@ export type Region =
   | 'galar'
   | 'hisui'
   | 'paldea'
-  | 'unknown';
+  | 'misc';
 
 /** The dex numbers each region covers, ends included. */
 const RANGES: { region: Region; from: number; to: number }[] = [
@@ -46,9 +46,8 @@ const RANGES: { region: Region; from: number; to: number }[] = [
 /**
  * Every region there is, in the order the games came.
  *
- * `unknown` is last and is where anything outside every range lands:
- * the collection numbers Missingno, an egg and a substitute like
- * pokemon without their being pokemon
+ * `misc` is last and is where anything outside every range lands: the
+ * collection numbers Missingno like a pokemon without its being one
  */
 export const REGIONS: Region[] = [
   'kanto',
@@ -61,7 +60,7 @@ export const REGIONS: Region[] = [
   'galar',
   'hisui',
   'paldea',
-  'unknown',
+  'misc',
 ];
 
 /**
@@ -96,5 +95,5 @@ export default function regionOf(dex: number, formName?: string | null): Region 
   if (named != null) {
     return named;
   }
-  return RANGES.find((range) => dex >= range.from && dex <= range.to)?.region ?? 'unknown';
+  return RANGES.find((range) => dex >= range.from && dex <= range.to)?.region ?? 'misc';
 }

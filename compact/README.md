@@ -18,8 +18,10 @@ compact/
 `{region}/{dex}/{form}/`, the numbers as four digits.
 
 **Region is not always the dex number's region.** Alolan Raichu is dex
-26 but lives under `alola/0026/0001`. Resolve paths through
-`index.json`, which lists every form:
+26 but lives under `alola/0026/0001`, and `misc/` holds what the
+collection numbers like a pokemon without its being one — Missingno, the
+egg, the substitute doll. Resolve paths through `index.json`, which
+lists every form:
 
 ```jsonc
 { "version": 1,
