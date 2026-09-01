@@ -7,6 +7,7 @@ folders are removed once a region is built and verified.
 - `sprite/`, `portrait/` — the collection, upstream's
 - `compact/` — built sheets, filed by region. [Format](compact/README.md)
 - `compact/EDITS.md` — sheets we changed, and why
+- `compact/GAPS.md` — what upstream has not drawn
 - `tools/` — the optimiser, status and recolour tools. [Docs](tools/README.md)
 
 ## Docs
