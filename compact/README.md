@@ -168,6 +168,31 @@ const column = (record, at) => table[at * records + record];
 Copy rather than view in place — inflate output may not be two-byte
 aligned.
 
+### `inflate`
+
+**The stream is zlib-wrapped, not raw.** It begins `78 da`, so in a
+browser it is `'deflate'` and never `'deflate-raw'`:
+
+```js
+const body = new Uint8Array(await new Response(
+  new Blob([bytes.subarray(12)]).stream().pipeThrough(new DecompressionStream('deflate')),
+).arrayBuffer());
+```
+
+`DecompressionStream` is Chrome 80, Firefox 113, Safari 16.4. Below that,
+or where a synchronous read is wanted,
+[`fflate`](https://github.com/101arrowz/fflate) is 8 kB and its
+`unzlibSync` takes these bytes as they are:
+
+```js
+import { unzlibSync } from 'fflate';
+const body = unzlibSync(bytes.subarray(12));
+```
+
+Node is `zlib.inflateSync`. `Int16Array` reads in the platform's byte
+order and the file is little-endian, which is every platform that runs a
+browser; `DataView.getInt16(offset, true)` if that is not enough.
+
 ## Drawing a frame
 
 ```js
