@@ -1,24 +1,32 @@
-import { existsSync, readdirSync, statSync } from 'node:fs';
-import { join } from 'node:path';
+import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
+import { join, relative } from 'node:path';
 import type { SpriteAnim } from './anims.ts';
 import { missingCommon } from './anims.ts';
+import type { Archive } from './archive.ts';
 import readArchive from './archive.ts';
 import type { Authors } from './credits.ts';
 import readCreditNames from './credits.ts';
 import type { Frames } from './frames.ts';
-import { encodeFrames } from './frames.ts';
+import { decodeFrames, encodeFrames } from './frames.ts';
 import type { Derived, Refused } from './merge.ts';
 import { decode } from './raster.ts';
-import type { SheetResult } from './sheet.ts';
-import { buildSheet } from './sheet.ts';
+import type { SheetData, SheetResult } from './sheet.ts';
+import { buildSheet, layoutsFor } from './sheet.ts';
 import type { CoatKey, Slot } from './slots.ts';
 import type { Region } from './regions.ts';
 import { pad, slotsOf, speciesIn } from './slots.ts';
 import type { Tracker } from './tracker.ts';
 import readTracker from './tracker.ts';
 import verifySheet, { type Mismatch } from './verify.ts';
-import type { Dropped, Written } from './write.ts';
-import { outputPath, removeSource, staleCoats, updateIndex, writeSheet } from './write.ts';
+import type { Dropped, Index, Written } from './write.ts';
+import {
+  FILENAMES,
+  outputPath,
+  removeSource,
+  staleCoats,
+  updateIndex,
+  writeSheet,
+} from './write.ts';
 
 /**
  * One run of the optimizer, from a list of species to a written tree.
@@ -43,6 +51,13 @@ export interface RunOptions {
   verify?: boolean;
   /** Whether the source folders are deleted once the sheet checks out. */
   prune?: boolean;
+  /**
+   * Whether to check the sheets already written instead of building
+   * them again. Packing and encoding are most of a run and neither
+   * changes the answer, so a prune of a tree that is already built need
+   * not pay for them.
+   */
+  check?: boolean;
   /** Whether anything is written at all. */
   dryRun?: boolean;
   /** Where the collection's record of names is, where it is to be read. */
@@ -198,12 +213,100 @@ export function speciesFor(root: string, asked: number[]): number[] {
   return asked.length > 0 ? [...new Set(asked)].sort((one, two) => one - two) : speciesIn(root);
 }
 
+/** Where one form's sheet is, out of the index that lists it. */
+function builtAt(output: string, dex: number, form: number): string {
+  const listing = join(output, 'index.json');
+
+  if (!existsSync(listing)) {
+    throw new Error(`${listing} is not there: build the tree before checking it`);
+  }
+  const index = JSON.parse(readFileSync(listing, 'utf8')) as Index;
+  const slot = index.slots.find((one) => one.dex === dex && one.form === form);
+
+  if (slot == null) {
+    throw new Error(`${dex}/${form} is not built`);
+  }
+  return join(output, slot.path);
+}
+
+/**
+ * One form: the sheet already written, read back and compared with the
+ * folders it came from.
+ *
+ * The same check a build does, without the build. Packing and encoding
+ * are most of the work of a run and neither of them decides whether the
+ * sheet on disk draws what the folders draw, so a prune of a tree that
+ * is already built does not have to pay for them — and, unlike a
+ * rebuild, this leaves the sheets alone, so a coat somebody made by
+ * hand is still there afterwards.
+ */
+function checkSlot(
+  slot: Slot,
+  archives: { key: CoatKey; archive: Archive }[],
+  options: RunOptions,
+): SlotReport {
+  const folder = builtAt(options.output, slot.dex, slot.form);
+  const meta = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
+  const frames = decodeFrames(readFileSync(join(folder, 'frames.bin')));
+  const sheets = meta.coats
+    .filter((key) => existsSync(join(folder, FILENAMES[key])))
+    .map((key) => ({ key, raster: decode(readFileSync(join(folder, FILENAMES[key]))) }));
+  const layouts = layoutsFor(archives, { compact: meta.compact, merge: options.merge });
+  // A coat drawn in the folders that the sheet has not got is a coat
+  // the check would pass over in silence, and it is the silence that
+  // would let its folder be deleted
+  const absent = slot.present.filter((key) => !sheets.some((one) => one.key === key));
+  const mismatches: Mismatch[] = [
+    ...absent.map((key) => ({ coat: key, anim: 'every', row: 0, column: 0, x: 0, y: 0 })),
+    ...verifySheet(meta, frames, layouts, archives, sheets),
+  ];
+  const removed: string[] = [];
+  // Weighed before anything is taken away, since that is what is about
+  // to go
+  const before = slot.present.reduce(
+    (total, key) => total + weigh(join(options.root, slot.coats[key])),
+    0,
+  );
+  const after = weighTree(folder);
+
+  if (options.prune === true && mismatches.length === 0 && options.dryRun !== true) {
+    for (const key of slot.present) {
+      removed.push(...removeSource(options.root, join(options.root, slot.coats[key])));
+    }
+  }
+  return {
+    dex: slot.dex,
+    form: slot.form,
+    path: relative(options.output, folder),
+    region: meta.region,
+    coats: slot.present,
+    width: meta.sheet.width,
+    height: meta.sheet.height,
+    pictures: meta.sheet.pictures.length,
+    frames: frames.indices.length,
+    before,
+    after,
+    containers: sheets.map((one) => one.key),
+    mismatches,
+    anchors: countAnchors(frames),
+    derived: meta.derived,
+    refused: [],
+    dropped: [],
+    missing: missingCommon(meta.anims.map((one) => one.anim)),
+    removed,
+  };
+}
+
 /** One form: read, built, checked, written, and its source taken away. */
 export function runSlot(slot: Slot, options: RunOptions): SlotReport {
   const archives = slot.present.map((key) => ({
     key,
     archive: readArchive(join(options.root, slot.coats[key]), options.authors),
   }));
+
+  if (options.check === true) {
+    return checkSlot(slot, archives, options);
+  }
   const result: SheetResult = buildSheet(slot, archives, {
     compact: options.compact,
     merge: options.merge,
@@ -311,7 +414,9 @@ export default function run(options: RunOptions): RunReport {
         regions.add(report.region);
         slots.push(report);
         options.onSlot?.(report);
-        wrote ||= options.dryRun !== true;
+        // A check writes no sheet, so the index it would rebuild is
+        // the one already there
+        wrote ||= options.dryRun !== true && options.check !== true;
       } catch (error) {
         failed.push({
           dex: slot.dex,

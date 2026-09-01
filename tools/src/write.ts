@@ -29,7 +29,7 @@ import { COATS, pad } from './slots.ts';
 export const OUTPUT_ROOT = 'compact';
 
 /** What each coat's drawing is called. */
-const FILENAMES: Record<CoatKey, string> = {
+export const FILENAMES: Record<CoatKey, string> = {
   regular: 'regular.png',
   shiny: 'shiny.png',
   female: 'female.png',

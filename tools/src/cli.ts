@@ -28,6 +28,7 @@ Options
   --no-compact     keep every frame at its authored size
   --no-merge       leave a coat missing an animation its pair has
   --no-verify      skip reading every frame back off the sheet
+  --check          check the sheets already written, build nothing
   --prune          delete the source folders once the sheet checks out
   --dry-run        build and report, write nothing
   --quiet          totals only
@@ -37,6 +38,7 @@ Examples
   sprite-optimize 1-151                 the original hundred and fifty-one
   sprite-optimize 25 --dry-run          say what Pikachu would come to
   sprite-optimize 1-151 --prune         and take the folders away after
+  sprite-optimize 1-151 --check --prune the same, without building again
 `;
 
 /** One argument as the species it names, however it was written. */
@@ -77,6 +79,7 @@ export interface Arguments {
   compact: boolean;
   merge: boolean;
   verify: boolean;
+  check: boolean;
   prune: boolean;
   dryRun: boolean;
   quiet: boolean;
@@ -94,6 +97,7 @@ export function parseArguments(argv: string[]): Arguments {
     compact: true,
     merge: true,
     verify: true,
+    check: false,
     prune: false,
     dryRun: false,
     quiet: false,
@@ -128,6 +132,9 @@ export function parseArguments(argv: string[]): Arguments {
         break;
       case '--no-verify':
         parsed.verify = false;
+        break;
+      case '--check':
+        parsed.check = true;
         break;
       case '--prune':
         parsed.prune = true;
@@ -195,6 +202,19 @@ export default function main(argv: string[]): number {
     process.stdout.write(USAGE);
     return 0;
   }
+  // Pruning is only ever safe on the strength of a check, and
+  // --no-verify is a way of asking for none
+  if (options.prune && !options.verify) {
+    process.stderr.write(
+      'Refusing --prune with --no-verify: nothing may be deleted unchecked.\n',
+    );
+    return 1;
+  }
+
+  if (options.check && !options.verify) {
+    process.stderr.write('--check is the check: it cannot be asked for with --no-verify.\n');
+    return 1;
+  }
   const root = resolve(options.root);
   const output = resolve(options.output);
 
@@ -214,6 +234,7 @@ export default function main(argv: string[]): number {
     compact: options.compact,
     merge: options.merge,
     verify: options.verify,
+    check: options.check,
     prune: options.prune,
     dryRun: options.dryRun,
     onSlot: options.quiet

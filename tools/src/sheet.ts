@@ -478,6 +478,36 @@ export function buildSheet(
   };
 }
 
+/**
+ * The grids a sheet's coats were read through, worked out again.
+ *
+ * The check needs these and the description does not carry them: coats
+ * are not always drawn on one cell size, so where a frame sits in a
+ * coat's own PNG cannot be told from the sheet alone. Building the
+ * whole sheet again to recover them is most of the work for none of the
+ * answer, so this does the reading and the merging and stops there.
+ */
+export function layoutsFor(
+  archives: { key: CoatKey; archive: Archive }[],
+  options: SheetOptions = {},
+): Layout[] {
+  const grids = archives.map((held) => readAnimData(held.archive.animData));
+
+  // A clip one coat gained from the other is in the sheet and not in
+  // the folders, so the check has to carry it across the same way
+  if (options.merge !== false) {
+    mergeCoats(archives, grids);
+  }
+  return entriesFor(
+    archives.map((held) => held.archive.images),
+    grids,
+    options.compact ?? true,
+  ).map((entry) => ({
+    anim: entry.anim,
+    coats: entry.coats.map((coat) => coat?.grid ?? null),
+  }));
+}
+
 /** Reads one form's folders and builds its sheet. */
 export default function processSlot(
   root: string,

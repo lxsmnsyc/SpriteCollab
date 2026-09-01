@@ -500,6 +500,57 @@ describe('a whole run', () => {
     }
   });
 
+  it('checks a sheet already written without building it again', () => {
+    run({ root, output, species: [1] });
+
+    const report = run({ root, output, species: [1], check: true });
+
+    expect(report.slots[0].mismatches).toEqual([]);
+    expect(report.slots[0].width).toBe(run({ root, output, species: [1] }).slots[0].width);
+  });
+
+  it('takes the folders away on the strength of a check', () => {
+    run({ root, output, species: [1] });
+    const report = run({ root, output, species: [1], check: true, prune: true });
+
+    expect(report.failed).toEqual([]);
+    expect(report.slots[0].mismatches).toEqual([]);
+    expect(report.slots[0].removed.length).toBeGreaterThan(0);
+    expect(existsSync(join(root, '0001'))).toBe(false);
+  });
+
+  it('leaves a hand-made coat alone where a rebuild would drop it', () => {
+    run({ root, output, species: [1] });
+
+    const folder = join(output, 'kanto/0001/0000');
+    const sheet = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
+
+    writeFileSync(join(folder, 'shiny_female.png'), readFileSync(join(folder, 'regular.png')));
+    sheet.coats = [...sheet.coats, 'shinyFemale'];
+    writeFileSync(join(folder, 'sheet.json'), JSON.stringify(sheet));
+
+    const report = run({ root, output, species: [1], check: true });
+
+    expect(report.slots[0].mismatches).toEqual([]);
+    expect(existsSync(join(folder, 'shiny_female.png'))).toBe(true);
+  });
+
+  it('will not pass a check where the sheet has no coat the folders drew', () => {
+    run({ root, output, species: [1] });
+
+    const folder = join(output, 'kanto/0001/0000');
+    const sheet = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
+
+    sheet.coats = sheet.coats.filter((coat) => coat !== 'regular');
+    writeFileSync(join(folder, 'sheet.json'), JSON.stringify(sheet));
+
+    const report = run({ root, output, species: [1], check: true, prune: true });
+
+    expect(report.slots[0].mismatches).toHaveLength(1);
+    expect(report.slots[0].removed).toEqual([]);
+    expect(existsSync(join(root, '0001'))).toBe(true);
+  });
+
   it('adds to the index rather than replacing it', () => {
     writeFixture(root, ANIMS, [{ path: '0025', color: COLORS.red }]);
     run({ root, output, species: [1] });

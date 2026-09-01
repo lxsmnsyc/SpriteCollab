@@ -38,6 +38,7 @@ The species line weighs all of `sprite/{dex}` against all of
 --no-compact     keep frames at their authored size
 --no-merge       leave a coat missing an animation its pair has
 --no-verify      skip reading every frame back
+--check          check the sheets already written, build nothing
 --prune          delete sources once verified
 --dry-run        build and report, write nothing
 --quiet          totals only
@@ -89,6 +90,25 @@ The run says which, and whether the sheet called it ours:
           dropped the shinyFemale coat: no art for it, and it was
           ours — redo it from compact/EDITS.md
 ```
+
+### Pruning what is already built
+
+`--prune` deletes a folder only where the sheet built in the same run
+read back as the folder itself, so a plain `--prune` builds everything
+again. Where the tree is already built, `--check` does the same check
+against the sheets on disk and skips the packing and the encoding:
+
+```bash
+node tools/src/bin.ts 1-151 --check           # do the sheets still match?
+node tools/src/bin.ts 1-151 --check --prune   # and take the folders away
+```
+
+About a third quicker — the reading and comparing is most of the cost,
+not the packing. It also leaves the sheets untouched, so a coat made by
+hand survives a prune.
+
+`--prune --no-verify` is refused. It would delete a folder having
+checked nothing.
 
 ### Merging a pair
 

@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { bytes, parseArguments, parseIndex, saved } from '../src/cli.ts';
+import main, { bytes, parseArguments, parseIndex, saved } from '../src/cli.ts';
 
 describe('parseIndex', () => {
   it('reads a species however it is written', () => {
@@ -30,9 +30,14 @@ describe('parseArguments', () => {
       output: 'compact',
       compact: true,
       verify: true,
+      check: false,
       prune: false,
       dryRun: false,
     });
+  });
+
+  it('takes --check', () => {
+    expect(parseArguments(['1', '--check']).check).toBe(true);
   });
 
   it('gathers every index it was given', () => {
@@ -68,5 +73,15 @@ describe('reporting', () => {
   it('writes how much smaller a thing got', () => {
     expect(saved(1000, 250)).toBe('75.0%');
     expect(saved(0, 0)).toBe('—');
+  });
+});
+
+describe('the flags that must not go together', () => {
+  it('refuses to prune without checking', () => {
+    expect(main(['1', '--prune', '--no-verify'])).toBe(1);
+  });
+
+  it('refuses a check that checks nothing', () => {
+    expect(main(['1', '--check', '--no-verify'])).toBe(1);
   });
 });
