@@ -26,7 +26,7 @@ compact/
   "regions": [{ "region": "kanto", "forms": 285 }, …],
   "slots": [{ "region": "kanto", "dex": 1, "form": 0, "path": "kanto/0001/0000",
               "coats": ["regular", "shiny"], "width": 92, "height": 214,
-              "derived": [] }] }
+              "derived": [], "missing": [] }] }
 ```
 
 ## `sheet.json`
@@ -102,6 +102,25 @@ Append-only, so safe to hard-code.
 The first eleven are on nearly every pokemon; the rest are rare. Every
 one is drawn in eight facings except `Sleep`, which has one. Cutscene
 poses (`EventSleep`, `Laying`, …) are not in this tree.
+
+### The common ten
+
+`Idle` `Sleep` `Hurt` `Attack` `Double` `Swing` `Charge` `Rotate` `Walk`
+`Hop` — what a pokemon needs to stand, move, act and be hit. A renderer
+can assume them and has nowhere to fall back to when one is absent, so
+`index.json` says which a sheet has not got:
+
+```jsonc
+"missing": [1, 2]        // no Sleep, no Hurt
+```
+
+Empty for 797 of the 805 forms. The eight that are short are unfinished
+art, not a fault in the build:
+
+```bash
+node -e 'for (const s of require("./compact/index.json").slots)
+  if (s.missing.length) console.log(s.path, s.missing.join(","))'
+```
 
 ## `frames.bin`
 
