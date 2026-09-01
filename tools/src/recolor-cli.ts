@@ -187,8 +187,20 @@ function coatImage(folder: string, coat: CoatKey) {
   return decodePng(readFileSync(path));
 }
 
-/** Adds a coat to the description, in the order the coats are filed. */
-function addCoat(folder: string, coat: CoatKey): SheetData {
+/**
+ * Adds a coat to the description, in the order the coats are filed.
+ *
+ * The index carries the same list, so it is written too — a reader that
+ * trusts the index would otherwise never look for the new coat.
+ */
+function addCoat(
+  output: string,
+  folder: string,
+  dex: number,
+  form: number,
+  coat: CoatKey,
+  from: CoatKey,
+): SheetData {
   const path = join(folder, 'sheet.json');
   const meta = JSON.parse(readFileSync(path, 'utf8')) as SheetData;
 
@@ -197,7 +209,21 @@ function addCoat(folder: string, coat: CoatKey): SheetData {
       (one) => one === coat || meta.coats.includes(one),
     );
   }
+  meta.derived = [
+    ...(meta.derived ?? []).filter((one) => !(one.coat === coat && one.anim == null)),
+    { coat, anim: null, from },
+  ];
   writeFileSync(path, JSON.stringify(meta));
+
+  const listing = join(output, 'index.json');
+  const index = JSON.parse(readFileSync(listing, 'utf8')) as Index;
+  const slot = index.slots.find((one) => one.dex === dex && one.form === form);
+
+  if (slot != null) {
+    slot.coats = [...meta.coats];
+    slot.derived = [...meta.derived];
+    writeFileSync(listing, JSON.stringify(index));
+  }
   return meta;
 }
 
@@ -286,7 +312,7 @@ export default function main(argv: string[]): number {
     const encoded = encodeSmallest(held.image);
 
     writeFileSync(join(folder, FILENAMES[as]), encoded.bytes);
-    const meta = addCoat(folder, as);
+    const meta = addCoat(output, folder, dex, form, as, options.coat);
 
     say(`written as the ${as} coat, ${encoded.as}, ${encoded.bytes.length} bytes`);
     say(`the sheet now has ${meta.coats.join(', ')}`);

@@ -1,8 +1,9 @@
+import { mkdirSync, mkdtempSync, readFileSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { describe, expect, it } from 'vitest';
 import type { Color, Image } from '../src/png.ts';
-import decodePng, { sameImage } from '../src/png.ts';
+import decodePng, { encodeTruecolor, sameImage } from '../src/png.ts';
 import {
   CELL,
   colorOf,
@@ -16,7 +17,9 @@ import {
   swapsFromStrip,
   writeMapping,
 } from '../src/recolor.ts';
-import { coatOf, folderOf, parseArguments, parseForm } from '../src/recolor-cli.ts';
+import main, { coatOf, folderOf, parseArguments, parseForm } from '../src/recolor-cli.ts';
+import type { SheetData } from '../src/sheet.ts';
+import type { Index } from '../src/write.ts';
 import { COLORS, fill, raster } from './helpers.ts';
 
 /** A small picture in a handful of flat colours. */
@@ -275,5 +278,93 @@ describe('the recolour command line', () => {
 
   it('refuses to work against a tree that is not there', () => {
     expect(() => folderOf(join(tmpdir(), 'no-such-tree'), 1, 0)).toThrow(/build the tree/);
+  });
+});
+
+/** A one-form tree with a single coat in it, enough to recolour. */
+function tree(): string {
+  const root = mkdtempSync(join(tmpdir(), 'recolor-'));
+  const folder = join(root, 'kanto/0001/0000');
+
+  mkdirSync(folder, { recursive: true });
+  writeFileSync(join(folder, 'regular.png'), encodeTruecolor(flat(), 'none'));
+  writeFileSync(join(folder, 'sheet.json'), JSON.stringify({ coats: ['regular'], derived: [] }));
+  writeFileSync(
+    join(root, 'index.json'),
+    JSON.stringify({
+      version: 1,
+      regions: [{ region: 'kanto', forms: 1 }],
+      slots: [
+        {
+          region: 'kanto',
+          dex: 1,
+          form: 0,
+          path: 'kanto/0001/0000',
+          coats: ['regular'],
+          width: 8,
+          height: 8,
+          derived: [],
+        },
+      ],
+    }),
+  );
+  return root;
+}
+
+describe('applying a mapping', () => {
+  it('lists the new coat in the index as well as the sheet', () => {
+    const root = tree();
+    const mapping = join(root, 'map.json');
+
+    writeFileSync(mapping, writeMapping([{ from: COLORS.red as Color, to: COLORS.blue as Color }]));
+    expect(
+      main(['apply', '1/0', '--coat', 'regular', '--as', 'shiny', '--map', mapping, '--out', root]),
+    ).toBe(0);
+
+    const index = JSON.parse(readFileSync(join(root, 'index.json'), 'utf8')) as Index;
+
+    expect(index.slots[0].coats).toEqual(['regular', 'shiny']);
+  });
+
+  it('records the coat as ours in the sheet and the index', () => {
+    const root = tree();
+    const mapping = join(root, 'map.json');
+
+    writeFileSync(mapping, writeMapping([{ from: COLORS.red as Color, to: COLORS.blue as Color }]));
+    main(['apply', '1/0', '--coat', 'regular', '--as', 'shiny', '--map', mapping, '--out', root]);
+
+    const sheet = JSON.parse(
+      readFileSync(join(root, 'kanto/0001/0000/sheet.json'), 'utf8'),
+    ) as SheetData;
+    const index = JSON.parse(readFileSync(join(root, 'index.json'), 'utf8')) as Index;
+    const ours = [{ coat: 'shiny', anim: null, from: 'regular' }];
+
+    expect(sheet.derived).toEqual(ours);
+    expect(index.slots[0].derived).toEqual(ours);
+  });
+
+  it('does not list the same coat twice when applied again', () => {
+    const root = tree();
+    const mapping = join(root, 'map.json');
+
+    writeFileSync(mapping, writeMapping([{ from: COLORS.red as Color, to: COLORS.blue as Color }]));
+    main(['apply', '1/0', '--coat', 'regular', '--as', 'shiny', '--map', mapping, '--out', root]);
+    main(['apply', '1/0', '--coat', 'regular', '--as', 'shiny', '--map', mapping, '--out', root]);
+
+    const index = JSON.parse(readFileSync(join(root, 'index.json'), 'utf8')) as Index;
+
+    expect(index.slots[0].derived).toHaveLength(1);
+  });
+
+  it('leaves the coat list alone when the coat is already there', () => {
+    const root = tree();
+    const mapping = join(root, 'map.json');
+
+    writeFileSync(mapping, writeMapping([{ from: COLORS.red as Color, to: COLORS.blue as Color }]));
+    main(['apply', '1/0', '--coat', 'regular', '--as', 'regular', '--map', mapping, '--out', root]);
+
+    const index = JSON.parse(readFileSync(join(root, 'index.json'), 'utf8')) as Index;
+
+    expect(index.slots[0].coats).toEqual(['regular']);
   });
 });

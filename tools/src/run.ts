@@ -302,6 +302,7 @@ export default function run(options: RunOptions): RunReport {
             coats: report.coats,
             width: report.width,
             height: report.height,
+            derived: report.derived,
           });
         }
       } catch (error) {

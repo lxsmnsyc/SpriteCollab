@@ -391,7 +391,7 @@ describe('a whole run', () => {
   });
 
   it('lists what it wrote in an index', () => {
-    run({ root, output, species: [1] });
+    const report = run({ root, output, species: [1] });
 
     const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
 
@@ -403,6 +403,9 @@ describe('a whole run', () => {
       path: 'kanto/0001/0000',
     });
     expect(index.regions).toEqual([{ region: 'kanto', forms: 1 }]);
+    // So the whole tree can be told from the collection's art without
+    // opening every sheet
+    expect(index.slots[0].derived).toEqual(report.slots[0].derived);
   });
 
   it('adds to the index rather than replacing it', () => {

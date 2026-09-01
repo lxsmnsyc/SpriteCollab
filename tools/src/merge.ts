@@ -36,13 +36,22 @@ const PAIRS: [CoatKey, CoatKey][] = [
 export interface Derived {
   /** The coat that gained it. */
   coat: CoatKey;
-  anim: SpriteAnim;
+  /**
+   * The animation carried over, or `null` for a coat recoloured whole.
+   *
+   * A number is the optimiser's work and comes back on every rebuild. A
+   * `null` is a person's: `sprite-recolor` wrote a coat the collection
+   * does not have, a rebuild loses it, and `compact/EDITS.md` says how
+   * to put it back.
+   */
+  anim: SpriteAnim | null;
   /** The coat it was recoloured from. */
   from: CoatKey;
 }
 
 /** One animation that could not be carried, and why. */
-export interface Refused extends Derived {
+export interface Refused extends Omit<Derived, 'anim'> {
+  anim: SpriteAnim;
   reason: 'ambiguous' | 'unknown colours';
 }
 
@@ -117,7 +126,7 @@ export default function mergeCoats(
         if (held.animation == null || images[to].get(anim)?.animation != null) {
           continue;
         }
-        const what: Derived = { coat: pair[to], anim, from: pair[from] };
+        const what = { coat: pair[to], anim, from: pair[from] } satisfies Derived;
 
         if (mapping.ambiguous.length > 0) {
           refused.push({ ...what, reason: 'ambiguous' });

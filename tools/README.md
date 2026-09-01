@@ -190,7 +190,8 @@ node tools/src/recolor-bin.ts apply 3/0 --coat female --map v.json --as shinyFem
 - **extract** — the palette as a strip of blocks to repaint (keep the
   order and count), or as hex pairs with `--file x.json`
 - **learn** — the mapping between two coats of one form
-- **apply** — writes the result as another coat and adds it to `coats`
+- **apply** — writes the result as another coat and adds it to `coats`,
+  in the sheet and in the index
 
 Nothing moves a pixel or changes alpha; a swap that would is refused.
 

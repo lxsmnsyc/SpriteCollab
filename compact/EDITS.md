@@ -30,6 +30,16 @@ unnecessary, then drop the row or redo it.
 
 ## Not listed here
 
-Animations one coat gains from the other of its pair are done by the
-optimiser, not by hand, and are listed per sheet in `sheet.json` under
-`derived`. Sunkern's shiny `Chop` is one.
+Animations one coat gains from the other of its pair are the optimiser's
+work, not ours, and come back on every rebuild. They are in `derived`
+with the animation's number. Sunkern's shiny `Chop` is one.
+
+## Finding them all
+
+`sheet.json` and `index.json` both carry `derived`. An entry with
+`"anim": null` is a coat from this table.
+
+```bash
+node -e 'for (const s of require("./compact/index.json").slots)
+  if (s.derived.some((d) => d.anim == null)) console.log(s.path)'
+```

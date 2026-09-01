@@ -25,7 +25,8 @@ compact/
 { "version": 1,
   "regions": [{ "region": "kanto", "forms": 285 }, …],
   "slots": [{ "region": "kanto", "dex": 1, "form": 0, "path": "kanto/0001/0000",
-              "coats": ["regular", "shiny"], "width": 92, "height": 214 }] }
+              "coats": ["regular", "shiny"], "width": 92, "height": 214,
+              "derived": [] }] }
 ```
 
 ## `sheet.json`
@@ -205,22 +206,32 @@ The collection is [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/
 non-commercial use, credit required. If you ship these sheets, ship the
 credit. Some sheets declare a different `license` — read the field.
 
-### `derived`
-
-Animations a coat gained by recolouring the other of its pair, because
-one was finished for a clip the other was not:
+### `derived` — what is ours, not the artist's
 
 ```jsonc
-"derived": [{ "coat": "shiny", "anim": 36, "from": "regular" }]
+"derived": [{ "coat": "shiny", "anim": 36, "from": "regular" },
+            { "coat": "shinyFemale", "anim": null, "from": "female" }]
 ```
 
-Those frames are the tool's pixels, not the collection's. Everything
-else is the artist's.
+| `anim` | Means | Survives a rebuild |
+|---|---|---|
+| a number | that one animation, recoloured from the other coat of the pair | yes |
+| `null` | the whole coat, recoloured by hand | no — redo it |
+
+Everything not listed is the artist's. `index.json` repeats each sheet's
+`derived`, so the whole tree can be checked without opening a thousand
+sheets:
+
+```bash
+node -e 'for (const s of require("./compact/index.json").slots)
+  if (s.derived.length) console.log(s.path, JSON.stringify(s.derived))'
+```
 
 ## Edited sheets
 
-A few sheets are ours rather than the collection's. [`EDITS.md`](EDITS.md)
-lists them. Add a row before editing one.
+Coats with a `null` in `derived` are ours, and a rebuild loses them.
+[`EDITS.md`](EDITS.md) says what each was made from and how to put it
+back. Add a row before editing one.
 
 ## Rebuilding
 

@@ -221,9 +221,9 @@ export default function main(argv: string[]): number {
       : (slot) => {
           process.stdout.write(`${line(slot)}\n`);
           for (const held of slot.derived) {
-            process.stdout.write(
-              `          ${held.coat} gained ${spriteAnimName(held.anim)} from ${held.from}\n`,
-            );
+            const what = held.anim == null ? 'every clip' : spriteAnimName(held.anim);
+
+            process.stdout.write(`          ${held.coat} gained ${what} from ${held.from}\n`);
           }
           for (const held of slot.refused) {
             process.stdout.write(

@@ -1,6 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
 import { encodeFrames } from './frames.ts';
+import type { Derived } from './merge.ts';
 import type { Region } from './regions.ts';
 import { REGIONS } from './regions.ts';
 import type { SheetResult } from './sheet.ts';
@@ -46,6 +47,12 @@ export interface IndexEntry {
   coats: CoatKey[];
   width: number;
   height: number;
+  /**
+   * What of this sheet is ours rather than the collection's, so the
+   * whole tree can be checked without opening a thousand sheets. Same
+   * shape as the sheet's own `derived`, and empty for most forms.
+   */
+  derived: Derived[];
 }
 
 export interface Index {
@@ -83,6 +90,7 @@ export function writeSheet(output: string, slot: Pick<Slot, 'dex' | 'form'>, res
     coats: result.coats.map((coat) => coat.key),
     width: result.width,
     height: result.height,
+    derived: result.meta.derived,
   };
 }
 
