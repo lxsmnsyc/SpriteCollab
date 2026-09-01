@@ -341,6 +341,40 @@ describe('a whole run', () => {
     expect(run({ root, output, species: [999] }).species).toEqual([]);
   });
 
+  it('gives a coat the animation its pair has and it has not', () => {
+    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
+    const other = join(held, 'sprite');
+
+    writeFixture(other, ANIMS, [{ path: '0001', color: COLORS.green }]);
+    // A shiny finished for Idle and not for Walk
+    writeFixture(other, ANIMS.slice(1, 2), [
+      { path: '0001/0000/0001', color: COLORS.blue },
+    ]);
+    const report = run({ root: other, output, species: [1] });
+    const meta = JSON.parse(
+      readFileSync(join(output, 'kanto', '0001', '0000', 'sheet.json'), 'utf8'),
+    ) as SheetData;
+
+    expect(report.slots[0].refused).toEqual([]);
+    expect(meta.derived).toEqual([
+      { coat: 'shiny', anim: SpriteAnim.Walk, from: 'regular' },
+    ]);
+    expect(report.slots[0].mismatches).toEqual([]);
+  });
+
+  it('leaves the gap where it is told not to merge', () => {
+    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
+    const other = join(held, 'sprite');
+
+    writeFixture(other, ANIMS, [{ path: '0001', color: COLORS.green }]);
+    writeFixture(other, ANIMS.slice(1, 2), [
+      { path: '0001/0000/0001', color: COLORS.blue },
+    ]);
+    const report = run({ root: other, output, species: [1], merge: false });
+
+    expect(report.slots[0].derived).toEqual([]);
+  });
+
   it('counts how many frames carry each anchor', () => {
     const report = run({ root, output, species: [1] });
 

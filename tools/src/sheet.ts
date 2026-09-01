@@ -9,6 +9,8 @@ import type { Coat, FrameCell, SourceGrid } from './dedupe.ts';
 import deduper, { drawPictures } from './dedupe.ts';
 import type { Frame, Frames } from './frames.ts';
 import { builder } from './frames.ts';
+import type { Derived, Refused } from './merge.ts';
+import mergeCoats from './merge.ts';
 import type { FrameMarkers } from './markers.ts';
 import markersFor from './markers.ts';
 import pack from './packing.ts';
@@ -107,6 +109,11 @@ export interface SheetData {
   sprites: SpriteTarget[];
   /** Who drew each coat, which the licence asks to be carried along. */
   credits: Partial<Record<CoatKey, Credit[]>>;
+  /**
+   * Animations one coat gained by recolouring the other of its pair,
+   * which are this tool's pixels rather than the collection's
+   */
+  derived: Derived[];
 }
 
 /** One coat, drawn and weighed. */
@@ -142,11 +149,18 @@ export interface SheetResult {
   /** Distinct pictures kept, against frames read. */
   pictures: number;
   frameCount: number;
+  /** Animations one coat could not be given, and why. */
+  refused: Refused[];
 }
 
 export interface SheetOptions {
   /** Whether every frame is cropped to the grid's content. */
   compact?: boolean;
+  /**
+   * Whether a coat missing an animation its pair has gets it, by
+   * recolouring. On by default
+   */
+  merge?: boolean;
   /** What the species and the form are called, where that is known. */
   names?: Names;
 }
@@ -327,6 +341,10 @@ export function buildSheet(
   // time. The *grids* are read per coat, since those do sometimes differ
   const grids = archives.map((held) => readAnimData(held.archive.animData));
   const data = grids[0];
+  // Before anything is measured: a coat that gains a clip here is a
+  // coat with more to trim, deduplicate and pack
+  const merged =
+    options.merge === false ? { derived: [], refused: [] } : mergeCoats(archives, grids);
   const images = archives.map((held) => held.archive.images);
   const entries = entriesFor(images, grids, compact);
 
@@ -437,6 +455,7 @@ export function buildSheet(
         .filter((held) => held.archive.credits.length > 0)
         .map((held) => [held.key, held.archive.credits]),
     ),
+    derived: merged.derived,
   };
 
   return {
@@ -455,6 +474,7 @@ export function buildSheet(
     height: layout.height,
     pictures: shared.pictures.length,
     frameCount,
+    refused: merged.refused,
   };
 }
 

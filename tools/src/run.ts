@@ -4,6 +4,7 @@ import readArchive from './archive.ts';
 import type { Authors } from './credits.ts';
 import readCreditNames from './credits.ts';
 import type { Frames } from './frames.ts';
+import type { Derived, Refused } from './merge.ts';
 import { encodeFrames } from './frames.ts';
 import { decode } from './raster.ts';
 import type { SheetResult } from './sheet.ts';
@@ -34,6 +35,8 @@ export interface RunOptions {
   species: number[];
   /** Whether every frame is cropped to the grid's content. */
   compact?: boolean;
+  /** Whether a coat missing an animation its pair has gets it. */
+  merge?: boolean;
   /** Whether every frame is read back off the sheet and compared. */
   verify?: boolean;
   /** Whether the source folders are deleted once the sheet checks out. */
@@ -111,6 +114,10 @@ export interface SlotReport {
   mismatches: Mismatch[];
   /** How many of its frames carry each anchor. */
   anchors: Anchors;
+  /** Animations one coat gained by recolouring the other of its pair. */
+  derived: Derived[];
+  /** Animations one coat could not be given, and why. */
+  refused: Refused[];
   /** The files and folders taken away, where pruning was asked for. */
   removed: string[];
   /** Where the sheet was filed. */
@@ -193,6 +200,7 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
   }));
   const result: SheetResult = buildSheet(slot, archives, {
     compact: options.compact,
+    merge: options.merge,
     names: options.names?.(slot.dex, slot.form),
   });
   const mismatches =
@@ -243,6 +251,8 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
     containers: result.coats.map((coat) => `${coat.key}: ${coat.as}`),
     mismatches,
     anchors: countAnchors(result.frames),
+    derived: result.meta.derived,
+    refused: result.refused,
     removed,
   };
 }

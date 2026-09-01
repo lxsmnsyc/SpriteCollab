@@ -1,5 +1,6 @@
 import { resolve } from 'node:path';
 import run from './run.ts';
+import { spriteAnimName } from './anims.ts';
 import type { SlotReport, SpeciesReport } from './run.ts';
 
 /**
@@ -25,6 +26,7 @@ Options
   --credits <file> the table of author names            (default credit_names.txt)
   --out <dir>      where the compact tree goes         (default compact)
   --no-compact     keep every frame at its authored size
+  --no-merge       leave a coat missing an animation its pair has
   --no-verify      skip reading every frame back off the sheet
   --prune          delete the source folders once the sheet checks out
   --dry-run        build and report, write nothing
@@ -73,6 +75,7 @@ export interface Arguments {
   creditNames: string;
   output: string;
   compact: boolean;
+  merge: boolean;
   verify: boolean;
   prune: boolean;
   dryRun: boolean;
@@ -89,6 +92,7 @@ export function parseArguments(argv: string[]): Arguments {
     creditNames: 'credit_names.txt',
     output: 'compact',
     compact: true,
+    merge: true,
     verify: true,
     prune: false,
     dryRun: false,
@@ -118,6 +122,9 @@ export function parseArguments(argv: string[]): Arguments {
         break;
       case '--no-compact':
         parsed.compact = false;
+        break;
+      case '--no-merge':
+        parsed.merge = false;
         break;
       case '--no-verify':
         parsed.verify = false;
@@ -205,6 +212,7 @@ export default function main(argv: string[]): number {
     tracker: resolve(options.tracker),
     creditNames: resolve(options.creditNames),
     compact: options.compact,
+    merge: options.merge,
     verify: options.verify,
     prune: options.prune,
     dryRun: options.dryRun,
@@ -212,6 +220,16 @@ export default function main(argv: string[]): number {
       ? undefined
       : (slot) => {
           process.stdout.write(`${line(slot)}\n`);
+          for (const held of slot.derived) {
+            process.stdout.write(
+              `          ${held.coat} gained ${spriteAnimName(held.anim)} from ${held.from}\n`,
+            );
+          }
+          for (const held of slot.refused) {
+            process.stdout.write(
+              `          ${held.coat} could not be given ${spriteAnimName(held.anim)}: ${held.reason}\n`,
+            );
+          }
         },
     onSpecies: options.quiet
       ? undefined
@@ -221,6 +239,14 @@ export default function main(argv: string[]): number {
   });
   const mismatched = report.slots.filter((slot) => slot.mismatches.length > 0);
   const anchors = report.anchors;
+  const derived = report.slots.reduce((total, slot) => total + slot.derived.length, 0);
+  const refused = report.slots.reduce((total, slot) => total + slot.refused.length, 0);
+
+  if (!options.quiet && derived + refused > 0) {
+    process.stdout.write(
+      `carried  ${derived} animation${derived === 1 ? '' : 's'} between coats, ${refused} refused\n`,
+    );
+  }
 
   if (!options.quiet && anchors.frames > 0) {
     process.stdout.write(
