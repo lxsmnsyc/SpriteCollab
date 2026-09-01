@@ -9,7 +9,9 @@ rather than what the artist submitted.
 | `kanto/0111/0000` shiny female | `kanto/0111/0000` female | No shiny female was drawn. Recoloured through Rhyhorn's own regular-to-shiny mapping. |
 | `hoenn/0317/0001` shiny female | `hoenn/0317/0001` female | No shiny female was drawn. Recoloured through Swalot Altcolor's own regular-to-shiny mapping. |
 | `unova/0502/0000` shiny | `unova/0502/0000` regular | The artist's shiny is a separate drawing, not a recolour: different cell sizes, different clip lengths, and most of each sprite drawn in one coat only. Rebuilt from the regular. |
-| `unova/0566/0000` shiny | `unova/0566/0000` regular | The same. `FlapAround`, which only the old shiny drew, is not in the sheet. |
+| `unova/0566/0000` shiny | `unova/0566/0000` regular | The same. |
+| `unova/0502/0001` Alternate | the old `0502` shiny folder | Moved, not edited. The drawing it replaced, kept as a form of its own. |
+| `unova/0566/0001` Alternate | the old `0566` shiny folder | The same, and where `FlapAround` lives now. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
@@ -30,6 +32,11 @@ is rebuilt from the regular's before the sheet is built, so the coat has
 the regular's animations and step counts. Recolour each `-Anim.png`
 through the mapping, copy the `-Offsets`, `-Shadow` and `AnimData.xml`
 across unchanged, then build the form.
+
+Their old shiny folders became form `0001` of each species, which is
+where the drawings they replaced still are. The two form names are ours,
+added to `tracker.json`; an upstream sync overwrites that file, and the
+names already written into the sheets are not affected.
 
 ## After a sync
 
