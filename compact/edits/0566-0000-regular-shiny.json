@@ -1,0 +1,50 @@
+{
+  "version": 1,
+  "from": "regular",
+  "swaps": [
+    {
+      "from": "#000000ff",
+      "to": "#000000ff"
+    },
+    {
+      "from": "#f4f4f4ff",
+      "to": "#f4f4f4ff"
+    },
+    {
+      "from": "#de524aff",
+      "to": "#9c5a41ff"
+    },
+    {
+      "from": "#944242ff",
+      "to": "#524129ff"
+    },
+    {
+      "from": "#e7827cff",
+      "to": "#e6834aff"
+    },
+    {
+      "from": "#3184f7ff",
+      "to": "#10d54aff"
+    },
+    {
+      "from": "#31529cff",
+      "to": "#109c41ff"
+    },
+    {
+      "from": "#99c0f7ff",
+      "to": "#79adf3ff"
+    },
+    {
+      "from": "#3866cdff",
+      "to": "#109c41ff"
+    },
+    {
+      "from": "#f7ce63ff",
+      "to": "#ffe66aff"
+    },
+    {
+      "from": "#bd9452ff",
+      "to": "#bdac52ff"
+    }
+  ]
+}

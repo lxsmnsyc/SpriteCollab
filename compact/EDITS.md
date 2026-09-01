@@ -8,6 +8,8 @@ rather than what the artist submitted.
 |---|---|---|
 | `kanto/0111/0000` shiny female | `kanto/0111/0000` female | No shiny female was drawn. Recoloured through Rhyhorn's own regular-to-shiny mapping. |
 | `hoenn/0317/0001` shiny female | `hoenn/0317/0001` female | No shiny female was drawn. Recoloured through Swalot Altcolor's own regular-to-shiny mapping. |
+| `unova/0502/0000` shiny | `unova/0502/0000` regular | The artist's shiny is a separate drawing, not a recolour: different cell sizes, different clip lengths, and most of each sprite drawn in one coat only. Rebuilt from the regular. |
+| `unova/0566/0000` shiny | `unova/0566/0000` regular | The same. `FlapAround`, which only the old shiny drew, is not in the sheet. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
@@ -22,6 +24,12 @@ node tools/src/recolor-bin.ts apply 191/0 --coat regular \
 
 An edit that is not a recolour cannot be reproduced from a mapping. Say
 so in its row.
+
+Dewott and Archen are recoloured a step earlier: their shiny **folder**
+is rebuilt from the regular's before the sheet is built, so the coat has
+the regular's animations and step counts. Recolour each `-Anim.png`
+through the mapping, copy the `-Offsets`, `-Shadow` and `AnimData.xml`
+across unchanged, then build the form.
 
 ## After a sync
 
