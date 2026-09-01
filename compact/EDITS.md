@@ -6,7 +6,7 @@ rather than what the artist submitted.
 
 | Edited sprite | Original sprite | Cause of editing |
 |---|---|---|
-| — | — | — |
+| `kanto/0111/0000` shiny female | `kanto/0111/0000` female | No shiny female was drawn. Recoloured through Rhyhorn's own regular-to-shiny mapping. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
