@@ -49,9 +49,11 @@ run continues; exit is non-zero if anything failed or mismatched.
 
 ### What it does
 
-1. **Keeps only the forty supported animations**
-   ([`anims.ts`](src/anims.ts), copied from Overwander and Poketerra).
-   Cutscene poses stay in `sprite/`. A third of Bulbasaur's frames.
+1. **Keeps only the forty-eight supported animations**
+   ([`anims.ts`](src/anims.ts): Overwander and Poketerra's forty, plus
+   eight the collection draws in all eight facings and they have yet to
+   list). Cutscene poses stay in `sprite/`. A third of Bulbasaur's
+   frames.
 2. **Reads the anchors** out of the `-Shadow` and `-Offsets` images, so
    those never ship again.
 3. **Crops each frame** to what is drawn in it.
@@ -163,7 +165,7 @@ form       name                   coats   anims   partial   extra   built
 Coats read `R S F Y`, with `.` absent, `~` padded to another cell size,
 `!` unalignable and left out of the sheet.
 
-- **anims** — how many of the forty any coat draws
+- **anims** — how many of the forty-eight any coat draws
 - **partial** — drawn in some coats and not others
 - **extra** — animations the sheet leaves behind
 - **built** — `yes` / `stale` / `no`
@@ -218,7 +220,7 @@ The index merges, so a partial run leaves the rest alone.
 | | |
 |---|---|
 | [`xml.ts`](src/xml.ts) | as much XML as `AnimData.xml` needs |
-| [`anims.ts`](src/anims.ts) | the forty supported animations |
+| [`anims.ts`](src/anims.ts) | the forty-eight supported animations |
 | [`anim-data.ts`](src/anim-data.ts) | the description, `CopyOf` resolved |
 | [`credits.ts`](src/credits.ts) | who drew it, under what terms |
 | [`png.ts`](src/png.ts) | decode, and encode into the smallest container |

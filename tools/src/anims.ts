@@ -9,9 +9,17 @@
  * sheet space and description for nothing.
  *
  * So this is the list the engines that read these sheets actually
- * support, and it is the filter the optimizer packs against. It is
- * copied from `src/data/ids/sprite-anims.ts` in both of them, where
- * the two files are identical.
+ * support, and it is the filter the optimizer packs against. Numbers 0
+ * to 39 are `src/data/ids/sprite-anims.ts` in both Overwander and
+ * Poketerra, where the two files are identical.
+ *
+ * Numbers 40 and up are ours, and those two files do not have them yet.
+ * They are the rest of the collection's ordinary animations — drawn in
+ * all eight facings by every coat that has them, and drawn more than
+ * once — as against the cutscene poses, which are a single facing or
+ * inconsistent between coats. An engine that does not know a number
+ * ignores it, so packing them costs the engines nothing and saves
+ * rebuilding the tree when they do learn them.
  *
  * **The numbers are written into every sheet's description, so they are
  * append-only.** A new animation takes the next free number; an
@@ -62,6 +70,15 @@ export const SpriteAnim = {
   Hover: 37,
   Rumble: 38,
   Sound: 39,
+  // Ours: eight facings everywhere they are drawn, and drawn more than once
+  FlapAround: 40,
+  TailWhip: 41,
+  Scratch: 42,
+  CarefulWalk: 43,
+  RaiseArms: 44,
+  Sing: 45,
+  Yawn: 46,
+  Slap: 47,
 } as const;
 
 export type SpriteAnim = (typeof SpriteAnim)[keyof typeof SpriteAnim];

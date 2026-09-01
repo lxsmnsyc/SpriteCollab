@@ -84,19 +84,22 @@ original folder. A renderer does not need them.
 Append-only, so safe to hard-code.
 
 ```
- 0 Idle          10 Swing         20 Slam          30 Emit
- 1 Sleep         11 Slice         21 Withdraw      31 Swell
- 2 Hurt          12 SpAttack      22 Twirl         32 Ricochet
- 3 Attack        13 Shock         23 RearUp        33 MultiScratch
- 4 Charge        14 QuickStrike   24 Shake         34 Bite
- 5 Shoot         15 Strike        25 Lick          35 Appeal
- 6 Double        16 Jab           26 Dance         36 Chop
- 7 Hop           17 Punch         27 Uppercut      37 Hover
- 8 Rotate        18 Kick          28 Gas           38 Rumble
- 9 Walk          19 MultiStrike   29 Stomp         39 Sound
+ 0 Idle          12 SpAttack      24 Shake         36 Chop
+ 1 Sleep         13 Shock         25 Lick          37 Hover
+ 2 Hurt          14 QuickStrike   26 Dance         38 Rumble
+ 3 Attack        15 Strike        27 Uppercut      39 Sound
+ 4 Charge        16 Jab           28 Gas           40 FlapAround
+ 5 Shoot         17 Punch         29 Stomp         41 TailWhip
+ 6 Double        18 Kick          30 Emit          42 Scratch
+ 7 Hop           19 MultiStrike   31 Swell         43 CarefulWalk
+ 8 Rotate        20 Slam          32 Ricochet      44 RaiseArms
+ 9 Walk          21 Withdraw      33 MultiScratch  45 Sing
+10 Swing         22 Twirl         34 Bite          46 Yawn
+11 Slice         23 RearUp        35 Appeal        47 Slap
 ```
 
-The first eleven are on nearly every pokemon; the rest are rare. Cutscene
+The first eleven are on nearly every pokemon; the rest are rare. Every
+one is drawn in eight facings except `Sleep`, which has one. Cutscene
 poses (`EventSleep`, `Laying`, …) are not in this tree.
 
 ## `frames.bin`
