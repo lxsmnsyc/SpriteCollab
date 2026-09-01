@@ -84,7 +84,7 @@ describe('statusOf', () => {
       { path: '0001', color: COLORS.green },
       { path: '0001/0000/0001', color: COLORS.green, cell: { width: 12, height: 12 } },
     ]);
-    run({ root: held.root, output: held.output, species: [1] });
+    run({ all: true, root: held.root, output: held.output, species: [1] });
     const status = statusOf(held.root, held.output, slotAt(held.root, 1, 0));
     const shiny = status.coats.find((coat) => coat.key === 'shiny');
 
@@ -119,7 +119,7 @@ describe('statusOf', () => {
       built: false,
       stale: null,
     });
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
     expect(statusOf(root, output, slotAt(root, 1, 0))).toMatchObject({
       built: true,
       stale: false,

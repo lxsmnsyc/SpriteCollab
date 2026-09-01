@@ -28,6 +28,7 @@ Options
   --no-compact     keep every frame at its authored size
   --no-merge       leave a coat missing an animation its pair has
   --no-verify      skip reading every frame back off the sheet
+  --all            build a form the collection has barely drawn too
   --check          check the sheets already written, build nothing
   --prune          delete the source folders once the sheet checks out
   --dry-run        build and report, write nothing
@@ -39,6 +40,7 @@ Examples
   sprite-optimize 25 --dry-run          say what Pikachu would come to
   sprite-optimize 1-151 --prune         and take the folders away after
   sprite-optimize 1-151 --check --prune the same, without building again
+  sprite-optimize 722-809 --all         Toucannon and the rest, however little
 `;
 
 /** One argument as the species it names, however it was written. */
@@ -79,6 +81,7 @@ export interface Arguments {
   compact: boolean;
   merge: boolean;
   verify: boolean;
+  all: boolean;
   check: boolean;
   prune: boolean;
   dryRun: boolean;
@@ -97,6 +100,7 @@ export function parseArguments(argv: string[]): Arguments {
     compact: true,
     merge: true,
     verify: true,
+    all: false,
     check: false,
     prune: false,
     dryRun: false,
@@ -132,6 +136,9 @@ export function parseArguments(argv: string[]): Arguments {
         break;
       case '--no-verify':
         parsed.verify = false;
+        break;
+      case '--all':
+        parsed.all = true;
         break;
       case '--check':
         parsed.check = true;
@@ -234,6 +241,7 @@ export default function main(argv: string[]): number {
     compact: options.compact,
     merge: options.merge,
     verify: options.verify,
+    all: options.all,
     check: options.check,
     prune: options.prune,
     dryRun: options.dryRun,
@@ -290,6 +298,21 @@ export default function main(argv: string[]): number {
           .slice(0, 6)
           .map((slot) => `${slot.dex}/${slot.form} ${slot.missing.map(spriteAnimName).join(' ')}`)
           .join(', ')}${short.length > 6 ? ', …' : ''}\n`,
+    );
+  }
+
+  // Said even under --quiet: a form that was not built is a sheet
+  // somebody will go looking for, and the run is the only place that
+  // says why it is not there
+  if (report.skipped.length > 0) {
+    const count = report.skipped.length;
+
+    process.stdout.write(
+      `skipped  ${count} form${count === 1 ? '' : 's'} below the bare minimum: ` +
+        `${report.skipped
+          .slice(0, 6)
+          .map((slot) => `${slot.dex}/${slot.form} ${slot.missing.map(spriteAnimName).join(' ')}`)
+          .join(', ')}${count > 6 ? ', …' : ''}\n`,
     );
   }
 

@@ -194,7 +194,7 @@ describe('a whole run', () => {
   });
 
   it('writes a sheet for each coat and one description beside them', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const folder = join(output, 'kanto', '0001', '0000');
 
@@ -206,7 +206,7 @@ describe('a whole run', () => {
   });
 
   it('describes the sheet in a shape a reader can follow', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const meta = JSON.parse(
       readFileSync(join(output, 'kanto', '0001', '0000', 'sheet.json'), 'utf8'),
@@ -251,7 +251,7 @@ describe('a whole run', () => {
       JSON.stringify({ '0001': { name: 'Bulbasaur', subgroups: { '0002': { name: 'Altcolor' } } } }),
     );
     writeFixture(root, ANIMS, [{ path: '0001/0002', color: COLORS.red }]);
-    run({ root, output, species: [1], tracker });
+    run({ all: true, root, output, species: [1], tracker });
 
     const read = (form: string): SheetData =>
       JSON.parse(readFileSync(join(output, 'kanto', '0001', form, 'sheet.json'), 'utf8')) as SheetData;
@@ -261,7 +261,7 @@ describe('a whole run', () => {
   });
 
   it('writes the frames as a table beside the description', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const folder = join(output, 'kanto', '0001', '0000');
     const meta = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
@@ -292,7 +292,7 @@ describe('a whole run', () => {
       JSON.stringify({ '0001': { name: 'Bulbasaur', subgroups: { '0002': { name: 'Alola' } } } }),
     );
     writeFixture(root, ANIMS, [{ path: '0001/0002', color: COLORS.red }]);
-    const report = run({ root, output, species: [1], tracker });
+    const report = run({ all: true, root, output, species: [1], tracker });
 
     expect(report.slots.map((slot) => slot.region)).toEqual(['kanto', 'alola']);
     expect(existsSync(join(output, 'alola', '0001', '0002', 'sheet.json'))).toBe(true);
@@ -309,7 +309,7 @@ describe('a whole run', () => {
     // Something in the species folder that is not a sprite at all
     writeFileSync(join(root, '0001', 'notes.txt'), 'x'.repeat(4096));
 
-    const report = run({ root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1] });
 
     expect(report.species).toHaveLength(1);
     expect(report.species[0]).toMatchObject({ dex: 1, forms: 2 });
@@ -323,7 +323,7 @@ describe('a whole run', () => {
   });
 
   it('weighs a species it only pretended to write', () => {
-    const report = run({ root, output, species: [1], dryRun: true });
+    const report = run({ all: true, root, output, species: [1], dryRun: true });
 
     expect(report.species[0].before).toBe(weighTree(join(root, '0001')));
     expect(report.species[0].after).toBe(report.slots[0].after);
@@ -331,14 +331,14 @@ describe('a whole run', () => {
 
   it('measures a species before pruning takes it away', () => {
     const before = weighTree(join(root, '0001'));
-    const report = run({ root, output, species: [1], prune: true });
+    const report = run({ all: true, root, output, species: [1], prune: true });
 
     expect(report.species[0].before).toBe(before);
     expect(existsSync(join(root, '0001'))).toBe(false);
   });
 
   it('says nothing about a species it built nothing for', () => {
-    expect(run({ root, output, species: [999] }).species).toEqual([]);
+    expect(run({ all: true, root, output, species: [999] }).species).toEqual([]);
   });
 
   it('gives a coat the animation its pair has and it has not', () => {
@@ -350,7 +350,7 @@ describe('a whole run', () => {
     writeFixture(other, ANIMS.slice(1, 2), [
       { path: '0001/0000/0001', color: COLORS.blue },
     ]);
-    const report = run({ root: other, output, species: [1] });
+    const report = run({ all: true, root: other, output, species: [1] });
     const meta = JSON.parse(
       readFileSync(join(output, 'kanto', '0001', '0000', 'sheet.json'), 'utf8'),
     ) as SheetData;
@@ -370,13 +370,13 @@ describe('a whole run', () => {
     writeFixture(other, ANIMS.slice(1, 2), [
       { path: '0001/0000/0001', color: COLORS.blue },
     ]);
-    const report = run({ root: other, output, species: [1], merge: false });
+    const report = run({ all: true, root: other, output, species: [1], merge: false });
 
     expect(report.slots[0].derived).toEqual([]);
   });
 
   it('counts how many frames carry each anchor', () => {
-    const report = run({ root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1] });
 
     // The fixture marks a shadow, a body and a head on every frame, and
     // no hands at all
@@ -391,7 +391,7 @@ describe('a whole run', () => {
   });
 
   it('lists what it wrote in an index', () => {
-    const report = run({ root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1] });
 
     const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
 
@@ -409,7 +409,7 @@ describe('a whole run', () => {
   });
 
   it('takes away a coat it has no art to rebuild, and says whose it was', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const folder = join(output, 'kanto/0001/0000');
     const sheet = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
@@ -421,7 +421,7 @@ describe('a whole run', () => {
     sheet.derived = [{ coat: 'shinyFemale', anim: null, from: 'female' }];
     writeFileSync(join(folder, 'sheet.json'), JSON.stringify(sheet));
 
-    const report = run({ root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1] });
 
     expect(existsSync(join(folder, 'shiny_female.png'))).toBe(false);
     expect(report.slots[0].dropped).toEqual([{ coat: 'shinyFemale', ours: true }]);
@@ -432,38 +432,38 @@ describe('a whole run', () => {
   });
 
   it('does not call a leftover coat ours when the sheet never claimed it', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const folder = join(output, 'kanto/0001/0000');
 
     writeFileSync(join(folder, 'female.png'), readFileSync(join(folder, 'regular.png')));
 
-    const report = run({ root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1] });
 
     expect(report.slots[0].dropped).toEqual([{ coat: 'female', ours: false }]);
   });
 
   it('says what a dry run would drop without dropping it', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const folder = join(output, 'kanto/0001/0000');
 
     writeFileSync(join(folder, 'female.png'), readFileSync(join(folder, 'regular.png')));
 
-    const report = run({ root, output, species: [1], dryRun: true });
+    const report = run({ all: true, root, output, species: [1], dryRun: true });
 
     expect(report.slots[0].dropped).toEqual([{ coat: 'female', ours: false }]);
     expect(existsSync(join(folder, 'female.png'))).toBe(true);
   });
 
   it('drops nothing when every coat it wrote is one it drew', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
-    expect(run({ root, output, species: [1] }).slots[0].dropped).toEqual([]);
+    expect(run({ all: true, root, output, species: [1] }).slots[0].dropped).toEqual([]);
   });
 
   it('says which of the common animations a form has not got', () => {
-    const report = run({ root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1] });
 
     const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
     // The fixture draws Walk and Idle and nothing else common
@@ -484,8 +484,8 @@ describe('a whole run', () => {
 
   it('reads the index off the tree, so it cannot drift from the sheets', () => {
     writeFixture(root, ANIMS, [{ path: '0025', color: COLORS.red }]);
-    run({ root, output, species: [1] });
-    run({ root, output, species: [25] });
+    run({ all: true, root, output, species: [1] });
+    run({ all: true, root, output, species: [25] });
 
     const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
 
@@ -501,17 +501,17 @@ describe('a whole run', () => {
   });
 
   it('checks a sheet already written without building it again', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
-    const report = run({ root, output, species: [1], check: true });
+    const report = run({ all: true, root, output, species: [1], check: true });
 
     expect(report.slots[0].mismatches).toEqual([]);
-    expect(report.slots[0].width).toBe(run({ root, output, species: [1] }).slots[0].width);
+    expect(report.slots[0].width).toBe(run({ all: true, root, output, species: [1] }).slots[0].width);
   });
 
   it('takes the folders away on the strength of a check', () => {
-    run({ root, output, species: [1] });
-    const report = run({ root, output, species: [1], check: true, prune: true });
+    run({ all: true, root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1], check: true, prune: true });
 
     expect(report.failed).toEqual([]);
     expect(report.slots[0].mismatches).toEqual([]);
@@ -520,7 +520,7 @@ describe('a whole run', () => {
   });
 
   it('leaves a hand-made coat alone where a rebuild would drop it', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const folder = join(output, 'kanto/0001/0000');
     const sheet = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
@@ -529,14 +529,14 @@ describe('a whole run', () => {
     sheet.coats = [...sheet.coats, 'shinyFemale'];
     writeFileSync(join(folder, 'sheet.json'), JSON.stringify(sheet));
 
-    const report = run({ root, output, species: [1], check: true });
+    const report = run({ all: true, root, output, species: [1], check: true });
 
     expect(report.slots[0].mismatches).toEqual([]);
     expect(existsSync(join(folder, 'shiny_female.png'))).toBe(true);
   });
 
   it('will not pass a check where the sheet has no coat the folders drew', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
 
     const folder = join(output, 'kanto/0001/0000');
     const sheet = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
@@ -544,7 +544,7 @@ describe('a whole run', () => {
     sheet.coats = sheet.coats.filter((coat) => coat !== 'regular');
     writeFileSync(join(folder, 'sheet.json'), JSON.stringify(sheet));
 
-    const report = run({ root, output, species: [1], check: true, prune: true });
+    const report = run({ all: true, root, output, species: [1], check: true, prune: true });
 
     expect(report.slots[0].mismatches).toHaveLength(1);
     expect(report.slots[0].removed).toEqual([]);
@@ -553,8 +553,8 @@ describe('a whole run', () => {
 
   it('adds to the index rather than replacing it', () => {
     writeFixture(root, ANIMS, [{ path: '0025', color: COLORS.red }]);
-    run({ root, output, species: [1] });
-    run({ root, output, species: [25] });
+    run({ all: true, root, output, species: [1] });
+    run({ all: true, root, output, species: [25] });
 
     const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
 
@@ -564,14 +564,14 @@ describe('a whole run', () => {
   it('does every species where none is named', () => {
     writeFixture(root, ANIMS, [{ path: '0025', color: COLORS.red }]);
 
-    expect(run({ root, output, species: [] }).slots.map((slot) => slot.dex)).toEqual([1, 25]);
+    expect(run({ all: true, root, output, species: [] }).slots.map((slot) => slot.dex)).toEqual([1, 25]);
   });
 
   it('takes the source folders away only where it is asked to', () => {
-    run({ root, output, species: [1] });
+    run({ all: true, root, output, species: [1] });
     expect(existsSync(join(root, '0001', 'AnimData.xml'))).toBe(true);
 
-    const report = run({ root, output, species: [1], prune: true });
+    const report = run({ all: true, root, output, species: [1], prune: true });
 
     expect(report.slots[0].removed.length).toBeGreaterThan(0);
     expect(existsSync(join(root, '0001', 'AnimData.xml'))).toBe(false);
@@ -601,9 +601,83 @@ describe('a whole run', () => {
       broken,
       '<?xml version="1.0" ?><AnimData><ShadowSize>1</ShadowSize><Anims><Anim><Name>Walk</Name><CopyOf>Idle</CopyOf></Anim></Anims></AnimData>',
     );
-    const report = run({ root, output, species: [1, 25] });
+    const report = run({ all: true, root, output, species: [1, 25] });
 
     expect(report.slots.map((slot) => slot.dex)).toEqual([1]);
     expect(report.failed).toEqual([{ dex: 25, form: 0, error: expect.stringContaining('Idle') }]);
+  });
+});
+
+describe('the bare minimum', () => {
+  /** The six a form has to have, as fixture animations. */
+  const SIX = ['Idle', 'Attack', 'Walk', 'Sleep', 'Hurt', 'Hop'].map((name, index) => ({
+    name,
+    index,
+    frameWidth: 8,
+    frameHeight: 8,
+    columns: 1,
+    rows: 8,
+    durations: [8],
+  }));
+
+  it('leaves a form whose regular coat is short of one of the six', () => {
+    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
+    const root = join(held, 'sprite');
+    const output = join(held, 'compact');
+
+    writeFixture(root, SIX.slice(0, 5), [{ path: '0001', color: COLORS.green }]);
+    const report = run({ root, output, species: [1] });
+
+    expect(report.slots).toHaveLength(0);
+    expect(report.skipped).toEqual([{ dex: 1, form: 0, missing: [SpriteAnim.Hop] }]);
+    expect(existsSync(join(output, 'kanto', '0001'))).toBe(false);
+  });
+
+  it('builds one that has all six', () => {
+    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
+    const root = join(held, 'sprite');
+    const output = join(held, 'compact');
+
+    writeFixture(root, SIX, [{ path: '0001', color: COLORS.green }]);
+    const report = run({ root, output, species: [1] });
+
+    expect(report.skipped).toHaveLength(0);
+    expect(report.slots).toHaveLength(1);
+  });
+
+  it('counts a form with no regular coat as short of all six', () => {
+    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
+    const root = join(held, 'sprite');
+    const output = join(held, 'compact');
+
+    // Drawn as a shiny and nothing else, the way Gimmighoul is
+    writeFixture(root, SIX, [{ path: '0001/0000/0001', color: COLORS.blue }]);
+    const report = run({ root, output, species: [1] });
+
+    expect(report.slots).toHaveLength(0);
+    expect(report.skipped[0].missing).toHaveLength(6);
+  });
+
+  it('builds it anyway when asked for all of them', () => {
+    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
+    const root = join(held, 'sprite');
+    const output = join(held, 'compact');
+
+    writeFixture(root, SIX.slice(0, 5), [{ path: '0001', color: COLORS.green }]);
+    const report = run({ root, output, species: [1], all: true });
+
+    expect(report.skipped).toHaveLength(0);
+    expect(report.slots).toHaveLength(1);
+  });
+
+  it('does not take the folders of a form it did not build', () => {
+    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
+    const root = join(held, 'sprite');
+    const output = join(held, 'compact');
+
+    writeFixture(root, SIX.slice(0, 5), [{ path: '0001', color: COLORS.green }]);
+    run({ root, output, species: [1], prune: true });
+
+    expect(existsSync(join(root, '0001', 'AnimData.xml'))).toBe(true);
   });
 });

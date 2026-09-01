@@ -1,7 +1,8 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import type { SpriteAnim } from './anims.ts';
-import { missingCommon } from './anims.ts';
+import { MINIMUM_ANIMS, missingCommon, missingMinimum } from './anims.ts';
+import readAnimData from './anim-data.ts';
 import type { Archive } from './archive.ts';
 import readArchive from './archive.ts';
 import type { Authors } from './credits.ts';
@@ -58,6 +59,16 @@ export interface RunOptions {
    * not pay for them.
    */
   check?: boolean;
+  /**
+   * Whether a form the collection has barely drawn is built anyway.
+   *
+   * Off, a form whose regular coat is short of one of the six
+   * bare-minimum animations is left where it is: it cannot be put on
+   * screen in a normal turn of play, so packing it and taking its
+   * folder away buys nothing and loses the folder a later revision
+   * would be finished in.
+   */
+  all?: boolean;
   /** Whether anything is written at all. */
   dryRun?: boolean;
   /** Where the collection's record of names is, where it is to be read. */
@@ -70,6 +81,8 @@ export interface RunOptions {
   names?: Tracker;
   /** Called as each form finishes, for a command line to report on. */
   onSlot?: (report: SlotReport) => void;
+  /** Called for each form left alone, for the same reason. */
+  onSkip?: (report: SkippedSlot) => void;
   /** Called as each species finishes, once every form of it is done. */
   onSpecies?: (report: SpeciesReport) => void;
 }
@@ -171,8 +184,18 @@ export interface SpeciesReport {
   after: number;
 }
 
+/** One form the run left where it was, and what it was short of. */
+export interface SkippedSlot {
+  dex: number;
+  form: number;
+  /** Which of the six its regular coat has not got. All six, where it has no regular coat. */
+  missing: SpriteAnim[];
+}
+
 export interface RunReport {
   slots: SlotReport[];
+  /** The forms below the bare minimum, which were not built. */
+  skipped: SkippedSlot[];
   species: SpeciesReport[];
   /** Every anchor of every frame the run wrote, counted. */
   anchors: Anchors;
@@ -297,6 +320,23 @@ function checkSlot(
   };
 }
 
+/**
+ * Which of the bare minimum a form's regular coat is short of.
+ *
+ * Read out of `AnimData.xml` alone — a form is judged before anything
+ * of it is decoded, so the ones that are not going to be built cost a
+ * few kilobytes of XML rather than a sheet's worth of PNG.
+ */
+export function belowMinimum(root: string, slot: Slot): SpriteAnim[] {
+  if (!slot.present.includes('regular')) {
+    return MINIMUM_ANIMS;
+  }
+  const file = join(root, slot.coats.regular, 'AnimData.xml');
+  const data = readAnimData(readFileSync(file, 'utf8'));
+
+  return missingMinimum(data.anims.map((one) => one.anim));
+}
+
 /** One form: read, built, checked, written, and its source taken away. */
 export function runSlot(slot: Slot, options: RunOptions): SlotReport {
   const archives = slot.present.map((key) => ({
@@ -387,6 +427,7 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
  */
 export default function run(options: RunOptions): RunReport {
   const slots: SlotReport[] = [];
+  const skipped: SkippedSlot[] = [];
   const species: SpeciesReport[] = [];
   const failed: RunReport['failed'] = [];
   let wrote = false;
@@ -407,6 +448,15 @@ export default function run(options: RunOptions): RunReport {
 
     for (const slot of slotsOf(options.root, dex)) {
       try {
+        const short = options.all === true ? [] : belowMinimum(options.root, slot);
+
+        if (short.length > 0) {
+          const missed: SkippedSlot = { dex: slot.dex, form: slot.form, missing: short };
+
+          skipped.push(missed);
+          options.onSkip?.(missed);
+          continue;
+        }
         const report = runSlot(slot, { ...options, names, authors });
 
         forms += 1;
@@ -453,6 +503,7 @@ export default function run(options: RunOptions): RunReport {
   }
   return {
     slots,
+    skipped,
     species,
     anchors: slots.reduce(
       (total, slot) => {

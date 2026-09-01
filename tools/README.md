@@ -37,6 +37,7 @@ The species line weighs all of `sprite/{dex}` against all of
 --out <dir>      where the tree goes               (default compact)
 --no-compact     keep frames at their authored size
 --no-merge       leave a coat missing an animation its pair has
+--all            build a form the collection has barely drawn too
 --no-verify      skip reading every frame back
 --check          check the sheets already written, build nothing
 --prune          delete sources once verified
@@ -90,6 +91,21 @@ The run says which, and whether the sheet called it ours:
           dropped the shinyFemale coat: no art for it, and it was
           ours — redo it from compact/EDITS.md
 ```
+
+### Below the bare minimum
+
+A form whose regular coat is short of one of the six
+([`anims.ts`](src/anims.ts)) is not built. It cannot be put on screen in
+a normal turn of play, and its folder is where a later revision will
+finish it. A form with no regular coat at all counts as short of all
+six. The run says which, even under `--quiet`:
+
+```
+skipped  1 form below the bare minimum: 733/0 Attack Walk Sleep Hurt Hop
+```
+
+`--all` builds them anyway. Sheets built before this rule stay where
+they are until something rebuilds them.
 
 ### Pruning what is already built
 

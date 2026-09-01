@@ -30,10 +30,15 @@ describe('parseArguments', () => {
       output: 'compact',
       compact: true,
       verify: true,
+      all: false,
       check: false,
       prune: false,
       dryRun: false,
     });
+  });
+
+  it('takes --all', () => {
+    expect(parseArguments(['1', '--all']).all).toBe(true);
   });
 
   it('takes --check', () => {
