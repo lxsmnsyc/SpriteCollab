@@ -72,6 +72,15 @@ it — see below.
 `RushFrame`, `HitFrame`, `ReturnFrame`, `CopyOf` and every coat's
 `credits.txt` are carried through.
 
+A coat file the build did not write is taken away: the packing is chosen
+afresh each run, so a leftover coat describes a layout that has moved.
+The run says which, and whether the sheet called it ours:
+
+```
+          dropped the shinyFemale coat: no art for it, and it was
+          ours — redo it from compact/EDITS.md
+```
+
 ### Merging a pair
 
 A coat is often finished for a clip its partner is not: Sunkern's

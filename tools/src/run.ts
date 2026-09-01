@@ -15,8 +15,8 @@ import { pad, slotsOf, speciesIn } from './slots.ts';
 import type { Tracker } from './tracker.ts';
 import readTracker from './tracker.ts';
 import verifySheet, { type Mismatch } from './verify.ts';
-import type { IndexEntry } from './write.ts';
-import { removeSource, updateIndex, writeSheet } from './write.ts';
+import type { Dropped, IndexEntry, Written } from './write.ts';
+import { outputPath, removeSource, staleCoats, updateIndex, writeSheet } from './write.ts';
 
 /**
  * One run of the optimizer, from a list of species to a written tree.
@@ -118,6 +118,8 @@ export interface SlotReport {
   derived: Derived[];
   /** Animations one coat could not be given, and why. */
   refused: Refused[];
+  /** Coat files this build did not write, and took away. */
+  dropped: Dropped[];
   /** The files and folders taken away, where pruning was asked for. */
   removed: string[];
   /** Where the sheet was filed. */
@@ -221,12 +223,22 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
     result.coats.reduce((total, coat) => total + coat.bytes.length, 0) +
     JSON.stringify(result.meta).length +
     encodeFrames(result.frames).length;
-  let entry: IndexEntry | null = null;
+  let written: Written | null = null;
   const removed: string[] = [];
   const region = result.meta.region;
 
+  // A dry run is how a change is looked at before it is made, so it
+  // says what it would take away as well as what it would write
+  const dropped =
+    options.dryRun === true
+      ? staleCoats(
+          join(options.output, outputPath(region, slot.dex, slot.form)),
+          new Set(result.coats.map((coat) => coat.key)),
+        )
+      : [];
+
   if (options.dryRun !== true) {
-    entry = writeSheet(options.output, slot, result);
+    written = writeSheet(options.output, slot, result);
     // Nothing is taken away on the strength of a sheet that did not
     // read back as what it replaced
     if (options.prune === true && mismatches.length === 0) {
@@ -239,7 +251,7 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
   return {
     dex: slot.dex,
     form: slot.form,
-    path: entry?.path ?? `${region}/${slot.dex}/${slot.form}`,
+    path: written?.entry.path ?? `${region}/${slot.dex}/${slot.form}`,
     region,
     coats: slot.present,
     width: result.width,
@@ -253,6 +265,7 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
     anchors: countAnchors(result.frames),
     derived: result.meta.derived,
     refused: result.refused,
+    dropped: written?.dropped ?? dropped,
     removed,
   };
 }
@@ -268,7 +281,7 @@ export default function run(options: RunOptions): RunReport {
   const slots: SlotReport[] = [];
   const species: SpeciesReport[] = [];
   const failed: RunReport['failed'] = [];
-  const written: IndexEntry[] = [];
+  const entries: IndexEntry[] = [];
   // Read once for the whole run: the record is ten megabytes, and
   // every form of every species would otherwise read it again
   const names = options.names ?? (options.tracker == null ? undefined : readTracker(options.tracker));
@@ -294,7 +307,7 @@ export default function run(options: RunOptions): RunReport {
         slots.push(report);
         options.onSlot?.(report);
         if (options.dryRun !== true) {
-          written.push({
+          entries.push({
             region: report.region,
             dex: slot.dex,
             form: slot.form,
@@ -336,8 +349,8 @@ export default function run(options: RunOptions): RunReport {
       options.onSpecies?.(report);
     }
   }
-  if (written.length > 0) {
-    updateIndex(options.output, written);
+  if (entries.length > 0) {
+    updateIndex(options.output, entries);
   }
   return {
     slots,

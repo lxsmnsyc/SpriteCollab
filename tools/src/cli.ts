@@ -225,6 +225,12 @@ export default function main(argv: string[]): number {
 
             process.stdout.write(`          ${held.coat} gained ${what} from ${held.from}\n`);
           }
+          for (const held of slot.dropped) {
+            process.stdout.write(
+              `          dropped the ${held.coat} coat: no art for it` +
+                `${held.ours ? ', and it was ours — redo it from compact/EDITS.md' : ''}\n`,
+            );
+          }
           for (const held of slot.refused) {
             process.stdout.write(
               `          ${held.coat} could not be given ${spriteAnimName(held.anim)}: ${held.reason}\n`,
@@ -245,6 +251,17 @@ export default function main(argv: string[]): number {
   if (!options.quiet && derived + refused > 0) {
     process.stdout.write(
       `carried  ${derived} animation${derived === 1 ? '' : 's'} between coats, ${refused} refused\n`,
+    );
+  }
+  // Said even under --quiet: a dropped coat of ours is work to redo,
+  // and a run that swallows it is how the tree goes quietly wrong
+  const ours = report.slots.flatMap((slot) => slot.dropped.filter((one) => one.ours));
+  const dropped = report.slots.reduce((total, slot) => total + slot.dropped.length, 0);
+
+  if (dropped > 0) {
+    process.stdout.write(
+      `dropped  ${dropped} coat${dropped === 1 ? '' : 's'} with no art to rebuild from` +
+        `${ours.length > 0 ? `, ${ours.length} of them ours — see compact/EDITS.md` : ''}\n`,
     );
   }
 

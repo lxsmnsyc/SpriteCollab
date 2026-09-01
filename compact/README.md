@@ -229,7 +229,9 @@ node -e 'for (const s of require("./compact/index.json").slots)
 
 ## Edited sheets
 
-Coats with a `null` in `derived` are ours, and a rebuild loses them.
+Coats with a `null` in `derived` are ours, and a rebuild deletes them —
+its packing is chosen afresh, so keeping the old file would leave frames
+pointing at the wrong pixels. The run says which it dropped.
 [`EDITS.md`](EDITS.md) says what each was made from and how to put it
 back. Add a row before editing one.
 

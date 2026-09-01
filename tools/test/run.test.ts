@@ -408,6 +408,60 @@ describe('a whole run', () => {
     expect(index.slots[0].derived).toEqual(report.slots[0].derived);
   });
 
+  it('takes away a coat it has no art to rebuild, and says whose it was', () => {
+    run({ root, output, species: [1] });
+
+    const folder = join(output, 'kanto/0001/0000');
+    const sheet = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
+
+    // A coat somebody recoloured by hand: the collection has no art for
+    // it, so the next build cannot make it again
+    writeFileSync(join(folder, 'shiny_female.png'), readFileSync(join(folder, 'regular.png')));
+    sheet.coats = [...sheet.coats, 'shinyFemale'];
+    sheet.derived = [{ coat: 'shinyFemale', anim: null, from: 'female' }];
+    writeFileSync(join(folder, 'sheet.json'), JSON.stringify(sheet));
+
+    const report = run({ root, output, species: [1] });
+
+    expect(existsSync(join(folder, 'shiny_female.png'))).toBe(false);
+    expect(report.slots[0].dropped).toEqual([{ coat: 'shinyFemale', ours: true }]);
+
+    const after = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8')) as SheetData;
+
+    expect(after.coats).not.toContain('shinyFemale');
+  });
+
+  it('does not call a leftover coat ours when the sheet never claimed it', () => {
+    run({ root, output, species: [1] });
+
+    const folder = join(output, 'kanto/0001/0000');
+
+    writeFileSync(join(folder, 'female.png'), readFileSync(join(folder, 'regular.png')));
+
+    const report = run({ root, output, species: [1] });
+
+    expect(report.slots[0].dropped).toEqual([{ coat: 'female', ours: false }]);
+  });
+
+  it('says what a dry run would drop without dropping it', () => {
+    run({ root, output, species: [1] });
+
+    const folder = join(output, 'kanto/0001/0000');
+
+    writeFileSync(join(folder, 'female.png'), readFileSync(join(folder, 'regular.png')));
+
+    const report = run({ root, output, species: [1], dryRun: true });
+
+    expect(report.slots[0].dropped).toEqual([{ coat: 'female', ours: false }]);
+    expect(existsSync(join(folder, 'female.png'))).toBe(true);
+  });
+
+  it('drops nothing when every coat it wrote is one it drew', () => {
+    run({ root, output, species: [1] });
+
+    expect(run({ root, output, species: [1] }).slots[0].dropped).toEqual([]);
+  });
+
   it('adds to the index rather than replacing it', () => {
     writeFixture(root, ANIMS, [{ path: '0025', color: COLORS.red }]);
     run({ root, output, species: [1] });

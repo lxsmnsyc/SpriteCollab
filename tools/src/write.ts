@@ -5,8 +5,9 @@ import type { Derived } from './merge.ts';
 import type { Region } from './regions.ts';
 import { REGIONS } from './regions.ts';
 import type { SheetResult } from './sheet.ts';
+import type { SheetData } from './sheet.ts';
 import type { CoatKey, Slot } from './slots.ts';
-import { pad } from './slots.ts';
+import { COATS, pad } from './slots.ts';
 
 /**
  * Where a finished sheet goes, and how the folders it replaces are
@@ -67,30 +68,75 @@ function write(path: string, body: Buffer | string): void {
   writeFileSync(path, body);
 }
 
+/** A coat this build did not draw, whose file was in the folder. */
+export interface Dropped {
+  coat: CoatKey;
+  /** Whether the sheet it replaces called that coat our own work. */
+  ours: boolean;
+}
+
+/** What writing one form's sheet did. */
+export interface Written {
+  entry: IndexEntry;
+  dropped: Dropped[];
+}
+
+/**
+ * Which of a folder's coat files this build is not going to write.
+ *
+ * The packing is chosen afresh every run, so a coat left over from the
+ * last one describes a layout that has moved: same filename, plausible
+ * size, frames pointing at the wrong pixels. Nothing downstream would
+ * catch it — the check reads back what was written, and both the sheet
+ * and the index list only the coats that were. So they go, and the run
+ * says which, because a coat the collection has no art for is one a
+ * person made and `compact/EDITS.md` says how to make again.
+ */
+export function staleCoats(folder: string, keeping: Set<CoatKey>): Dropped[] {
+  const before = join(folder, 'sheet.json');
+  const held: Derived[] = existsSync(before)
+    ? ((JSON.parse(readFileSync(before, 'utf8')) as SheetData).derived ?? [])
+    : [];
+
+  return COATS.map((coat) => coat.key)
+    .filter((key) => !keeping.has(key) && existsSync(join(folder, FILENAMES[key])))
+    .map((coat) => ({
+      coat,
+      ours: held.some((one) => one.coat === coat && one.anim == null),
+    }));
+}
+
 /**
  * Writes one form's sheets and its description.
  *
  * The description is written without spacing: it is read by programs
  * and by nothing else, and indenting it is three times the bytes
  */
-export function writeSheet(output: string, slot: Pick<Slot, 'dex' | 'form'>, result: SheetResult): IndexEntry {
+export function writeSheet(output: string, slot: Pick<Slot, 'dex' | 'form'>, result: SheetResult): Written {
   const path = outputPath(result.meta.region, slot.dex, slot.form);
   const folder = join(output, path);
+  const dropped = staleCoats(folder, new Set(result.coats.map((coat) => coat.key)));
 
   for (const coat of result.coats) {
     write(join(folder, FILENAMES[coat.key]), coat.bytes);
   }
+  for (const stale of dropped) {
+    unlinkSync(join(folder, FILENAMES[stale.coat]));
+  }
   write(join(folder, 'sheet.json'), JSON.stringify(result.meta));
   write(join(folder, 'frames.bin'), encodeFrames(result.frames));
   return {
-    region: result.meta.region,
-    dex: slot.dex,
-    form: slot.form,
-    path,
-    coats: result.coats.map((coat) => coat.key),
-    width: result.width,
-    height: result.height,
-    derived: result.meta.derived,
+    entry: {
+      region: result.meta.region,
+      dex: slot.dex,
+      form: slot.form,
+      path,
+      coats: result.coats.map((coat) => coat.key),
+      width: result.width,
+      height: result.height,
+      derived: result.meta.derived,
+    },
+    dropped,
   };
 }
 
