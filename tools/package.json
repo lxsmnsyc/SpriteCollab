@@ -7,14 +7,16 @@
   "type": "module",
   "bin": {
     "sprite-optimize": "./src/bin.ts",
-    "sprite-status": "./src/status-bin.ts"
+    "sprite-status": "./src/status-bin.ts",
+    "sprite-recolor": "./src/recolor-bin.ts"
   },
   "scripts": {
     "optimize": "node src/bin.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "status": "node src/status-bin.ts"
+    "status": "node src/status-bin.ts",
+    "recolor": "node src/recolor-bin.ts"
   },
   "devDependencies": {
     "@types/node": "^24.7.0",

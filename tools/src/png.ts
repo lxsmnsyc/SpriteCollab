@@ -399,7 +399,7 @@ export function encodeTruecolor(image: Image, filtering: Filtering): Buffer {
   );
 }
 
-type Color = readonly [number, number, number, number];
+export type Color = readonly [number, number, number, number];
 
 export interface Palette {
   /**
