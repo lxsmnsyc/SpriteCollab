@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import run from './run.ts';
-import { spriteAnimName } from './anims.ts';
+import { MINIMUM_ANIMS, spriteAnimName } from './anims.ts';
 import type { SlotReport, SpeciesReport } from './run.ts';
 
 /**
@@ -280,10 +280,12 @@ export default function main(argv: string[]): number {
   const dropped = report.slots.reduce((total, slot) => total + slot.dropped.length, 0);
 
   const short = report.slots.filter((slot) => slot.missing.length > 0);
+  const bare = short.filter((slot) => slot.missing.some((anim) => MINIMUM_ANIMS.includes(anim)));
 
   if (!options.quiet && short.length > 0) {
     process.stdout.write(
-      `common   ${short.length} form${short.length === 1 ? '' : 's'} short of a common animation: ` +
+      `common   ${short.length} form${short.length === 1 ? '' : 's'} short of a common animation` +
+        `${bare.length > 0 ? `, ${bare.length} of the bare minimum` : ''}: ` +
         `${short
           .slice(0, 6)
           .map((slot) => `${slot.dex}/${slot.form} ${slot.missing.map(spriteAnimName).join(' ')}`)

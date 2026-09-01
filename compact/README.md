@@ -105,23 +105,31 @@ The first eleven are on nearly every pokemon; the rest are rare. Every
 one is drawn in eight facings except `Sleep`, which has one. Cutscene
 poses (`EventSleep`, `Laying`, …) are not in this tree.
 
-### The common ten
+### The common ten, and the six inside them
 
-`Idle` `Sleep` `Hurt` `Attack` `Double` `Swing` `Charge` `Rotate` `Walk`
-`Hop` — what a pokemon needs to stand, move, act and be hit. A renderer
-can assume them and has nowhere to fall back to when one is absent, so
-`index.json` says which a sheet has not got:
+| | Animations |
+|---|---|
+| **bare minimum** | `Idle` `Attack` `Walk` `Sleep` `Hurt` `Hop` |
+| **the rest of the ten** | `Double` `Swing` `Charge` `Rotate` |
+
+The six are what a sheet cannot be put on screen without. The ten are
+what a renderer may assume. A sheet short of one of the ten has nowhere
+to fall back to, so `index.json` says which it has not got:
 
 ```jsonc
 "missing": [1, 2]        // no Sleep, no Hurt
 ```
 
-Empty for 797 of the 805 forms. The eight that are short are unfinished
-art, not a fault in the build:
+Empty for nearly every form; what is short is unfinished art rather than
+a fault in the build. Intersect `missing` with the six to find the
+serious cases:
 
 ```bash
-node -e 'for (const s of require("./compact/index.json").slots)
-  if (s.missing.length) console.log(s.path, s.missing.join(","))'
+node -e 'const six = [0, 3, 9, 1, 2, 7];
+for (const s of require("./compact/index.json").slots) {
+  const gone = s.missing.filter((a) => six.includes(a));
+  if (gone.length) console.log(s.path, gone.join(","));
+}'
 ```
 
 ## `frames.bin`

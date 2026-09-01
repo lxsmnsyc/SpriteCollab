@@ -259,7 +259,7 @@ The index merges, so a partial run leaves the rest alone.
 | | |
 |---|---|
 | [`xml.ts`](src/xml.ts) | as much XML as `AnimData.xml` needs |
-| [`anims.ts`](src/anims.ts) | the forty-eight supported animations, and the common ten |
+| [`anims.ts`](src/anims.ts) | the forty-eight supported animations, the common ten and the six inside them |
 | [`anim-data.ts`](src/anim-data.ts) | the description, `CopyOf` resolved |
 | [`credits.ts`](src/credits.ts) | who drew it, under what terms |
 | [`png.ts`](src/png.ts) | decode, and encode into the smallest container |

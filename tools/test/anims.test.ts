@@ -1,9 +1,11 @@
 import { describe, expect, it } from 'vitest';
 import {
   COMMON_ANIMS,
+  MINIMUM_ANIMS,
   SPRITE_ANIMS,
   SpriteAnim,
   missingCommon,
+  missingMinimum,
   spriteAnimName,
   spriteAnimOf,
 } from '../src/anims.ts';
@@ -58,5 +60,32 @@ describe('the common animations', () => {
 
   it('does not count an animation that is not common', () => {
     expect(missingCommon([...COMMON_ANIMS, SpriteAnim.Bite])).toEqual([]);
+  });
+});
+
+describe('the bare minimum', () => {
+  it('is the six a sheet is no use without', () => {
+    expect(MINIMUM_ANIMS.map(spriteAnimName)).toEqual([
+      'Idle', 'Attack', 'Walk', 'Sleep', 'Hurt', 'Hop',
+    ]);
+  });
+
+  it('is inside the common ten', () => {
+    for (const anim of MINIMUM_ANIMS) {
+      expect(COMMON_ANIMS).toContain(anim);
+    }
+  });
+
+  it('says which of the six a sheet has not got', () => {
+    expect(missingMinimum(COMMON_ANIMS)).toEqual([]);
+    expect(missingMinimum([SpriteAnim.Idle])).toEqual(
+      MINIMUM_ANIMS.filter((anim) => anim !== SpriteAnim.Idle),
+    );
+  });
+
+  it('is never longer than what the common ten is missing', () => {
+    const held = [SpriteAnim.Idle, SpriteAnim.Rotate];
+
+    expect(missingMinimum(held).length).toBeLessThanOrEqual(missingCommon(held).length);
   });
 });
