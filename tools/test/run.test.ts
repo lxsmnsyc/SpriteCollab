@@ -462,6 +462,44 @@ describe('a whole run', () => {
     expect(run({ root, output, species: [1] }).slots[0].dropped).toEqual([]);
   });
 
+  it('says which of the common animations a form has not got', () => {
+    const report = run({ root, output, species: [1] });
+
+    const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
+    // The fixture draws Walk and Idle and nothing else common
+    const short = [
+      SpriteAnim.Sleep,
+      SpriteAnim.Hurt,
+      SpriteAnim.Attack,
+      SpriteAnim.Double,
+      SpriteAnim.Swing,
+      SpriteAnim.Charge,
+      SpriteAnim.Rotate,
+      SpriteAnim.Hop,
+    ];
+
+    expect(report.slots[0].missing).toEqual(short);
+    expect(index.slots[0].missing).toEqual(short);
+  });
+
+  it('reads the index off the tree, so it cannot drift from the sheets', () => {
+    writeFixture(root, ANIMS, [{ path: '0025', color: COLORS.red }]);
+    run({ root, output, species: [1] });
+    run({ root, output, species: [25] });
+
+    const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
+
+    for (const slot of index.slots) {
+      const sheet = JSON.parse(
+        readFileSync(join(output, slot.path, 'sheet.json'), 'utf8'),
+      ) as SheetData;
+
+      expect(slot.coats).toEqual(sheet.coats);
+      expect(slot.width).toBe(sheet.sheet.width);
+      expect(slot.height).toBe(sheet.sheet.height);
+    }
+  });
+
   it('adds to the index rather than replacing it', () => {
     writeFixture(root, ANIMS, [{ path: '0025', color: COLORS.red }]);
     run({ root, output, species: [1] });

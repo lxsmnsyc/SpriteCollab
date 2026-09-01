@@ -72,6 +72,15 @@ it — see below.
 `RushFrame`, `HitFrame`, `ReturnFrame`, `CopyOf` and every coat's
 `credits.txt` are carried through.
 
+The index is written by reading the tree back, not by accumulating
+entries across runs, so it cannot disagree with the sheets it describes.
+Each slot carries `missing`: which of the ten common animations
+([`anims.ts`](src/anims.ts)) the form has not got. The run says so too:
+
+```
+common   4 forms short of a common animation: 254/1 Sleep Hurt …
+```
+
 A coat file the build did not write is taken away: the packing is chosen
 afresh each run, so a leftover coat describes a layout that has moved.
 The run says which, and whether the sheet called it ours:
@@ -230,7 +239,7 @@ The index merges, so a partial run leaves the rest alone.
 | | |
 |---|---|
 | [`xml.ts`](src/xml.ts) | as much XML as `AnimData.xml` needs |
-| [`anims.ts`](src/anims.ts) | the forty-eight supported animations |
+| [`anims.ts`](src/anims.ts) | the forty-eight supported animations, and the common ten |
 | [`anim-data.ts`](src/anim-data.ts) | the description, `CopyOf` resolved |
 | [`credits.ts`](src/credits.ts) | who drew it, under what terms |
 | [`png.ts`](src/png.ts) | decode, and encode into the smallest container |

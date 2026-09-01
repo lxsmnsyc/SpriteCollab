@@ -1,5 +1,12 @@
 import { describe, expect, it } from 'vitest';
-import { SPRITE_ANIMS, SpriteAnim, spriteAnimName, spriteAnimOf } from '../src/anims.ts';
+import {
+  COMMON_ANIMS,
+  SPRITE_ANIMS,
+  SpriteAnim,
+  missingCommon,
+  spriteAnimName,
+  spriteAnimOf,
+} from '../src/anims.ts';
 
 describe('the supported animations', () => {
   it('numbers each one once, from zero and without a gap', () => {
@@ -25,5 +32,31 @@ describe('the supported animations', () => {
     for (const anim of SPRITE_ANIMS) {
       expect(spriteAnimOf(spriteAnimName(anim))).toBe(anim);
     }
+  });
+});
+
+describe('the common animations', () => {
+  it('is the ten a sheet is expected to have', () => {
+    expect(COMMON_ANIMS.map(spriteAnimName)).toEqual([
+      'Idle', 'Sleep', 'Hurt', 'Attack', 'Double',
+      'Swing', 'Charge', 'Rotate', 'Walk', 'Hop',
+    ]);
+  });
+
+  it('is every one of them a real animation', () => {
+    for (const anim of COMMON_ANIMS) {
+      expect(SPRITE_ANIMS).toContain(anim);
+    }
+  });
+
+  it('says which of them a sheet has not got', () => {
+    expect(missingCommon(COMMON_ANIMS)).toEqual([]);
+    expect(missingCommon([SpriteAnim.Idle, SpriteAnim.Sleep])).toEqual(
+      COMMON_ANIMS.filter((anim) => anim !== SpriteAnim.Idle && anim !== SpriteAnim.Sleep),
+    );
+  });
+
+  it('does not count an animation that is not common', () => {
+    expect(missingCommon([...COMMON_ANIMS, SpriteAnim.Bite])).toEqual([]);
   });
 });

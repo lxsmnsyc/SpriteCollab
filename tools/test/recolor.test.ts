@@ -288,7 +288,19 @@ function tree(): string {
 
   mkdirSync(folder, { recursive: true });
   writeFileSync(join(folder, 'regular.png'), encodeTruecolor(flat(), 'none'));
-  writeFileSync(join(folder, 'sheet.json'), JSON.stringify({ coats: ['regular'], derived: [] }));
+  writeFileSync(
+    join(folder, 'sheet.json'),
+    JSON.stringify({
+      version: 2,
+      region: 'kanto',
+      dex: 1,
+      form: 0,
+      coats: ['regular'],
+      sheet: { width: 8, height: 8, pictures: [] },
+      anims: [{ anim: 0 }],
+      derived: [],
+    }),
+  );
   writeFileSync(
     join(root, 'index.json'),
     JSON.stringify({

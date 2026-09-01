@@ -1,11 +1,13 @@
 import { existsSync, readdirSync, statSync } from 'node:fs';
 import { join } from 'node:path';
+import type { SpriteAnim } from './anims.ts';
+import { missingCommon } from './anims.ts';
 import readArchive from './archive.ts';
 import type { Authors } from './credits.ts';
 import readCreditNames from './credits.ts';
 import type { Frames } from './frames.ts';
-import type { Derived, Refused } from './merge.ts';
 import { encodeFrames } from './frames.ts';
+import type { Derived, Refused } from './merge.ts';
 import { decode } from './raster.ts';
 import type { SheetResult } from './sheet.ts';
 import { buildSheet } from './sheet.ts';
@@ -15,7 +17,7 @@ import { pad, slotsOf, speciesIn } from './slots.ts';
 import type { Tracker } from './tracker.ts';
 import readTracker from './tracker.ts';
 import verifySheet, { type Mismatch } from './verify.ts';
-import type { Dropped, IndexEntry, Written } from './write.ts';
+import type { Dropped, Written } from './write.ts';
 import { outputPath, removeSource, staleCoats, updateIndex, writeSheet } from './write.ts';
 
 /**
@@ -120,6 +122,8 @@ export interface SlotReport {
   refused: Refused[];
   /** Coat files this build did not write, and took away. */
   dropped: Dropped[];
+  /** Which of the common animations the form has not got. */
+  missing: SpriteAnim[];
   /** The files and folders taken away, where pruning was asked for. */
   removed: string[];
   /** Where the sheet was filed. */
@@ -266,6 +270,7 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
     derived: result.meta.derived,
     refused: result.refused,
     dropped: written?.dropped ?? dropped,
+    missing: missingCommon(result.meta.anims.map((one) => one.anim)),
     removed,
   };
 }
@@ -281,7 +286,7 @@ export default function run(options: RunOptions): RunReport {
   const slots: SlotReport[] = [];
   const species: SpeciesReport[] = [];
   const failed: RunReport['failed'] = [];
-  const entries: IndexEntry[] = [];
+  let wrote = false;
   // Read once for the whole run: the record is ten megabytes, and
   // every form of every species would otherwise read it again
   const names = options.names ?? (options.tracker == null ? undefined : readTracker(options.tracker));
@@ -306,18 +311,7 @@ export default function run(options: RunOptions): RunReport {
         regions.add(report.region);
         slots.push(report);
         options.onSlot?.(report);
-        if (options.dryRun !== true) {
-          entries.push({
-            region: report.region,
-            dex: slot.dex,
-            form: slot.form,
-            path: report.path,
-            coats: report.coats,
-            width: report.width,
-            height: report.height,
-            derived: report.derived,
-          });
-        }
+        wrote ||= options.dryRun !== true;
       } catch (error) {
         failed.push({
           dex: slot.dex,
@@ -349,8 +343,8 @@ export default function run(options: RunOptions): RunReport {
       options.onSpecies?.(report);
     }
   }
-  if (entries.length > 0) {
-    updateIndex(options.output, entries);
+  if (wrote) {
+    updateIndex(options.output);
   }
   return {
     slots,

@@ -1,5 +1,7 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, rmdirSync, unlinkSync, writeFileSync } from 'node:fs';
 import { dirname, join, relative } from 'node:path';
+import type { SpriteAnim } from './anims.ts';
+import { missingCommon } from './anims.ts';
 import { encodeFrames } from './frames.ts';
 import type { Derived } from './merge.ts';
 import type { Region } from './regions.ts';
@@ -54,6 +56,12 @@ export interface IndexEntry {
    * shape as the sheet's own `derived`, and empty for most forms.
    */
   derived: Derived[];
+  /**
+   * Which of the common animations the sheet has not got. Empty for
+   * nearly every form; a reader that needs all ten can skip the rest
+   * without opening them.
+   */
+  missing: SpriteAnim[];
 }
 
 export interface Index {
@@ -135,39 +143,68 @@ export function writeSheet(output: string, slot: Pick<Slot, 'dex' | 'form'>, res
       width: result.width,
       height: result.height,
       derived: result.meta.derived,
+      missing: missingCommon(result.meta.anims.map((one) => one.anim)),
     },
     dropped,
   };
 }
 
-/**
- * Puts new entries into the index the compact tree carries.
- *
- * Merged with whatever is already there rather than replacing it: a
- * run is usually a handful of species out of a thousand, and the index
- * describes the tree rather than the run
- */
-export function updateIndex(output: string, entries: IndexEntry[]): Index {
-  const path = join(output, 'index.json');
-  const held = new Map<string, IndexEntry>();
-
-  if (existsSync(path)) {
-    const before = JSON.parse(readFileSync(path, 'utf8')) as Index;
-
-    for (const entry of before.slots ?? []) {
-      held.set(`${entry.dex}/${entry.form}`, entry);
+/** Every sheet under a compact tree, however it got there. */
+function sheetsUnder(output: string): string[] {
+  if (!existsSync(output)) {
+    return [];
+  }
+  const found: string[] = [];
+  const walk = (folder: string): void => {
+    for (const entry of readdirSync(folder, { withFileTypes: true })) {
+      if (entry.isDirectory()) {
+        walk(join(folder, entry.name));
+      } else if (entry.name === 'sheet.json') {
+        found.push(join(folder, entry.name));
+      }
     }
-  }
-  for (const entry of entries) {
-    held.set(`${entry.dex}/${entry.form}`, entry);
-  }
-  // By region first, so the listing reads the way the tree is laid out
-  const slots = [...held.values()].sort(
-    (one, two) =>
-      REGIONS.indexOf(one.region) - REGIONS.indexOf(two.region) ||
-      one.dex - two.dex ||
-      one.form - two.form,
-  );
+  };
+
+  walk(output);
+  return found;
+}
+
+/** One slot of the index, read back out of the sheet it describes. */
+function entryOf(sheet: SheetData): IndexEntry {
+  return {
+    region: sheet.region,
+    dex: sheet.dex,
+    form: sheet.form,
+    path: outputPath(sheet.region, sheet.dex, sheet.form),
+    coats: sheet.coats,
+    width: sheet.sheet.width,
+    height: sheet.sheet.height,
+    derived: sheet.derived,
+    missing: missingCommon(sheet.anims.map((one) => one.anim)),
+  };
+}
+
+/**
+ * Writes the index the compact tree carries.
+ *
+ * Read back off the tree rather than accumulated across runs. A run is
+ * usually a handful of species out of a thousand and the index
+ * describes the tree, so the old way was to merge new entries into
+ * what was already in the file — which meant the index could disagree
+ * with the sheets and nothing would say so. Reading a thousand small
+ * descriptions costs a moment and cannot drift.
+ */
+export function updateIndex(output: string): Index {
+  const path = join(output, 'index.json');
+  const slots = sheetsUnder(output)
+    .map((file) => entryOf(JSON.parse(readFileSync(file, 'utf8')) as SheetData))
+    // By region first, so the listing reads the way the tree is laid out
+    .sort(
+      (one, two) =>
+        REGIONS.indexOf(one.region) - REGIONS.indexOf(two.region) ||
+        one.dex - two.dex ||
+        one.form - two.form,
+    );
   const index: Index = {
     version: 1,
     regions: REGIONS.flatMap((region) => {

@@ -86,6 +86,38 @@ export type SpriteAnim = (typeof SpriteAnim)[keyof typeof SpriteAnim];
 /** Every animation there is, in the order they are numbered. */
 export const SPRITE_ANIMS: SpriteAnim[] = Object.values(SpriteAnim);
 
+/**
+ * The animations a sheet is expected to have.
+ *
+ * These ten are what a pokemon needs to stand, move, act and be hit —
+ * anything downstream can assume them and has nowhere to fall back to
+ * when one is absent. The rest are particular to a move or a species
+ * and a renderer is expected to cope without them.
+ *
+ * Nearly every coat in the collection draws all ten. A sheet short of
+ * one is a gap in the art rather than a fault in the build, so the
+ * index says which are missing instead of the build refusing them.
+ */
+export const COMMON_ANIMS: SpriteAnim[] = [
+  SpriteAnim.Idle,
+  SpriteAnim.Sleep,
+  SpriteAnim.Hurt,
+  SpriteAnim.Attack,
+  SpriteAnim.Double,
+  SpriteAnim.Swing,
+  SpriteAnim.Charge,
+  SpriteAnim.Rotate,
+  SpriteAnim.Walk,
+  SpriteAnim.Hop,
+];
+
+/** Which of the common animations a sheet's animations do not cover. */
+export function missingCommon(held: Iterable<SpriteAnim>): SpriteAnim[] {
+  const have = new Set(held);
+
+  return COMMON_ANIMS.filter((anim) => !have.has(anim));
+}
+
 const NAMED = new Map<number, string>(
   Object.entries(SpriteAnim).map(([name, anim]) => [anim, name]),
 );
