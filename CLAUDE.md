@@ -25,3 +25,7 @@ the reader and the fact they came for.
 - `compact/` is generated. Edit `sprite/` and rebuild, unless the sheet
   is listed in `EDITS.md`.
 - Tests build their own fixtures. Do not read `sprite/` from a test.
+- Count base forms only. `Alternate`, `Gigantamax`, `Mega`, `Altcolor`
+  and `Cutscene` are left out of coverage and completeness reports —
+  they are far less finished than base forms and skew every figure.
+  Regional forms count. Everything is still built.
