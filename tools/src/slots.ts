@@ -89,23 +89,31 @@ function numberedFolders(directory: string): number[] {
     .sort((one, two) => one - two);
 }
 
+/** Whether any coat of one form is drawn. */
+function drawnAt(root: string, dex: number, form: number): boolean {
+  return COATS.some((coat) =>
+    isSpriteFolder(join(root, spritePath(dex, form, coat.shiny, coat.gender))),
+  );
+}
+
 /**
  * Every form of one species that is drawn at all.
  *
- * The base form is not a folder of its own — its regular coat is the
- * species folder itself — so it is listed whenever that folder holds
- * a sprite, and the numbered folders beside it are the other forms.
- * A folder that only exists to hold a coat is not a form: `0000` under
- * the species is where the base form's shiny and female live
+ * A form counts when **any** of its four coats is drawn, not when its
+ * ordinary one is. That is not a nicety: Raichu's Altcolor and Muk's
+ * Altcolor exist only as a shiny, with no ordinary coat under them at
+ * all, and asking for the ordinary one skips both of them silently.
+ *
+ * The candidates are the numbered folders under the species, plus the
+ * base form, which is not a folder of its own — its ordinary coat is
+ * the species folder itself, and `0000` beside it is where its shiny
+ * and female live rather than a form of its own
  */
 export function formsOf(root: string, dex: number): number[] {
   const species = join(root, pad(dex));
-  const forms = numberedFolders(species).filter(
-    (form) => form !== 0 && isSpriteFolder(join(species, pad(form))),
-  );
-  const base = isSpriteFolder(species) || isSpriteFolder(join(species, pad(0), pad(1)));
+  const candidates = [...new Set([0, ...numberedFolders(species)])].sort((one, two) => one - two);
 
-  return base ? [0, ...forms] : forms;
+  return candidates.filter((form) => drawnAt(root, dex, form));
 }
 
 /** Every species in the collection, in order. */

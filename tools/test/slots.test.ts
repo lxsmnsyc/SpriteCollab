@@ -47,10 +47,13 @@ describe('reading a sprite root', () => {
     // A folder that is only there to hold something else
     mkdirSync(join(root, '0099', '0000', '0001'), { recursive: true });
     writeFileSync(join(root, '0099', 'notes.txt'), 'nothing drawn here');
+    // A form drawn as a shiny and nothing else, which the collection
+    // does for a couple of the Altcolor forms
+    writeFixture(root, ANIMS, [{ path: '0050/0004/0001', color: COLORS.blue }]);
   });
 
   it('lists the species that are folders', () => {
-    expect(speciesIn(root)).toEqual([1, 25, 99]);
+    expect(speciesIn(root)).toEqual([1, 25, 50, 99]);
   });
 
   it('lists the base form and the forms beside it', () => {
@@ -60,6 +63,12 @@ describe('reading a sprite root', () => {
 
   it("does not take a coat's folder for a form", () => {
     expect(formsOf(root, 25)).not.toContain(1);
+  });
+
+  it('lists a form that is drawn as a shiny and nothing else', () => {
+    expect(formsOf(root, 50)).toEqual([4]);
+    expect(slotAt(root, 50, 4).present).toEqual(['shiny']);
+    expect(slotsOf(root, 50).map((slot) => slot.form)).toEqual([4]);
   });
 
   it('lists nothing for a species nobody has drawn', () => {
