@@ -182,6 +182,10 @@ shiny in changes nothing else. Where a coat was not drawn for some
 animation its part of the sheet is transparent, so a frame can be empty
 in one coat and not another.
 
+Where a species is drawn separately for males — only Xatu and Camerupt
+are — the male drawing is `regular` and the one filed under no gender is
+`female`.
+
 ## Credits
 
 Every sheet carries each coat's credits, resolved through the

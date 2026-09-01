@@ -43,6 +43,9 @@ The coats column reads R S F Y — ordinary, shiny, female, shiny female —
 with a dot for one that is not drawn, a ~ for one padded to a different
 cell size, and a ! for one whose frame count cannot be lined up with the
 first coat's and which is therefore left out of the sheet.
+
+Where a species is drawn separately for males, the male drawing is the
+ordinary coat and the one filed under no gender is the female.
 `;
 
 /** One letter a coat, in the order they are filed. */

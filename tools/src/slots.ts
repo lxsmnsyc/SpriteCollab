@@ -12,18 +12,39 @@ import { isSpriteFolder } from './archive.ts';
  * number that is not one. So Bulbasaur is `sprite/0001`, his shiny is
  * `sprite/0001/0000/0001`, and Pikachu's Libre form is `sprite/0025/0006`.
  *
- * The four drawings of one form are read together, because they share
- * one description and are deduplicated against each other, so a slot
- * here is a form and the up-to-four folders that draw it.
+ * The drawings of one form are read together, because they share one
+ * description and are deduplicated against each other, so a slot here is
+ * a form and the folders that draw it.
  */
 
-/** The coat and gender each drawing is filed under. */
+/** The four drawings of a form, in the order they are filed. */
 export const COATS = [
   { key: 'regular', shiny: 0, gender: 0 },
   { key: 'shiny', shiny: 1, gender: 0 },
   { key: 'female', shiny: 0, gender: 2 },
   { key: 'shinyFemale', shiny: 1, gender: 2 },
 ] as const;
+
+/**
+ * Which gender folder each coat is under.
+ *
+ * The gender level has three values, not two: `0000` is the drawing
+ * used whatever the pokemon is, `0002` is one drawn for females alone,
+ * and `0001` for males. Only Xatu and Camerupt have a male drawing, and
+ * neither has a female one — because for them the `0000` drawing *is*
+ * the female, with the male filed beside it.
+ *
+ * So a form with a male drawing is read the other way round: the male
+ * folder is the ordinary coat, and the one that would otherwise be
+ * ordinary is the female. That keeps four coats meaning the same four
+ * things everywhere rather than adding two more that two species use
+ */
+const SEXED: Record<CoatKey, number> = {
+  regular: 1,
+  shiny: 1,
+  female: 0,
+  shinyFemale: 0,
+};
 
 export type CoatKey = (typeof COATS)[number]['key'];
 
@@ -60,8 +81,12 @@ export interface Slot {
 
 /** The slot for one form, with its coats looked up on disk. */
 export function slotAt(root: string, dex: number, form: number): Slot {
+  const sexed = isSexed(root, dex, form);
   const coats = Object.fromEntries(
-    COATS.map((coat) => [coat.key, spritePath(dex, form, coat.shiny, coat.gender)]),
+    COATS.map((coat) => [
+      coat.key,
+      spritePath(dex, form, coat.shiny, sexed ? SEXED[coat.key] : coat.gender),
+    ]),
   ) as Record<CoatKey, string>;
 
   return {
@@ -89,11 +114,16 @@ function numberedFolders(directory: string): number[] {
     .sort((one, two) => one - two);
 }
 
-/** Whether any coat of one form is drawn. */
+/** Whether any coat of one form is drawn, under any gender. */
 function drawnAt(root: string, dex: number, form: number): boolean {
-  return COATS.some((coat) =>
-    isSpriteFolder(join(root, spritePath(dex, form, coat.shiny, coat.gender))),
+  return [0, 1, 2].some((gender) =>
+    [0, 1].some((shiny) => isSpriteFolder(join(root, spritePath(dex, form, shiny, gender)))),
   );
+}
+
+/** Whether this form has a drawing for males, which changes what `0000` is. */
+function isSexed(root: string, dex: number, form: number): boolean {
+  return [0, 1].some((shiny) => isSpriteFolder(join(root, spritePath(dex, form, shiny, 1))));
 }
 
 /**

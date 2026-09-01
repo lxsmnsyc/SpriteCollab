@@ -106,6 +106,12 @@ The four coats share one description and one layout, so every comparison
 is made across all of them at once, including coats that did not draw a
 clip.
 
+The gender level under a form has three values: `0000` for the drawing
+used whatever the pokemon is, `0002` for a female one, `0001` for a
+male. Where a male drawing exists — only Xatu and Camerupt — it is the
+ordinary coat and the `0000` one is the female, since neither has a
+`0002` folder.
+
 They are not always on the same grid: Charizard Mega X's shiny uses an
 80×88 cell where the ordinary drawing uses 88×96. Each coat is read
 through its own grid, aligned on the **cell centre**. Read against the

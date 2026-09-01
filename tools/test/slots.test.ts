@@ -17,6 +17,13 @@ describe('spritePath', () => {
     expect(spritePath(1, 0, 1, 2)).toBe('0001/0000/0001/0002');
   });
 
+  it('writes the folder a male drawing needs', () => {
+    // The gender level is three-valued: 0 for the drawing used whatever
+    // the pokemon is, 1 for male and 2 for female
+    expect(spritePath(178, 0, 0, 1)).toBe('0178/0000/0000/0001');
+    expect(spritePath(178, 0, 1, 1)).toBe('0178/0000/0001/0001');
+  });
+
   it('drops the trailing defaults of a form as well', () => {
     expect(spritePath(25, 6, 0, 0)).toBe('0025/0006');
     expect(spritePath(25, 6, 1, 0)).toBe('0025/0006/0001');
@@ -79,5 +86,34 @@ describe('reading a sprite root', () => {
   it('finds the coats a form actually has', () => {
     expect(slotAt(root, 1, 0).present).toEqual(['regular', 'shiny', 'female']);
     expect(slotAt(root, 25, 6).present).toEqual(['regular']);
+  });
+
+  it('takes the male drawing as the ordinary coat, and the base as the female', () => {
+    // Xatu and Camerupt are the only two drawn separately for males,
+    // and neither has a folder for females: the one under no gender is
+    // the female, with the male filed beside it
+    writeFixture(root, ANIMS, [
+      { path: '0178', color: COLORS.green },
+      { path: '0178/0000/0001', color: COLORS.white },
+      { path: '0178/0000/0000/0001', color: COLORS.blue },
+      { path: '0178/0000/0001/0001', color: COLORS.red },
+    ]);
+    const slot = slotAt(root, 178, 0);
+
+    expect(slot.present).toEqual(['regular', 'shiny', 'female', 'shinyFemale']);
+    expect(slot.coats).toEqual({
+      regular: '0178/0000/0000/0001',
+      shiny: '0178/0000/0001/0001',
+      female: '0178',
+      shinyFemale: '0178/0000/0001',
+    });
+  });
+
+  it('reads a form with no male drawing the ordinary way round', () => {
+    expect(slotAt(root, 1, 0).coats).toMatchObject({
+      regular: '0001',
+      shiny: '0001/0000/0001',
+      female: '0001/0000/0000/0002',
+    });
   });
 });
