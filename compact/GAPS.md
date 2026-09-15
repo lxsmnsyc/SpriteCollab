@@ -6,24 +6,23 @@ What upstream has not drawn. Nothing here is a fault in the build —
 
 ## No sprite at all
 
-43 species.
+42 species.
 
 | Region | Species |
 |---|---|
 | unova (13) | Simisear, Simipour, Tranquill, Blitzle, Zebstrika, Throh, Crustle, Tirtouga, Carracosta, Amoonguss, Frillish, Shelmet, Bouffalant |
 | alola (4) | Trumbeak, Gumshoos, Shiinotic, Oranguru |
-| galar (8) | Rolycoly, Carkol, Coalossal, Barraskewda, Mr_Rime, Cufant, Zarude, Glastrier |
+| galar (7) | Rolycoly, Carkol, Coalossal, Barraskewda, Mr_Rime, Cufant, Zarude |
 | paldea (18) | Squawkabilly, Maschiff, Mabosstiff, Shroodle, Brambleghast, Toedscruel, Klawf, Rabsca, Espathra, Bombirdier, Flamigo, Brute_Bonnet, Iron_Jugulis, Wo_Chien, Chien_Pao, Okidogi, Iron_Boulder, Iron_Crown |
 
 ## No regular coat
 
-5 species are drawn, but not in a way that gives the base form a
+4 species are drawn, but not in a way that gives the base form a
 regular coat.
 
 | Dex | Species | Why |
 |---|---|---|
 | 0668 | Pyroar | Drawn as a female only; nobody has drawn the male, which is the one with the mane. |
-| 0741 | Oricorio | Drawn as Pom_Pom and Pa_U. Baile, the base form, is not drawn. |
 | 0870 | Falinks | Drawn as Brass and Trooper only. |
 | 0999 | Gimmighoul | Drawn as Roaming only; the Chest form is not drawn. |
 | 1008 | Miraidon | Drawn as Low_Power only. |
