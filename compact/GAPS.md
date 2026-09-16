@@ -15,6 +15,10 @@ What upstream has not drawn. Nothing here is a fault in the build —
 | galar (7) | Rolycoly, Carkol, Coalossal, Barraskewda, Mr_Rime, Cufant, Zarude |
 | paldea (18) | Squawkabilly, Maschiff, Mabosstiff, Shroodle, Brambleghast, Toedscruel, Klawf, Rabsca, Espathra, Bombirdier, Flamigo, Brute_Bonnet, Iron_Jugulis, Wo_Chien, Chien_Pao, Okidogi, Iron_Boulder, Iron_Crown |
 
+Tranquill and Crustle are drawn in Pokemon Auto Chess. Worth looking at
+before commissioning either — check the credits and the licence first,
+since a sheet from there is somebody else's work under its own terms.
+
 ## No regular coat
 
 4 species are drawn, but not in a way that gives the base form a
