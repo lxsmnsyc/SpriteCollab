@@ -1,0 +1,91 @@
+{
+  "source": {
+    "form": "488/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "488/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "wings",
+      "base": "#cf67a7",
+      "members": [
+        "#a75777",
+        "#cf67a7",
+        "#efafcf",
+        "#f7d7ef"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#77a7ff",
+      "members": [
+        "#577fbf",
+        "#77a7ff",
+        "#afcfff"
+      ]
+    },
+    {
+      "part": "crescent",
+      "base": "#e7bf6f",
+      "members": [
+        "#af874f",
+        "#e7bf6f",
+        "#ffe78f",
+        "#ffffff"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": [
+    {
+      "white": [
+        "#ffffff"
+      ],
+      "face": [
+        "#000000",
+        "#a75777",
+        "#cf67a7",
+        "#efafcf",
+        "#af874f",
+        "#e7bf6f",
+        "#ffe78f",
+        "#77a7ff"
+      ],
+      "touch": [
+        "#a75777",
+        "#cf67a7"
+      ],
+      "near": [
+        "#000000"
+      ],
+      "reach": 1,
+      "max": 2,
+      "diagonal": true
+    },
+    {
+      "white": [
+        "#ffffff"
+      ],
+      "face": [
+        "#a75777",
+        "#af874f",
+        "#e7bf6f",
+        "#ffe78f"
+      ],
+      "touch": [
+        "#a75777"
+      ],
+      "near": [
+        "#af874f",
+        "#e7bf6f"
+      ],
+      "reach": 1,
+      "max": 1,
+      "diagonal": true
+    }
+  ]
+}

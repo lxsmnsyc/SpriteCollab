@@ -1,0 +1,61 @@
+{
+  "source": {
+    "form": "491/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "491/6",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#47376f",
+      "members": [
+        "#271f47",
+        "#47376f"
+      ],
+      "fit": true
+    },
+    {
+      "part": "collar",
+      "base": "#d73f00",
+      "members": [
+        "#9f0000",
+        "#d73f00"
+      ]
+    },
+    {
+      "part": "head",
+      "base": "#d7dfdf",
+      "members": [
+        "#8f9797",
+        "#b7b7bf",
+        "#d7dfdf"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "smoke",
+      "base": "#b79fd7",
+      "members": [
+        "#776797",
+        "#b79fd7"
+      ]
+    },
+    {
+      "part": "sparkle",
+      "base": "#ffef00",
+      "members": [
+        "#ffc75f",
+        "#ffef00",
+        "#ffffff"
+      ]
+    }
+  ],
+  "red": [
+    "#67b7b7",
+    "#4f8f8f"
+  ]
+}

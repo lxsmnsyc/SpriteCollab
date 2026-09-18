@@ -1,0 +1,60 @@
+{
+  "source": {
+    "form": "491/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "491/6",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "partsFrom": "regular",
+  "families": [
+    {
+      "part": "body",
+      "base": "#381878",
+      "members": [
+        "#271f47",
+        "#47376f"
+      ],
+      "fit": true
+    },
+    {
+      "part": "collar",
+      "base": "#d81080",
+      "members": [
+        "#9f0000",
+        "#d73f00"
+      ]
+    },
+    {
+      "part": "head",
+      "base": "#d7dfdf",
+      "members": [
+        "#8f9797",
+        "#b7b7bf",
+        "#d7dfdf"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "smoke",
+      "base": "#b79fd7",
+      "members": [
+        "#776797",
+        "#b79fd7"
+      ]
+    },
+    {
+      "part": "sparkle",
+      "base": "#ffef00",
+      "members": [
+        "#ffc75f",
+        "#ffef00",
+        "#ffffff"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0491-0006-shadow-regular.json"
+}

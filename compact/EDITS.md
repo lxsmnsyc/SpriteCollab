@@ -78,6 +78,10 @@ rather than what the artist submitted.
 | `sinnoh/0487/0004` Shadow, shiny | `sinnoh/0487/0000` shiny | The same, from shiny Giratina, with the regular's eyes: `edits/0487-0004-shadow-shiny.json`. |
 | `sinnoh/0487/0005` Shadow_Origin | `sinnoh/0487/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0487-0005-shadow-regular.json`. Eyes share their red with the stripes. Gold's blue muted by `scheme`; the shiny's plan uses its own colours. |
 | `sinnoh/0487/0005` Shadow_Origin, shiny | `sinnoh/0487/0001` shiny | The same, from shiny Origin Giratina, with the regular's eyes: `edits/0487-0005-shadow-shiny.json`. |
+| `sinnoh/0488/0002` Shadow | `sinnoh/0488/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0488-0002-shadow-regular.json`. Eye whites share their colour with the gems; two rules, with and without a black edge. |
+| `sinnoh/0488/0002` Shadow, shiny | `sinnoh/0488/0000` shiny | The same, from shiny Cresselia, with the regular's eyes: `edits/0488-0002-shadow-shiny.json`. |
+| `sinnoh/0491/0006` Shadow | `sinnoh/0491/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0491-0006-shadow-regular.json`. |
+| `sinnoh/0491/0006` Shadow, shiny | `sinnoh/0491/0000` shiny | The same, from shiny Darkrai, with the regular's eyes: `edits/0491-0006-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
