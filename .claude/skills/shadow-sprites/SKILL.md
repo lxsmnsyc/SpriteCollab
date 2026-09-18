@@ -42,6 +42,8 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
    can be claws, down-facing eyes often touch the beak or brow rather than
    the face, and an up-facing head can be tilted back with its eye showing.
    Check down- and up-facing frames every time.
+   If red would not stand out against the inverted body, give that coat
+   alone `"eyeColour": "#000000"` (shiny Regice).
 4. `preview`, show the user both images, `install` when approved. Target is
    the next free form number, with `"name": "Shadow"`.
 5. Repeat for the shiny: `palette <dex>/0 shiny`, a plan with the shiny's

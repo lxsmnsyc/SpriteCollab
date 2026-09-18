@@ -46,6 +46,12 @@ rather than what the artist submitted.
 | `hoenn/0380/0003` Shadow, shiny | `hoenn/0380/0000` shiny | The same, from shiny Latias, with the regular's eyes: `edits/0380-0003-shadow-shiny.json`. |
 | `hoenn/0381/0003` Shadow | `hoenn/0381/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0381-0003-shadow-regular.json`. Eyes share their reds with the chest and mouth; two rules find them. |
 | `hoenn/0381/0003` Shadow, shiny | `hoenn/0381/0000` shiny | The same, from shiny Latios, with the regular's eyes: `edits/0381-0003-shadow-shiny.json`. |
+| `hoenn/0377/0002` Shadow | `hoenn/0377/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0377-0002-shadow-regular.json`. Its dots are painted as eyes. |
+| `hoenn/0377/0002` Shadow, shiny | `hoenn/0377/0000` shiny | The same, from shiny Regirock, with the regular's eyes: `edits/0377-0002-shadow-shiny.json`. |
+| `hoenn/0378/0002` Shadow | `hoenn/0378/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0378-0002-shadow-regular.json`. Its dots are painted as eyes. |
+| `hoenn/0378/0002` Shadow, shiny | `hoenn/0378/0000` shiny | The same, from shiny Regice, with the regular's eyes painted black: red was lost on its red body. `edits/0378-0002-shadow-shiny.json`. |
+| `hoenn/0379/0002` Shadow | `hoenn/0379/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0379-0002-shadow-regular.json`. Its dots, face and palms, are painted as eyes. |
+| `hoenn/0379/0002` Shadow, shiny | `hoenn/0379/0000` shiny | The same, from shiny Registeel, with the regular's eyes: `edits/0379-0002-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

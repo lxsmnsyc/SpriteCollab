@@ -1,0 +1,28 @@
+{
+  "source": {
+    "form": "378/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "378/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "ice",
+      "base": "#879fff",
+      "members": [
+        "#ffffff",
+        "#b7cfff",
+        "#879fff",
+        "#5767b7",
+        "#373f8f"
+      ]
+    }
+  ],
+  "red": [
+    "#ffe79f",
+    "#dfaf67"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "source": {
+    "form": "379/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "379/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "steel",
+      "base": "#afb7bf",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#47676f"
+      ]
+    }
+  ],
+  "red": [
+    "#ff875f",
+    "#d73f00"
+  ]
+}

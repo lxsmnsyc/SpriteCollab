@@ -1,0 +1,37 @@
+{
+  "source": {
+    "form": "377/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "377/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "rock",
+      "base": "#afb7bf",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#47676f"
+      ]
+    },
+    {
+      "part": "boulders",
+      "base": "#df771f",
+      "members": [
+        "#773f00",
+        "#a75f1f",
+        "#df771f",
+        "#dfaf67"
+      ]
+    }
+  ],
+  "red": [
+    "#ff875f"
+  ]
+}

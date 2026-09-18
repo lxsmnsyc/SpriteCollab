@@ -1,0 +1,34 @@
+{
+  "source": {
+    "form": "379/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "379/2",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "steel",
+      "base": "#33cc99",
+      "members": [
+        "#ffffff",
+        "#99ffcc",
+        "#33cc99",
+        "#009966",
+        "#006800"
+      ]
+    },
+    {
+      "part": "dark",
+      "base": "#988060",
+      "members": [
+        "#988060",
+        "#585040"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0379-0002-shadow-regular.json"
+}

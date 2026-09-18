@@ -1,0 +1,36 @@
+{
+  "source": {
+    "form": "377/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "377/2",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "rock",
+      "base": "#9c6a52",
+      "members": [
+        "#d5b59b",
+        "#bd8b62",
+        "#9c6a52",
+        "#6a3918",
+        "#51311e"
+      ]
+    },
+    {
+      "part": "boulders",
+      "base": "#df771f",
+      "members": [
+        "#773f00",
+        "#a75f1f",
+        "#df771f",
+        "#dfaf67"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0377-0002-shadow-regular.json"
+}

@@ -84,7 +84,12 @@ interface Plan {
    * `reach` pixels. Painted `#ff0000`.
    */
   eyes?: EyeRule | EyeRule[];
-  /** Eye colours no other part uses, painted `#ff0000` outright. */
+  /**
+   * What the eyes are painted, `#ff0000` unless given. Black for eyes that
+   * red would lose against the inverted body.
+   */
+  eyeColour?: string;
+  /** Eye colours no other part uses, painted the eye colour outright. */
   red?: string[];
   /**
    * Another plan, beside this one, whose eye picks are used as they are.
@@ -238,7 +243,7 @@ export function render(plan: Plan, dir = process.cwd()): { source: Image; result
     const i = p * 4;
     if (!source.rgba[i + 3]) continue;
     let to: string | undefined;
-    if (eyes.has(p)) to = '#ff0000';
+    if (eyes.has(p)) to = plan.eyeColour ?? '#ff0000';
     else if (parts == null) to = swaps.get(hexAt(source, i));
     else {
       const own = hexAt(source, i), f = parts.rgba[i + 3] ? partOf.get(hexAt(parts, i)) : undefined;

@@ -1,0 +1,27 @@
+{
+  "source": {
+    "form": "378/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "378/2",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "ice",
+      "base": "#33ccff",
+      "members": [
+        "#f8f8f8",
+        "#66ffff",
+        "#33ccff",
+        "#0099ff",
+        "#0066cc"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0378-0002-shadow-regular.json",
+  "eyeColour": "#000000"
+}
