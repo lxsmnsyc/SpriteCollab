@@ -1,0 +1,42 @@
+{
+  "source": {
+    "form": "150/3",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "150/3",
+    "coat": "shiny"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#475e75",
+      "members": [
+        "#475e75",
+        "#3c4a62",
+        "#343a55",
+        "#292a42"
+      ],
+      "scheme": [
+        "#ffffff"
+      ],
+      "darken": 0.75
+    },
+    {
+      "part": "tail and belly",
+      "base": "#293042",
+      "members": [
+        "#334052",
+        "#293042",
+        "#212635"
+      ],
+      "scheme": [
+        "#90c840"
+      ]
+    }
+  ],
+  "override": {
+    "#ffd860": "#879fff",
+    "#cb7334": "#264ad9"
+  }
+}

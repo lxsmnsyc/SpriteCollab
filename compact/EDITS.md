@@ -17,6 +17,7 @@ rather than what the artist submitted.
 | `johto/0249/0001` Shadow shiny | `johto/0249/0001` regular | No shiny was drawn. Scheme taken from shiny Lugia with its shading removed, then inverted: black body, turquoise plates. Applied over Shadow Lugia's own shading; eyes kept red. |
 | `johto/0250/0002` Shadow | `johto/0250/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill from `edits/0250-0002-shadow-regular.json`, eyes included. |
 | `johto/0250/0002` Shadow, shiny | `johto/0250/0000` shiny | The same, from shiny Ho-Oh: `edits/0250-0002-shadow-shiny.json`. |
+| `kanto/0150/0003` Shadow, shiny | `kanto/0150/0003` regular | No shiny was drawn. Made with the `shadow-sprites` skill: body and tail from shiny Mewtwo inverted, gold blasts and stripes turned to Mewtwo's blast blue by hand (`edits/0150-0003-shadow-shiny.json`). |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
