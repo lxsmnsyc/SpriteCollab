@@ -1,0 +1,72 @@
+{
+  "source": {
+    "form": "646/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "646/8",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "ice",
+      "base": "#afd5e4",
+      "members": [
+        "#ffffff",
+        "#d5f2f0",
+        "#afd5e4",
+        "#82afc1",
+        "#476b6f"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#888080",
+      "members": [
+        "#a09898",
+        "#888080",
+        "#686060",
+        "#404040"
+      ]
+    },
+    {
+      "part": "yellow",
+      "base": "#f8e808",
+      "members": [
+        "#f8e808",
+        "#e8b838"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": {
+    "white": [
+      "#f8e808",
+      "#e8b838"
+    ],
+    "face": [
+      "#000000",
+      "#ffffff",
+      "#d5f2f0",
+      "#afd5e4",
+      "#82afc1",
+      "#476b6f",
+      "#a09898",
+      "#888080",
+      "#686060",
+      "#404040"
+    ],
+    "touch": [
+      "#404040",
+      "#686060"
+    ],
+    "near": [
+      "#404040",
+      "#686060"
+    ],
+    "reach": 1,
+    "max": 3,
+    "diagonal": true
+  }
+}
