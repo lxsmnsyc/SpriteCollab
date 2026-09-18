@@ -30,7 +30,9 @@
         "#3a1a0c",
         "#161207"
       ],
-      "fit": true
+      "scheme": [
+        "#f3e5c5"
+      ]
     },
     {
       "part": "legs",
@@ -40,7 +42,9 @@
         "#302b27",
         "#0f0f0f"
       ],
-      "fit": true
+      "scheme": [
+        "#d8d4cf"
+      ]
     }
   ],
   "eyes": [

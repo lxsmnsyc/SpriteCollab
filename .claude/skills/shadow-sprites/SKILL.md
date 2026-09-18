@@ -33,6 +33,8 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
    or shade. A part that inverts to near black (white, pale grey) gets
    `"darken": 0.3` so its shading survives. A dark part that inverts to a
    light one gets `"fit": true`, or its lights all turn white.
+   Dark edges and outlines (Galarian Zapdos's feathers) stay dark instead:
+   give them a `scheme` whose inverse is a dark colour of the new hue.
 3. Eyes. A colour only the eyes use goes in `red`. Eyes sharing a body
    colour need an `eyes` rule: a small patch of `white` touching only
    `face` colours, at least one `touch` colour, with a `near` colour within
@@ -81,6 +83,9 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
 }
 ```
 
+A part covering much of the sprite that inverts to a fully saturated blue
+gets `"tone": 0.55`, a cap on its saturation. Leave cyan and small parts.
+
 Colours in no part stay as they are. `override` maps a colour's result by
 hand, for a part that inverts too close to its neighbour.
 Shades that differ from the base by hue more than lightness (Uxie's
@@ -89,6 +94,8 @@ deepen them with `override`.
 `"diagonal": true` sizes a patch with its corner neighbours, so a
 fragment of a larger spot in the eye's colour (Palkia's pearls) is too big.
 `far` lists colours that must not be within `reach`.
+`iris` lists colours that belong to the eye when just below a picked pixel,
+straight or diagonal: paint the whole eye, not only its glint (Ho-Oh).
 An eye rule's `white` can list several colours, for an eye drawn in two
 tones. Eyes sharing the mouth's colours can instead keep them: leave the
 colours out of every part and put the eye tone in `red`, as Raikou does.

@@ -1,10 +1,46 @@
 {
-  "source": { "form": "380/0", "coat": "shiny" },
-  "target": { "form": "380/3", "coat": "shiny", "name": "Shadow" },
+  "source": {
+    "form": "380/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "380/3",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
   "families": [
-    { "part": "body", "base": "#faa213", "members": ["#c5770e", "#faa213", "#ffe71c", "#9f0000", "#d73f00"] },
-    { "part": "white", "base": "#d7dfdf", "members": ["#ffffff", "#d7dfdf", "#afb7bf", "#7f8f97", "#736a8b"], "darken": 0.3 },
-    { "part": "chest", "base": "#63e88c", "members": ["#63e88c", "#31b65a"] }
+    {
+      "part": "body",
+      "base": "#faa213",
+      "members": [
+        "#c5770e",
+        "#faa213",
+        "#ffe71c",
+        "#9f0000",
+        "#d73f00"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "white",
+      "base": "#d7dfdf",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#736a8b"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "chest",
+      "base": "#63e88c",
+      "members": [
+        "#63e88c",
+        "#31b65a"
+      ]
+    }
   ],
   "red": [],
   "eyesFrom": "0380-0003-shadow-regular.json"

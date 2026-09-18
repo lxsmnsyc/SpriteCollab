@@ -15,15 +15,15 @@ rather than what the artist submitted.
 | `kalos/0702/0000` shiny `Hurt` | `kalos/0702/0000` regular `Hurt` | The shiny was never drawn hurt. Recoloured through the mapping, except the light forehead: the regular paints forehead and face one tan, so those pixels came from whichever of the shiny’s other clips draws the same five-by-five neighbourhood. |
 | `unova/0588/0000` shiny | `unova/0588/0000` regular | No shiny was drawn. Recoloured from the regular, matched to the official shiny artwork. |
 | `johto/0249/0001` Shadow shiny | `johto/0249/0001` regular | No shiny was drawn. Scheme taken from shiny Lugia with its shading removed, then inverted: black body, turquoise plates. Applied over Shadow Lugia's own shading; eyes kept red. |
-| `johto/0250/0002` Shadow | `johto/0250/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill from `edits/0250-0002-shadow-regular.json`, eyes included. |
-| `johto/0250/0002` Shadow, shiny | `johto/0250/0000` shiny | The same, from shiny Ho-Oh: `edits/0250-0002-shadow-shiny.json`. |
+| `johto/0250/0002` Shadow | `johto/0250/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill from `edits/0250-0002-shadow-regular.json`, eyes included. Each eye is a white glint plus the red iris below it (`iris`); side views need a second rule. Main blue softened with `tone`. |
+| `johto/0250/0002` Shadow, shiny | `johto/0250/0000` shiny | The same, from shiny Ho-Oh: `edits/0250-0002-shadow-shiny.json`. Main blue softened with `tone`. |
 | `kanto/0150/0003` Shadow, shiny | `kanto/0150/0003` regular | No shiny was drawn. Made with the `shadow-sprites` skill: body and tail from shiny Mewtwo inverted, gold blasts and stripes turned to Mewtwo's blast blue by hand (`edits/0150-0003-shadow-shiny.json`). |
-| `kanto/0146/0004` Shadow | `kanto/0146/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0146-0004-shadow-regular.json`. |
+| `kanto/0146/0004` Shadow | `kanto/0146/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0146-0004-shadow-regular.json`. Main blue softened with `tone`. |
 | `kanto/0146/0004` Shadow, shiny | `kanto/0146/0000` shiny | The same, from shiny Moltres, with the regular's eyes: `edits/0146-0004-shadow-shiny.json`. |
 | `kanto/0144/0004` Shadow | `kanto/0144/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0144-0004-shadow-regular.json`. |
 | `kanto/0144/0004` Shadow, shiny | `kanto/0144/0000` shiny | The same, from shiny Articuno, with the regular's eyes: `edits/0144-0004-shadow-shiny.json`. |
-| `kanto/0145/0004` Shadow | `kanto/0145/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0004-shadow-regular.json`. |
-| `kanto/0145/0004` Shadow, shiny | `kanto/0145/0000` shiny | The same, from shiny Zapdos, with the regular's eyes: `edits/0145-0004-shadow-shiny.json`. |
+| `kanto/0145/0004` Shadow | `kanto/0145/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0004-shadow-regular.json`. Main blue softened with `tone`. |
+| `kanto/0145/0004` Shadow, shiny | `kanto/0145/0000` shiny | The same, from shiny Zapdos, with the regular's eyes: `edits/0145-0004-shadow-shiny.json`. Main blue softened with `tone`. |
 | `hoenn/0382/0003` Shadow | `hoenn/0382/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0382-0003-shadow-regular.json`. |
 | `hoenn/0382/0003` Shadow, shiny | `hoenn/0382/0000` shiny | The same, from shiny Kyogre, with the regular's eyes: `edits/0382-0003-shadow-shiny.json`. |
 | `hoenn/0383/0004` Shadow | `hoenn/0383/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0383-0004-shadow-regular.json`. |
@@ -34,16 +34,16 @@ rather than what the artist submitted.
 | `galar/0144/0005` Shadow_Galar, shiny | `galar/0144/0001` shiny | The same, from shiny Galarian Articuno, with the regular's eyes: `edits/0144-0005-shadow-shiny.json`. |
 | `galar/0146/0005` Shadow_Galar | `galar/0146/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0146-0005-shadow-regular.json`. |
 | `galar/0146/0005` Shadow_Galar, shiny | `galar/0146/0001` shiny | The same, from shiny Galarian Moltres, with the regular's eyes: `edits/0146-0005-shadow-shiny.json`. |
-| `galar/0145/0005` Shadow_Galar | `galar/0145/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0005-shadow-regular.json`. Its glowing and non-glowing frames draw the eye differently; one rule each. |
-| `galar/0145/0005` Shadow_Galar, shiny | `galar/0145/0001` shiny | The same, from shiny Galarian Zapdos, with the regular's eyes: `edits/0145-0005-shadow-shiny.json`. |
-| `johto/0243/0002` Shadow | `johto/0243/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0243-0002-shadow-regular.json`. Eyes and mouth share their reds; the reds are kept and the eye tone painted red. |
+| `galar/0145/0005` Shadow_Galar | `galar/0145/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0005-shadow-regular.json`. Its glowing and non-glowing frames draw the eye differently; one rule each. Dark feathers and legs keep their darkness. |
+| `galar/0145/0005` Shadow_Galar, shiny | `galar/0145/0001` shiny | The same, from shiny Galarian Zapdos, with the regular's eyes: `edits/0145-0005-shadow-shiny.json`. Main blue softened with `tone`. |
+| `johto/0243/0002` Shadow | `johto/0243/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0243-0002-shadow-regular.json`. Eyes and mouth share their reds; the reds are kept and the eye tone painted red. Main blue softened with `tone`. |
 | `johto/0243/0002` Shadow, shiny | `johto/0243/0000` shiny | The same, from shiny Raikou, parts told apart by the regular: `edits/0243-0002-shadow-shiny.json`. |
 | `johto/0244/0003` Shadow | `johto/0244/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0244-0003-shadow-regular.json`. |
 | `johto/0244/0003` Shadow, shiny | `johto/0244/0000` shiny | The same, from shiny Entei, parts told apart by the regular: `edits/0244-0003-shadow-shiny.json`. |
 | `johto/0245/0003` Shadow | `johto/0245/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0245-0003-shadow-regular.json`. |
 | `johto/0245/0003` Shadow, shiny | `johto/0245/0000` shiny | The same, from shiny Suicune, parts told apart by the regular: `edits/0245-0003-shadow-shiny.json`. |
 | `hoenn/0380/0003` Shadow | `hoenn/0380/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0380-0003-shadow-regular.json`. |
-| `hoenn/0380/0003` Shadow, shiny | `hoenn/0380/0000` shiny | The same, from shiny Latias, with the regular's eyes: `edits/0380-0003-shadow-shiny.json`. |
+| `hoenn/0380/0003` Shadow, shiny | `hoenn/0380/0000` shiny | The same, from shiny Latias, with the regular's eyes: `edits/0380-0003-shadow-shiny.json`. Main blue softened with `tone`. |
 | `hoenn/0381/0003` Shadow | `hoenn/0381/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0381-0003-shadow-regular.json`. Eyes share their reds with the chest and mouth; two rules find them. |
 | `hoenn/0381/0003` Shadow, shiny | `hoenn/0381/0000` shiny | The same, from shiny Latios, with the regular's eyes: `edits/0381-0003-shadow-shiny.json`. |
 | `hoenn/0377/0002` Shadow | `hoenn/0377/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0377-0002-shadow-regular.json`. Its dots are painted as eyes. |
@@ -61,7 +61,7 @@ rather than what the artist submitted.
 | `hoenn/0386/0011` Shadow_Speed | `hoenn/0386/0003` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0386-0011-shadow-regular.json`. Eyes found by rule: the sparkles share their white. |
 | `hoenn/0386/0011` Shadow_Speed, shiny | `hoenn/0386/0003` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0011-shadow-shiny.json`. |
 | `sinnoh/0480/0001` Shadow | `sinnoh/0480/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0480-0001-shadow-regular.json`. Closed eyes share their brown with the head; two rules find them. Head blue muted by `scheme`; crease shades deepened by `override`. |
-| `sinnoh/0480/0001` Shadow, shiny | `sinnoh/0480/0000` shiny | The same, from shiny Uxie, with the regular's eyes: `edits/0480-0001-shadow-shiny.json`. |
+| `sinnoh/0480/0001` Shadow, shiny | `sinnoh/0480/0000` shiny | The same, from shiny Uxie, with the regular's eyes: `edits/0480-0001-shadow-shiny.json`. Main blue softened with `tone`. |
 | `sinnoh/0481/0002` Shadow | `sinnoh/0481/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0481-0002-shadow-regular.json`. Hair shade and gems share a red; parts told apart by the shiny. |
 | `sinnoh/0481/0002` Shadow, shiny | `sinnoh/0481/0000` shiny | The same, from shiny Mesprit, with the regular's eyes: `edits/0481-0002-shadow-shiny.json`. |
 | `sinnoh/0482/0002` Shadow | `sinnoh/0482/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0482-0002-shadow-regular.json`. |

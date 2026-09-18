@@ -43,6 +43,11 @@ interface Family {
    * every light tone to white.
    */
   fit?: boolean;
+  /**
+   * The most saturation the part may end on. Inverting a warm, saturated
+   * colour lands on a glaring pure blue or cyan; this softens it.
+   */
+  tone?: number;
 }
 /**
  * Down-facing eyes are drawn differently from side views, so a plan can
@@ -77,6 +82,12 @@ interface EyeRule {
    * a fragment of a larger spot drawn in the eye's colour is too big.
    */
   diagonal?: boolean;
+  /**
+   * Colours that are part of the eye when below a picked pixel, straight
+   * or diagonally:
+   * an eye drawn as a white glint over a coloured iris (Ho-Oh).
+   */
+  iris?: string[];
 }
 interface Plan {
   /** The sheet the pixels come from, as `dex/form`, and which coat. */
@@ -158,7 +169,8 @@ export function swapsFor(plan: Plan): Map<string, string> {
 /** A colour of a part, moved onto the part's inverted flat colour. */
 function shade(f: Family, colour: string): string {
   const target = invert(f.scheme == null ? f.base : mean(f.scheme));
-  const [th, ts, tl] = toHsl(rgb(target));
+  const [th, full, tl] = toHsl(rgb(target));
+  const ts = f.tone == null ? full : Math.min(full, f.tone);
   const baseL = toHsl(rgb(f.base))[2];
   const l = toHsl(rgb(colour))[2];
   const fitted = l <= baseL ? (l / baseL) * tl : tl + ((l - baseL) * (1 - tl)) / (1 - baseL);
@@ -240,7 +252,18 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
       }
       return false;
     });
-    if (close && clear) for (const b of blob) found.add(b);
+    if (!close || !clear) continue;
+    const iris = new Set(rule.iris ?? []);
+    for (const b of blob) {
+      found.add(b);
+      const bx = b % img.width, by = (b / img.width) | 0;
+      // Below, or diagonally below for a side view
+      for (const dx of [0, -1, 1]) {
+        const nx = bx + dx, ny = by + 1, n = ny * img.width + nx;
+        if (!iris.size || nx < 0 || nx >= img.width || ny >= img.height) continue;
+        if (img.rgba[n * 4 + 3] && iris.has(hexAt(img, n * 4))) found.add(n);
+      }
+    }
   }
   return found;
 }
@@ -355,7 +378,11 @@ function install(plan: Plan, planFile: string): void {
   // Whoever drew the source drawing is credited for it; the colours are ours
   meta.credits = { ...meta.credits, [coat]: from.credits[plan.source.coat] ?? [] };
   meta.coats = ['regular', 'shiny', 'female', 'shinyFemale'].filter((k) => k === coat || meta.coats.includes(k));
-  meta.derived = [...(meta.derived ?? []).filter((d: any) => d.coat !== coat), { coat, anim: null, from: plan.source.coat }];
+  // Replace in place, so reinstalling a coat leaves the list's order alone
+  const entry = { coat, anim: null, from: plan.source.coat };
+  const derived = meta.derived ?? [];
+  const at = derived.findIndex((d: any) => d.coat === coat);
+  meta.derived = at < 0 ? [...derived, entry] : derived.map((d: any, i: number) => (i === at ? entry : d));
   writeFileSync(join(folder, 'sheet.json'), JSON.stringify(meta));
   updateIndex(COMPACT);
   const kept = join(COMPACT, 'edits', `${plan.target.form.split('/').map((n) => n.padStart(4, '0')).join('-')}-shadow-${coat}.json`);

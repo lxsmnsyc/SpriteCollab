@@ -1,18 +1,103 @@
 {
-  "source": { "form": "250/0", "coat": "regular" },
-  "target": { "form": "250/2", "coat": "regular", "name": "Shadow" },
+  "source": {
+    "form": "250/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "250/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
   "families": [
-    { "part": "body", "base": "#d73f00", "members": ["#ff875f", "#d73f00", "#9f0000"] },
-    { "part": "tail and crest", "base": "#dfb700", "members": ["#fff700", "#dfb700", "#a76f00"] },
-    { "part": "belly and wing edges", "base": "#ffffff", "members": ["#ffffff", "#b7cfff", "#879fff", "#5767b7"], "darken": 0.3 },
-    { "part": "wing bands", "base": "#5fb727", "members": ["#d7efa7", "#9fcf6f", "#5fb727", "#278700"] }
+    {
+      "part": "body",
+      "base": "#d73f00",
+      "members": [
+        "#ff875f",
+        "#d73f00",
+        "#9f0000"
+      ]
+    },
+    {
+      "part": "tail and crest",
+      "base": "#dfb700",
+      "members": [
+        "#fff700",
+        "#dfb700",
+        "#a76f00"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "belly and wing edges",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#b7cfff",
+        "#879fff",
+        "#5767b7"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "wing bands",
+      "base": "#5fb727",
+      "members": [
+        "#d7efa7",
+        "#9fcf6f",
+        "#5fb727",
+        "#278700"
+      ]
+    }
   ],
-  "eyes": {
-    "white": "#ffffff",
-    "face": ["#d73f00", "#9f0000", "#000000", "#ff875f"],
-    "touch": ["#d73f00", "#9f0000"],
-    "near": ["#fff700", "#dfb700", "#a76f00"],
-    "reach": 3,
-    "max": 4
-  }
+  "eyes": [
+    {
+      "white": "#ffffff",
+      "face": [
+        "#d73f00",
+        "#9f0000",
+        "#000000",
+        "#ff875f"
+      ],
+      "touch": [
+        "#d73f00",
+        "#9f0000"
+      ],
+      "near": [
+        "#fff700",
+        "#dfb700",
+        "#a76f00"
+      ],
+      "reach": 3,
+      "max": 4,
+      "iris": [
+        "#d73f00",
+        "#9f0000"
+      ]
+    },
+    {
+      "white": "#ffffff",
+      "face": [
+        "#000000"
+      ],
+      "touch": [
+        "#000000"
+      ],
+      "near": [
+        "#d73f00",
+        "#9f0000"
+      ],
+      "far": [
+        "#b7cfff",
+        "#5767b7",
+        "#879fff"
+      ],
+      "reach": 1,
+      "max": 1,
+      "iris": [
+        "#d73f00",
+        "#9f0000"
+      ]
+    }
+  ]
 }
