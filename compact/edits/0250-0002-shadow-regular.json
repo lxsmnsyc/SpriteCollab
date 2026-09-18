@@ -1,0 +1,18 @@
+{
+  "source": { "form": "250/0", "coat": "regular" },
+  "target": { "form": "250/2", "coat": "regular", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#d73f00", "members": ["#ff875f", "#d73f00", "#9f0000"] },
+    { "part": "tail and crest", "base": "#dfb700", "members": ["#fff700", "#dfb700", "#a76f00"] },
+    { "part": "belly and wing edges", "base": "#ffffff", "members": ["#ffffff", "#b7cfff", "#879fff", "#5767b7"], "darken": 0.3 },
+    { "part": "wing bands", "base": "#5fb727", "members": ["#d7efa7", "#9fcf6f", "#5fb727", "#278700"] }
+  ],
+  "eyes": {
+    "white": "#ffffff",
+    "face": ["#d73f00", "#9f0000", "#000000", "#ff875f"],
+    "touch": ["#d73f00", "#9f0000"],
+    "near": ["#fff700", "#dfb700", "#a76f00"],
+    "reach": 3,
+    "max": 4
+  }
+}

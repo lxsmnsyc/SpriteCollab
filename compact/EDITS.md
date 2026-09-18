@@ -15,7 +15,7 @@ rather than what the artist submitted.
 | `kalos/0702/0000` shiny `Hurt` | `kalos/0702/0000` regular `Hurt` | The shiny was never drawn hurt. Recoloured through the mapping, except the light forehead: the regular paints forehead and face one tan, so those pixels came from whichever of the shiny’s other clips draws the same five-by-five neighbourhood. |
 | `unova/0588/0000` shiny | `unova/0588/0000` regular | No shiny was drawn. Recoloured from the regular, matched to the official shiny artwork. |
 | `johto/0249/0001` Shadow shiny | `johto/0249/0001` regular | No shiny was drawn. Scheme taken from shiny Lugia with its shading removed, then inverted: black body, turquoise plates. Applied over Shadow Lugia's own shading; eyes kept red. |
-| `johto/0250/0002` Shadow | `johto/0250/0000` regular | Not in the collection; a form of ours. Each colour family flattened and inverted, applied over Ho-Oh's own shading (`edits/0250-0000-regular-shadow.json`). Eyes share the belly's white, so they are not in the mapping: a white patch of up to 4 pixels touching only face red and outline, with yellow within 3 pixels, is painted `#ff0000`. |
+| `johto/0250/0002` Shadow | `johto/0250/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill from `edits/0250-0002-shadow-regular.json`, eyes included. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
