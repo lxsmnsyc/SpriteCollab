@@ -1,0 +1,9 @@
+{
+  "source": { "form": "146/1", "coat": "shiny" },
+  "target": { "form": "146/5", "coat": "shiny", "name": "Shadow_Galar" },
+  "families": [
+    { "part": "body", "base": "#cca45f", "members": ["#f9cd7a", "#e2b66a", "#cca45f", "#917644"] },
+    { "part": "flames", "base": "#ce4116", "members": ["#eb8226", "#c66e21", "#ce4116", "#d34a23", "#ad3c1d", "#a03311", "#5b1d0a"] }
+  ],
+  "eyesFrom": "0146-0005-shadow-regular.json"
+}

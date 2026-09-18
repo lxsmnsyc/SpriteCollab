@@ -1,0 +1,12 @@
+{
+  "source": { "form": "145/1", "coat": "shiny" },
+  "target": { "form": "145/5", "coat": "shiny", "name": "Shadow_Galar" },
+  "families": [
+    { "part": "plumage", "base": "#ffec5d", "members": ["#ffffad", "#fcff47", "#ffec5d", "#e5bb49", "#b28a35"] },
+    { "part": "orange details", "base": "#cc872c", "members": ["#ffaa37", "#cc872c"] },
+    { "part": "dark feathers", "base": "#604b1d", "members": ["#604b1d"], "fit": true },
+    { "part": "legs", "base": "#302b27", "members": ["#453e38", "#393027", "#302b27", "#0f0f0f"], "fit": true },
+    { "part": "talons", "base": "#d3cbc5", "members": ["#d3cbc5"], "darken": 0.3 }
+  ],
+  "eyesFrom": "0145-0005-shadow-regular.json"
+}

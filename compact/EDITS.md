@@ -30,6 +30,12 @@ rather than what the artist submitted.
 | `hoenn/0383/0004` Shadow, shiny | `hoenn/0383/0000` shiny | The same, from shiny Groudon, with the regular's eyes: `edits/0383-0004-shadow-shiny.json`. |
 | `hoenn/0384/0004` Shadow | `hoenn/0384/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0384-0004-shadow-regular.json`. |
 | `hoenn/0384/0004` Shadow, shiny | `hoenn/0384/0000` shiny | The same, from shiny Rayquaza, with the regular's eyes: `edits/0384-0004-shadow-shiny.json`. |
+| `galar/0144/0005` Shadow_Galar | `galar/0144/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0144-0005-shadow-regular.json`. |
+| `galar/0144/0005` Shadow_Galar, shiny | `galar/0144/0001` shiny | The same, from shiny Galarian Articuno, with the regular's eyes: `edits/0144-0005-shadow-shiny.json`. |
+| `galar/0146/0005` Shadow_Galar | `galar/0146/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0146-0005-shadow-regular.json`. |
+| `galar/0146/0005` Shadow_Galar, shiny | `galar/0146/0001` shiny | The same, from shiny Galarian Moltres, with the regular's eyes: `edits/0146-0005-shadow-shiny.json`. |
+| `galar/0145/0005` Shadow_Galar | `galar/0145/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0005-shadow-regular.json`. Its glowing and non-glowing frames draw the eye differently; one rule each. |
+| `galar/0145/0005` Shadow_Galar, shiny | `galar/0145/0001` shiny | The same, from shiny Galarian Zapdos, with the regular's eyes: `edits/0145-0005-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

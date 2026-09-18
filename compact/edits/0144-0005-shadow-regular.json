@@ -1,0 +1,74 @@
+{
+  "source": {
+    "form": "144/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "144/5",
+    "coat": "regular",
+    "name": "Shadow_Galar"
+  },
+  "families": [
+    {
+      "part": "wings and body",
+      "base": "#b99dc2",
+      "members": [
+        "#ffffff",
+        "#d4c4db",
+        "#b99dc2",
+        "#8a6b9b"
+      ]
+    },
+    {
+      "part": "plumes",
+      "base": "#6d56b1",
+      "members": [
+        "#8b72d7",
+        "#6d56b1",
+        "#42347f"
+      ]
+    },
+    {
+      "part": "face mask and legs",
+      "base": "#494a46",
+      "members": [
+        "#494a46",
+        "#343936"
+      ],
+      "fit": true
+    },
+    {
+      "part": "psychic glow",
+      "base": "#2db0ff",
+      "members": [
+        "#83f7ff",
+        "#2db0ff"
+      ]
+    }
+  ],
+  "red": [
+    "#5ca0b4"
+  ],
+  "eyes": {
+    "white": "#83f7ff",
+    "face": [
+      "#343936",
+      "#494a46",
+      "#000000",
+      "#5ca0b4",
+      "#42347f",
+      "#6d56b1",
+      "#8b72d7"
+    ],
+    "touch": [
+      "#343936",
+      "#494a46",
+      "#5ca0b4"
+    ],
+    "near": [
+      "#5ca0b4"
+    ],
+    "reach": 1,
+    "max": 3
+  }
+}

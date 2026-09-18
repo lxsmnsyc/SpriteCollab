@@ -1,0 +1,91 @@
+{
+  "source": {
+    "form": "145/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "145/5",
+    "coat": "regular",
+    "name": "Shadow_Galar"
+  },
+  "families": [
+    {
+      "part": "plumage and talons",
+      "base": "#f76c1a",
+      "members": [
+        "#f9d65b",
+        "#f5b41b",
+        "#f7831a",
+        "#f76c1a",
+        "#c24814",
+        "#863716"
+      ]
+    },
+    {
+      "part": "dark feathers",
+      "base": "#3a1a0c",
+      "members": [
+        "#53492b",
+        "#3a301d",
+        "#3a1a0c",
+        "#161207"
+      ],
+      "fit": true
+    },
+    {
+      "part": "legs",
+      "base": "#302b27",
+      "members": [
+        "#453e38",
+        "#302b27",
+        "#0f0f0f"
+      ],
+      "fit": true
+    }
+  ],
+  "eyes": [
+    {
+      "white": "#f9d65b",
+      "face": [
+        "#3a1a0c",
+        "#3a301d",
+        "#f7831a",
+        "#000000",
+        "#161207",
+        "#53492b"
+      ],
+      "touch": [
+        "#f7831a"
+      ],
+      "near": [
+        "#f7831a"
+      ],
+      "reach": 1,
+      "max": 3
+    },
+    {
+      "white": "#f5b41b",
+      "face": [
+        "#302b27",
+        "#453e38",
+        "#0f0f0f",
+        "#000000",
+        "#c24814",
+        "#863716",
+        "#f76c1a",
+        "#3a1a0c"
+      ],
+      "touch": [
+        "#302b27",
+        "#453e38"
+      ],
+      "near": [
+        "#c24814",
+        "#f76c1a",
+        "#863716"
+      ],
+      "reach": 1,
+      "max": 2
+    }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "source": { "form": "146/1", "coat": "regular" },
+  "target": { "form": "146/5", "coat": "regular", "name": "Shadow_Galar" },
+  "families": [
+    { "part": "body", "base": "#302b27", "members": ["#574e46", "#453e38", "#302b27", "#1f1c18"], "fit": true },
+    { "part": "flames", "base": "#e92075", "members": ["#ff95c5", "#f65d9c", "#e92075", "#e6004c", "#a40e39", "#a00031", "#5a071e"] }
+  ],
+  "red": ["#29a5ac", "#8bcede", "#ffffff"]
+}

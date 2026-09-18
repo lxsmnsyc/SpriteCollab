@@ -1,0 +1,11 @@
+{
+  "source": { "form": "144/1", "coat": "shiny" },
+  "target": { "form": "144/5", "coat": "shiny", "name": "Shadow_Galar" },
+  "families": [
+    { "part": "wings and body", "base": "#73acdb", "members": ["#ffffff", "#b2d8f6", "#73acdb", "#3c85bf"] },
+    { "part": "plumes", "base": "#1f9fe7", "members": ["#7fcfff", "#1f9fe7", "#0067b7"] },
+    { "part": "face mask", "base": "#bcd1e4", "members": ["#bcd1e4"], "darken": 0.3 },
+    { "part": "psychic glow", "base": "#2db0ff", "members": ["#83f7ff", "#2db0ff"] }
+  ],
+  "eyesFrom": "0144-0005-shadow-regular.json"
+}
