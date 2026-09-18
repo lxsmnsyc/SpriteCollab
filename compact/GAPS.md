@@ -7,13 +7,13 @@ the rest.
 
 ## No sprite at all
 
-42 species.
+41 species.
 
 | Region | Species |
 |---|---|
 | unova (13) | Simisear, Simipour, Tranquill, Blitzle, Zebstrika, Throh, Crustle, Tirtouga, Carracosta, Amoonguss, Frillish, Shelmet, Bouffalant |
 | alola (4) | Trumbeak, Gumshoos, Shiinotic, Oranguru |
-| galar (7) | Rolycoly, Carkol, Coalossal, Barraskewda, Mr_Rime, Cufant, Zarude |
+| galar (6) | Rolycoly, Carkol, Coalossal, Mr_Rime, Cufant, Zarude |
 | paldea (18) | Squawkabilly, Maschiff, Mabosstiff, Shroodle, Brambleghast, Toedscruel, Klawf, Rabsca, Espathra, Bombirdier, Flamigo, Brute_Bonnet, Iron_Jugulis, Wo_Chien, Chien_Pao, Okidogi, Iron_Boulder, Iron_Crown |
 
 Tranquill and Crustle are drawn in Pokemon Auto Chess. Worth looking at
@@ -100,11 +100,11 @@ Drawn, but below the bare minimum.
 
 ### No shiny
 
-77 built forms have a regular coat and no shiny.
+78 built forms have a regular coat and no shiny.
 
 | Kind | Forms |
 |---|---|
-| Base (7) | Karrablast, Milcery, Greedent, Glastrier, Oinkologne, Naclstack, Koraidon |
+| Base (8) | Karrablast, Milcery, Greedent, Barraskewda, Glastrier, Oinkologne, Naclstack, Koraidon |
 | Mega (3) | Tyranitar, Medicham, Darkrai |
 | Regional (2) | Meowth Galar, Darumaka Galar |
 | Other (65) | Alcremie: all 56 flavours · Minior: 7 cores · Oricorio Pa'u · Terapagos Terastal |
