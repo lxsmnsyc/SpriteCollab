@@ -1,0 +1,85 @@
+{
+  "source": {
+    "form": "640/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "640/1",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#75b333",
+      "members": [
+        "#378234",
+        "#75b333",
+        "#8bd72f"
+      ]
+    },
+    {
+      "part": "dark",
+      "base": "#49494d",
+      "members": [
+        "#49494d",
+        "#4c6956"
+      ],
+      "fit": true
+    },
+    {
+      "part": "cream",
+      "base": "#d3ac72",
+      "members": [
+        "#d3ac72",
+        "#f7e7c8"
+      ]
+    },
+    {
+      "part": "leaves",
+      "base": "#ab3724",
+      "members": [
+        "#ab3724",
+        "#e06b88"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#eeeef7",
+      "members": [
+        "#eeeef7",
+        "#c8c8d4"
+      ],
+      "darken": 0.3
+    }
+  ],
+  "red": [],
+  "eyes": {
+    "white": [
+      "#eeeef7",
+      "#c8c8d4"
+    ],
+    "face": [
+      "#000000",
+      "#49494d",
+      "#ab3724",
+      "#d3ac72",
+      "#e06b88",
+      "#f7e7c8"
+    ],
+    "touch": [
+      "#ab3724",
+      "#49494d"
+    ],
+    "near": [
+      "#000000",
+      "#49494d"
+    ],
+    "reach": 1,
+    "max": 2,
+    "iris": [
+      "#ab3724",
+      "#e06b88"
+    ]
+  }
+}

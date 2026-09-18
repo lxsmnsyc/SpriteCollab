@@ -94,8 +94,8 @@ deepen them with `override`.
 `"diagonal": true` sizes a patch with its corner neighbours, so a
 fragment of a larger spot in the eye's colour (Palkia's pearls) is too big.
 `far` lists colours that must not be within `reach`.
-`iris` lists colours that belong to the eye when just below a picked pixel,
-straight or diagonal: paint the whole eye, not only its glint (Ho-Oh).
+`iris` lists colours that belong to the eye when beside or below a picked
+pixel: paint the whole eye, not only its glint (Ho-Oh).
 An eye rule's `white` can list several colours, for an eye drawn in two
 tones. Eyes sharing the mouth's colours can instead keep them: leave the
 colours out of every part and put the eye tone in `red`, as Raikou does.

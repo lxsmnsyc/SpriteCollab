@@ -86,6 +86,12 @@ rather than what the artist submitted.
 | `sinnoh/0485/0003` Shadow, shiny | `sinnoh/0485/0000` shiny | The same, from shiny Heatran, with the regular's eyes: `edits/0485-0003-shadow-shiny.json`. |
 | `sinnoh/0486/0003` Shadow | `sinnoh/0486/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0486-0003-shadow-regular.json`. Its eyes are the seven dots in the gold centre; gold's blue muted by `scheme`. |
 | `sinnoh/0486/0003` Shadow, shiny | `sinnoh/0486/0000` shiny | The same, from shiny Regigigas, with the regular's eyes: `edits/0486-0003-shadow-shiny.json`. |
+| `unova/0638/0001` Shadow | `unova/0638/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0638-0001-shadow-regular.json`. Eyes are a white glint with a brown pupil; the red spots are the mouth. |
+| `unova/0638/0001` Shadow, shiny | `unova/0638/0000` shiny | The same, from shiny Cobalion, with the regular's eyes: `edits/0638-0001-shadow-shiny.json`. |
+| `unova/0639/0001` Shadow | `unova/0639/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0639-0001-shadow-regular.json`. Eyes are a white glint with an orange iris. |
+| `unova/0639/0001` Shadow, shiny | `unova/0639/0000` shiny | The same, from shiny Terrakion, with the regular's eyes: `edits/0639-0001-shadow-shiny.json`. |
+| `unova/0640/0001` Shadow | `unova/0640/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0640-0001-shadow-regular.json`. Each eye is a 2×2 of white, grey, red and pink. |
+| `unova/0640/0001` Shadow, shiny | `unova/0640/0000` shiny | The same, from shiny Virizion, with the regular's eyes: `edits/0640-0001-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

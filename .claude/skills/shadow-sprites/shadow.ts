@@ -83,8 +83,7 @@ interface EyeRule {
    */
   diagonal?: boolean;
   /**
-   * Colours that are part of the eye when below a picked pixel, straight
-   * or diagonally:
+   * Colours that are part of the eye when beside or below a picked pixel:
    * an eye drawn as a white glint over a coloured iris (Ho-Oh).
    */
   iris?: string[];
@@ -257,9 +256,9 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
     for (const b of blob) {
       found.add(b);
       const bx = b % img.width, by = (b / img.width) | 0;
-      // Below, or diagonally below for a side view
-      for (const dx of [0, -1, 1]) {
-        const nx = bx + dx, ny = by + 1, n = ny * img.width + nx;
+      // Beside or below, straight or diagonal
+      for (const [dx, dy] of [[0, 1], [-1, 1], [1, 1], [-1, 0], [1, 0]]) {
+        const nx = bx + dx, ny = by + dy, n = ny * img.width + nx;
         if (!iris.size || nx < 0 || nx >= img.width || ny >= img.height) continue;
         if (img.rgba[n * 4 + 3] && iris.has(hexAt(img, n * 4))) found.add(n);
       }
