@@ -1,0 +1,14 @@
+{
+  "source": { "form": "244/0", "coat": "shiny" },
+  "target": { "form": "244/3", "coat": "shiny", "name": "Shadow" },
+  "partsFrom": "regular",
+  "families": [
+    { "part": "body", "base": "#87542f", "members": ["#773f00", "#a75f1f", "#df771f"] },
+    { "part": "mask", "base": "#8fafb7", "members": ["#47876f", "#8fafb7", "#d7e7df"] },
+    { "part": "cloud", "base": "#e7e3d3", "members": ["#4f9fd7", "#a7cfef", "#ffffff"], "darken": 0.3 },
+    { "part": "red", "base": "#726f72", "members": ["#9f0000", "#ff570f"] },
+    { "part": "crown", "base": "#fff700", "members": ["#d7a700", "#fff700", "#ffe79f"] }
+  ],
+  "red": [],
+  "eyesFrom": "0244-0003-shadow-regular.json"
+}

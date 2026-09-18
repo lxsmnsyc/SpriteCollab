@@ -36,6 +36,12 @@ rather than what the artist submitted.
 | `galar/0146/0005` Shadow_Galar, shiny | `galar/0146/0001` shiny | The same, from shiny Galarian Moltres, with the regular's eyes: `edits/0146-0005-shadow-shiny.json`. |
 | `galar/0145/0005` Shadow_Galar | `galar/0145/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0005-shadow-regular.json`. Its glowing and non-glowing frames draw the eye differently; one rule each. |
 | `galar/0145/0005` Shadow_Galar, shiny | `galar/0145/0001` shiny | The same, from shiny Galarian Zapdos, with the regular's eyes: `edits/0145-0005-shadow-shiny.json`. |
+| `johto/0243/0002` Shadow | `johto/0243/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0243-0002-shadow-regular.json`. Eyes and mouth share their reds; the reds are kept and the eye tone painted red. |
+| `johto/0243/0002` Shadow, shiny | `johto/0243/0000` shiny | The same, from shiny Raikou, parts told apart by the regular: `edits/0243-0002-shadow-shiny.json`. |
+| `johto/0244/0003` Shadow | `johto/0244/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0244-0003-shadow-regular.json`. |
+| `johto/0244/0003` Shadow, shiny | `johto/0244/0000` shiny | The same, from shiny Entei, parts told apart by the regular: `edits/0244-0003-shadow-shiny.json`. |
+| `johto/0245/0003` Shadow | `johto/0245/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0245-0003-shadow-regular.json`. |
+| `johto/0245/0003` Shadow, shiny | `johto/0245/0000` shiny | The same, from shiny Suicune, parts told apart by the regular: `edits/0245-0003-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

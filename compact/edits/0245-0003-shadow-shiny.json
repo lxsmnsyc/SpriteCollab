@@ -1,0 +1,13 @@
+{
+  "source": { "form": "245/0", "coat": "shiny" },
+  "target": { "form": "245/3", "coat": "shiny", "name": "Shadow" },
+  "partsFrom": "regular",
+  "families": [
+    { "part": "body", "base": "#8bc5ff", "members": ["#5767b7", "#879fff", "#b7cfff"] },
+    { "part": "mane", "base": "#3666d5", "members": ["#873f87", "#af6fb7", "#d797df"] },
+    { "part": "ribbons", "base": "#d7dfdf", "members": ["#ffffff", "#d7dfdf", "#979fa7", "#47676f"], "darken": 0.3 },
+    { "part": "mouth", "base": "#d73f00", "members": ["#d73f00", "#dfaf67", "#bf7727"] }
+  ],
+  "red": [],
+  "eyesFrom": "0245-0003-shadow-regular.json"
+}

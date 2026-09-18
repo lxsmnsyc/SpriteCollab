@@ -48,6 +48,9 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
    own colours, source and target coat `shiny`, same target form. Give it
    `"eyesFrom": "{dex}-{form}-shadow-regular.json"` so it paints exactly
    the regular's eyes.
+   If the shiny draws two parts in one colour, add `"partsFrom": "regular"`:
+   `members` are then the regular's colours, `base` the shiny's flat colour,
+   and each pixel takes its part from the regular pixel in its place.
 
 ## Shadow form already drawn
 
@@ -78,6 +81,9 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
 
 Colours in no part stay as they are. `override` maps a colour's result by
 hand, for a part that inverts too close to its neighbour.
+An eye rule's `white` can list several colours, for an eye drawn in two
+tones. Eyes sharing the mouth's colours can instead keep them: leave the
+colours out of every part and put the eye tone in `red`, as Raikou does.
 
 ## After
 

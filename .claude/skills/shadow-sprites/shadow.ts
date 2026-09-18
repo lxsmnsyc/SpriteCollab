@@ -49,7 +49,8 @@ interface Family {
  * give more than one rule; a pixel any rule picks is an eye.
  */
 interface EyeRule {
-  white: string;
+  /** The eye's colour, or several when an eye is drawn in two tones. */
+  white: string | string[];
   face: string[];
   touch: string[];
   near: string[];
@@ -93,6 +94,13 @@ interface Plan {
   eyesFrom?: string;
   /** Hand adjustments, `from` colour to `to`, applied after everything else. */
   override?: Record<string, string>;
+  /**
+   * Another coat of the source form whose colours tell the parts apart:
+   * `members` are then that coat's colours, and each pixel takes its part
+   * from the pixel under it there, its shading from its own colour. For a
+   * shiny that draws two parts in one colour.
+   */
+  partsFrom?: CoatKey;
 }
 
 const rgb = (h: string) => [1, 3, 5].map((o) => parseInt(h.slice(o, o + 2), 16));
@@ -131,18 +139,18 @@ function sheetOf(form: string, coat: CoatKey): Image {
 /** Every colour of a part to its new colour. Colours in no part stay. */
 export function swapsFor(plan: Plan): Map<string, string> {
   const swaps = new Map<string, string>();
-  for (const f of plan.families) {
-    const target = invert(f.scheme == null ? f.base : mean(f.scheme));
-    const [th, ts, tl] = toHsl(rgb(target));
-    const baseL = toHsl(rgb(f.base))[2];
-    for (const m of f.members) {
-      const l = toHsl(rgb(m))[2];
-      const fitted = l <= baseL ? (l / baseL) * tl : tl + ((l - baseL) * (1 - tl)) / (1 - baseL);
-      const out = f.darken != null ? fromHsl([0, 0, l * f.darken]) : fromHsl([th, ts, f.fit ? fitted : (l / baseL) * tl]);
-      swaps.set(m, toHex(out));
-    }
-  }
+  for (const f of plan.families) for (const m of f.members) swaps.set(m, shade(f, m));
   return swaps;
+}
+
+/** A colour of a part, moved onto the part's inverted flat colour. */
+function shade(f: Family, colour: string): string {
+  const target = invert(f.scheme == null ? f.base : mean(f.scheme));
+  const [th, ts, tl] = toHsl(rgb(target));
+  const baseL = toHsl(rgb(f.base))[2];
+  const l = toHsl(rgb(colour))[2];
+  const fitted = l <= baseL ? (l / baseL) * tl : tl + ((l - baseL) * (1 - tl)) / (1 - baseL);
+  return toHex(f.darken != null ? fromHsl([0, 0, l * f.darken]) : fromHsl([th, ts, f.fit ? fitted : (l / baseL) * tl]));
 }
 
 /** The pixels the eye rule picks out. */
@@ -154,9 +162,10 @@ export function eyesIn(img: Image, rules: EyeRule | EyeRule[]): Set<number> {
 
 function eyesBy(img: Image, rule: EyeRule): Set<number> {
   const face = new Set(rule.face), touch = new Set(rule.touch), near = new Set(rule.near);
+  const white = new Set(Array.isArray(rule.white) ? rule.white : [rule.white]);
   const seen = new Set<number>(), found = new Set<number>();
   for (let p = 0; p < img.width * img.height; p++) {
-    if (seen.has(p) || !img.rgba[p * 4 + 3] || hexAt(img, p * 4) !== rule.white) continue;
+    if (seen.has(p) || !img.rgba[p * 4 + 3] || !white.has(hexAt(img, p * 4))) continue;
     const blob = [p], stack = [p];
     let enclosed = true, touched = false, black = 0;
     seen.add(p);
@@ -168,7 +177,7 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
         const n = ny * img.width + nx;
         if (!img.rgba[n * 4 + 3]) { enclosed = false; continue; }
         const c = hexAt(img, n * 4);
-        if (c === rule.white) { if (!seen.has(n)) { seen.add(n); blob.push(n); stack.push(n); } }
+        if (white.has(c)) { if (!seen.has(n)) { seen.add(n); blob.push(n); stack.push(n); } }
         else if (!face.has(c)) enclosed = false;
         else if (touch.has(c)) touched = true;
         if (c === '#000000') black++;
@@ -217,14 +226,25 @@ function eyesOf(plan: Plan, source: Image, dir: string): Set<number> {
 
 export function render(plan: Plan, dir = process.cwd()): { source: Image; result: Buffer; swaps: Map<string, string>; eyes: Set<number> } {
   const source = sheetOf(plan.source.form, plan.source.coat);
-  const swaps = swapsFor(plan);
-  for (const [from, to] of Object.entries(plan.override ?? {})) swaps.set(from, to);
+  const swaps = plan.partsFrom == null ? swapsFor(plan) : new Map<string, string>();
+  const override = new Map(Object.entries(plan.override ?? {}));
+  for (const [from, to] of override) swaps.set(from, to);
   const eyes = eyesOf(plan, source, dir);
+  const parts = plan.partsFrom == null ? null : sheetOf(plan.source.form, plan.partsFrom);
+  if (parts != null && (parts.width !== source.width || parts.height !== source.height)) throw new Error(`${plan.partsFrom} is laid out differently`);
+  const partOf = new Map(plan.families.flatMap((f) => f.members.map((m) => [m, f] as const)));
   const result = Buffer.from(source.rgba);
   for (let p = 0; p < source.width * source.height; p++) {
     const i = p * 4;
     if (!source.rgba[i + 3]) continue;
-    const to = eyes.has(p) ? '#ff0000' : swaps.get(hexAt(source, i));
+    let to: string | undefined;
+    if (eyes.has(p)) to = '#ff0000';
+    else if (parts == null) to = swaps.get(hexAt(source, i));
+    else {
+      const own = hexAt(source, i), f = parts.rgba[i + 3] ? partOf.get(hexAt(parts, i)) : undefined;
+      to = override.get(own) ?? (f == null ? undefined : shade(f, own));
+      if (to != null) swaps.set(own, to);
+    }
     if (to != null) rgb(to).forEach((v, j) => (result[i + j] = v));
   }
   return { source, result, swaps, eyes };
@@ -330,7 +350,7 @@ function palette(form: string, coat: CoatKey): void {
   }
 }
 
-const [command, a, b] = process.argv.slice(2);
+const [command, a, b] = import.meta.main ? process.argv.slice(2) : [];
 if (command === 'palette') palette(a, (b ?? 'regular') as CoatKey);
 else if (command === 'preview') preview(JSON.parse(readFileSync(a, 'utf8')), dirname(a));
 else if (command === 'install') install(JSON.parse(readFileSync(a, 'utf8')), a);
