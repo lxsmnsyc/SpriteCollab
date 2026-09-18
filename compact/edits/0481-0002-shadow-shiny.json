@@ -1,0 +1,49 @@
+{
+  "source": {
+    "form": "481/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "481/2",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "hair",
+      "base": "#ff8492",
+      "members": [
+        "#ff8492",
+        "#e54e69",
+        "#c13863"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#e0b370",
+      "members": [
+        "#ffe69c",
+        "#e0b370",
+        "#bf7e16"
+      ]
+    },
+    {
+      "part": "gems",
+      "base": "#cf3f00",
+      "members": [
+        "#ffffff",
+        "#ff3f00",
+        "#cf3f00"
+      ]
+    },
+    {
+      "part": "tail",
+      "base": "#d6c7d6",
+      "members": [
+        "#d6c7d6"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0481-0002-shadow-regular.json"
+}

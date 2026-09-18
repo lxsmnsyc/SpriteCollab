@@ -1,0 +1,42 @@
+{
+  "source": {
+    "form": "480/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "480/1",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "head",
+      "base": "#ffae55",
+      "members": [
+        "#ffae55",
+        "#df771f",
+        "#a73f0f"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#eebd62",
+      "members": [
+        "#ffe69c",
+        "#eebd62",
+        "#ac6a31"
+      ]
+    },
+    {
+      "part": "gems",
+      "base": "#cf3f00",
+      "members": [
+        "#ffffff",
+        "#ff3f00",
+        "#cf3f00"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0480-0001-shadow-regular.json"
+}

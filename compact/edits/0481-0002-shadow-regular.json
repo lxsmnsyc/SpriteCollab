@@ -1,0 +1,53 @@
+{
+  "source": {
+    "form": "481/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "481/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "partsFrom": "shiny",
+  "families": [
+    {
+      "part": "hair",
+      "base": "#ff8fdf",
+      "members": [
+        "#ff8492",
+        "#e54e69",
+        "#c13863"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#67b7ef",
+      "members": [
+        "#ffe69c",
+        "#e0b370",
+        "#bf7e16"
+      ]
+    },
+    {
+      "part": "gems",
+      "base": "#cf3f00",
+      "members": [
+        "#ffffff",
+        "#ff3f00",
+        "#cf3f00"
+      ]
+    },
+    {
+      "part": "tail",
+      "base": "#c7d7d7",
+      "members": [
+        "#d6c7d6"
+      ]
+    }
+  ],
+  "red": [
+    "#efb700",
+    "#fff700",
+    "#8f673f"
+  ]
+}

@@ -60,6 +60,12 @@ rather than what the artist submitted.
 | `hoenn/0386/0010` Shadow_Defense, shiny | `hoenn/0386/0002` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0010-shadow-shiny.json`. |
 | `hoenn/0386/0011` Shadow_Speed | `hoenn/0386/0003` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0386-0011-shadow-regular.json`. Eyes found by rule: the sparkles share their white. |
 | `hoenn/0386/0011` Shadow_Speed, shiny | `hoenn/0386/0003` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0011-shadow-shiny.json`. |
+| `sinnoh/0480/0001` Shadow | `sinnoh/0480/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0480-0001-shadow-regular.json`. Closed eyes share their brown with the head; two rules find them. Head blue muted by `scheme`; crease shades deepened by `override`. |
+| `sinnoh/0480/0001` Shadow, shiny | `sinnoh/0480/0000` shiny | The same, from shiny Uxie, with the regular's eyes: `edits/0480-0001-shadow-shiny.json`. |
+| `sinnoh/0481/0002` Shadow | `sinnoh/0481/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0481-0002-shadow-regular.json`. Hair shade and gems share a red; parts told apart by the shiny. |
+| `sinnoh/0481/0002` Shadow, shiny | `sinnoh/0481/0000` shiny | The same, from shiny Mesprit, with the regular's eyes: `edits/0481-0002-shadow-shiny.json`. |
+| `sinnoh/0482/0002` Shadow | `sinnoh/0482/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0482-0002-shadow-regular.json`. |
+| `sinnoh/0482/0002` Shadow, shiny | `sinnoh/0482/0000` shiny | The same, from shiny Azelf, with the regular's eyes: `edits/0482-0002-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

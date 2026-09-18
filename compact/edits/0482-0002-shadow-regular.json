@@ -1,0 +1,45 @@
+{
+  "source": {
+    "form": "482/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "482/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#67a7ef",
+      "members": [
+        "#afd7ff",
+        "#67a7ef",
+        "#1f77d7"
+      ]
+    },
+    {
+      "part": "head",
+      "base": "#5fb7c7",
+      "members": [
+        "#5fb7c7",
+        "#478fa7",
+        "#276f87"
+      ]
+    },
+    {
+      "part": "gems",
+      "base": "#cf3f00",
+      "members": [
+        "#ffffff",
+        "#ff3f00",
+        "#cf3f00"
+      ]
+    }
+  ],
+  "red": [
+    "#efb700",
+    "#fff700",
+    "#8f673f"
+  ]
+}

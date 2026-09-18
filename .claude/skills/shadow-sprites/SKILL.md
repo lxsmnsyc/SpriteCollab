@@ -83,6 +83,9 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
 
 Colours in no part stay as they are. `override` maps a colour's result by
 hand, for a part that inverts too close to its neighbour.
+Shades that differ from the base by hue more than lightness (Uxie's
+yellow and orange creases) come out flat; check a head close-up and
+deepen them with `override`.
 An eye rule's `white` can list several colours, for an eye drawn in two
 tones. Eyes sharing the mouth's colours can instead keep them: leave the
 colours out of every part and put the eye tone in `red`, as Raikou does.
