@@ -11,7 +11,7 @@
  * sheet whose colours the scheme is taken from. See SKILL.md.
  */
 import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
-import { join } from 'node:path';
+import { dirname, join } from 'node:path';
 import decode, { encodeSmallest, encodeTruecolor } from '../../../tools/src/png.ts';
 import type { Image } from '../../../tools/src/png.ts';
 import { FILENAMES, updateIndex } from '../../../tools/src/write.ts';
@@ -37,6 +37,27 @@ interface Family {
    */
   darken?: number;
 }
+/**
+ * Down-facing eyes are drawn differently from side views, so a plan can
+ * give more than one rule; a pixel any rule picks is an eye.
+ */
+interface EyeRule {
+  white: string;
+  face: string[];
+  touch: string[];
+  near: string[];
+  reach: number;
+  max: number;
+  /** A colour the patch must have directly above it: a brow. */
+  above?: string;
+  /** A colour the patch must have directly below it. */
+  below?: string;
+  /**
+   * Only look for `near` on one side of the patch: `below` for a head
+   * facing down, whose beak is under its eyes; `above` for one looking up.
+   */
+  nearSide?: 'above' | 'below';
+}
 interface Plan {
   /** The sheet the pixels come from, as `dex/form`, and which coat. */
   source: { form: string; coat: CoatKey };
@@ -49,9 +70,15 @@ interface Plan {
    * colours and at least one `touch` colour, with a `near` colour within
    * `reach` pixels. Painted `#ff0000`.
    */
-  eyes?: { white: string; face: string[]; touch: string[]; near: string[]; reach: number; max: number };
+  eyes?: EyeRule | EyeRule[];
   /** Eye colours no other part uses, painted `#ff0000` outright. */
   red?: string[];
+  /**
+   * Another plan, beside this one, whose eye picks are used as they are.
+   * Coats of one form share a layout, so a shiny can take the regular's
+   * eyes rather than finding them again through different colours.
+   */
+  eyesFrom?: string;
   /** Hand adjustments, `from` colour to `to`, applied after everything else. */
   override?: Record<string, string>;
 }
@@ -106,7 +133,13 @@ export function swapsFor(plan: Plan): Map<string, string> {
 }
 
 /** The pixels the eye rule picks out. */
-export function eyesIn(img: Image, rule: NonNullable<Plan['eyes']>): Set<number> {
+export function eyesIn(img: Image, rules: EyeRule | EyeRule[]): Set<number> {
+  const found = new Set<number>();
+  for (const rule of Array.isArray(rules) ? rules : [rules]) for (const p of eyesBy(img, rule)) found.add(p);
+  return found;
+}
+
+function eyesBy(img: Image, rule: EyeRule): Set<number> {
   const face = new Set(rule.face), touch = new Set(rule.touch), near = new Set(rule.near);
   const seen = new Set<number>(), found = new Set<number>();
   for (let p = 0; p < img.width * img.height; p++) {
@@ -128,9 +161,16 @@ export function eyesIn(img: Image, rule: NonNullable<Plan['eyes']>): Set<number>
       }
     }
     if (!enclosed || !touched || blob.length > rule.max) continue;
+    const neighbour = (b: number, dy: number) => {
+      const n = b + dy * img.width;
+      return n >= 0 && n < img.width * img.height && img.rgba[n * 4 + 3] ? hexAt(img, n * 4) : null;
+    };
+    if (rule.above != null && !blob.some((b) => neighbour(b, -1) === rule.above)) continue;
+    if (rule.below != null && !blob.some((b) => neighbour(b, 1) === rule.below)) continue;
     const close = blob.some((b) => {
       const bx = b % img.width, by = (b / img.width) | 0;
-      for (let dy = -rule.reach; dy <= rule.reach; dy++) for (let dx = -rule.reach; dx <= rule.reach; dx++) {
+      const fromY = rule.nearSide === 'below' ? 0 : -rule.reach, toY = rule.nearSide === 'above' ? 0 : rule.reach;
+      for (let dy = fromY; dy <= toY; dy++) for (let dx = -rule.reach; dx <= rule.reach; dx++) {
         const nx = bx + dx, ny = by + dy;
         if (nx < 0 || ny < 0 || nx >= img.width || ny >= img.height) continue;
         const n = (ny * img.width + nx) * 4;
@@ -143,12 +183,28 @@ export function eyesIn(img: Image, rule: NonNullable<Plan['eyes']>): Set<number>
   return found;
 }
 
-export function render(plan: Plan): { source: Image; result: Buffer; swaps: Map<string, string>; eyes: Set<number> } {
+/** Every eye pixel a plan picks, on its own source sheet. */
+function eyesOf(plan: Plan, source: Image, dir: string): Set<number> {
+  if (plan.eyesFrom != null) {
+    const other: Plan = JSON.parse(readFileSync(join(dir, plan.eyesFrom), 'utf8'));
+    const theirs = sheetOf(other.source.form, other.source.coat);
+    if (theirs.width !== source.width || theirs.height !== source.height) throw new Error(`${plan.eyesFrom} is laid out differently`);
+    return eyesOf(other, theirs, dir);
+  }
+  const eyes = plan.eyes == null ? new Set<number>() : eyesIn(source, plan.eyes);
+  // Eyes in a colour of their own are eyes too, and get the same close-ups
+  const red = new Set(plan.red ?? []);
+  for (let p = 0; p < source.width * source.height; p++) {
+    if (source.rgba[p * 4 + 3] && red.has(hexAt(source, p * 4))) eyes.add(p);
+  }
+  return eyes;
+}
+
+export function render(plan: Plan, dir = process.cwd()): { source: Image; result: Buffer; swaps: Map<string, string>; eyes: Set<number> } {
   const source = sheetOf(plan.source.form, plan.source.coat);
   const swaps = swapsFor(plan);
-  for (const c of plan.red ?? []) swaps.set(c, '#ff0000');
   for (const [from, to] of Object.entries(plan.override ?? {})) swaps.set(from, to);
-  const eyes = plan.eyes == null ? new Set<number>() : eyesIn(source, plan.eyes);
+  const eyes = eyesOf(plan, source, dir);
   const result = Buffer.from(source.rgba);
   for (let p = 0; p < source.width * source.height; p++) {
     const i = p * 4;
@@ -159,8 +215,8 @@ export function render(plan: Plan): { source: Image; result: Buffer; swaps: Map<
   return { source, result, swaps, eyes };
 }
 
-function preview(plan: Plan): void {
-  const { source, result, swaps, eyes } = render(plan);
+function preview(plan: Plan, dir: string): void {
+  const { source, result, swaps, eyes } = render(plan, dir);
   for (const [from, to] of swaps) console.log(`  ${from} -> ${to}`);
   console.log(`eyes painted red: ${eyes.size} px`);
   const S = 2, gap = 12, H = Math.min(source.height, 260) * S, W = source.width * S * 2 + gap;
@@ -181,14 +237,18 @@ function preview(plan: Plan): void {
     const x = p % source.width, y = (p / source.width) | 0;
     if (spots.every(([a, b]) => Math.abs(a - x) > 12 || Math.abs(b - y) > 12)) spots.push([x, y]);
   }
-  const R = 7, E = 6, cell = (R * 2 + 1) * E, EW = spots.length * (cell + 6) - 6, EH = cell * 2 + 6;
+  // Ten to a row, before above after, so every pick is big enough to judge
+  const R = 7, E = 8, cell = (R * 2 + 1) * E, PER = 10, G = 6;
+  const rows = Math.ceil(spots.length / PER), EW = Math.min(spots.length, PER) * (cell + G) - G, EH = rows * (cell * 2 + G * 3) - G * 2;
   const eyesOut = Buffer.alloc(EW * EH * 4, 255);
   spots.forEach(([ex, ey], k) => [source.rgba, result].forEach((src, row) => {
+    const ox = (k % PER) * (cell + G), oy = Math.floor(k / PER) * (cell * 2 + G * 3) + row * (cell + G);
     for (let y = 0; y < cell; y++) for (let x = 0; x < cell; x++) {
-      const sx = ex - R + ((x / E) | 0), sy = ey - R + ((y / E) | 0), o = ((row * (cell + 6) + y) * EW + k * (cell + 6) + x) * 4;
+      const sx = ex - R + ((x / E) | 0), sy = ey - R + ((y / E) | 0), o = ((oy + y) * EW + ox + x) * 4;
       const inside = sx >= 0 && sy >= 0 && sx < source.width && sy < source.height, i = (sy * source.width + sx) * 4;
       const bg = (((x >> 4) + (y >> 4)) & 1) ? 214 : 236;
       for (let j = 0; j < 3; j++) eyesOut[o + j] = inside && src[i + 3] ? src[i + j] : bg;
+      eyesOut[o + 3] = 255;
     }
   }));
   writeFileSync(join(REPO, 'shadow-preview-eyes.png'), encodeTruecolor({ width: EW, height: EH, rgba: eyesOut }, 'none'));
@@ -196,7 +256,7 @@ function preview(plan: Plan): void {
 }
 
 function install(plan: Plan, planFile: string): void {
-  const { source, result } = render(plan);
+  const { source, result } = render(plan, dirname(planFile));
   const [dex, form] = plan.target.form.split('/').map(Number);
   const sourceFolder = folderOf(plan.source.form)!;
   let folder = folderOf(plan.target.form);
@@ -256,6 +316,6 @@ function palette(form: string, coat: CoatKey): void {
 
 const [command, a, b] = process.argv.slice(2);
 if (command === 'palette') palette(a, (b ?? 'regular') as CoatKey);
-else if (command === 'preview') preview(JSON.parse(readFileSync(a, 'utf8')));
+else if (command === 'preview') preview(JSON.parse(readFileSync(a, 'utf8')), dirname(a));
 else if (command === 'install') install(JSON.parse(readFileSync(a, 'utf8')), a);
 else if (command != null) throw new Error(`no ${command} command: palette, preview or install`);

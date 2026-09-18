@@ -37,10 +37,16 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
    `face` colours, at least one `touch` colour, with a `near` colour within
    `reach` pixels. Tune it until `shadow-preview-eyes.png` shows eyes and
    nothing else.
+   Look before calling a pick right or wrong: a colour in mirrored pairs
+   can be claws, down-facing eyes often touch the beak or brow rather than
+   the face, and an up-facing head can be tilted back with its eye showing.
+   Check down- and up-facing frames every time.
 4. `preview`, show the user both images, `install` when approved. Target is
    the next free form number, with `"name": "Shadow"`.
 5. Repeat for the shiny: `palette <dex>/0 shiny`, a plan with the shiny's
-   own colours, source and target coat `shiny`, same target form.
+   own colours, source and target coat `shiny`, same target form. Give it
+   `"eyesFrom": "{dex}-{form}-shadow-regular.json"` so it paints exactly
+   the regular's eyes.
 
 ## Shadow form already drawn
 

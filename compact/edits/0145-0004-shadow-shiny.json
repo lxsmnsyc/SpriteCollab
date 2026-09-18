@@ -1,0 +1,45 @@
+{
+  "source": {
+    "form": "145/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "145/4",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#f2db24",
+      "members": [
+        "#ffffff",
+        "#fff79f",
+        "#f2db24",
+        "#e6b40d",
+        "#d7bf67",
+        "#aa7a2e",
+        "#ac6e0a",
+        "#6d2d10"
+      ]
+    },
+    {
+      "part": "beak and legs",
+      "base": "#d1734c",
+      "members": [
+        "#ff9747",
+        "#d1734c",
+        "#954a29"
+      ]
+    },
+    {
+      "part": "tongue",
+      "base": "#e73f67",
+      "members": [
+        "#ff8faf",
+        "#e73f67"
+      ]
+    }
+  ],
+  "eyesFrom": "0145-0004-shadow-regular.json"
+}

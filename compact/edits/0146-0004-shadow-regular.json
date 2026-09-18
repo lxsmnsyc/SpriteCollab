@@ -1,0 +1,43 @@
+{
+  "source": {
+    "form": "146/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "146/4",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#fff700",
+      "members": [
+        "#fff700",
+        "#dfb700",
+        "#bf7727",
+        "#a76f00",
+        "#ffe79f"
+      ]
+    },
+    {
+      "part": "red flames",
+      "base": "#d73f00",
+      "members": [
+        "#ff875f",
+        "#d73f00",
+        "#9f0000"
+      ]
+    },
+    {
+      "part": "pink flames",
+      "base": "#ff87bf",
+      "members": [
+        "#ff87bf"
+      ]
+    }
+  ],
+  "red": [
+    "#ffffff"
+  ]
+}

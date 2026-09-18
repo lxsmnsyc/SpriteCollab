@@ -1,0 +1,104 @@
+{
+  "source": {
+    "form": "145/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "145/4",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#fff700",
+      "members": [
+        "#ffffff",
+        "#fff79f",
+        "#fff700",
+        "#dfb700",
+        "#d7bf67",
+        "#b78727",
+        "#a76f00",
+        "#773f00"
+      ]
+    },
+    {
+      "part": "beak and legs",
+      "base": "#df771f",
+      "members": [
+        "#ff9747",
+        "#df771f",
+        "#a75f1f"
+      ]
+    },
+    {
+      "part": "tongue",
+      "base": "#e73f67",
+      "members": [
+        "#ff8faf",
+        "#e73f67"
+      ]
+    }
+  ],
+  "eyes": [
+    {
+      "white": "#ffffff",
+      "face": [
+        "#fff700",
+        "#dfb700",
+        "#b78727",
+        "#a76f00",
+        "#773f00",
+        "#000000"
+      ],
+      "touch": [
+        "#fff700",
+        "#dfb700",
+        "#b78727"
+      ],
+      "near": [
+        "#df771f",
+        "#a75f1f"
+      ],
+      "reach": 3,
+      "max": 4
+    },
+    {
+      "white": "#ffffff",
+      "face": [
+        "#000000",
+        "#773f00"
+      ],
+      "touch": [
+        "#773f00"
+      ],
+      "near": [
+        "#df771f",
+        "#a75f1f"
+      ],
+      "reach": 2,
+      "max": 1,
+      "above": "#000000",
+      "nearSide": "below"
+    },
+    {
+      "white": "#ffffff",
+      "face": [
+        "#000000",
+        "#773f00"
+      ],
+      "touch": [
+        "#773f00"
+      ],
+      "near": [
+        "#df771f",
+        "#a75f1f"
+      ],
+      "reach": 2,
+      "max": 1,
+      "nearSide": "above",
+      "below": "#000000"
+    }
+  ]
+}

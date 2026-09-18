@@ -1,0 +1,56 @@
+{
+  "source": {
+    "form": "144/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "144/4",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#1f9fe7",
+      "members": [
+        "#7fcfff",
+        "#1f9fe7",
+        "#0067b7"
+      ]
+    },
+    {
+      "part": "belly, legs and beak",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#47676f"
+      ],
+      "darken": 0.3
+    }
+  ],
+  "eyes": {
+    "white": "#d73f00",
+    "face": [
+      "#000000",
+      "#ffffff",
+      "#7fcfff",
+      "#1f9fe7",
+      "#0067b7",
+      "#d7dfdf",
+      "#afb7bf",
+      "#7f8f97",
+      "#47676f"
+    ],
+    "touch": [
+      "#000000"
+    ],
+    "near": [
+      "#000000"
+    ],
+    "reach": 1,
+    "max": 3
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "source": {
+    "form": "146/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "146/4",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#f685a0",
+      "members": [
+        "#f685a0",
+        "#d45474",
+        "#c54263",
+        "#b2255b",
+        "#ffe79f"
+      ]
+    },
+    {
+      "part": "red flames",
+      "base": "#d4001a",
+      "members": [
+        "#f36333",
+        "#d4001a",
+        "#970000"
+      ]
+    },
+    {
+      "part": "orange flames",
+      "base": "#ffb335",
+      "members": [
+        "#ffb335"
+      ]
+    }
+  ],
+  "eyesFrom": "0146-0004-shadow-regular.json"
+}

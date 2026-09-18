@@ -18,6 +18,12 @@ rather than what the artist submitted.
 | `johto/0250/0002` Shadow | `johto/0250/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill from `edits/0250-0002-shadow-regular.json`, eyes included. |
 | `johto/0250/0002` Shadow, shiny | `johto/0250/0000` shiny | The same, from shiny Ho-Oh: `edits/0250-0002-shadow-shiny.json`. |
 | `kanto/0150/0003` Shadow, shiny | `kanto/0150/0003` regular | No shiny was drawn. Made with the `shadow-sprites` skill: body and tail from shiny Mewtwo inverted, gold blasts and stripes turned to Mewtwo's blast blue by hand (`edits/0150-0003-shadow-shiny.json`). |
+| `kanto/0146/0004` Shadow | `kanto/0146/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0146-0004-shadow-regular.json`. |
+| `kanto/0146/0004` Shadow, shiny | `kanto/0146/0000` shiny | The same, from shiny Moltres, with the regular's eyes: `edits/0146-0004-shadow-shiny.json`. |
+| `kanto/0144/0004` Shadow | `kanto/0144/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0144-0004-shadow-regular.json`. |
+| `kanto/0144/0004` Shadow, shiny | `kanto/0144/0000` shiny | The same, from shiny Articuno, with the regular's eyes: `edits/0144-0004-shadow-shiny.json`. |
+| `kanto/0145/0004` Shadow | `kanto/0145/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0004-shadow-regular.json`. |
+| `kanto/0145/0004` Shadow, shiny | `kanto/0145/0000` shiny | The same, from shiny Zapdos, with the regular's eyes: `edits/0145-0004-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
