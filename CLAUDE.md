@@ -32,4 +32,5 @@ the reader and the fact they came for.
 - Count base forms only. `Alternate`, `Gigantamax`, `Mega`, `Altcolor`
   and `Cutscene` are left out of coverage and completeness reports —
   they are far less finished than base forms and skew every figure.
-  Regional forms count. Everything is still built.
+  Regional forms count. Everything is still built. `GAPS.md` lists
+  missing game forms and shinies in a section of their own.

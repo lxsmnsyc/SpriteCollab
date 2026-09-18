@@ -1,8 +1,9 @@
 # Gaps in the collection
 
 What upstream has not drawn. Nothing here is a fault in the build —
-`compact/` holds every sheet that exists. Base forms only, per
-[`CLAUDE.md`](../CLAUDE.md).
+`compact/` holds every sheet that exists. The first four sections are
+base forms only, per [`CLAUDE.md`](../CLAUDE.md); [Forms](#forms) covers
+the rest.
 
 ## No sprite at all
 
@@ -64,6 +65,49 @@ Milcery alone has the six but not `Double`, `Swing`, `Charge` or `Rotate`.
 | Dex | Species | Missing |
 |---|---|---|
 | 0868 | Milcery | Swing Charge |
+
+## Forms
+
+Game forms other than the base, from `tracker.json`. Altcolor,
+Alternate, Cutscene, Beta and Skytemple slots are left out.
+
+### Not drawn
+
+120 forms.
+
+| Kind | Forms |
+|---|---|
+| Mega (41) | Venusaur, Charizard Y, Blastoise, Beedrill, Pidgeot, Clefable, Starmie, Pinsir, Gyarados, Mewtwo X, Ampharos, Scizor, Heracross, Blaziken, Swampert, Aggron, Salamence, Metagross, Staraptor, Garchomp, Abomasnow, Froslass, Emboar, Audino, Scolipede, Chandelure, Golurk, Chesnaught, Delphox, Greninja, Pyroar, Malamar, Barbaracle, Crabominable, Magearna, Magearna Original, Scovillain, Glimmora, Tatsugiri Stretchy, Tatsugiri Droopy, Baxcalibur |
+| Gigantamax (31) | Venusaur, Blastoise, Butterfree, Pikachu, Meowth, Machamp, Gengar, Kingler, Lapras, Eevee, Snorlax, Garbodor, Melmetal, Rillaboom, Cinderace, Inteleon, Corviknight, Orbeetle, Drednaw, Coalossal, Flapple, Appletun, Sandaconda, Toxtricity, Centiskorch, Hatterene, Grimmsnarl, Copperajah, Duraludon, Urshifu, Urshifu Rapid Strike |
+| Regional (2) | Darmanitan Galar Zen, Stunfisk Galar |
+| Battle (12) | Tornadus Therian, Thundurus Therian, Keldeo Resolute, Greninja Ash, Oricorio Sensu, Necrozma Dusk Mane, Necrozma Dawn Wings, Cramorant Gulping, Cramorant Gorging, Calyrex Ice Rider, Calyrex Shadow Rider, Terapagos Stellar |
+| Cosmetic (34) | Pikachu: 8 caps, 4 Cosplay outfits, Windychu, Wavychu · Furfrou: 8 trims · Revavroom: 5 Starmobiles · Squawkabilly Blue, Yellow, White · Gourgeist Small, Large · Zarude Dada · Dudunsparce Three-Segment |
+
+### Held back
+
+Drawn, but below the bare minimum.
+
+| Dex | Form | Missing |
+|---|---|---|
+| 0006 | Charizard Gigantamax | Attack Walk Sleep Hurt Hop |
+| 0080 | Slowbro Mega | Sleep Hurt |
+| 0254 | Sceptile Mega | Attack Sleep Hurt Hop |
+| 0319 | Sharpedo Mega | Sleep Hurt Hop |
+| 0560 | Scrafty Mega | Hurt Hop |
+| 0869 | Alcremie Gigantamax | Attack Walk Sleep Hurt Hop |
+| 0877 | Morpeko Hangry | Attack |
+| 0890 | Eternatus Eternamax | Sleep Hurt Hop |
+
+### No shiny
+
+77 built forms have a regular coat and no shiny.
+
+| Kind | Forms |
+|---|---|
+| Base (7) | Karrablast, Milcery, Greedent, Glastrier, Oinkologne, Naclstack, Koraidon |
+| Mega (3) | Tyranitar, Medicham, Darkrai |
+| Regional (2) | Meowth Galar, Darumaka Galar |
+| Other (65) | Alcremie: all 56 flavours · Minior: 7 cores · Oricorio Pa'u · Terapagos Terastal |
 
 ## Redoing this
 
