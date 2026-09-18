@@ -16,6 +16,7 @@ rather than what the artist submitted.
 | `unova/0588/0000` shiny | `unova/0588/0000` regular | No shiny was drawn. Recoloured from the regular, matched to the official shiny artwork. |
 | `johto/0249/0001` Shadow shiny | `johto/0249/0001` regular | No shiny was drawn. Scheme taken from shiny Lugia with its shading removed, then inverted: black body, turquoise plates. Applied over Shadow Lugia's own shading; eyes kept red. |
 | `johto/0250/0002` Shadow | `johto/0250/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill from `edits/0250-0002-shadow-regular.json`, eyes included. |
+| `johto/0250/0002` Shadow, shiny | `johto/0250/0000` shiny | The same, from shiny Ho-Oh: `edits/0250-0002-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

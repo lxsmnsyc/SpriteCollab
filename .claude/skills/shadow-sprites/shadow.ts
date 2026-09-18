@@ -52,6 +52,8 @@ interface Plan {
   eyes?: { white: string; face: string[]; touch: string[]; near: string[]; reach: number; max: number };
   /** Eye colours no other part uses, painted `#ff0000` outright. */
   red?: string[];
+  /** Hand adjustments, `from` colour to `to`, applied after everything else. */
+  override?: Record<string, string>;
 }
 
 const rgb = (h: string) => [1, 3, 5].map((o) => parseInt(h.slice(o, o + 2), 16));
@@ -145,6 +147,7 @@ export function render(plan: Plan): { source: Image; result: Buffer; swaps: Map<
   const source = sheetOf(plan.source.form, plan.source.coat);
   const swaps = swapsFor(plan);
   for (const c of plan.red ?? []) swaps.set(c, '#ff0000');
+  for (const [from, to] of Object.entries(plan.override ?? {})) swaps.set(from, to);
   const eyes = plan.eyes == null ? new Set<number>() : eyesIn(source, plan.eyes);
   const result = Buffer.from(source.rgba);
   for (let p = 0; p < source.width * source.height; p++) {

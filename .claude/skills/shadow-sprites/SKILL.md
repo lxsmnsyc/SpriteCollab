@@ -69,7 +69,8 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
 }
 ```
 
-Colours in no part stay as they are.
+Colours in no part stay as they are. `override` maps a colour's result by
+hand, for a part that inverts too close to its neighbour.
 
 ## After
 
