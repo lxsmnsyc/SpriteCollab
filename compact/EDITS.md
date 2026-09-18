@@ -66,6 +66,18 @@ rather than what the artist submitted.
 | `sinnoh/0481/0002` Shadow, shiny | `sinnoh/0481/0000` shiny | The same, from shiny Mesprit, with the regular's eyes: `edits/0481-0002-shadow-shiny.json`. |
 | `sinnoh/0482/0002` Shadow | `sinnoh/0482/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0482-0002-shadow-regular.json`. |
 | `sinnoh/0482/0002` Shadow, shiny | `sinnoh/0482/0000` shiny | The same, from shiny Azelf, with the regular's eyes: `edits/0482-0002-shadow-shiny.json`. |
+| `sinnoh/0483/0007` Shadow | `sinnoh/0483/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0483-0007-shadow-regular.json`. Eyes share their red with the mouth; only single-pixel spots count. |
+| `sinnoh/0483/0007` Shadow, shiny | `sinnoh/0483/0000` shiny | The same, from shiny Dialga, with the regular's eyes: `edits/0483-0007-shadow-shiny.json`. |
+| `sinnoh/0483/0008` Shadow_Origin | `sinnoh/0483/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0483-0008-shadow-regular.json`. Eyes share their red with the mouth; only single-pixel spots count. |
+| `sinnoh/0483/0008` Shadow_Origin, shiny | `sinnoh/0483/0001` shiny | The same, from shiny Origin Dialga, with the regular's eyes: `edits/0483-0008-shadow-shiny.json`. |
+| `sinnoh/0484/0004` Shadow | `sinnoh/0484/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0484-0004-shadow-regular.json`. Eyes share their red with the pearls; `diagonal` keeps pearl edges out. |
+| `sinnoh/0484/0004` Shadow, shiny | `sinnoh/0484/0000` shiny | The same, from shiny Palkia, with the regular's eyes: `edits/0484-0004-shadow-shiny.json`. |
+| `sinnoh/0484/0005` Shadow_Origin | `sinnoh/0484/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0484-0005-shadow-regular.json`. Eyes share their colours with the pearls; `diagonal` keeps them out. |
+| `sinnoh/0484/0005` Shadow_Origin, shiny | `sinnoh/0484/0001` shiny | The same, from shiny Origin Palkia, with the regular's eyes: `edits/0484-0005-shadow-shiny.json`. |
+| `sinnoh/0487/0004` Shadow | `sinnoh/0487/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0487-0004-shadow-regular.json`. Eyes share their red with the stripes; four rules, one per way the face is drawn. Gold's blue muted by `scheme`. |
+| `sinnoh/0487/0004` Shadow, shiny | `sinnoh/0487/0000` shiny | The same, from shiny Giratina, with the regular's eyes: `edits/0487-0004-shadow-shiny.json`. |
+| `sinnoh/0487/0005` Shadow_Origin | `sinnoh/0487/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0487-0005-shadow-regular.json`. Eyes share their red with the stripes. Gold's blue muted by `scheme`; the shiny's plan uses its own colours. |
+| `sinnoh/0487/0005` Shadow_Origin, shiny | `sinnoh/0487/0001` shiny | The same, from shiny Origin Giratina, with the regular's eyes: `edits/0487-0005-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

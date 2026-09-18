@@ -86,6 +86,9 @@ hand, for a part that inverts too close to its neighbour.
 Shades that differ from the base by hue more than lightness (Uxie's
 yellow and orange creases) come out flat; check a head close-up and
 deepen them with `override`.
+`"diagonal": true` sizes a patch with its corner neighbours, so a
+fragment of a larger spot in the eye's colour (Palkia's pearls) is too big.
+`far` lists colours that must not be within `reach`.
 An eye rule's `white` can list several colours, for an eye drawn in two
 tones. Eyes sharing the mouth's colours can instead keep them: leave the
 colours out of every part and put the eye tone in `red`, as Raikou does.

@@ -1,0 +1,84 @@
+{
+  "source": {
+    "form": "483/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "483/7",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "steel",
+      "base": "#afbfe7",
+      "members": [
+        "#ffffff",
+        "#dfe7f7",
+        "#afbfe7",
+        "#7f9fcf"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#0f87df",
+      "members": [
+        "#002787",
+        "#0057af",
+        "#0f87df"
+      ]
+    },
+    {
+      "part": "lines",
+      "base": "#97e7f7",
+      "members": [
+        "#67bfe7",
+        "#97e7f7",
+        "#c7ffff"
+      ]
+    },
+    {
+      "part": "gem",
+      "base": "#4f97f7",
+      "members": [
+        "#1f47ff",
+        "#4f97f7"
+      ]
+    },
+    {
+      "part": "mouth",
+      "base": "#ff2f00",
+      "members": [
+        "#ff2f00",
+        "#a71700"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": {
+    "white": [
+      "#ff2f00",
+      "#a71700"
+    ],
+    "face": [
+      "#000000",
+      "#dfe7f7",
+      "#afbfe7",
+      "#7f9fcf",
+      "#002787",
+      "#0057af",
+      "#0f87df",
+      "#97e7f7",
+      "#67bfe7"
+    ],
+    "touch": [
+      "#000000"
+    ],
+    "near": [
+      "#000000"
+    ],
+    "reach": 1,
+    "max": 1,
+    "diagonal": true
+  }
+}

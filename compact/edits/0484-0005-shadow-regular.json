@@ -1,0 +1,77 @@
+{
+  "source": {
+    "form": "484/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "484/5",
+    "coat": "regular",
+    "name": "Shadow_Origin"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#dbc1e0",
+      "members": [
+        "#86748a",
+        "#b899be",
+        "#dbc1e0",
+        "#efe3f1"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#dadaf3",
+      "members": [
+        "#ffffff",
+        "#dadaf3",
+        "#afafcf"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "pink",
+      "base": "#b74fb7",
+      "members": [
+        "#7f2f77",
+        "#b74fb7"
+      ]
+    },
+    {
+      "part": "pearls",
+      "base": "#e8796f",
+      "members": [
+        "#d73f00",
+        "#e8796f",
+        "#f1aba6"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": {
+    "white": [
+      "#d73f00",
+      "#e8796f",
+      "#f1aba6"
+    ],
+    "face": [
+      "#000000",
+      "#efe3f1",
+      "#dbc1e0",
+      "#b899be",
+      "#86748a",
+      "#dadaf3",
+      "#ffffff",
+      "#afafcf"
+    ],
+    "touch": [
+      "#000000"
+    ],
+    "near": [
+      "#000000"
+    ],
+    "reach": 1,
+    "max": 3,
+    "diagonal": true
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "source": {
+    "form": "484/1",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "484/5",
+    "coat": "shiny",
+    "name": "Shadow_Origin"
+  },
+  "partsFrom": "regular",
+  "families": [
+    {
+      "part": "body",
+      "base": "#dfbacc",
+      "members": [
+        "#86748a",
+        "#b899be",
+        "#dbc1e0",
+        "#efe3f1"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#dadaf3",
+      "members": [
+        "#ffffff",
+        "#dadaf3",
+        "#afafcf"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "pink",
+      "base": "#e552ad",
+      "members": [
+        "#7f2f77",
+        "#b74fb7"
+      ]
+    },
+    {
+      "part": "pearls",
+      "base": "#e8796f",
+      "members": [
+        "#d73f00",
+        "#e8796f",
+        "#f1aba6"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0484-0005-shadow-regular.json"
+}

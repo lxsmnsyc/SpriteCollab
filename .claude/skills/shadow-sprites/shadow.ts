@@ -70,6 +70,13 @@ interface EyeRule {
    * facing down, whose beak is under its eyes; `above` for one looking up.
    */
   nearSide?: 'above' | 'below';
+  /** Colours that must not be within `reach` pixels: an eye-coloured spot on another part. */
+  far?: string[];
+  /**
+   * Count diagonal neighbours as part of the patch when checking `max`, so
+   * a fragment of a larger spot drawn in the eye's colour is too big.
+   */
+  diagonal?: boolean;
 }
 interface Plan {
   /** The sheet the pixels come from, as `dex/form`, and which coat. */
@@ -159,6 +166,20 @@ function shade(f: Family, colour: string): string {
 }
 
 /** The pixels the eye rule picks out. */
+/** How many pixels of `colours` a patch reaches through edges and corners. */
+function spread(img: Image, start: number[], colours: Set<string>): number {
+  const seen = new Set(start), stack = [...start];
+  while (stack.length) {
+    const q = stack.pop()!, x = q % img.width, y = (q / img.width) | 0;
+    for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+      const nx = x + dx, ny = y + dy, n = ny * img.width + nx;
+      if (nx < 0 || ny < 0 || nx >= img.width || ny >= img.height || seen.has(n)) continue;
+      if (img.rgba[n * 4 + 3] && colours.has(hexAt(img, n * 4))) { seen.add(n); stack.push(n); }
+    }
+  }
+  return seen.size;
+}
+
 export function eyesIn(img: Image, rules: EyeRule | EyeRule[]): Set<number> {
   const found = new Set<number>();
   for (const rule of Array.isArray(rules) ? rules : [rules]) for (const p of eyesBy(img, rule)) found.add(p);
@@ -189,6 +210,7 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
       }
     }
     if (!enclosed || !touched || blob.length > rule.max) continue;
+    if (rule.diagonal && spread(img, blob, white) > rule.max) continue;
     if (rule.outline != null && black < rule.outline) continue;
     const neighbour = (b: number, dy: number) => {
       const n = b + dy * img.width;
@@ -207,7 +229,18 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
       }
       return false;
     });
-    if (close) for (const b of blob) found.add(b);
+    const far = new Set(rule.far ?? []);
+    const clear = far.size === 0 || !blob.some((b) => {
+      const bx = b % img.width, by = (b / img.width) | 0;
+      for (let dy = -rule.reach; dy <= rule.reach; dy++) for (let dx = -rule.reach; dx <= rule.reach; dx++) {
+        const nx = bx + dx, ny = by + dy;
+        if (nx < 0 || ny < 0 || nx >= img.width || ny >= img.height) continue;
+        const n = (ny * img.width + nx) * 4;
+        if (img.rgba[n + 3] && far.has(hexAt(img, n))) return true;
+      }
+      return false;
+    });
+    if (close && clear) for (const b of blob) found.add(b);
   }
   return found;
 }
