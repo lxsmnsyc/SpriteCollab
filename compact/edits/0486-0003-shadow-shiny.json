@@ -1,0 +1,67 @@
+{
+  "source": {
+    "form": "486/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "486/3",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "partsFrom": "regular",
+  "families": [
+    {
+      "part": "gold",
+      "base": "#7f8ebb",
+      "members": [
+        "#9f7700",
+        "#d7a700",
+        "#e7d700",
+        "#fff797"
+      ]
+    },
+    {
+      "part": "ice",
+      "base": "#d0e8ea",
+      "members": [
+        "#ffffff",
+        "#d7e7ff",
+        "#bfcff7",
+        "#97afcf"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "grey",
+      "base": "#7f7777",
+      "members": [
+        "#4f474f",
+        "#7f7777"
+      ]
+    },
+    {
+      "part": "moss",
+      "base": "#5ab58c",
+      "members": [
+        "#278f00",
+        "#5fc737"
+      ]
+    },
+    {
+      "part": "red ring",
+      "base": "#b65042",
+      "members": [
+        "#cf0000"
+      ]
+    },
+    {
+      "part": "blue ring",
+      "base": "#3f928d",
+      "members": [
+        "#1f9fe7"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0486-0003-shadow-regular.json"
+}

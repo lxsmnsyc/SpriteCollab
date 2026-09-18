@@ -1,0 +1,64 @@
+{
+  "source": {
+    "form": "485/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "485/3",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "brown",
+      "base": "#97571f",
+      "members": [
+        "#673f00",
+        "#97571f"
+      ]
+    },
+    {
+      "part": "steel",
+      "base": "#7f8f97",
+      "members": [
+        "#afb7bf",
+        "#7f8f97",
+        "#67676f"
+      ]
+    },
+    {
+      "part": "dark",
+      "base": "#473f3f",
+      "members": [
+        "#473f3f"
+      ]
+    },
+    {
+      "part": "shine",
+      "base": "#d7dfdf",
+      "members": [
+        "#d7dfdf"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "lava",
+      "base": "#e78f27",
+      "members": [
+        "#e78f27",
+        "#f7b71f"
+      ]
+    },
+    {
+      "part": "mouth",
+      "base": "#bf3700",
+      "members": [
+        "#bf3700",
+        "#e74f47"
+      ]
+    }
+  ],
+  "red": [
+    "#ff875f"
+  ]
+}
