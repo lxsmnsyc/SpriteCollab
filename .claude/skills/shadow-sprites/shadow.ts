@@ -89,6 +89,8 @@ interface EyeRule {
   iris?: string[];
   /** Take `iris` colours only from the left and right, not below. */
   irisSides?: boolean;
+  /** Colours taken from directly above any pixel this rule paints. */
+  irisAbove?: string[];
   /** A colour the patch must contain, when `white` lists several: the eye's highlight. */
   needs?: string;
   /**
@@ -270,6 +272,7 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
     });
     if (!close || !clear) continue;
     const iris = new Set(rule.iris ?? []);
+    const mine = [...blob];
     for (const b of blob) {
       found.add(b);
       const bx = b % img.width, by = (b / img.width) | 0;
@@ -277,8 +280,13 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
       for (const [dx, dy] of rule.irisSides ? [[-1, 0], [1, 0]] : [[0, 1], [-1, 1], [1, 1], [-1, 0], [1, 0]]) {
         const nx = bx + dx, ny = by + dy, n = ny * img.width + nx;
         if (!iris.size || nx < 0 || nx >= img.width || ny >= img.height) continue;
-        if (img.rgba[n * 4 + 3] && iris.has(hexAt(img, n * 4))) found.add(n);
+        if (img.rgba[n * 4 + 3] && iris.has(hexAt(img, n * 4))) { found.add(n); mine.push(n); }
       }
+    }
+    const above = new Set(rule.irisAbove ?? []);
+    if (above.size) for (const b of mine) {
+      const n = b - img.width;
+      if (n >= 0 && img.rgba[n * 4 + 3] && above.has(hexAt(img, n * 4))) found.add(n);
     }
     centres.push([blob.reduce((t, b) => t + (b % img.width), 0) / blob.length, blob.reduce((t, b) => t + ((b / img.width) | 0), 0) / blob.length, blob]);
   }

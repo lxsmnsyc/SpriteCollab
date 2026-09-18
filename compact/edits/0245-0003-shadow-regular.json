@@ -1,13 +1,87 @@
 {
-  "source": { "form": "245/0", "coat": "regular" },
-  "target": { "form": "245/3", "coat": "regular", "name": "Shadow" },
+  "source": {
+    "form": "245/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "245/3",
+    "coat": "regular",
+    "name": "Shadow"
+  },
   "families": [
-    { "part": "body", "base": "#879fff", "members": ["#5767b7", "#879fff", "#b7cfff"] },
-    { "part": "mane", "base": "#af6fb7", "members": ["#873f87", "#af6fb7", "#d797df"] },
-    { "part": "ribbons", "base": "#d7dfdf", "members": ["#ffffff", "#d7dfdf", "#979fa7", "#47676f"], "darken": 0.3 },
-    { "part": "mouth", "base": "#d73f00", "members": ["#d73f00", "#dfaf67", "#bf7727"] }
+    {
+      "part": "body",
+      "base": "#879fff",
+      "members": [
+        "#5767b7",
+        "#879fff",
+        "#b7cfff"
+      ]
+    },
+    {
+      "part": "mane",
+      "base": "#af6fb7",
+      "members": [
+        "#873f87",
+        "#af6fb7",
+        "#d797df"
+      ]
+    },
+    {
+      "part": "ribbons",
+      "base": "#d7dfdf",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#979fa7",
+        "#47676f"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "mouth",
+      "base": "#d73f00",
+      "members": [
+        "#d73f00",
+        "#dfaf67",
+        "#bf7727"
+      ]
+    }
   ],
   "red": [],
-  "eyes": { "white": ["#bf7727", "#dfaf67"], "face": ["#000000", "#47676f", "#d7dfdf", "#ffffff", "#879fff", "#979fa7", "#873f87"],
-            "touch": ["#47676f", "#d7dfdf", "#ffffff", "#879fff", "#979fa7", "#873f87"], "near": ["#000000"], "reach": 1, "max": 1 }
+  "eyes": {
+    "white": [
+      "#bf7727",
+      "#dfaf67"
+    ],
+    "face": [
+      "#000000",
+      "#47676f",
+      "#d7dfdf",
+      "#ffffff",
+      "#879fff",
+      "#979fa7",
+      "#873f87"
+    ],
+    "touch": [
+      "#47676f",
+      "#d7dfdf",
+      "#ffffff",
+      "#879fff",
+      "#979fa7",
+      "#873f87"
+    ],
+    "near": [
+      "#000000"
+    ],
+    "reach": 1,
+    "max": 1,
+    "iris": [
+      "#ffffff"
+    ],
+    "irisSides": true,
+    "irisAbove": [
+      "#d7dfdf"
+    ]
+  }
 }
