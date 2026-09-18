@@ -1,0 +1,98 @@
+{
+  "source": {
+    "form": "381/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "381/3",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#1f9fe7",
+      "members": [
+        "#0067b7",
+        "#1f9fe7",
+        "#7fcfff"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#d7dfdf",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#47676f"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "chest",
+      "base": "#d73f00",
+      "members": [
+        "#9f0000",
+        "#d73f00"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": [
+    {
+      "white": [
+        "#9f0000",
+        "#d73f00"
+      ],
+      "face": [
+        "#000000",
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#0067b7",
+        "#1f9fe7",
+        "#7fcfff"
+      ],
+      "touch": [
+        "#000000",
+        "#ffffff",
+        "#d7dfdf"
+      ],
+      "near": [
+        "#000000"
+      ],
+      "reach": 1,
+      "max": 2
+    },
+    {
+      "white": [
+        "#9f0000",
+        "#d73f00"
+      ],
+      "face": [
+        "#000000",
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#0067b7",
+        "#1f9fe7",
+        "#7fcfff"
+      ],
+      "touch": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf"
+      ],
+      "near": [
+        "#000000",
+        "#7fcfff"
+      ],
+      "reach": 1,
+      "max": 4
+    }
+  ]
+}

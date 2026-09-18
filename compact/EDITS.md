@@ -42,6 +42,10 @@ rather than what the artist submitted.
 | `johto/0244/0003` Shadow, shiny | `johto/0244/0000` shiny | The same, from shiny Entei, parts told apart by the regular: `edits/0244-0003-shadow-shiny.json`. |
 | `johto/0245/0003` Shadow | `johto/0245/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0245-0003-shadow-regular.json`. |
 | `johto/0245/0003` Shadow, shiny | `johto/0245/0000` shiny | The same, from shiny Suicune, parts told apart by the regular: `edits/0245-0003-shadow-shiny.json`. |
+| `hoenn/0380/0003` Shadow | `hoenn/0380/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0380-0003-shadow-regular.json`. |
+| `hoenn/0380/0003` Shadow, shiny | `hoenn/0380/0000` shiny | The same, from shiny Latias, with the regular's eyes: `edits/0380-0003-shadow-shiny.json`. |
+| `hoenn/0381/0003` Shadow | `hoenn/0381/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0381-0003-shadow-regular.json`. Eyes share their reds with the chest and mouth; two rules find them. |
+| `hoenn/0381/0003` Shadow, shiny | `hoenn/0381/0000` shiny | The same, from shiny Latios, with the regular's eyes: `edits/0381-0003-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
