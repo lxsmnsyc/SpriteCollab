@@ -13,6 +13,7 @@ rather than what the artist submitted.
 | `unova/0502/0001` Alternate | the old `0502` shiny folder | Moved, not edited. The drawing it replaced, kept as a form of its own. |
 | `unova/0566/0001` Alternate | the old `0566` shiny folder | The same, and where `FlapAround` lives now. |
 | `kalos/0702/0000` shiny `Hurt` | `kalos/0702/0000` regular `Hurt` | The shiny was never drawn hurt. Recoloured through the mapping, except the light forehead: the regular paints forehead and face one tan, so those pixels came from whichever of the shiny’s other clips draws the same five-by-five neighbourhood. |
+| `unova/0588/0000` shiny | `unova/0588/0000` regular | No shiny was drawn. Recoloured from the regular, matched to the official shiny artwork. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
