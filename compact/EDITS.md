@@ -52,6 +52,14 @@ rather than what the artist submitted.
 | `hoenn/0378/0002` Shadow, shiny | `hoenn/0378/0000` shiny | The same, from shiny Regice, with the regular's eyes painted black: red was lost on its red body. `edits/0378-0002-shadow-shiny.json`. |
 | `hoenn/0379/0002` Shadow | `hoenn/0379/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0379-0002-shadow-regular.json`. Its dots, face and palms, are painted as eyes. |
 | `hoenn/0379/0002` Shadow, shiny | `hoenn/0379/0000` shiny | The same, from shiny Registeel, with the regular's eyes: `edits/0379-0002-shadow-shiny.json`. |
+| `hoenn/0386/0008` Shadow | `hoenn/0386/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0386-0008-shadow-regular.json`. |
+| `hoenn/0386/0008` Shadow, shiny | `hoenn/0386/0000` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0008-shadow-shiny.json`. |
+| `hoenn/0386/0009` Shadow_Attack | `hoenn/0386/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0386-0009-shadow-regular.json`. Eyes found by rule: the sparkles share their white. |
+| `hoenn/0386/0009` Shadow_Attack, shiny | `hoenn/0386/0001` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0009-shadow-shiny.json`. |
+| `hoenn/0386/0010` Shadow_Defense | `hoenn/0386/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0386-0010-shadow-regular.json`. |
+| `hoenn/0386/0010` Shadow_Defense, shiny | `hoenn/0386/0002` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0010-shadow-shiny.json`. |
+| `hoenn/0386/0011` Shadow_Speed | `hoenn/0386/0003` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0386-0011-shadow-regular.json`. Eyes found by rule: the sparkles share their white. |
+| `hoenn/0386/0011` Shadow_Speed, shiny | `hoenn/0386/0003` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0011-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

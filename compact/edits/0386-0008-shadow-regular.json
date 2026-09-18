@@ -1,0 +1,39 @@
+{
+  "source": {
+    "form": "386/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "386/8",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#df771f",
+      "members": [
+        "#773f00",
+        "#af671f",
+        "#df771f",
+        "#ff9747"
+      ]
+    },
+    {
+      "part": "tentacles",
+      "base": "#879fff",
+      "members": [
+        "#b7cfff",
+        "#879fff",
+        "#6787af",
+        "#5767b7",
+        "#4f5f97",
+        "#373f8f",
+        "#b7bfc7"
+      ]
+    }
+  ],
+  "red": [
+    "#ffffff"
+  ]
+}

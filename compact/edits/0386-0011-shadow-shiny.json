@@ -1,0 +1,52 @@
+{
+  "source": {
+    "form": "386/3",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "386/11",
+    "coat": "shiny",
+    "name": "Shadow_Speed"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#ede32a",
+      "members": [
+        "#7a8a33",
+        "#acba35",
+        "#ede32a",
+        "#fff264"
+      ]
+    },
+    {
+      "part": "tentacles",
+      "base": "#3cd496",
+      "members": [
+        "#76f5c0",
+        "#3cd496",
+        "#49aa8d",
+        "#4e8883"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#70798c",
+      "members": [
+        "#939ca6",
+        "#70798c",
+        "#56566b",
+        "#3a3a46"
+      ]
+    },
+    {
+      "part": "crystal",
+      "base": "#8246b0",
+      "members": [
+        "#8246b0"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0386-0011-shadow-regular.json"
+}

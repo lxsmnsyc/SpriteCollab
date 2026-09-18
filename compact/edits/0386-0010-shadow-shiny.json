@@ -1,0 +1,50 @@
+{
+  "source": {
+    "form": "386/2",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "386/10",
+    "coat": "shiny",
+    "name": "Shadow_Defense"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#ede32a",
+      "members": [
+        "#7a8a33",
+        "#acba35",
+        "#ede32a",
+        "#fff264"
+      ]
+    },
+    {
+      "part": "tentacles",
+      "base": "#3cd496",
+      "members": [
+        "#76f5c0",
+        "#3cd496",
+        "#49aa8d",
+        "#4e8883"
+      ]
+    },
+    {
+      "part": "crystal",
+      "base": "#955dc4",
+      "members": [
+        "#955dc4",
+        "#4b438c"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#91989e",
+      "members": [
+        "#91989e"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0386-0010-shadow-regular.json"
+}

@@ -1,0 +1,78 @@
+{
+  "source": {
+    "form": "386/3",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "386/11",
+    "coat": "regular",
+    "name": "Shadow_Speed"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#df771f",
+      "members": [
+        "#773f00",
+        "#af671f",
+        "#df771f",
+        "#ff9747"
+      ]
+    },
+    {
+      "part": "tentacles",
+      "base": "#779f9f",
+      "members": [
+        "#a7c7c7",
+        "#779f9f",
+        "#576767"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#777f7f",
+      "members": [
+        "#979fa7",
+        "#777f7f",
+        "#373737"
+      ]
+    },
+    {
+      "part": "crystal",
+      "base": "#7f67ff",
+      "members": [
+        "#7f67ff"
+      ]
+    },
+    {
+      "part": "sparkle",
+      "base": "#fff700",
+      "members": [
+        "#fff700",
+        "#dfb700"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": {
+    "white": "#ffffff",
+    "face": [
+      "#000000",
+      "#373737",
+      "#777f7f",
+      "#779f9f",
+      "#a7c7c7",
+      "#576767"
+    ],
+    "touch": [
+      "#000000"
+    ],
+    "near": [
+      "#779f9f",
+      "#a7c7c7",
+      "#576767"
+    ],
+    "reach": 1,
+    "max": 1
+  }
+}

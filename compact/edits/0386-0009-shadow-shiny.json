@@ -1,0 +1,52 @@
+{
+  "source": {
+    "form": "386/1",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "386/9",
+    "coat": "shiny",
+    "name": "Shadow_Attack"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#ede32a",
+      "members": [
+        "#7a8a33",
+        "#acba35",
+        "#ede32a",
+        "#fff264"
+      ]
+    },
+    {
+      "part": "tentacles",
+      "base": "#3cd496",
+      "members": [
+        "#76f5c0",
+        "#3cd496",
+        "#49aa8d",
+        "#4e8883"
+      ]
+    },
+    {
+      "part": "crystal",
+      "base": "#955dc4",
+      "members": [
+        "#955dc4",
+        "#4b438c"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#5d6473",
+      "members": [
+        "#90969b",
+        "#5d6473",
+        "#49495b"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0386-0009-shadow-regular.json"
+}
