@@ -1,0 +1,10 @@
+{
+  "source": { "form": "382/0", "coat": "regular" },
+  "target": { "form": "382/3", "coat": "regular", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#1f9fe7", "members": ["#7fcfff", "#1f9fe7", "#0067b7"] },
+    { "part": "markings", "base": "#d73f00", "members": ["#ff875f", "#d73f00", "#9f0000"] },
+    { "part": "belly and fins", "base": "#ffffff", "members": ["#ffffff", "#d7dfdf", "#afb7bf", "#7f8f97", "#47676f"], "darken": 0.3 }
+  ],
+  "red": ["#ffe79f"]
+}

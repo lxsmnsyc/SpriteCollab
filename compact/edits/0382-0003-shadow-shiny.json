@@ -1,0 +1,10 @@
+{
+  "source": { "form": "382/0", "coat": "shiny" },
+  "target": { "form": "382/3", "coat": "shiny", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#b439bd", "members": ["#ee73f6", "#b439bd", "#83108b"] },
+    { "part": "markings", "base": "#d73f00", "members": ["#ff875f", "#d73f00", "#9f0000"] },
+    { "part": "belly and fins", "base": "#ffffff", "members": ["#ffffff", "#e6dee6", "#d5bdd5", "#a48b9c", "#5a526a"], "darken": 0.3 }
+  ],
+  "eyesFrom": "0382-0003-shadow-regular.json"
+}

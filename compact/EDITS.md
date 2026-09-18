@@ -24,6 +24,12 @@ rather than what the artist submitted.
 | `kanto/0144/0004` Shadow, shiny | `kanto/0144/0000` shiny | The same, from shiny Articuno, with the regular's eyes: `edits/0144-0004-shadow-shiny.json`. |
 | `kanto/0145/0004` Shadow | `kanto/0145/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0145-0004-shadow-regular.json`. |
 | `kanto/0145/0004` Shadow, shiny | `kanto/0145/0000` shiny | The same, from shiny Zapdos, with the regular's eyes: `edits/0145-0004-shadow-shiny.json`. |
+| `hoenn/0382/0003` Shadow | `hoenn/0382/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0382-0003-shadow-regular.json`. |
+| `hoenn/0382/0003` Shadow, shiny | `hoenn/0382/0000` shiny | The same, from shiny Kyogre, with the regular's eyes: `edits/0382-0003-shadow-shiny.json`. |
+| `hoenn/0383/0004` Shadow | `hoenn/0383/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0383-0004-shadow-regular.json`. |
+| `hoenn/0383/0004` Shadow, shiny | `hoenn/0383/0000` shiny | The same, from shiny Groudon, with the regular's eyes: `edits/0383-0004-shadow-shiny.json`. |
+| `hoenn/0384/0004` Shadow | `hoenn/0384/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0384-0004-shadow-regular.json`. |
+| `hoenn/0384/0004` Shadow, shiny | `hoenn/0384/0000` shiny | The same, from shiny Rayquaza, with the regular's eyes: `edits/0384-0004-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

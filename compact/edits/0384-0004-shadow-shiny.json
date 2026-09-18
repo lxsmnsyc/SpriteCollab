@@ -1,0 +1,11 @@
+{
+  "source": { "form": "384/0", "coat": "shiny" },
+  "target": { "form": "384/4", "coat": "shiny", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#4a524a", "members": ["#94a49c", "#737b73", "#4a524a", "#283128"], "fit": true },
+    { "part": "rings", "base": "#dfb700", "members": ["#fff700", "#dfb700", "#a76f00"] },
+    { "part": "fin tips and mouth", "base": "#d73f00", "members": ["#ff875f", "#d73f00", "#9f0000"] },
+    { "part": "claws and teeth", "base": "#ffffff", "members": ["#ffffff", "#b7cfff"], "darken": 0.3 }
+  ],
+  "eyesFrom": "0384-0004-shadow-regular.json"
+}

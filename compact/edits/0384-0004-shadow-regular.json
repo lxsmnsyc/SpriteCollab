@@ -1,0 +1,95 @@
+{
+  "source": {
+    "form": "384/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "384/4",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#5fb727",
+      "members": [
+        "#d7efa7",
+        "#9fcf6f",
+        "#5fb727",
+        "#278700"
+      ]
+    },
+    {
+      "part": "rings",
+      "base": "#dfb700",
+      "members": [
+        "#fff700",
+        "#dfb700",
+        "#a76f00"
+      ]
+    },
+    {
+      "part": "fin tips and mouth",
+      "base": "#d73f00",
+      "members": [
+        "#ff875f",
+        "#d73f00",
+        "#9f0000"
+      ]
+    },
+    {
+      "part": "claws and teeth",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#b7cfff"
+      ],
+      "darken": 0.3
+    }
+  ],
+  "eyes": [
+    {
+      "white": "#fff700",
+      "face": [
+        "#000000",
+        "#5fb727",
+        "#278700",
+        "#9fcf6f",
+        "#d7efa7",
+        "#a76f00",
+        "#dfb700"
+      ],
+      "touch": [
+        "#000000"
+      ],
+      "near": [
+        "#a76f00"
+      ],
+      "reach": 1,
+      "max": 2,
+      "outline": 3
+    },
+    {
+      "white": "#fff700",
+      "face": [
+        "#000000",
+        "#5fb727",
+        "#278700",
+        "#9fcf6f",
+        "#d7efa7",
+        "#a76f00",
+        "#dfb700"
+      ],
+      "touch": [
+        "#000000"
+      ],
+      "near": [
+        "#a76f00"
+      ],
+      "reach": 1,
+      "max": 2,
+      "outline": 2,
+      "below": "#a76f00"
+    }
+  ]
+}

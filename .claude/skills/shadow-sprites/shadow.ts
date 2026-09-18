@@ -36,6 +36,13 @@ interface Family {
    * at this fraction of its lightness. Pure black would lose every shade.
    */
   darken?: number;
+  /**
+   * Spread the shading around the target instead of scaling it: shades
+   * between black and the target, lights between the target and white.
+   * For a dark part inverting to a light one, where scaling would push
+   * every light tone to white.
+   */
+  fit?: boolean;
 }
 /**
  * Down-facing eyes are drawn differently from side views, so a plan can
@@ -52,6 +59,11 @@ interface EyeRule {
   above?: string;
   /** A colour the patch must have directly below it. */
   below?: string;
+  /**
+   * How many of the patch's edge neighbours must be black. An eye sits in
+   * the outline; a marking that happens to share its colour mostly does not.
+   */
+  outline?: number;
   /**
    * Only look for `near` on one side of the patch: `below` for a head
    * facing down, whose beak is under its eyes; `above` for one looking up.
@@ -125,7 +137,8 @@ export function swapsFor(plan: Plan): Map<string, string> {
     const baseL = toHsl(rgb(f.base))[2];
     for (const m of f.members) {
       const l = toHsl(rgb(m))[2];
-      const out = f.darken != null ? fromHsl([0, 0, l * f.darken]) : fromHsl([th, ts, (l / baseL) * tl]);
+      const fitted = l <= baseL ? (l / baseL) * tl : tl + ((l - baseL) * (1 - tl)) / (1 - baseL);
+      const out = f.darken != null ? fromHsl([0, 0, l * f.darken]) : fromHsl([th, ts, f.fit ? fitted : (l / baseL) * tl]);
       swaps.set(m, toHex(out));
     }
   }
@@ -145,7 +158,7 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
   for (let p = 0; p < img.width * img.height; p++) {
     if (seen.has(p) || !img.rgba[p * 4 + 3] || hexAt(img, p * 4) !== rule.white) continue;
     const blob = [p], stack = [p];
-    let enclosed = true, touched = false;
+    let enclosed = true, touched = false, black = 0;
     seen.add(p);
     while (stack.length) {
       const q = stack.pop()!, x = q % img.width, y = (q / img.width) | 0;
@@ -158,9 +171,11 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
         if (c === rule.white) { if (!seen.has(n)) { seen.add(n); blob.push(n); stack.push(n); } }
         else if (!face.has(c)) enclosed = false;
         else if (touch.has(c)) touched = true;
+        if (c === '#000000') black++;
       }
     }
     if (!enclosed || !touched || blob.length > rule.max) continue;
+    if (rule.outline != null && black < rule.outline) continue;
     const neighbour = (b: number, dy: number) => {
       const n = b + dy * img.width;
       return n >= 0 && n < img.width * img.height && img.rgba[n * 4 + 3] ? hexAt(img, n * 4) : null;
@@ -235,7 +250,8 @@ function preview(plan: Plan, dir: string): void {
   const spots: number[][] = [];
   for (const p of eyes) {
     const x = p % source.width, y = (p / source.width) | 0;
-    if (spots.every(([a, b]) => Math.abs(a - x) > 12 || Math.abs(b - y) > 12)) spots.push([x, y]);
+    // A new close-up only where no earlier one reaches, so every pick shows
+    if (spots.every(([a, b]) => Math.abs(a - x) > 6 || Math.abs(b - y) > 6)) spots.push([x, y]);
   }
   // Ten to a row, before above after, so every pick is big enough to judge
   const R = 7, E = 8, cell = (R * 2 + 1) * E, PER = 10, G = 6;

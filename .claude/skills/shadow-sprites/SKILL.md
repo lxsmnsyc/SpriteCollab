@@ -31,7 +31,8 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
    black out.
 2. Each part's `base` is its flat colour: the main tone, not the highlight
    or shade. A part that inverts to near black (white, pale grey) gets
-   `"darken": 0.3` so its shading survives.
+   `"darken": 0.3` so its shading survives. A dark part that inverts to a
+   light one gets `"fit": true`, or its lights all turn white.
 3. Eyes. A colour only the eyes use goes in `red`. Eyes sharing a body
    colour need an `eyes` rule: a small patch of `white` touching only
    `face` colours, at least one `touch` colour, with a `near` colour within

@@ -1,0 +1,10 @@
+{
+  "source": { "form": "383/0", "coat": "regular" },
+  "target": { "form": "383/4", "coat": "regular", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#d73f00", "members": ["#ff875f", "#d73f00", "#9f0000"] },
+    { "part": "plates, belly and claws", "base": "#ffffff", "members": ["#ffffff", "#d7dfdf", "#afb7bf", "#7f8f97", "#47676f"], "darken": 0.3 }
+  ],
+  "red": ["#ffe79f", "#dfaf67"],
+  "override": { "#bf7727": "#9f0000" }
+}
