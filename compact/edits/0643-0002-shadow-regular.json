@@ -1,0 +1,60 @@
+{
+  "source": {
+    "form": "643/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "643/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "white",
+      "base": "#e8e8f8",
+      "members": [
+        "#e8e8f8",
+        "#c8c8d8",
+        "#9898b8",
+        "#686890",
+        "#404058"
+      ],
+      "darken": 0.4
+    },
+    {
+      "part": "metal",
+      "base": "#b1b9c9",
+      "members": [
+        "#848796",
+        "#b1b9c9",
+        "#d5e4f7"
+      ]
+    },
+    {
+      "part": "flame",
+      "base": "#f88028",
+      "members": [
+        "#f88028"
+      ]
+    },
+    {
+      "part": "red",
+      "base": "#c03848",
+      "members": [
+        "#c03848",
+        "#a90909"
+      ]
+    },
+    {
+      "part": "skin",
+      "base": "#e8c0a8",
+      "members": [
+        "#e8c0a8"
+      ]
+    }
+  ],
+  "red": [
+    "#10a8a8",
+    "#186878"
+  ]
+}

@@ -87,6 +87,13 @@ interface EyeRule {
    * an eye drawn as a white glint over a coloured iris (Ho-Oh).
    */
   iris?: string[];
+  /** A colour the patch must contain, when `white` lists several: the eye's highlight. */
+  needs?: string;
+  /**
+   * Keep a patch only when at least `count` picked patches (itself
+   * included) lie within `radius` pixels: a cluster of dots, not a stray.
+   */
+  cluster?: { count: number; radius: number };
 }
 interface Plan {
   /** The sheet the pixels come from, as `dex/form`, and which coat. */
@@ -201,6 +208,7 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
   const face = new Set(rule.face), touch = new Set(rule.touch), near = new Set(rule.near);
   const white = new Set(Array.isArray(rule.white) ? rule.white : [rule.white]);
   const seen = new Set<number>(), found = new Set<number>();
+  const centres: [number, number, number[]][] = [];
   for (let p = 0; p < img.width * img.height; p++) {
     if (seen.has(p) || !img.rgba[p * 4 + 3] || !white.has(hexAt(img, p * 4))) continue;
     const blob = [p], stack = [p];
@@ -221,6 +229,7 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
       }
     }
     if (!enclosed || !touched || blob.length > rule.max) continue;
+    if (rule.needs != null && !blob.some((b) => hexAt(img, b * 4) === rule.needs)) continue;
     if (rule.diagonal && spread(img, blob, white) > rule.max) continue;
     if (rule.outline != null && black < rule.outline) continue;
     const neighbour = (b: number, dy: number) => {
@@ -263,8 +272,15 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
         if (img.rgba[n * 4 + 3] && iris.has(hexAt(img, n * 4))) found.add(n);
       }
     }
+    centres.push([blob.reduce((t, b) => t + (b % img.width), 0) / blob.length, blob.reduce((t, b) => t + ((b / img.width) | 0), 0) / blob.length, blob]);
   }
-  return found;
+  if (rule.cluster == null) return found;
+  const { count, radius } = rule.cluster, kept = new Set<number>();
+  for (const [x, y, blob] of centres) {
+    const n = centres.filter(([a, b]) => Math.hypot(a - x, b - y) <= radius).length;
+    if (n >= count) for (const b of blob) { kept.add(b); for (const q of found) if (Math.abs((q % img.width) - (b % img.width)) <= 1 && Math.abs(((q / img.width) | 0) - ((b / img.width) | 0)) <= 1) kept.add(q); }
+  }
+  return kept;
 }
 
 /** Every eye pixel a plan picks, on its own source sheet. */
@@ -284,6 +300,37 @@ function eyesOf(plan: Plan, source: Image, dir: string): Set<number> {
   return eyes;
 }
 
+/**
+ * The red each eye pixel is painted. An eye drawn in one colour is solid
+ * red. An eye drawn in several keeps its structure: every colour becomes a
+ * red of its own relative lightness, glint included.
+ */
+function eyeTones(img: Image, eyes: Set<number>): Map<number, string> {
+  const tones = new Map<number, string>(), seen = new Set<number>();
+  for (const start of eyes) {
+    if (seen.has(start)) continue;
+    const blob = [start], stack = [start];
+    seen.add(start);
+    while (stack.length) {
+      const q = stack.pop()!, x = q % img.width, y = (q / img.width) | 0;
+      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+        const nx = x + dx, ny = y + dy, n = ny * img.width + nx;
+        if (nx < 0 || ny < 0 || nx >= img.width || ny >= img.height || seen.has(n) || !eyes.has(n)) continue;
+        seen.add(n); blob.push(n); stack.push(n);
+      }
+    }
+    const light = new Map(blob.map((b) => [b, toHsl(rgb(hexAt(img, b * 4)))[2]]));
+    const levels = [...new Set(light.values())];
+    const lo = Math.min(...levels), hi = Math.max(...levels);
+    for (const b of blob) {
+      if (levels.length < 2) { tones.set(b, '#ff0000'); continue; }
+      // Darkest a deep red, lightest a pale one, pure red between
+      tones.set(b, toHex(fromHsl([0, 1, 0.3 + (0.4 * (light.get(b)! - lo)) / (hi - lo)])));
+    }
+  }
+  return tones;
+}
+
 export function render(plan: Plan, dir = process.cwd()): { source: Image; result: Buffer; swaps: Map<string, string>; eyes: Set<number> } {
   const source = sheetOf(plan.source.form, plan.source.coat);
   const swaps = plan.partsFrom == null ? swapsFor(plan) : new Map<string, string>();
@@ -293,12 +340,13 @@ export function render(plan: Plan, dir = process.cwd()): { source: Image; result
   const parts = plan.partsFrom == null ? null : sheetOf(plan.source.form, plan.partsFrom);
   if (parts != null && (parts.width !== source.width || parts.height !== source.height)) throw new Error(`${plan.partsFrom} is laid out differently`);
   const partOf = new Map(plan.families.flatMap((f) => f.members.map((m) => [m, f] as const)));
+  const tones = plan.eyeColour == null ? eyeTones(source, eyes) : null;
   const result = Buffer.from(source.rgba);
   for (let p = 0; p < source.width * source.height; p++) {
     const i = p * 4;
     if (!source.rgba[i + 3]) continue;
     let to: string | undefined;
-    if (eyes.has(p)) to = plan.eyeColour ?? '#ff0000';
+    if (eyes.has(p)) to = tones?.get(p) ?? plan.eyeColour;
     else if (parts == null) to = swaps.get(hexAt(source, i));
     else {
       const own = hexAt(source, i), f = parts.rgba[i + 3] ? partOf.get(hexAt(parts, i)) : undefined;
