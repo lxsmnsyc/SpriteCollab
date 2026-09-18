@@ -94,6 +94,10 @@ deepen them with `override`.
 `"diagonal": true` sizes a patch with its corner neighbours, so a
 fragment of a larger spot in the eye's colour (Palkia's pearls) is too big.
 `far` lists colours that must not be within `reach`.
+`cluster: {count, radius}` keeps a patch only among `count` patches
+within `radius` pixels: Registeel's torso dots, not its claws.
+An eye drawn in several colours keeps its structure: each becomes a red
+of its own lightness, glint included. One-colour eyes are solid red.
 `iris` lists colours that belong to the eye when beside or below a picked
 pixel: paint the whole eye, not only its glint (Ho-Oh).
 An eye rule's `white` can list several colours, for an eye drawn in two

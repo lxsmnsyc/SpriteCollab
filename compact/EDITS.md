@@ -50,7 +50,7 @@ rather than what the artist submitted.
 | `hoenn/0377/0002` Shadow, shiny | `hoenn/0377/0000` shiny | The same, from shiny Regirock, with the regular's eyes: `edits/0377-0002-shadow-shiny.json`. |
 | `hoenn/0378/0002` Shadow | `hoenn/0378/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0378-0002-shadow-regular.json`. Its dots are painted as eyes. |
 | `hoenn/0378/0002` Shadow, shiny | `hoenn/0378/0000` shiny | The same, from shiny Regice, with the regular's eyes painted black: red was lost on its red body. `edits/0378-0002-shadow-shiny.json`. |
-| `hoenn/0379/0002` Shadow | `hoenn/0379/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0379-0002-shadow-regular.json`. Its dots, face and palms, are painted as eyes. |
+| `hoenn/0379/0002` Shadow | `hoenn/0379/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0379-0002-shadow-regular.json`. Its eyes are the torso dots, found by `cluster`; the claws share their colour. |
 | `hoenn/0379/0002` Shadow, shiny | `hoenn/0379/0000` shiny | The same, from shiny Registeel, with the regular's eyes: `edits/0379-0002-shadow-shiny.json`. |
 | `hoenn/0386/0008` Shadow | `hoenn/0386/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0386-0008-shadow-regular.json`. |
 | `hoenn/0386/0008` Shadow, shiny | `hoenn/0386/0000` shiny | The same, from the shiny, with the regular's eyes: `edits/0386-0008-shadow-shiny.json`. |
