@@ -87,6 +87,8 @@ interface EyeRule {
    * an eye drawn as a white glint over a coloured iris (Ho-Oh).
    */
   iris?: string[];
+  /** Take `iris` colours only from the left and right, not below. */
+  irisSides?: boolean;
   /** A colour the patch must contain, when `white` lists several: the eye's highlight. */
   needs?: string;
   /**
@@ -113,6 +115,12 @@ interface Plan {
    * red would lose against the inverted body.
    */
   eyeColour?: string;
+  /**
+   * Colours that are part of an eye when touching a picked pixel on any
+   * side, corners included: a glint, iris or ring around the part the
+   * rule finds.
+   */
+  ring?: string[];
   /** Eye colours no other part uses, painted the eye colour outright. */
   red?: string[];
   /**
@@ -266,7 +274,7 @@ function eyesBy(img: Image, rule: EyeRule): Set<number> {
       found.add(b);
       const bx = b % img.width, by = (b / img.width) | 0;
       // Beside or below, straight or diagonal
-      for (const [dx, dy] of [[0, 1], [-1, 1], [1, 1], [-1, 0], [1, 0]]) {
+      for (const [dx, dy] of rule.irisSides ? [[-1, 0], [1, 0]] : [[0, 1], [-1, 1], [1, 1], [-1, 0], [1, 0]]) {
         const nx = bx + dx, ny = by + dy, n = ny * img.width + nx;
         if (!iris.size || nx < 0 || nx >= img.width || ny >= img.height) continue;
         if (img.rgba[n * 4 + 3] && iris.has(hexAt(img, n * 4))) found.add(n);
@@ -296,6 +304,15 @@ function eyesOf(plan: Plan, source: Image, dir: string): Set<number> {
   const red = new Set(plan.red ?? []);
   for (let p = 0; p < source.width * source.height; p++) {
     if (source.rgba[p * 4 + 3] && red.has(hexAt(source, p * 4))) eyes.add(p);
+  }
+  const ring = new Set(plan.ring ?? []);
+  if (ring.size) for (const p of [...eyes]) {
+    const x = p % source.width, y = (p / source.width) | 0;
+    for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
+      const nx = x + dx, ny = y + dy, n = ny * source.width + nx;
+      if (nx < 0 || ny < 0 || nx >= source.width || ny >= source.height) continue;
+      if (source.rgba[n * 4 + 3] && ring.has(hexAt(source, n * 4))) eyes.add(n);
+    }
   }
   return eyes;
 }
