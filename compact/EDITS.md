@@ -92,6 +92,14 @@ rather than what the artist submitted.
 | `unova/0639/0001` Shadow, shiny | `unova/0639/0000` shiny | The same, from shiny Terrakion, with the regular's eyes: `edits/0639-0001-shadow-shiny.json`. |
 | `unova/0640/0001` Shadow | `unova/0640/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0640-0001-shadow-regular.json`. Each eye is a 2×2 of white, grey, red and pink. |
 | `unova/0640/0001` Shadow, shiny | `unova/0640/0000` shiny | The same, from shiny Virizion, with the regular's eyes: `edits/0640-0001-shadow-shiny.json`. |
+| `unova/0643/0002` Shadow | `unova/0643/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0643-0002-shadow-regular.json`. Shiny eyes found with `needs`: they share the mouth's red. |
+| `unova/0643/0002` Shadow, shiny | `unova/0643/0000` shiny | The same, from shiny Reshiram: `edits/0643-0002-shadow-shiny.json`. |
+| `unova/0644/0001` Shadow | `unova/0644/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0644-0001-shadow-regular.json`. Eyes are small red patches with a white glint; the mouth is left out. |
+| `unova/0644/0001` Shadow, shiny | `unova/0644/0000` shiny | The same, from shiny Zekrom: `edits/0644-0001-shadow-shiny.json`. |
+| `unova/0646/0008` Shadow | `unova/0646/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0646-0008-shadow-regular.json`. Eyes are the small yellow patches touching the dark face grey, not the crest or wing tips. |
+| `unova/0646/0008` Shadow, shiny | `unova/0646/0000` shiny | The same, from the shiny, with the regular's eyes: `edits/0646-0008-shadow-shiny.json`. |
+| `unova/0646/0009` Shadow_Black | `unova/0646/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0646-0009-shadow-regular.json`. Eyes found from `black-kyurem-hd.png`: small yellow patches near the pink, with a glint, or lone; one placed by hand with `eyePixels`. |
+| `unova/0646/0009` Shadow_Black, shiny | `unova/0646/0001` shiny | The same, from the shiny, with the regular's eyes: `edits/0646-0009-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

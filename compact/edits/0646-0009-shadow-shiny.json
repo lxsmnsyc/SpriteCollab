@@ -1,0 +1,67 @@
+{
+  "source": {
+    "form": "646/1",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "646/9",
+    "coat": "shiny",
+    "name": "Shadow_Black"
+  },
+  "partsFrom": "regular",
+  "families": [
+    {
+      "part": "ice",
+      "base": "#c0b1da",
+      "members": [
+        "#ffffff",
+        "#d5f2f0",
+        "#afd5e4",
+        "#82afc1"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#434f52",
+      "members": [
+        "#222731",
+        "#343e43",
+        "#4e5e62"
+      ],
+      "fit": true
+    },
+    {
+      "part": "grey",
+      "base": "#758079",
+      "members": [
+        "#808688",
+        "#98a0a0"
+      ]
+    },
+    {
+      "part": "glow",
+      "base": "#09e26b",
+      "members": [
+        "#0036c0",
+        "#00a3ff"
+      ]
+    },
+    {
+      "part": "pink",
+      "base": "#ce5298",
+      "members": [
+        "#ce5298"
+      ]
+    },
+    {
+      "part": "yellow",
+      "base": "#ef88d8",
+      "members": [
+        "#f8e808",
+        "#e8b838"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0646-0009-shadow-regular.json"
+}

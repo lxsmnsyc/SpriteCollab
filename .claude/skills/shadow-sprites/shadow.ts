@@ -123,6 +123,8 @@ interface Plan {
    * rule finds.
    */
   ring?: string[];
+  /** Eye pixels no rule can find, as [x, y] on the source sheet, painted by hand. */
+  eyePixels?: [number, number][];
   /** Eye colours no other part uses, painted the eye colour outright. */
   red?: string[];
   /**
@@ -313,6 +315,7 @@ function eyesOf(plan: Plan, source: Image, dir: string): Set<number> {
   for (let p = 0; p < source.width * source.height; p++) {
     if (source.rgba[p * 4 + 3] && red.has(hexAt(source, p * 4))) eyes.add(p);
   }
+  for (const [x, y] of plan.eyePixels ?? []) eyes.add(y * source.width + x);
   const ring = new Set(plan.ring ?? []);
   if (ring.size) for (const p of [...eyes]) {
     const x = p % source.width, y = (p / source.width) | 0;

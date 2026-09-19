@@ -1,0 +1,156 @@
+{
+  "source": {
+    "form": "646/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "646/9",
+    "coat": "regular",
+    "name": "Shadow_Black"
+  },
+  "families": [
+    {
+      "part": "ice",
+      "base": "#afd5e4",
+      "members": [
+        "#ffffff",
+        "#d5f2f0",
+        "#afd5e4",
+        "#82afc1"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#4e5e62",
+      "members": [
+        "#222731",
+        "#343e43",
+        "#4e5e62"
+      ],
+      "fit": true
+    },
+    {
+      "part": "grey",
+      "base": "#98a0a0",
+      "members": [
+        "#808688",
+        "#98a0a0"
+      ]
+    },
+    {
+      "part": "glow",
+      "base": "#00a3ff",
+      "members": [
+        "#0036c0",
+        "#00a3ff"
+      ]
+    },
+    {
+      "part": "pink",
+      "base": "#ce5298",
+      "members": [
+        "#ce5298"
+      ]
+    },
+    {
+      "part": "yellow",
+      "base": "#f8e808",
+      "members": [
+        "#f8e808",
+        "#e8b838"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": [
+    {
+      "white": [
+        "#f8e808",
+        "#e8b838"
+      ],
+      "face": [
+        "#000000",
+        "#ffffff",
+        "#d5f2f0",
+        "#afd5e4",
+        "#82afc1",
+        "#4e5e62",
+        "#343e43",
+        "#222731",
+        "#808688",
+        "#98a0a0",
+        "#ce5298"
+      ],
+      "touch": [
+        "#000000",
+        "#222731",
+        "#343e43"
+      ],
+      "near": [
+        "#ce5298"
+      ],
+      "reach": 3,
+      "max": 4,
+      "diagonal": true
+    },
+    {
+      "white": [
+        "#f8e808",
+        "#e8b838"
+      ],
+      "face": [
+        "#000000",
+        "#ffffff",
+        "#d5f2f0",
+        "#afd5e4",
+        "#82afc1",
+        "#4e5e62",
+        "#343e43",
+        "#222731",
+        "#808688",
+        "#98a0a0",
+        "#ce5298"
+      ],
+      "touch": [
+        "#000000",
+        "#222731",
+        "#343e43"
+      ],
+      "near": [
+        "#ffffff"
+      ],
+      "reach": 1,
+      "max": 4,
+      "diagonal": true
+    },
+    {
+      "white": [
+        "#f8e808",
+        "#e8b838"
+      ],
+      "face": [
+        "#4e5e62",
+        "#ffffff",
+        "#82afc1",
+        "#343e43",
+        "#222731",
+        "#d5f2f0",
+        "#afd5e4"
+      ],
+      "touch": [
+        "#ffffff"
+      ],
+      "near": [
+        "#ffffff"
+      ],
+      "reach": 1,
+      "max": 1
+    }
+  ],
+  "eyePixels": [
+    [
+      1268,
+      406
+    ]
+  ]
+}
