@@ -103,8 +103,8 @@ takes listed pixels out (a nose, a mouth).
 Always set `"skipAnims": [1, 2]`: Sleep and Hurt frames get no eyes.
 `cluster: {count, radius}` keeps a patch only among `count` patches
 within `radius` pixels: Registeel's torso dots, not its claws.
-An eye drawn in several colours keeps its structure: each becomes a red
-of its own lightness, glint included. One-colour eyes are solid red.
+Every eye pixel is solid red, glint and iris alike: the whole eye slot,
+no structure.
 `iris` lists colours that belong to the eye when beside or below a picked
 pixel: paint the whole eye, not only its glint (Ho-Oh).
 An eye rule's `white` can list several colours, for an eye drawn in two

@@ -360,37 +360,6 @@ function picturesOnlyIn(form: string, anims: number[]): number[][] {
   return [...inside].filter((cell) => cell >= 0 && !outside.has(cell)).map((cell) => meta.sheet.pictures[cell]);
 }
 
-/**
- * The red each eye pixel is painted. An eye drawn in one colour is solid
- * red. An eye drawn in several keeps its structure: every colour becomes a
- * red of its own relative lightness, glint included.
- */
-function eyeTones(img: Image, eyes: Set<number>): Map<number, string> {
-  const tones = new Map<number, string>(), seen = new Set<number>();
-  for (const start of eyes) {
-    if (seen.has(start)) continue;
-    const blob = [start], stack = [start];
-    seen.add(start);
-    while (stack.length) {
-      const q = stack.pop()!, x = q % img.width, y = (q / img.width) | 0;
-      for (let dy = -1; dy <= 1; dy++) for (let dx = -1; dx <= 1; dx++) {
-        const nx = x + dx, ny = y + dy, n = ny * img.width + nx;
-        if (nx < 0 || ny < 0 || nx >= img.width || ny >= img.height || seen.has(n) || !eyes.has(n)) continue;
-        seen.add(n); blob.push(n); stack.push(n);
-      }
-    }
-    const light = new Map(blob.map((b) => [b, toHsl(rgb(hexAt(img, b * 4)))[2]]));
-    const levels = [...new Set(light.values())];
-    const lo = Math.min(...levels), hi = Math.max(...levels);
-    for (const b of blob) {
-      if (levels.length < 2) { tones.set(b, '#ff0000'); continue; }
-      // Darkest a deep red, lightest a pale one, pure red between
-      tones.set(b, toHex(fromHsl([0, 1, 0.3 + (0.4 * (light.get(b)! - lo)) / (hi - lo)])));
-    }
-  }
-  return tones;
-}
-
 export function render(plan: Plan, dir = process.cwd()): { source: Image; result: Buffer; swaps: Map<string, string>; eyes: Set<number> } {
   const source = sheetOf(plan.source.form, plan.source.coat);
   const swaps = plan.partsFrom == null ? swapsFor(plan) : new Map<string, string>();
@@ -400,13 +369,14 @@ export function render(plan: Plan, dir = process.cwd()): { source: Image; result
   const parts = plan.partsFrom == null ? null : sheetOf(plan.source.form, plan.partsFrom);
   if (parts != null && (parts.width !== source.width || parts.height !== source.height)) throw new Error(`${plan.partsFrom} is laid out differently`);
   const partOf = new Map(plan.families.flatMap((f) => f.members.map((m) => [m, f] as const)));
-  const tones = plan.eyeColour == null ? eyeTones(source, eyes) : null;
+  // Eyes are solid red, glint and iris alike: a blank, sinister stare
+  const eyeColour = plan.eyeColour ?? '#ff0000';
   const result = Buffer.from(source.rgba);
   for (let p = 0; p < source.width * source.height; p++) {
     const i = p * 4;
     if (!source.rgba[i + 3]) continue;
     let to: string | undefined;
-    if (eyes.has(p)) to = tones?.get(p) ?? plan.eyeColour;
+    if (eyes.has(p)) to = eyeColour;
     else if (parts == null) to = swaps.get(hexAt(source, i));
     else {
       const own = hexAt(source, i), f = parts.rgba[i + 3] ? partOf.get(hexAt(parts, i)) : undefined;
