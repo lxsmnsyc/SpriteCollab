@@ -1,0 +1,42 @@
+{
+  "source": {
+    "form": "385/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "385/4",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "star",
+      "base": "#e2c54a",
+      "members": [
+        "#fff696",
+        "#e2c54a"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "body",
+      "base": "#e9a2b5",
+      "members": [
+        "#ffe9ec",
+        "#ffc7d7",
+        "#e9a2b5",
+        "#ce6b85"
+      ]
+    },
+    {
+      "part": "tags",
+      "base": "#be041c",
+      "members": [
+        "#be041c",
+        "#dc6047"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0385-0004-shadow-regular.json"
+}
