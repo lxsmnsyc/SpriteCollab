@@ -1,0 +1,60 @@
+{
+  "source": {
+    "form": "646/2",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "646/10",
+    "coat": "shiny",
+    "name": "Shadow_White"
+  },
+  "families": [
+    {
+      "part": "white",
+      "base": "#e8e8f8",
+      "members": [
+        "#e8e8f8",
+        "#c0c0d0"
+      ],
+      "darken": 0.4
+    },
+    {
+      "part": "ice",
+      "base": "#8494e6",
+      "members": [
+        "#b0c8b8",
+        "#889890",
+        "#506060"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#637363",
+      "members": [
+        "#b8b098",
+        "#908878",
+        "#606060",
+        "#303028"
+      ]
+    },
+    {
+      "part": "flame",
+      "base": "#e06050",
+      "members": [
+        "#981838",
+        "#e06050"
+      ]
+    },
+    {
+      "part": "yellow",
+      "base": "#ef42b5",
+      "members": [
+        "#f8e808",
+        "#e8b838"
+      ]
+    }
+  ],
+  "red": [],
+  "partsFrom": "regular",
+  "eyesFrom": "0646-0010-shadow-regular.json"
+}

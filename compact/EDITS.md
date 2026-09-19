@@ -100,6 +100,8 @@ rather than what the artist submitted.
 | `unova/0646/0008` Shadow, shiny | `unova/0646/0000` shiny | The same, from the shiny, with the regular's eyes: `edits/0646-0008-shadow-shiny.json`. |
 | `unova/0646/0009` Shadow_Black | `unova/0646/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0646-0009-shadow-regular.json`. Eyes found from `black-kyurem-hd.png`: small yellow patches near the pink, with a glint, or lone; one placed by hand with `eyePixels`. |
 | `unova/0646/0009` Shadow_Black, shiny | `unova/0646/0001` shiny | The same, from the shiny, with the regular's eyes: `edits/0646-0009-shadow-shiny.json`. |
+| `unova/0646/0010` Shadow_White | `unova/0646/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0646-0010-shadow-regular.json`. Eyes placed by hand with `eyePixels`, from `white-kyurem-base.png` and pointers per frame; the crest, prongs and flames share their yellow. |
+| `unova/0646/0010` Shadow_White, shiny | `unova/0646/0002` shiny | The same, from the shiny, with the regular's eyes: `edits/0646-0010-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
