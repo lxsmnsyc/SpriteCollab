@@ -110,6 +110,8 @@ rather than what the artist submitted.
 | `unova/0645/0002` Shadow, shiny | `unova/0645/0000` shiny | The same, from shiny Landorus, with the regular's eyes: `edits/0645-0002-shadow-shiny.json`. |
 | `kanto/0151/0002` Shadow | `kanto/0151/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0151-0002-shadow-regular.json`. Eyes are the blue and white patches inside the face; the sparkles keep their colours. |
 | `kanto/0151/0002` Shadow, shiny | `kanto/0151/0000` shiny | The same, from shiny Mew, with the regular's eyes: `edits/0151-0002-shadow-shiny.json`. |
+| `johto/0251/0002` Shadow | `johto/0251/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0251-0002-shadow-regular.json`. Eyes are the patches with the dark iris inside the outline, plus two slits and a far eye by hand. |
+| `johto/0251/0002` Shadow, shiny | `johto/0251/0000` shiny | The same, from shiny Celebi, with the regular's eyes: `edits/0251-0002-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

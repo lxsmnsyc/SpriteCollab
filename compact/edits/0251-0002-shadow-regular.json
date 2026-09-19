@@ -1,0 +1,123 @@
+{
+  "source": {
+    "form": "251/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "251/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#9fcf6f",
+      "members": [
+        "#d7efa7",
+        "#9fcf6f",
+        "#5fb727",
+        "#278700"
+      ]
+    },
+    {
+      "part": "blue",
+      "base": "#879fff",
+      "members": [
+        "#b7cfff",
+        "#879fff",
+        "#5767b7"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "mouth",
+      "base": "#d73f00",
+      "members": [
+        "#d73f00",
+        "#9f0000"
+      ]
+    }
+  ],
+  "red": [],
+  "eyes": {
+    "white": [
+      "#b7cfff",
+      "#879fff",
+      "#5767b7",
+      "#ffffff"
+    ],
+    "face": [
+      "#000000"
+    ],
+    "touch": [
+      "#000000"
+    ],
+    "near": [
+      "#d7efa7"
+    ],
+    "reach": 2,
+    "max": 18,
+    "needs": "#5767b7"
+  },
+  "eyePixels": [
+    [
+      94,
+      88
+    ],
+    [
+      93,
+      89
+    ],
+    [
+      91,
+      90
+    ],
+    [
+      92,
+      90
+    ],
+    [
+      91,
+      16
+    ],
+    [
+      91,
+      17
+    ],
+    [
+      90,
+      18
+    ],
+    [
+      91,
+      18
+    ],
+    [
+      91,
+      19
+    ],
+    [
+      28,
+      42
+    ],
+    [
+      27,
+      43
+    ],
+    [
+      26,
+      44
+    ],
+    [
+      25,
+      44
+    ]
+  ]
+}
