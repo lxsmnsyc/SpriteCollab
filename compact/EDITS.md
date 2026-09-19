@@ -114,6 +114,10 @@ rather than what the artist submitted.
 | `johto/0251/0002` Shadow, shiny | `johto/0251/0000` shiny | The same, from shiny Celebi, with the regular's eyes: `edits/0251-0002-shadow-shiny.json`. |
 | `hoenn/0385/0004` Shadow | `hoenn/0385/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0385-0004-shadow-regular.json`. Eyes are the dark green iris and the 2×3 block of black and white around it; Sleep frames left closed. Parts from the shiny, so the sparkles keep their colours. |
 | `hoenn/0385/0004` Shadow, shiny | `hoenn/0385/0000` shiny | The same, from shiny Jirachi, with the regular's eyes: `edits/0385-0004-shadow-shiny.json`. |
+| `sinnoh/0492/0004` Shadow | `sinnoh/0492/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0492-0004-shadow-regular.json`. Eyes are the dark green iris and the green pixel above it; Hurt frames left as they are. |
+| `sinnoh/0492/0004` Shadow, shiny | `sinnoh/0492/0000` shiny | The same, from shiny Shaymin, with the regular's eyes: `edits/0492-0004-shadow-shiny.json`. |
+| `sinnoh/0492/0005` Shadow | `sinnoh/0492/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0492-0005-shadow-regular.json`. Eyes are the dark green pixels under the head grass; noses left out; Sleep and Hurt frames left as they are. |
+| `sinnoh/0492/0005` Shadow, shiny | `sinnoh/0492/0001` shiny | The same, from shiny Sky Shaymin, with the regular's eyes: `edits/0492-0005-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

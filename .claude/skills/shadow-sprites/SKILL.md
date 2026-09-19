@@ -98,7 +98,9 @@ fragment of a larger spot in the eye's colour (Palkia's pearls) is too big.
 included. `irisSides` limits `iris` to left and right; `irisAbove` adds
 listed colours directly above painted pixels.
 `needs` requires a colour in the patch. `eyePixels` (on the plan) paints
-listed [x, y] source pixels by hand, for an eye no rule finds.
+listed [x, y] source pixels by hand, for an eye no rule finds; `notEyes`
+takes listed pixels out (a nose, a mouth).
+Always set `"skipAnims": [1, 2]`: Sleep and Hurt frames get no eyes.
 `cluster: {count, radius}` keeps a patch only among `count` patches
 within `radius` pixels: Registeel's torso dots, not its claws.
 An eye drawn in several colours keeps its structure: each becomes a red

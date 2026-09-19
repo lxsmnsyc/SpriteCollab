@@ -16,6 +16,7 @@ import decode, { encodeSmallest, encodeTruecolor } from '../../../tools/src/png.
 import type { Image } from '../../../tools/src/png.ts';
 import { FILENAMES, updateIndex } from '../../../tools/src/write.ts';
 import type { CoatKey } from '../../../tools/src/slots.ts';
+import { decodeFrames } from '../../../tools/src/frames.ts';
 
 const REPO = join(import.meta.dirname, '../../..');
 const COMPACT = join(REPO, 'compact');
@@ -125,6 +126,13 @@ interface Plan {
   ring?: string[];
   /** Eye pixels no rule can find, as [x, y] on the source sheet, painted by hand. */
   eyePixels?: [number, number][];
+  /** Picks that are not eyes (a nose, a mouth), as [x, y], taken out after everything else. */
+  notEyes?: [number, number][];
+  /**
+   * Animations whose frames get no eyes, by number: Sleep 1, Hurt 2.
+   * Only pictures no other animation draws are left alone.
+   */
+  skipAnims?: number[];
   /** Eye colours no other part uses, painted the eye colour outright. */
   red?: string[];
   /**
@@ -325,7 +333,31 @@ function eyesOf(plan: Plan, source: Image, dir: string): Set<number> {
       if (source.rgba[n * 4 + 3] && ring.has(hexAt(source, n * 4))) eyes.add(n);
     }
   }
+  for (const [x, y] of plan.notEyes ?? []) eyes.delete(y * source.width + x);
+  if (plan.skipAnims?.length) {
+    for (const [px, py, pw, ph] of picturesOnlyIn(plan.source.form, plan.skipAnims)) {
+      for (const p of [...eyes]) {
+        const x = p % source.width, y = (p / source.width) | 0;
+        if (x >= px && x < px + pw && y >= py && y < py + ph) eyes.delete(p);
+      }
+    }
+  }
   return eyes;
+}
+
+/** The sheet boxes drawn only by these animations, no other. */
+function picturesOnlyIn(form: string, anims: number[]): number[][] {
+  const folder = folderOf(form)!;
+  const meta = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8'));
+  const { records, indices } = decodeFrames(readFileSync(join(folder, 'frames.bin')));
+  const inside = new Set<number>(), outside = new Set<number>();
+  for (const sprite of meta.sprites) {
+    const [offset, count] = sprite.frames;
+    for (let i = offset; i < offset + count; i += 1) {
+      (anims.includes(sprite.anim) ? inside : outside).add(records[indices[i]].cell);
+    }
+  }
+  return [...inside].filter((cell) => cell >= 0 && !outside.has(cell)).map((cell) => meta.sheet.pictures[cell]);
 }
 
 /**

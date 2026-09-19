@@ -1,0 +1,60 @@
+{
+  "source": {
+    "form": "492/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "492/4",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "grass",
+      "base": "#5ac5ad",
+      "members": [
+        "#99ffcc",
+        "#5ac5ad",
+        "#00a090",
+        "#006c6c"
+      ]
+    },
+    {
+      "part": "leaf",
+      "base": "#47c717",
+      "members": [
+        "#47c717",
+        "#479717"
+      ]
+    },
+    {
+      "part": "flower",
+      "base": "#ff87bf",
+      "members": [
+        "#ffafe7",
+        "#ff87bf",
+        "#c64a73"
+      ]
+    },
+    {
+      "part": "body",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#dfd7d7",
+        "#af9797"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "gold",
+      "base": "#efef67",
+      "members": [
+        "#efef67",
+        "#d7cf4f"
+      ]
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0492-0004-shadow-regular.json"
+}
