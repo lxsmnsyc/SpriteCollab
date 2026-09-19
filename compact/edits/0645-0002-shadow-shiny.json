@@ -1,0 +1,53 @@
+{
+  "source": {
+    "form": "645/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "645/2",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "partsFrom": "regular",
+  "families": [
+    {
+      "part": "brown",
+      "base": "#6b4223",
+      "members": [
+        "#84634a",
+        "#634231"
+      ]
+    },
+    {
+      "part": "orange",
+      "base": "#e39346",
+      "members": [
+        "#ec9930",
+        "#df7a29",
+        "#c75921",
+        "#903508"
+      ]
+    },
+    {
+      "part": "red",
+      "base": "#c34e28",
+      "members": [
+        "#b0415a",
+        "#942c44",
+        "#7d1a51"
+      ]
+    },
+    {
+      "part": "cloud",
+      "base": "#c2d5d4",
+      "members": [
+        "#ffffff",
+        "#c2d5d4",
+        "#7fa7a4"
+      ],
+      "darken": 0.3
+    }
+  ],
+  "red": [],
+  "eyesFrom": "0645-0002-shadow-regular.json"
+}

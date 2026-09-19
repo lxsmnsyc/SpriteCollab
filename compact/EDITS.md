@@ -102,6 +102,12 @@ rather than what the artist submitted.
 | `unova/0646/0009` Shadow_Black, shiny | `unova/0646/0001` shiny | The same, from the shiny, with the regular's eyes: `edits/0646-0009-shadow-shiny.json`. |
 | `unova/0646/0010` Shadow_White | `unova/0646/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0646-0010-shadow-regular.json`. Eyes placed by hand with `eyePixels`, from `white-kyurem-base.png` and pointers per frame; the crest, prongs and flames share their yellow. |
 | `unova/0646/0010` Shadow_White, shiny | `unova/0646/0002` shiny | The same, from the shiny, with the regular's eyes: `edits/0646-0010-shadow-shiny.json`. |
+| `unova/0641/0002` Shadow | `unova/0641/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0641-0002-shadow-regular.json`. Eyes are the gold iris and the white beside it. |
+| `unova/0641/0002` Shadow, shiny | `unova/0641/0000` shiny | The same, from shiny Tornadus, with the regular's eyes: `edits/0641-0002-shadow-shiny.json`. |
+| `unova/0642/0002` Shadow | `unova/0642/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0642-0002-shadow-regular.json`. Eyes are the gold iris and the white beside it. |
+| `unova/0642/0002` Shadow, shiny | `unova/0642/0000` shiny | The same, from shiny Thundurus, with the regular's eyes: `edits/0642-0002-shadow-shiny.json`. |
+| `unova/0645/0002` Shadow | `unova/0645/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0645-0002-shadow-regular.json`. Eyes are the gold iris and the white beside it. |
+| `unova/0645/0002` Shadow, shiny | `unova/0645/0000` shiny | The same, from shiny Landorus, with the regular's eyes: `edits/0645-0002-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
