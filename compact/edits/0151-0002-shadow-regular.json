@@ -1,0 +1,16 @@
+{
+  "source": { "form": "151/0", "coat": "regular" },
+  "target": { "form": "151/2", "coat": "regular", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#ff8faf", "members": ["#ffc7d7", "#ff8faf", "#e73f67"] },
+    { "part": "feet", "base": "#a75f1f", "members": ["#a75f1f"] }
+  ],
+  "red": [],
+  "eyes": {
+    "white": ["#8fdfff", "#0067b7", "#1f9fe7", "#ffffff"],
+    "face": ["#ffc7d7", "#ff8faf", "#e73f67", "#000000"],
+    "touch": ["#ffc7d7", "#ff8faf", "#e73f67"],
+    "near": ["#ffc7d7", "#ff8faf", "#e73f67"],
+    "reach": 1, "max": 10
+  }
+}

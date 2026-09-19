@@ -1,0 +1,11 @@
+{
+  "source": { "form": "151/0", "coat": "shiny" },
+  "target": { "form": "151/2", "coat": "shiny", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#85bae2", "members": ["#a8e6ff", "#85bae2", "#507ab2"] },
+    { "part": "feet", "base": "#353ca5", "members": ["#353ca5"] },
+    { "part": "mouth", "base": "#e73f67", "members": ["#e73f67"] }
+  ],
+  "red": [],
+  "eyesFrom": "0151-0002-shadow-regular.json"
+}
