@@ -1,0 +1,59 @@
+{
+  "source": {
+    "form": "382/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "382/4",
+    "coat": "regular",
+    "name": "Primal_Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#3b3886",
+      "members": [
+        "#28256a",
+        "#3b3886",
+        "#5a5199"
+      ],
+      "fit": true
+    },
+    {
+      "part": "lines",
+      "base": "#77b6e1",
+      "members": [
+        "#77b6e1",
+        "#4c8ca7"
+      ]
+    },
+    {
+      "part": "glow",
+      "base": "#f5c26b",
+      "members": [
+        "#fff3ad",
+        "#f5c26b"
+      ]
+    },
+    {
+      "part": "pink",
+      "base": "#bc708c",
+      "members": [
+        "#bc708c",
+        "#a34a6a"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97"
+      ],
+      "darken": 0.3
+    }
+  ],
+  "red": []
+}

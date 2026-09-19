@@ -1,0 +1,44 @@
+{
+  "source": {
+    "form": "383/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "383/5",
+    "coat": "regular",
+    "name": "Primal_Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#d73f00",
+      "members": [
+        "#ff875f",
+        "#d73f00",
+        "#9f0000"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "glow",
+      "base": "#fef9bb",
+      "members": [
+        "#fef9bb"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "claws",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#47676f"
+      ],
+      "darken": 0.3
+    }
+  ],
+  "red": []
+}
