@@ -1,0 +1,9 @@
+{ "source": { "form": "494/0", "coat": "shiny" },
+  "target": { "form": "494/1", "coat": "shiny", "name": "Shadow" },
+  "partsFrom": "regular",
+  "families": [
+    { "part": "body", "base": "#ffffff", "members": ["#ffe6ac", "#c59c5a"], "darken": 0.4 },
+    { "part": "ears and tails", "base": "#ff4118", "members": ["#ff6a18", "#bd4a00"], "tone": 0.55 },
+    { "part": "flame", "base": "#ffff00", "members": ["#ffff00", "#ffac00"], "tone": 0.55 },
+    { "part": "eyes", "base": "#087394", "members": ["#395aac", "#73acff", "#ffffff"], "fit": true } ],
+  "override": { "#ffac00": "#1f1f7a" } }
