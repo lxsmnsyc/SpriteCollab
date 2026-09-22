@@ -1,0 +1,71 @@
+{
+ "source": {
+  "form": "719/0",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "719/2",
+  "coat": "shiny",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "crystals",
+   "base": "#db67a5",
+   "members": [
+    "#fae7f7",
+    "#ffb5de",
+    "#db67a5"
+   ],
+   "fit": true
+  },
+  {
+   "part": "dress",
+   "base": "#ff78b5",
+   "members": [
+    "#fa508f",
+    "#ff78b5"
+   ]
+  },
+  {
+   "part": "body",
+   "base": "#565961",
+   "members": [
+    "#252425",
+    "#454753",
+    "#565961",
+    "#707179"
+   ]
+  },
+  {
+   "part": "sparkle",
+   "base": "#ffffff",
+   "members": [
+    "#ffffff"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "band",
+   "base": "#ccb274",
+   "members": [
+    "#ccb274",
+    "#eee8ae"
+   ]
+  },
+  {
+   "part": "pale sparkle",
+   "base": "#b4c8cc",
+   "members": [
+    "#b4c8cc"
+   ]
+  },
+  {
+   "part": "eyes",
+   "base": "#d0474e",
+   "members": [
+    "#d0474e"
+   ]
+  }
+ ]
+}
