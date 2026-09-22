@@ -1,6 +1,6 @@
 ---
 name: shadow-sprites
-description: Make Shadow Pokémon sprites for compact/ by inverting colours and painting the eyes red. Use when asked for a Shadow form of a species, or a shiny of an existing Shadow form (Lugia, Mewtwo).
+description: Make Shadow Pokémon sprites for compact/ by inverting colours. Use when asked for a Shadow form of a species, or a shiny of an existing Shadow form (Lugia, Mewtwo).
 ---
 
 # Shadow sprites
@@ -35,23 +35,14 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
    light one gets `"fit": true`, or its lights all turn white.
    Dark edges and outlines (Galarian Zapdos's feathers) stay dark instead:
    give them a `scheme` whose inverse is a dark colour of the new hue.
-3. Eyes. A colour only the eyes use goes in `red`. Eyes sharing a body
-   colour need an `eyes` rule: a small patch of `white` touching only
-   `face` colours, at least one `touch` colour, with a `near` colour within
-   `reach` pixels. Tune it until `shadow-preview-eyes.png` shows eyes and
-   nothing else.
-   Look before calling a pick right or wrong: a colour in mirrored pairs
-   can be claws, down-facing eyes often touch the beak or brow rather than
-   the face, and an up-facing head can be tilted back with its eye showing.
-   Check down- and up-facing frames every time.
-   If red would not stand out against the inverted body, give that coat
-   alone `"eyeColour": "#000000"` (shiny Regice).
+3. No eyes. A Shadow form is colours only: eyes are recoloured with the
+   part they sit in, or left out of every part to keep their own colour.
+   The eye options below are for the forms made before this, which still
+   have red eyes until they are cleaned up.
 4. `preview`, show the user both images, `install` when approved. Target is
    the next free form number, with `"name": "Shadow"`.
 5. Repeat for the shiny: `palette <dex>/0 shiny`, a plan with the shiny's
-   own colours, source and target coat `shiny`, same target form. Give it
-   `"eyesFrom": "{dex}-{form}-shadow-regular.json"` so it paints exactly
-   the regular's eyes.
+   own colours, source and target coat `shiny`, same target form.
    If the shiny draws two parts in one colour, add `"partsFrom": "regular"`:
    `members` are then the regular's colours, `base` the shiny's flat colour,
    and each pixel takes its part from the regular pixel in its place.

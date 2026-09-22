@@ -1,0 +1,57 @@
+{
+  "source": {
+    "form": "647/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "647/1",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#e2bb93",
+      "members": [
+        "#fff7bd",
+        "#e2bb93",
+        "#826b55"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "mane",
+      "base": "#4a94ce",
+      "members": [
+        "#4a94ce",
+        "#2c6982",
+        "#193a5a",
+        "#4a6aac"
+      ]
+    },
+    {
+      "part": "tufts",
+      "base": "#51ad6d",
+      "members": [
+        "#6be694",
+        "#51ad6d",
+        "#265133"
+      ]
+    },
+    {
+      "part": "hair",
+      "base": "#f2632b",
+      "members": [
+        "#f2632b",
+        "#a8451e"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ]
+    }
+  ]
+}

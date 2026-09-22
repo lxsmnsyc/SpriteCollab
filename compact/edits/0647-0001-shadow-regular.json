@@ -1,0 +1,48 @@
+{
+  "source": {
+    "form": "647/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "647/1",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#debd6e",
+      "members": [
+        "#ffffa4",
+        "#debd6e",
+        "#736333"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "mane",
+      "base": "#4294ba",
+      "members": [
+        "#63dee3",
+        "#4294ba",
+        "#4a6aac",
+        "#2c3a54"
+      ]
+    },
+    {
+      "part": "hair",
+      "base": "#ef4e2f",
+      "members": [
+        "#ef4e2f",
+        "#a44a52"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ]
+    }
+  ]
+}

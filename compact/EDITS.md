@@ -122,6 +122,8 @@ rather than what the artist submitted.
 | `hoenn/0382/0004` Primal Shadow, shiny | `hoenn/0382/0001` shiny | The same, from shiny Primal Kyogre: `edits/0382-0004-shadow-shiny.json`. |
 | `hoenn/0383/0005` Primal Shadow | `hoenn/0383/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0383-0005-shadow-regular.json`. No red eyes. |
 | `hoenn/0383/0005` Primal Shadow, shiny | `hoenn/0383/0001` shiny | The same, from shiny Primal Groudon: `edits/0383-0005-shadow-shiny.json`. |
+| `unova/0647/0001` Shadow | `unova/0647/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0647-0001-shadow-regular.json`. Colours only, no red eyes. Cream body softened with `tone`. |
+| `unova/0647/0001` Shadow, shiny | `unova/0647/0000` shiny | The same, from shiny Keldeo: `edits/0647-0001-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
