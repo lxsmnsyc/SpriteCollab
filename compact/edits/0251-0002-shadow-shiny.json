@@ -1,13 +1,55 @@
 {
-  "source": { "form": "251/0", "coat": "shiny" },
-  "target": { "form": "251/2", "coat": "shiny", "name": "Shadow" },
+  "source": {
+    "form": "251/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "251/2",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
   "families": [
-    { "part": "body", "base": "#f797cf", "members": ["#ffdfef", "#ffc7ef", "#f797cf", "#ef5faf"] },
-    { "part": "wing", "base": "#a7377f", "members": ["#a7377f"] },
-    { "part": "green", "base": "#6fc75f", "members": ["#d7efa7", "#6fc75f", "#1f8747"] },
-    { "part": "white", "base": "#ffffff", "members": ["#ffffff"], "darken": 0.3 },
-    { "part": "mouth", "base": "#d73f00", "members": ["#d73f00", "#9f0000"] }
-  ],
-  "red": [],
-  "eyesFrom": "0251-0002-shadow-regular.json"
+    {
+      "part": "body",
+      "base": "#f797cf",
+      "members": [
+        "#ffdfef",
+        "#ffc7ef",
+        "#f797cf",
+        "#ef5faf"
+      ]
+    },
+    {
+      "part": "wing",
+      "base": "#a7377f",
+      "members": [
+        "#a7377f"
+      ]
+    },
+    {
+      "part": "green",
+      "base": "#6fc75f",
+      "members": [
+        "#d7efa7",
+        "#6fc75f",
+        "#1f8747"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "mouth",
+      "base": "#d73f00",
+      "members": [
+        "#d73f00",
+        "#9f0000"
+      ]
+    }
+  ]
 }

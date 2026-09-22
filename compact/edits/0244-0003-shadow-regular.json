@@ -53,30 +53,5 @@
         "#ffe79f"
       ]
     }
-  ],
-  "red": [],
-  "eyes": {
-    "white": "#ffffff",
-    "face": [
-      "#000000",
-      "#8fafb7",
-      "#9f0000",
-      "#ff570f",
-      "#d7a700",
-      "#fff700"
-    ],
-    "touch": [
-      "#000000"
-    ],
-    "near": [
-      "#9f0000",
-      "#ff570f"
-    ],
-    "reach": 1,
-    "max": 2,
-    "iris": [
-      "#ff570f"
-    ],
-    "irisSides": true
-  }
+  ]
 }

@@ -45,9 +45,15 @@
         "#ffffff"
       ],
       "darken": 0.3
+    },
+    {
+      "part": "mouth and eyes",
+      "base": "#d73f00",
+      "members": [
+        "#ff875f",
+        "#d73f00",
+        "#9f0000"
+      ]
     }
-  ],
-  "red": [
-    "#d73f00"
   ]
 }

@@ -1,12 +1,59 @@
 {
-  "source": { "form": "243/0", "coat": "shiny" },
-  "target": { "form": "243/2", "coat": "shiny", "name": "Shadow" },
+  "source": {
+    "form": "243/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "243/2",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
   "partsFrom": "regular",
   "families": [
-    { "part": "body", "base": "#e9891b", "members": ["#fff700", "#dfb700", "#a76f00"] },
-    { "part": "cloud", "base": "#f9d74a", "members": ["#572f9f", "#8f67bf", "#b797df"] },
-    { "part": "mask", "base": "#848b95", "members": ["#bfcff7", "#6787af", "#4f5f97", "#373f8f"] },
-    { "part": "white", "base": "#ffffff", "members": ["#ffffff"], "darken": 0.3 }
-  ],
-  "red": ["#d73f00"]
+    {
+      "part": "body",
+      "base": "#e9891b",
+      "members": [
+        "#fff700",
+        "#dfb700",
+        "#a76f00"
+      ]
+    },
+    {
+      "part": "cloud",
+      "base": "#f9d74a",
+      "members": [
+        "#572f9f",
+        "#8f67bf",
+        "#b797df"
+      ]
+    },
+    {
+      "part": "mask",
+      "base": "#848b95",
+      "members": [
+        "#bfcff7",
+        "#6787af",
+        "#4f5f97",
+        "#373f8f"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "mouth and eyes",
+      "base": "#d73f00",
+      "members": [
+        "#ff875f",
+        "#d73f00",
+        "#9f0000"
+      ]
+    }
+  ]
 }

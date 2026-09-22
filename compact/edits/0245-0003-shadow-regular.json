@@ -47,41 +47,5 @@
         "#bf7727"
       ]
     }
-  ],
-  "red": [],
-  "eyes": {
-    "white": [
-      "#bf7727",
-      "#dfaf67"
-    ],
-    "face": [
-      "#000000",
-      "#47676f",
-      "#d7dfdf",
-      "#ffffff",
-      "#879fff",
-      "#979fa7",
-      "#873f87"
-    ],
-    "touch": [
-      "#47676f",
-      "#d7dfdf",
-      "#ffffff",
-      "#879fff",
-      "#979fa7",
-      "#873f87"
-    ],
-    "near": [
-      "#000000"
-    ],
-    "reach": 1,
-    "max": 1,
-    "iris": [
-      "#ffffff"
-    ],
-    "irisSides": true,
-    "irisAbove": [
-      "#d7dfdf"
-    ]
-  }
+  ]
 }
