@@ -1,0 +1,47 @@
+{
+ "source": {
+  "form": "718/1",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "718/4",
+  "coat": "shiny",
+  "name": "Shadow_10"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#a7a8a8",
+   "members": [
+    "#7a7a7a",
+    "#a7a8a8",
+    "#cbcccb",
+    "#f0f0f0"
+   ]
+  },
+  {
+   "part": "markings",
+   "base": "#2bb28e",
+   "members": [
+    "#1d7a61",
+    "#2bb28e",
+    "#34d8ac"
+   ]
+  },
+  {
+   "part": "eyes",
+   "base": "#ffffff",
+   "members": [
+    "#ffffff"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "mouth",
+   "base": "#ce545f",
+   "members": [
+    "#ce545f"
+   ]
+  }
+ ]
+}

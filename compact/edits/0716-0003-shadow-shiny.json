@@ -1,0 +1,49 @@
+{
+ "source": {
+  "form": "716/1",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "716/3",
+  "coat": "shiny",
+  "name": "Shadow_Neutral"
+ },
+ "families": [
+  {
+   "part": "antlers",
+   "base": "#174299",
+   "members": [
+    "#1a2f71",
+    "#174299",
+    "#2062be"
+   ]
+  },
+  {
+   "part": "neck and torso",
+   "base": "#0f63ad",
+   "members": [
+    "#030457",
+    "#0f63ad",
+    "#2aacda"
+   ]
+  },
+  {
+   "part": "fur",
+   "base": "#bdaec3",
+   "members": [
+    "#7b7686",
+    "#bdaec3",
+    "#dcdcdb"
+   ],
+   "fit": true
+  },
+  {
+   "part": "glint",
+   "base": "#ffffff",
+   "members": [
+    "#ffffff"
+   ],
+   "darken": 0.3
+  }
+ ]
+}

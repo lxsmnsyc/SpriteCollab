@@ -1,0 +1,52 @@
+{
+ "source": {
+  "form": "718/0",
+  "coat": "regular"
+ },
+ "target": {
+  "form": "718/3",
+  "coat": "regular",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#3c4339",
+   "members": [
+    "#101010",
+    "#1b1d1a",
+    "#282d27",
+    "#3c4339"
+   ]
+  },
+  {
+   "part": "markings",
+   "base": "#52813b",
+   "members": [
+    "#35562c",
+    "#52813b",
+    "#93bc3e"
+   ]
+  },
+  {
+   "part": "cells",
+   "base": "#8da976",
+   "members": [
+    "#678259",
+    "#8da976",
+    "#a4d180"
+   ]
+  },
+  {
+   "part": "spots",
+   "base": "#d1dab6",
+   "members": [
+    "#8e967e",
+    "#d1dab6",
+    "#bee0bb",
+    "#ffffff"
+   ],
+   "darken": 0.3
+  }
+ ]
+}

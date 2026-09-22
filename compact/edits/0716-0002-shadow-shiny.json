@@ -1,0 +1,70 @@
+{
+ "source": {
+  "form": "716/0",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "716/2",
+  "coat": "shiny",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "antlers",
+   "base": "#bdae5a",
+   "members": [
+    "#8a7029",
+    "#bdae5a",
+    "#f6e694"
+   ]
+  },
+  {
+   "part": "neck and torso",
+   "base": "#0f63ad",
+   "members": [
+    "#001e71",
+    "#0f63ad",
+    "#2aacda"
+   ]
+  },
+  {
+   "part": "fur",
+   "base": "#bdaec3",
+   "members": [
+    "#5e5e8d",
+    "#7b7686",
+    "#bdaec3",
+    "#dcdcdb"
+   ],
+   "fit": true
+  },
+  {
+   "part": "orange tips",
+   "base": "#ffae00",
+   "members": [
+    "#ffae00"
+   ]
+  },
+  {
+   "part": "cyan tips",
+   "base": "#30b5de",
+   "members": [
+    "#30b5de"
+   ]
+  },
+  {
+   "part": "red tips",
+   "base": "#f65952",
+   "members": [
+    "#f65952"
+   ]
+  },
+  {
+   "part": "purple tips",
+   "base": "#7b69b4",
+   "members": [
+    "#7b69b4"
+   ]
+  }
+ ]
+}

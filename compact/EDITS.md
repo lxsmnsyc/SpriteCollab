@@ -146,6 +146,18 @@ rather than what the artist submitted.
 | `unova/0649/0008` Shadow Burn, shiny | `unova/0649/0003` shiny | The same, from shiny Burn Genesect: `edits/0649-0008-shadow-shiny.json`. The shiny draws the lightning's white and the eye's brightest tone alike, so parts come from the regular coat. |
 | `unova/0649/0009` Shadow Chill | `unova/0649/0004` regular | The same as Shadow Genesect, with the Drive's own colours: `edits/0649-0009-shadow-regular.json`. |
 | `unova/0649/0009` Shadow Chill, shiny | `unova/0649/0004` shiny | The same, from shiny Chill Genesect: `edits/0649-0009-shadow-shiny.json`. The shiny draws the lightning's white and the eye's brightest tone alike, so parts come from the regular coat. |
+| `kalos/0716/0002` Shadow | `kalos/0716/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0716-0002-shadow-regular.json`. The regular draws the torso's deepest shade and the fur's in one grey, so parts come from the shiny coat. |
+| `kalos/0716/0002` Shadow, shiny | `kalos/0716/0000` shiny | The same, from shiny Xerneas: `edits/0716-0002-shadow-shiny.json`. |
+| `kalos/0716/0003` Shadow Neutral | `kalos/0716/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0716-0003-shadow-regular.json`. Parts come from the shiny coat, as for the Active form. |
+| `kalos/0716/0003` Shadow Neutral, shiny | `kalos/0716/0001` shiny | The same, from shiny Neutral Xerneas: `edits/0716-0003-shadow-shiny.json`. |
+| `kalos/0717/0001` Shadow | `kalos/0717/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0717-0001-shadow-regular.json`. Parts: wings and body, belly and spots, head and claws, eyes, and the pink spark. |
+| `kalos/0717/0001` Shadow, shiny | `kalos/0717/0000` shiny | The same, from shiny Yveltal: `edits/0717-0001-shadow-shiny.json`. |
+| `kalos/0718/0003` Shadow | `kalos/0718/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0718-0003-shadow-regular.json`. Parts: body, markings, cells, spots. |
+| `kalos/0718/0003` Shadow, shiny | `kalos/0718/0000` shiny | The same, from shiny Zygarde: `edits/0718-0003-shadow-shiny.json`. Its body is near white, so it is darkened rather than inverted. |
+| `kalos/0718/0004` Shadow 10 | `kalos/0718/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0718-0004-shadow-regular.json`. |
+| `kalos/0718/0004` Shadow 10, shiny | `kalos/0718/0001` shiny | The same, from shiny 10% Zygarde: `edits/0718-0004-shadow-shiny.json`. |
+| `kalos/0718/0008` Shadow Complete | `kalos/0718/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0718-0008-shadow-regular.json`. |
+| `kalos/0718/0008` Shadow Complete, shiny | `kalos/0718/0002` shiny | The same, from shiny Complete Zygarde: `edits/0718-0008-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

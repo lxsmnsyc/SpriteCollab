@@ -1,0 +1,67 @@
+{
+ "source": {
+  "form": "718/2",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "718/8",
+  "coat": "shiny",
+  "name": "Shadow_Complete"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#a0b7b7",
+   "members": [
+    "#516e6e",
+    "#a0b7b7",
+    "#f0f0f0"
+   ]
+  },
+  {
+   "part": "markings",
+   "base": "#37e0b3",
+   "members": [
+    "#208e70",
+    "#37e0b3"
+   ]
+  },
+  {
+   "part": "chest",
+   "base": "#ecebb0",
+   "members": [
+    "#7fa863",
+    "#aec26b",
+    "#ecebb0"
+   ]
+  },
+  {
+   "part": "red lights",
+   "base": "#983225",
+   "members": [
+    "#983225"
+   ]
+  },
+  {
+   "part": "blue lights",
+   "base": "#3466a7",
+   "members": [
+    "#3466a7"
+   ]
+  },
+  {
+   "part": "gold",
+   "base": "#e9b331",
+   "members": [
+    "#e9b331"
+   ]
+  },
+  {
+   "part": "cyan",
+   "base": "#71c5c4",
+   "members": [
+    "#71c5c4"
+   ]
+  }
+ ]
+}

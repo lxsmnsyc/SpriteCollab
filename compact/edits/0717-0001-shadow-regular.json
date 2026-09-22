@@ -1,0 +1,58 @@
+{
+ "source": {
+  "form": "717/0",
+  "coat": "regular"
+ },
+ "target": {
+  "form": "717/1",
+  "coat": "regular",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "wings and body",
+   "base": "#3a434c",
+   "members": [
+    "#1b1d21",
+    "#3a434c"
+   ]
+  },
+  {
+   "part": "belly and spots",
+   "base": "#888593",
+   "members": [
+    "#2c2831",
+    "#4c4856",
+    "#888593",
+    "#b5bfca"
+   ]
+  },
+  {
+   "part": "head and claws",
+   "base": "#9e1717",
+   "members": [
+    "#6d0000",
+    "#9e1717",
+    "#f74125",
+    "#ff8442"
+   ],
+   "fit": true
+  },
+  {
+   "part": "eyes",
+   "base": "#0281ff",
+   "members": [
+    "#003584",
+    "#0281ff",
+    "#ffffff"
+   ]
+  },
+  {
+   "part": "pink spark",
+   "base": "#d2538e",
+   "members": [
+    "#d2538e"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "source": {
+  "form": "718/2",
+  "coat": "regular"
+ },
+ "target": {
+  "form": "718/8",
+  "coat": "regular",
+  "name": "Shadow_Complete"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#4a504a",
+   "members": [
+    "#313031",
+    "#4a504a",
+    "#6a6b62"
+   ],
+   "fit": true
+  },
+  {
+   "part": "markings",
+   "base": "#abd028",
+   "members": [
+    "#658b2d",
+    "#abd028"
+   ]
+  },
+  {
+   "part": "chest",
+   "base": "#ffffff",
+   "members": [
+    "#d5d6d5",
+    "#d7d7e7",
+    "#ffffff"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "red lights",
+   "base": "#983225",
+   "members": [
+    "#983225"
+   ]
+  },
+  {
+   "part": "blue lights",
+   "base": "#3466a7",
+   "members": [
+    "#3466a7"
+   ]
+  },
+  {
+   "part": "gold",
+   "base": "#e9b331",
+   "members": [
+    "#e9b331"
+   ]
+  },
+  {
+   "part": "cyan",
+   "base": "#71c5c4",
+   "members": [
+    "#71c5c4"
+   ]
+  }
+ ]
+}
