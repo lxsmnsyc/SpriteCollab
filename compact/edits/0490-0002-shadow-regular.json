@@ -1,0 +1,7 @@
+{ "source": { "form": "490/0", "coat": "regular" },
+  "target": { "form": "490/2", "coat": "regular", "name": "Shadow" },
+  "families": [
+    { "part": "body", "base": "#7fd7e7", "members": ["#bfefff", "#7fd7e7", "#3faff7", "#377fdf"] },
+    { "part": "cheek spots", "base": "#efb700", "members": ["#ffcf77", "#efb700", "#cf8f00"] },
+    { "part": "gem", "base": "#cf3f67", "members": ["#cf3f67", "#971f37", "#670000"] },
+    { "part": "eyes", "base": "#ffffff", "members": ["#ffffff", "#378f77"], "darken": 0.3 } ] }

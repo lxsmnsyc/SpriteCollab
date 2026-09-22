@@ -1,0 +1,51 @@
+{
+ "source": {
+  "form": "490/0",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "490/2",
+  "coat": "shiny",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#8be8de",
+   "members": [
+    "#bcfff5",
+    "#8be8de",
+    "#38c1b6",
+    "#1e8e8e"
+   ]
+  },
+  {
+   "part": "cheek spots",
+   "base": "#d7ce00",
+   "members": [
+    "#ffff73",
+    "#d7ce00",
+    "#a39800"
+   ],
+   "fit": true
+  },
+  {
+   "part": "gem",
+   "base": "#cf3f67",
+   "members": [
+    "#cf3f67",
+    "#971f37",
+    "#670000"
+   ]
+  },
+  {
+   "part": "eyes",
+   "base": "#ffffff",
+   "members": [
+    "#ffffff",
+    "#28715d"
+   ],
+   "darken": 0.3
+  }
+ ]
+}

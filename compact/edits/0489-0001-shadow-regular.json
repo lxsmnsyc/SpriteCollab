@@ -1,0 +1,56 @@
+{
+ "source": {
+  "form": "489/0",
+  "coat": "regular"
+ },
+ "target": {
+  "form": "489/1",
+  "coat": "regular",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#97dfff",
+   "members": [
+    "#cfffff",
+    "#97dfff",
+    "#77afef",
+    "#4f77c7"
+   ]
+  },
+  {
+   "part": "markings",
+   "base": "#178fff",
+   "members": [
+    "#178fff",
+    "#0767af"
+   ]
+  },
+  {
+   "part": "gem",
+   "base": "#c7171f",
+   "members": [
+    "#ef3f57",
+    "#c7171f"
+   ]
+  },
+  {
+   "part": "droplets",
+   "base": "#ffffff",
+   "members": [
+    "#ffffff"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "eyes",
+   "base": "#674f1f",
+   "members": [
+    "#674f1f",
+    "#c7c7c7"
+   ],
+   "fit": true
+  }
+ ]
+}

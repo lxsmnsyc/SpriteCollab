@@ -1,0 +1,64 @@
+{
+ "source": {
+  "form": "489/0",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "489/1",
+  "coat": "shiny",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#8be8de",
+   "members": [
+    "#d1ffee",
+    "#8be8de",
+    "#59c1b5",
+    "#299393"
+   ]
+  },
+  {
+   "part": "markings",
+   "base": "#369be2",
+   "members": [
+    "#369be2",
+    "#2c75a5"
+   ]
+  },
+  {
+   "part": "gem",
+   "base": "#c7171f",
+   "members": [
+    "#ef3f57",
+    "#c7171f"
+   ]
+  },
+  {
+   "part": "underline",
+   "base": "#bc9020",
+   "members": [
+    "#eae164",
+    "#bc9020"
+   ]
+  },
+  {
+   "part": "droplets",
+   "base": "#ffffff",
+   "members": [
+    "#ffffff"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "eyes",
+   "base": "#674f1f",
+   "members": [
+    "#674f1f",
+    "#c7c7c7"
+   ],
+   "fit": true
+  }
+ ]
+}

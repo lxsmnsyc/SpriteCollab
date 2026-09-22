@@ -126,6 +126,10 @@ rather than what the artist submitted.
 | `unova/0647/0001` Shadow, shiny | `unova/0647/0000` shiny | The same, from shiny Keldeo: `edits/0647-0001-shadow-shiny.json`. |
 | `hoenn/0384/0005` Shadow Mega | `hoenn/0384/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0384-0005-shadow-regular.json`. Parts follow base Shadow Rayquaza, plus the Mega's streamers and dark segments. |
 | `hoenn/0384/0005` Shadow Mega, shiny | `hoenn/0384/0001` shiny | The same, from shiny Mega Rayquaza: `edits/0384-0005-shadow-shiny.json`. |
+| `sinnoh/0489/0001` Shadow | `sinnoh/0489/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0489-0001-shadow-regular.json`. Parts: body, markings, gem, droplets, eyes. |
+| `sinnoh/0489/0001` Shadow, shiny | `sinnoh/0489/0000` shiny | The same, from shiny Phione: `edits/0489-0001-shadow-shiny.json`. The shiny draws the belly streak in gold, so it gets a part of its own. |
+| `sinnoh/0490/0002` Shadow | `sinnoh/0490/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0490-0002-shadow-regular.json`. Parts: body, cheek spots, gem, eyes. |
+| `sinnoh/0490/0002` Shadow, shiny | `sinnoh/0490/0000` shiny | The same, from shiny Manaphy: `edits/0490-0002-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
