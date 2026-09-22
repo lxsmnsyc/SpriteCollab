@@ -1,0 +1,53 @@
+{
+ "source": {
+  "form": "649/0",
+  "coat": "regular"
+ },
+ "target": {
+  "form": "649/5",
+  "coat": "regular",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#7b439e",
+   "members": [
+    "#bc93d6",
+    "#a066c4",
+    "#7b439e",
+    "#482e59",
+    "#2c1938"
+   ]
+  },
+  {
+   "part": "lightning",
+   "base": "#cdb4ff",
+   "members": [
+    "#ffffff",
+    "#cdb4ff",
+    "#a58dd3"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "eyes",
+   "base": "#ad4735",
+   "members": [
+    "#fbc6c9",
+    "#f48673",
+    "#d36450",
+    "#ad4735"
+   ],
+   "fit": true
+  },
+  {
+   "part": "drive",
+   "base": "#d8972d",
+   "members": [
+    "#f3ae39",
+    "#d8972d"
+   ]
+  }
+ ]
+}

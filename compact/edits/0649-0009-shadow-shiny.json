@@ -1,0 +1,54 @@
+{
+ "source": {
+  "form": "649/4",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "649/9",
+  "coat": "shiny",
+  "name": "Shadow_Chill"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#ba3b3b",
+   "members": [
+    "#bc93d6",
+    "#a066c4",
+    "#7b439e",
+    "#482e59",
+    "#2c1938"
+   ]
+  },
+  {
+   "part": "lightning",
+   "base": "#ffb4cd",
+   "members": [
+    "#ffffff",
+    "#cdb4ff",
+    "#a58dd3"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "eyes",
+   "base": "#959bb2",
+   "members": [
+    "#fbc6c9",
+    "#f48673",
+    "#d36450",
+    "#ad4735"
+   ],
+   "fit": true
+  },
+  {
+   "part": "drive",
+   "base": "#83d1e2",
+   "members": [
+    "#b5ffff",
+    "#83d1e2"
+   ]
+  }
+ ],
+ "partsFrom": "regular"
+}

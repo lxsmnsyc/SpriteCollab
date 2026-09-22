@@ -136,6 +136,16 @@ rather than what the artist submitted.
 | `unova/0648/0002` Shadow, shiny | `unova/0648/0000` shiny | The same, from shiny Meloetta: `edits/0648-0002-shadow-shiny.json`. |
 | `unova/0648/0003` Shadow Pirouette | `unova/0648/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0648-0003-shadow-regular.json`. The hair is toned down and keeps its near-black deepest shade. |
 | `unova/0648/0003` Shadow Pirouette, shiny | `unova/0648/0001` shiny | The same, from shiny Pirouette: `edits/0648-0003-shadow-shiny.json`. |
+| `unova/0649/0005` Shadow | `unova/0649/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0649-0005-shadow-regular.json`. Parts: body, lightning, eyes, Drive. The four Drive forms share this shape, differing only in the Drive's two colours. |
+| `unova/0649/0005` Shadow, shiny | `unova/0649/0000` shiny | The same, from shiny Genesect: `edits/0649-0005-shadow-shiny.json`. The shiny draws the lightning's white and the eye's brightest tone alike, so parts come from the regular coat. |
+| `unova/0649/0006` Shadow Douse | `unova/0649/0001` regular | The same as Shadow Genesect, with the Drive's own colours: `edits/0649-0006-shadow-regular.json`. |
+| `unova/0649/0006` Shadow Douse, shiny | `unova/0649/0001` shiny | The same, from shiny Douse Genesect: `edits/0649-0006-shadow-shiny.json`. The shiny draws the lightning's white and the eye's brightest tone alike, so parts come from the regular coat. |
+| `unova/0649/0007` Shadow Shock | `unova/0649/0002` regular | The same as Shadow Genesect, with the Drive's own colours: `edits/0649-0007-shadow-regular.json`. |
+| `unova/0649/0007` Shadow Shock, shiny | `unova/0649/0002` shiny | The same, from shiny Shock Genesect: `edits/0649-0007-shadow-shiny.json`. The shiny draws the lightning's white and the eye's brightest tone alike, so parts come from the regular coat. |
+| `unova/0649/0008` Shadow Burn | `unova/0649/0003` regular | The same as Shadow Genesect, with the Drive's own colours: `edits/0649-0008-shadow-regular.json`. |
+| `unova/0649/0008` Shadow Burn, shiny | `unova/0649/0003` shiny | The same, from shiny Burn Genesect: `edits/0649-0008-shadow-shiny.json`. The shiny draws the lightning's white and the eye's brightest tone alike, so parts come from the regular coat. |
+| `unova/0649/0009` Shadow Chill | `unova/0649/0004` regular | The same as Shadow Genesect, with the Drive's own colours: `edits/0649-0009-shadow-regular.json`. |
+| `unova/0649/0009` Shadow Chill, shiny | `unova/0649/0004` shiny | The same, from shiny Chill Genesect: `edits/0649-0009-shadow-shiny.json`. The shiny draws the lightning's white and the eye's brightest tone alike, so parts come from the regular coat. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
