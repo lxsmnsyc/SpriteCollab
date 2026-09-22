@@ -45,47 +45,13 @@
         "#fff700",
         "#dfb700"
       ]
-    }
-  ],
-  "red": [],
-  "eyes": [
-    {
-      "white": "#ffffff",
-      "face": [
-        "#000000",
-        "#4f4f6f",
-        "#87b7af",
-        "#678f8f",
-        "#9fcfcf",
-        "#5f6f77"
-      ],
-      "touch": [
-        "#000000"
-      ],
-      "near": [
-        "#87b7af",
-        "#678f8f",
-        "#9fcfcf",
-        "#5f6f77"
-      ],
-      "reach": 1,
-      "max": 1
     },
     {
-      "white": "#ffffff",
-      "face": [
-        "#000000",
-        "#87b7af",
-        "#df771f"
-      ],
-      "touch": [
-        "#87b7af"
-      ],
-      "near": [
-        "#000000"
-      ],
-      "reach": 1,
-      "max": 1
+      "part": "kept #ffffff",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ]
     }
   ]
 }

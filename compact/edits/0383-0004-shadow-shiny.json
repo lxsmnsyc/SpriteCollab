@@ -1,10 +1,55 @@
 {
-  "source": { "form": "383/0", "coat": "shiny" },
-  "target": { "form": "383/4", "coat": "shiny", "name": "Shadow" },
+  "source": {
+    "form": "383/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "383/4",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
   "families": [
-    { "part": "body", "base": "#c5cd31", "members": ["#f7ff8c", "#c5cd31", "#7d8415"] },
-    { "part": "plates, belly and claws", "base": "#ffffff", "members": ["#ffffff", "#e2d3d3", "#bcb5b5", "#9c8b8b", "#73625a"], "darken": 0.3 }
-  ],
-  "eyesFrom": "0383-0004-shadow-regular.json",
-  "override": { "#9c6a31": "#9f0000" }
+    {
+      "part": "body",
+      "base": "#c5cd31",
+      "members": [
+        "#f7ff8c",
+        "#c5cd31",
+        "#7d8415"
+      ]
+    },
+    {
+      "part": "plates, belly and claws",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#e2d3d3",
+        "#bcb5b5",
+        "#9c8b8b",
+        "#73625a"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "kept #9c6a31",
+      "base": "#9c6a31",
+      "members": [
+        "#9c6a31"
+      ]
+    },
+    {
+      "part": "kept #ffcd31",
+      "base": "#ffcd31",
+      "members": [
+        "#ffcd31"
+      ]
+    },
+    {
+      "part": "kept #dfaf67",
+      "base": "#dfaf67",
+      "members": [
+        "#dfaf67"
+      ]
+    }
+  ]
 }

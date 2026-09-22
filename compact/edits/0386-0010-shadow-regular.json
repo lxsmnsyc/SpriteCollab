@@ -31,9 +31,13 @@
         "#373f8f",
         "#b7bfc7"
       ]
+    },
+    {
+      "part": "kept #ffffff",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ]
     }
-  ],
-  "red": [
-    "#ffffff"
   ]
 }

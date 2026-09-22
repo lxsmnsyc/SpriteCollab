@@ -29,9 +29,13 @@
         "#df771f",
         "#dfaf67"
       ]
+    },
+    {
+      "part": "kept #ff875f",
+      "base": "#ff875f",
+      "members": [
+        "#ff875f"
+      ]
     }
-  ],
-  "red": [
-    "#ff875f"
   ]
 }

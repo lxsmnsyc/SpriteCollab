@@ -29,16 +29,27 @@
         "#47676f"
       ],
       "darken": 0.3
+    },
+    {
+      "part": "kept #bf7727",
+      "base": "#bf7727",
+      "members": [
+        "#bf7727"
+      ]
+    },
+    {
+      "part": "kept #ffe79f",
+      "base": "#ffe79f",
+      "members": [
+        "#ffe79f"
+      ]
+    },
+    {
+      "part": "kept #dfaf67",
+      "base": "#dfaf67",
+      "members": [
+        "#dfaf67"
+      ]
     }
-  ],
-  "red": [
-    "#ffe79f",
-    "#dfaf67"
-  ],
-  "override": {
-    "#bf7727": "#9f0000"
-  },
-  "ring": [
-    "#bf7727"
   ]
 }

@@ -19,10 +19,20 @@
         "#5767b7",
         "#373f8f"
       ]
+    },
+    {
+      "part": "kept #ffe79f",
+      "base": "#ffe79f",
+      "members": [
+        "#ffe79f"
+      ]
+    },
+    {
+      "part": "kept #dfaf67",
+      "base": "#dfaf67",
+      "members": [
+        "#dfaf67"
+      ]
     }
-  ],
-  "red": [
-    "#ffe79f",
-    "#dfaf67"
   ]
 }

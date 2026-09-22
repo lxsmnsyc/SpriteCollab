@@ -1,10 +1,56 @@
 {
-  "source": { "form": "380/0", "coat": "regular" },
-  "target": { "form": "380/3", "coat": "regular", "name": "Shadow" },
+  "source": {
+    "form": "380/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "380/3",
+    "coat": "regular",
+    "name": "Shadow"
+  },
   "families": [
-    { "part": "body", "base": "#d73f00", "members": ["#9f0000", "#d73f00", "#ff875f"] },
-    { "part": "white", "base": "#d7dfdf", "members": ["#ffffff", "#d7dfdf", "#afb7bf", "#7f8f97", "#47676f"], "darken": 0.3 },
-    { "part": "chest", "base": "#1f9fe7", "members": ["#1f9fe7", "#0067b7"] }
-  ],
-  "red": ["#ffe79f", "#dfaf67"]
+    {
+      "part": "body",
+      "base": "#d73f00",
+      "members": [
+        "#9f0000",
+        "#d73f00",
+        "#ff875f"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#d7dfdf",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97",
+        "#47676f"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "chest",
+      "base": "#1f9fe7",
+      "members": [
+        "#1f9fe7",
+        "#0067b7"
+      ]
+    },
+    {
+      "part": "kept #ffe79f",
+      "base": "#ffe79f",
+      "members": [
+        "#ffe79f"
+      ]
+    },
+    {
+      "part": "kept #dfaf67",
+      "base": "#dfaf67",
+      "members": [
+        "#dfaf67"
+      ]
+    }
+  ]
 }

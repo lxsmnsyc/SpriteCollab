@@ -40,8 +40,20 @@
         "#63e88c",
         "#31b65a"
       ]
+    },
+    {
+      "part": "kept #35f47b",
+      "base": "#35f47b",
+      "members": [
+        "#35f47b"
+      ]
+    },
+    {
+      "part": "kept #00c64c",
+      "base": "#00c64c",
+      "members": [
+        "#00c64c"
+      ]
     }
-  ],
-  "red": [],
-  "eyesFrom": "0380-0003-shadow-regular.json"
+  ]
 }

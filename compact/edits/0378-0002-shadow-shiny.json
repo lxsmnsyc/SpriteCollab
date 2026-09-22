@@ -19,9 +19,20 @@
         "#0099ff",
         "#0066cc"
       ]
+    },
+    {
+      "part": "kept #ffe79f",
+      "base": "#ffe79f",
+      "members": [
+        "#ffe79f"
+      ]
+    },
+    {
+      "part": "kept #dfaf67",
+      "base": "#dfaf67",
+      "members": [
+        "#dfaf67"
+      ]
     }
-  ],
-  "red": [],
-  "eyesFrom": "0378-0002-shadow-regular.json",
-  "eyeColour": "#000000"
+  ]
 }
