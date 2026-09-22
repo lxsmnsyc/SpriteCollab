@@ -35,7 +35,14 @@
       "members": [
         "#ffb335"
       ]
+    },
+    {
+      "part": "eyes",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.3
     }
-  ],
-  "eyesFrom": "0146-0004-shadow-regular.json"
+  ]
 }

@@ -38,7 +38,14 @@
         "#97877f",
         "#6f5b47"
       ]
+    },
+    {
+      "part": "eyes",
+      "base": "#d73f00",
+      "members": [
+        "#d73f00",
+        "#9f0000"
+      ]
     }
-  ],
-  "eyesFrom": "0144-0004-shadow-regular.json"
+  ]
 }

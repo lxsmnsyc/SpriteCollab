@@ -36,9 +36,14 @@
       "members": [
         "#ff87bf"
       ]
+    },
+    {
+      "part": "eyes",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.3
     }
-  ],
-  "red": [
-    "#ffffff"
   ]
 }
