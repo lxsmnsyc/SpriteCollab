@@ -158,6 +158,8 @@ rather than what the artist submitted.
 | `kalos/0718/0004` Shadow 10, shiny | `kalos/0718/0001` shiny | The same, from shiny 10% Zygarde: `edits/0718-0004-shadow-shiny.json`. |
 | `kalos/0718/0008` Shadow Complete | `kalos/0718/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0718-0008-shadow-regular.json`. |
 | `kalos/0718/0008` Shadow Complete, shiny | `kalos/0718/0002` shiny | The same, from shiny Complete Zygarde: `edits/0718-0008-shadow-shiny.json`. |
+| `kalos/0721/0001` Shadow | `kalos/0721/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0721-0001-shadow-regular.json`. Parts: body, bands, blue stripes, claws, steam, flame. |
+| `kalos/0721/0001` Shadow, shiny | `kalos/0721/0000` shiny | The same, from shiny Volcanion: `edits/0721-0001-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

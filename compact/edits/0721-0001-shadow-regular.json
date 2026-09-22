@@ -1,0 +1,66 @@
+{
+ "source": {
+  "form": "721/0",
+  "coat": "regular"
+ },
+ "target": {
+  "form": "721/1",
+  "coat": "regular",
+  "name": "Shadow"
+ },
+ "families": [
+  {
+   "part": "body",
+   "base": "#942430",
+   "members": [
+    "#7e091a",
+    "#942430",
+    "#b8404d"
+   ],
+   "fit": true
+  },
+  {
+   "part": "bands",
+   "base": "#c49303",
+   "members": [
+    "#c49303",
+    "#ffc842",
+    "#ffffe6"
+   ],
+   "fit": true
+  },
+  {
+   "part": "blue stripes",
+   "base": "#52b2ff",
+   "members": [
+    "#52b2ff",
+    "#73ceff"
+   ]
+  },
+  {
+   "part": "claws",
+   "base": "#393547",
+   "members": [
+    "#25253b",
+    "#393547"
+   ]
+  },
+  {
+   "part": "steam",
+   "base": "#ffffff",
+   "members": [
+    "#b7bfc7",
+    "#ffffff"
+   ],
+   "darken": 0.3
+  },
+  {
+   "part": "flame",
+   "base": "#bd2b2b",
+   "members": [
+    "#bd2b2b",
+    "#f0522e"
+   ]
+  }
+ ]
+}
