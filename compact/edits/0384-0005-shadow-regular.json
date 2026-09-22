@@ -1,0 +1,11 @@
+{
+  "source": { "form": "384/1", "coat": "regular" },
+  "target": { "form": "384/5", "coat": "regular", "name": "Shadow_Mega" },
+  "families": [
+    { "part": "body", "base": "#5fb727", "members": ["#d7efa7", "#9fcf6f", "#5fb727", "#278700"] },
+    { "part": "rings", "base": "#dfb700", "members": ["#fff700", "#dfb700", "#a76f00", "#d73f00"] },
+    { "part": "dark segments", "base": "#3d3838", "members": ["#3d3838"] },
+    { "part": "streamers", "base": "#eac26b", "members": ["#fbe27e", "#eac26b", "#f6886b"] },
+    { "part": "claws and teeth", "base": "#ffffff", "members": ["#ffffff", "#b7cfff"], "darken": 0.3 }
+  ]
+}
