@@ -1,0 +1,8 @@
+{ "source": { "form": "648/0", "coat": "regular" },
+  "target": { "form": "648/2", "coat": "regular", "name": "Shadow" },
+  "families": [
+    { "part": "hair", "base": "#91c151", "members": ["#c5d278", "#91c151", "#6f8f47"] },
+    { "part": "dress", "base": "#695069", "members": ["#695069", "#49494d", "#2a2f4a"] },
+    { "part": "face", "base": "#eeeef7", "members": ["#ffffff", "#eeeef7", "#c8c8d4", "#a6a6a6"], "darken": 0.35 },
+    { "part": "eyes and notes", "base": "#4294aa", "members": ["#b0c6e0", "#4294aa", "#2e6670"], "fit": true },
+    { "part": "mouth", "base": "#ff608d", "members": ["#ff608d"] } ] }

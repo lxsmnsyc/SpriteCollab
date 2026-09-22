@@ -132,6 +132,10 @@ rather than what the artist submitted.
 | `sinnoh/0490/0002` Shadow, shiny | `sinnoh/0490/0000` shiny | The same, from shiny Manaphy: `edits/0490-0002-shadow-shiny.json`. |
 | `unova/0494/0001` Shadow | `unova/0494/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0494-0001-shadow-regular.json`. The cream body is darkened rather than inverted; ears, tails and the V-flame are toned down. |
 | `unova/0494/0001` Shadow, shiny | `unova/0494/0000` shiny | The same, from shiny Victini: `edits/0494-0001-shadow-shiny.json`. The shiny draws body and eye glint in one white, so parts come from the regular coat. |
+| `unova/0648/0002` Shadow | `unova/0648/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0648-0002-shadow-regular.json`. The eyes share a ramp with the music notes, so they form one part. |
+| `unova/0648/0002` Shadow, shiny | `unova/0648/0000` shiny | The same, from shiny Meloetta: `edits/0648-0002-shadow-shiny.json`. |
+| `unova/0648/0003` Shadow Pirouette | `unova/0648/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0648-0003-shadow-regular.json`. The hair is toned down and keeps its near-black deepest shade. |
+| `unova/0648/0003` Shadow Pirouette, shiny | `unova/0648/0001` shiny | The same, from shiny Pirouette: `edits/0648-0003-shadow-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

@@ -1,0 +1,54 @@
+{
+ "source": {
+  "form": "648/1",
+  "coat": "shiny"
+ },
+ "target": {
+  "form": "648/3",
+  "coat": "shiny",
+  "name": "Shadow_Pirouette"
+ },
+ "families": [
+  {
+   "part": "hair",
+   "base": "#f96ebd",
+   "members": [
+    "#ffa5c5",
+    "#f96ebd",
+    "#b03b7c",
+    "#83056d",
+    "#101010"
+   ],
+   "fit": true,
+   "tone": 0.55
+  },
+  {
+   "part": "dress",
+   "base": "#695069",
+   "members": [
+    "#695069",
+    "#49494d",
+    "#2a2f4a"
+   ]
+  },
+  {
+   "part": "face",
+   "base": "#eeeef7",
+   "members": [
+    "#ffffff",
+    "#eeeef7",
+    "#c8c8d4",
+    "#a6a6a6"
+   ],
+   "darken": 0.35
+  },
+  {
+   "part": "eyes",
+   "base": "#d9712f",
+   "members": [
+    "#d9712f",
+    "#901840"
+   ]
+  }
+ ]
+}

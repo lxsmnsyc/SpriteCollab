@@ -1,0 +1,8 @@
+{ "source": { "form": "648/0", "coat": "shiny" },
+  "target": { "form": "648/2", "coat": "shiny", "name": "Shadow" },
+  "families": [
+    { "part": "hair", "base": "#7bb590", "members": ["#9deaba", "#7bb590", "#476b60"] },
+    { "part": "dress", "base": "#695069", "members": ["#695069", "#49494d", "#2a2f4a"] },
+    { "part": "face", "base": "#eeeef7", "members": ["#ffffff", "#eeeef7", "#c8c8d4", "#a6a6a6"], "darken": 0.35 },
+    { "part": "eyes and notes", "base": "#59b53d", "members": ["#7bf954", "#59b53d", "#387227"], "fit": true },
+    { "part": "mouth", "base": "#ff608d", "members": ["#ff608d"] } ] }
