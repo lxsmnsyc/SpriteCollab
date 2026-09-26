@@ -162,6 +162,7 @@ rather than what the artist submitted.
 | `kalos/0721/0001` Shadow, shiny | `kalos/0721/0000` shiny | The same, from shiny Volcanion: `edits/0721-0001-shadow-shiny.json`. |
 | `kalos/0719/0002` Shadow | `kalos/0719/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0719-0002-shadow-regular.json`. The regular draws the dress front and the sparkle in one white, so parts come from the shiny coat. The crystals sit on their mid pink, which keeps them visible. |
 | `kalos/0719/0002` Shadow, shiny | `kalos/0719/0000` shiny | The same, from shiny Diancie: `edits/0719-0002-shadow-shiny.json`. |
+| `alola/0741/0002` shiny | `alola/0741/0002` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Pa'u art: `edits/0741-0002-regular-shiny.json`. The face and the wing-feather tips share one colour, so the tips come out cream-white rather than pale pink. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".

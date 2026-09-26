@@ -100,14 +100,14 @@ Drawn, but below the bare minimum.
 
 ### No shiny
 
-77 built forms have a regular coat and no shiny.
+76 built forms have a regular coat and no shiny.
 
 | Kind | Forms |
 |---|---|
 | Base (7) | Milcery, Greedent, Barraskewda, Glastrier, Oinkologne, Naclstack, Koraidon |
 | Mega (3) | Tyranitar, Medicham, Darkrai |
 | Regional (2) | Meowth Galar, Darumaka Galar |
-| Other (65) | Alcremie: all 56 flavours · Minior: 7 cores · Oricorio Pa'u · Terapagos Terastal |
+| Other (64) | Alcremie: all 56 flavours · Minior: 7 cores · Terapagos Terastal |
 
 ## Redoing this
 
