@@ -29,13 +29,12 @@ regular coat.
 
 ## Below the bare minimum
 
-18 base forms are missing one of the six a sheet cannot be shown
+17 base forms are missing one of the six a sheet cannot be shown
 without — **bold** below. See [`README.md`](README.md).
 
 | Dex | Species | Missing |
 |---|---|---|
 | 0593 | Jellicent | **Hurt** **Attack** Double Charge **Hop** |
-| 0618 | Stunfisk | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
 | 0683 | Aromatisse | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
 | 0733 | Toucannon | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
 | 0865 | Sirfetch_d | **Sleep** **Hurt** **Attack** Charge **Hop** |
