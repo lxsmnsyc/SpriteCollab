@@ -163,6 +163,11 @@ rather than what the artist submitted.
 | `kalos/0719/0002` Shadow | `kalos/0719/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0719-0002-shadow-regular.json`. The regular draws the dress front and the sparkle in one white, so parts come from the shiny coat. The crystals sit on their mid pink, which keeps them visible. |
 | `kalos/0719/0002` Shadow, shiny | `kalos/0719/0000` shiny | The same, from shiny Diancie: `edits/0719-0002-shadow-shiny.json`. |
 | `alola/0741/0002` shiny | `alola/0741/0002` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Pa'u art: `edits/0741-0002-regular-shiny.json`. The face and the wing-feather tips share one colour, so the tips come out cream-white rather than pale pink. |
+| `unova/0520/0000` Tranquill | `sprite-0520.zip`, regular | Not in the collection yet; built from the artist's SpriteCollab-format folder (`sprite-0520.zip`), with a `credits.txt` added: Pokejavi., CC BY-NC 4.0. A rebuild from `sprite/` will not make it until upstream has it. |
+| `unova/0558/0000` Crustle | `sprite-0558.zip`, regular | Not in the collection yet; built from the artist's SpriteCollab-format folder (`sprite-0558.zip`), with a `credits.txt` added: JFain, CC BY-NC 4.0. A rebuild from `sprite/` will not make it until upstream has it. |
+| `unova/0616/0000` Shelmet | `sprite-0616.zip`, regular | Not in the collection yet; built from the artist's SpriteCollab-format folder (`sprite-0616.zip`), with a `credits.txt` added: Pokejavi., CC BY-NC 4.0. A rebuild from `sprite/` will not make it until upstream has it. |
+| `unova/0626/0000` Bouffalant | `sprite-0626.zip`, regular | Not in the collection yet; built from the artist's SpriteCollab-format folder (`sprite-0626.zip`), with a `credits.txt` added: Pokejavi., CC BY-NC 4.0. A rebuild from `sprite/` will not make it until upstream has it. |
+| `alola/0741/0003` Oricorio Sensu | `sprite-0741-0003.zip`, regular | Not in the collection yet; built from the artist's SpriteCollab-format folder (`sprite-0741-0003.zip`), with a `credits.txt` added: baronessfaron, CC BY-NC 4.0. A rebuild from `sprite/` will not make it until upstream has it. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
