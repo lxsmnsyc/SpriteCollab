@@ -7,11 +7,11 @@ the rest.
 
 ## No sprite at all
 
-31 species.
+30 species.
 
 | Region | Species |
 |---|---|
-| unova (3) | Blitzle, Zebstrika, Carracosta |
+| unova (2) | Blitzle, Zebstrika |
 | alola (4) | Trumbeak, Gumshoos, Shiinotic, Oranguru |
 | galar (6) | Rolycoly, Carkol, Coalossal, Mr_Rime, Cufant, Zarude |
 | paldea (18) | Squawkabilly, Maschiff, Mabosstiff, Shroodle, Brambleghast, Toedscruel, Klawf, Rabsca, Espathra, Bombirdier, Flamigo, Brute_Bonnet, Iron_Jugulis, Wo_Chien, Chien_Pao, Okidogi, Iron_Boulder, Iron_Crown |
