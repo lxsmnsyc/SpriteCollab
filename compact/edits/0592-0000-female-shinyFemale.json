@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "from": "female",
+  "swaps": [
+    {
+      "from": "#ffffffff",
+      "to": "#ffffffff"
+    },
+    {
+      "from": "#d7dfdfff",
+      "to": "#d7dfdfff"
+    },
+    {
+      "from": "#7f8f97ff",
+      "to": "#7f8f97ff"
+    },
+    {
+      "from": "#000000ff",
+      "to": "#000000ff"
+    },
+    {
+      "from": "#ffdee6ff",
+      "to": "#efe6feff"
+    },
+    {
+      "from": "#d5b4bdff",
+      "to": "#d5b4bdff"
+    },
+    {
+      "from": "#bd83a4ff",
+      "to": "#c57b7cff"
+    },
+    {
+      "from": "#ffb4d5ff",
+      "to": "#ff9c9dff"
+    },
+    {
+      "from": "#f4bed7ff",
+      "to": "#f4bed7ff"
+    },
+    {
+      "from": "#425a7bff",
+      "to": "#425a7bff"
+    },
+    {
+      "from": "#929fb0ff",
+      "to": "#929fb0ff"
+    },
+    {
+      "from": "#ac3141ff",
+      "to": "#841989ff"
+    },
+    {
+      "from": "#5aa4c5ff",
+      "to": "#5aa4c5ff"
+    },
+    {
+      "from": "#f8f8f8ff",
+      "to": "#f8f8f8ff"
+    }
+  ]
+}
