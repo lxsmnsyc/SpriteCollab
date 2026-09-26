@@ -173,6 +173,8 @@ rather than what the artist submitted.
 | `unova/0558/0000` shiny | `unova/0558/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Crustle art: `edits/0558-0000-regular-shiny.json`. |
 | `unova/0626/0000` shiny | `unova/0626/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Bouffalant art: `edits/0626-0000-regular-shiny.json`. |
 | `unova/0616/0000` shiny | `unova/0616/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Shelmet art: `edits/0616-0000-regular-shiny.json`. |
+| `unova/0592/0000` Frillish | `sprite-0592.zip`, regular | Not in the collection yet; built from the artist's SpriteCollab-format folder with a `credits.txt` added: Pokejavi., CC BY-NC 4.0. Realigned on review notes: every frame's drawing and anchor marks moved whole pixels so the head tuft sits over the shadow pixel (487 frames), Hurt down-left and down-right up 2 px, Walk down given down-right's bob. Shadows unchanged. Not reproducible from a mapping; the realigned folder is `sprite-0592-fixed.zip`. |
+| `unova/0592/0000` shiny | `unova/0592/0000` regular | No shiny was drawn. Recoloured from the regular through the male regular-to-shiny pairing of the game's own Frillish icons: `edits/0592-0000-regular-shiny.json`. Water droplets and sparkles keep their colours. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
