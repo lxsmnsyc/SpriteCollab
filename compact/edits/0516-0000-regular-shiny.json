@@ -1,0 +1,90 @@
+{
+  "version": 1,
+  "from": "regular",
+  "swaps": [
+    {
+      "from": "#000000ff",
+      "to": "#000000ff"
+    },
+    {
+      "from": "#8adff7ff",
+      "to": "#699af7ff"
+    },
+    {
+      "from": "#04a2cfff",
+      "to": "#3c59c7ff"
+    },
+    {
+      "from": "#004151ff",
+      "to": "#181845ff"
+    },
+    {
+      "from": "#5d96aaff",
+      "to": "#7d7db2ff"
+    },
+    {
+      "from": "#006582ff",
+      "to": "#302c82ff"
+    },
+    {
+      "from": "#002834ff",
+      "to": "#10102cff"
+    },
+    {
+      "from": "#c3cbd7ff",
+      "to": "#c3cbd7ff"
+    },
+    {
+      "from": "#003c51ff",
+      "to": "#181845ff"
+    },
+    {
+      "from": "#ffffffff",
+      "to": "#ffffffff"
+    },
+    {
+      "from": "#8e92a6ff",
+      "to": "#8e92a6ff"
+    },
+    {
+      "from": "#efba2cff",
+      "to": "#dba628ff"
+    },
+    {
+      "from": "#f7f7f7ff",
+      "to": "#f7f7f7ff"
+    },
+    {
+      "from": "#555969ff",
+      "to": "#655d69ff"
+    },
+    {
+      "from": "#100c10ff",
+      "to": "#100c10ff"
+    },
+    {
+      "from": "#966d00ff",
+      "to": "#966d00ff"
+    },
+    {
+      "from": "#614500ff",
+      "to": "#614500ff"
+    },
+    {
+      "from": "#ffe7a2ff",
+      "to": "#efd796ff"
+    },
+    {
+      "from": "#9a690cff",
+      "to": "#825100ff"
+    },
+    {
+      "from": "#3c2800ff",
+      "to": "#3c2800ff"
+    },
+    {
+      "from": "#613c00ff",
+      "to": "#613c00ff"
+    }
+  ]
+}

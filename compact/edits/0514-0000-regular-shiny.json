@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "from": "regular",
+  "swaps": [
+    {
+      "from": "#f8e088ff",
+      "to": "#f8d165ff"
+    },
+    {
+      "from": "#fafafaff",
+      "to": "#fafafaff"
+    },
+    {
+      "from": "#000000ff",
+      "to": "#000000ff"
+    },
+    {
+      "from": "#e65241ff",
+      "to": "#ee2840ff"
+    },
+    {
+      "from": "#a63028ff",
+      "to": "#901222ff"
+    },
+    {
+      "from": "#680800ff",
+      "to": "#450005ff"
+    },
+    {
+      "from": "#f89018ff",
+      "to": "#f89900ff"
+    },
+    {
+      "from": "#c0c0d8ff",
+      "to": "#c0c0d8ff"
+    },
+    {
+      "from": "#e0b833ff",
+      "to": "#e0bf04ff"
+    }
+  ]
+}
