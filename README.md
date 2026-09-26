@@ -1,4 +1,4 @@
-**Key**
+![alt text](image.png)**Key**
 :star: Fully Featured: Contains all emotions in high quality.
 :white_check_mark: Exists: Contains at least a Normal emotion in high quality.
 :white_circle: Incomplete: Contains at least a Normal emotion, but considered unfinished.

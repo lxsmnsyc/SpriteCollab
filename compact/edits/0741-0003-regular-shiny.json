@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "from": "regular",
+  "swaps": [
+    {
+      "from": "#000000ff",
+      "to": "#000000ff"
+    },
+    {
+      "from": "#64bec9ff",
+      "to": "#7880c0ff"
+    },
+    {
+      "from": "#b5b5adff",
+      "to": "#b5b5adff"
+    },
+    {
+      "from": "#ffffffff",
+      "to": "#ffffffff"
+    },
+    {
+      "from": "#9be7f1ff",
+      "to": "#a8b0d8ff"
+    },
+    {
+      "from": "#f7bbe4ff",
+      "to": "#e0d0e8ff"
+    },
+    {
+      "from": "#de8bc4ff",
+      "to": "#c8b8d0ff"
+    },
+    {
+      "from": "#a095e1ff",
+      "to": "#b0d8d8ff"
+    },
+    {
+      "from": "#7769c6ff",
+      "to": "#78b0a8ff"
+    },
+    {
+      "from": "#9e4e7eff",
+      "to": "#b87878ff"
+    }
+  ]
+}
