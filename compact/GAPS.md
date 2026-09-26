@@ -1,7 +1,7 @@
 # Gaps in the collection
 
 What upstream has not drawn. Nothing here is a fault in the build —
-`compact/` holds every sheet that exists. The first four sections are
+`compact/` holds every sheet that exists. The first five sections are
 base forms only, per [`CLAUDE.md`](../CLAUDE.md); [Forms](#forms) covers
 the rest.
 
@@ -59,6 +59,24 @@ Milcery alone has the six but not `Double`, `Swing`, `Charge` or `Rotate`.
 | Dex | Species | Missing |
 |---|---|---|
 | 0868 | Milcery | Swing Charge |
+
+## Rendered from 3D models
+
+9 species have no upstream art; `compact/` holds a stand-in rendered
+from the Pokédex 3D model until someone draws them. See
+[`EDITS.md`](EDITS.md).
+
+| Dex | Species | Upstream has |
+|---|---|---|
+| 0516 | Simipour | Nothing |
+| 0522 | Blitzle | Nothing |
+| 0523 | Zebstrika | Nothing |
+| 0538 | Throh | Nothing |
+| 0564 | Tirtouga | Nothing |
+| 0565 | Carracosta | Nothing |
+| 0591 | Amoonguss | Nothing |
+| 0618 | Stunfisk | Idle and Rotate only |
+| 0626 | Bouffalant | Nothing |
 
 ## Forms
 
