@@ -170,6 +170,7 @@ rather than what the artist submitted.
 | `alola/0741/0003` Oricorio Sensu | `sprite-0741-0003.zip`, regular | Not in the collection yet; built from the artist's SpriteCollab-format folder (`sprite-0741-0003.zip`), with a `credits.txt` added: baronessfaron, CC BY-NC 4.0. A rebuild from `sprite/` will not make it until upstream has it. |
 | `unova/0520/0000` shiny | `unova/0520/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Tranquill art: `edits/0520-0000-regular-shiny.json`. The eye patch and legs share one colour, so both come out one lavender. |
 | `alola/0741/0003` shiny | `alola/0741/0003` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Sensu art: `edits/0741-0003-regular-shiny.json`. The beak shares the fan scallops' pink, so it comes out lilac rather than salmon. |
+| `unova/0558/0000` shiny | `unova/0558/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Crustle art: `edits/0558-0000-regular-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
