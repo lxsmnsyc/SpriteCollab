@@ -7,60 +7,88 @@
       "to": "#000000ff"
     },
     {
-      "from": "#312920ff",
-      "to": "#483e36ff"
+      "from": "#756d69ff",
+      "to": "#9e928aff"
     },
     {
-      "from": "#fff6cdff",
-      "to": "#f8d8b0ff"
+      "from": "#514945ff",
+      "to": "#6d6159ff"
     },
     {
-      "from": "#f6d59cff",
-      "to": "#e8b888ff"
+      "from": "#383430ff",
+      "to": "#49453cff"
     },
     {
-      "from": "#ffc54aff",
-      "to": "#f0f058ff"
+      "from": "#201c18ff",
+      "to": "#28241cff"
     },
     {
-      "from": "#6a4a29ff",
-      "to": "#682818ff"
+      "from": "#ebb68eff",
+      "to": "#d39e8eff"
     },
     {
-      "from": "#946a31ff",
-      "to": "#904028ff"
+      "from": "#c75d14ff",
+      "to": "#b24d34ff"
     },
     {
-      "from": "#9c835aff",
-      "to": "#906048ff"
+      "from": "#793400ff",
+      "to": "#692814ff"
     },
     {
-      "from": "#bda47bff",
-      "to": "#b08060ff"
+      "from": "#4d2000ff",
+      "to": "#45180cff"
     },
     {
-      "from": "#4a3118ff",
-      "to": "#401810ff"
+      "from": "#ffd796ff",
+      "to": "#f3eba6ff"
     },
     {
-      "from": "#6a6a73ff",
-      "to": "#6a6a73ff"
+      "from": "#f7aa20ff",
+      "to": "#ebe351ff"
     },
     {
-      "from": "#9ca4a4ff",
-      "to": "#9ca4a4ff"
+      "from": "#e39210ff",
+      "to": "#d7cb41ff"
     },
     {
-      "from": "#393941ff",
-      "to": "#393941ff"
+      "from": "#8e5500ff",
+      "to": "#867d20ff"
     },
     {
-      "from": "#a8b0b8ff",
-      "to": "#a8b0b8ff"
+      "from": "#5d3800ff",
+      "to": "#555114ff"
     },
     {
-      "from": "#d0d8d8ff",
-      "to": "#d0d8d8ff"
+      "from": "#ffffffff",
+      "to": "#ffffffff"
+    },
+    {
+      "from": "#c3cbd7ff",
+      "to": "#e7c7a2ff"
+    },
+    {
+      "from": "#8e92a6ff",
+      "to": "#b29e5dff"
+    },
+    {
+      "from": "#555969ff",
+      "to": "#6d5d28ff"
+    },
+    {
+      "from": "#ebdbd3ff",
+      "to": "#dbbeb6ff"
+    },
+    {
+      "from": "#c7b2a2ff",
+      "to": "#ba9682ff"
+    },
+    {
+      "from": "#8e8a6dff",
+      "to": "#827951ff"
+    },
+    {
+      "from": "#55453cff",
+      "to": "#4d3428ff"
     }
   ]
 }
