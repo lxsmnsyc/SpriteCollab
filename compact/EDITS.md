@@ -172,6 +172,7 @@ rather than what the artist submitted.
 | `alola/0741/0003` shiny | `alola/0741/0003` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Sensu art: `edits/0741-0003-regular-shiny.json`. The beak shares the fan scallops' pink, so it comes out lilac rather than salmon. |
 | `unova/0558/0000` shiny | `unova/0558/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Crustle art: `edits/0558-0000-regular-shiny.json`. |
 | `unova/0626/0000` shiny | `unova/0626/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Bouffalant art: `edits/0626-0000-regular-shiny.json`. |
+| `unova/0616/0000` shiny | `unova/0616/0000` regular | No shiny was drawn. Recoloured from the regular with colours taken from official shiny Shelmet art: `edits/0616-0000-regular-shiny.json`. |
 
 Add a row before editing a sheet. Say what changed, what it was made
 from, and why — "filled a missing animation", not "improved".
