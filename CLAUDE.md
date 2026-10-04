@@ -26,9 +26,11 @@ the reader and the fact they came for.
 - `compact/` is generated. Edit `sprite/` and rebuild, unless the sheet
   is listed in `EDITS.md`.
 - Tests build their own fixtures. Do not read `sprite/` from a test.
-- Forms whose regular coat lacks one of the bare-minimum animations
-  are not built. They stay in `sprite/` for upstream to finish.
-  `--all` overrides.
+- A form is built if its regular coat has `Idle` or `Rotate`
+  (showable). What it lacks of the seven minimal-complete animations,
+  `Double` and `Charge` is polyfilled from its standing pose and listed
+  in the sheet. A form with neither stays in `sprite/`; `--all`
+  overrides.
 - Count base forms only. `Alternate`, `Gigantamax`, `Mega`, `Altcolor`
   and `Cutscene` are left out of coverage and completeness reports —
   they are far less finished than base forms and skew every figure.

@@ -112,21 +112,21 @@ export const COMMON_ANIMS: SpriteAnim[] = [
 ];
 
 /**
- * The six a sheet is no use at all without.
+ * The seven a minimal complete sheet has drawn.
  *
- * A subset of the common ten, and the harder line: standing, moving,
- * attacking, being hit, resting and the hop that stands in for
- * everything else. A sheet short of one of these cannot be put on
- * screen in a normal turn of play, where a sheet missing `Rotate` or
- * `Charge` is merely incomplete.
+ * A subset of the common ten: standing, moving, attacking, being hit,
+ * resting, the hop that stands in for everything else, and turning on
+ * the spot. A form short of one of these is still built where it is
+ * showable, with the missing ones [polyfilled](./polyfill.ts).
  */
-export const MINIMUM_ANIMS: SpriteAnim[] = [
+export const MINIMAL_COMPLETE_ANIMS: SpriteAnim[] = [
   SpriteAnim.Idle,
   SpriteAnim.Attack,
   SpriteAnim.Walk,
   SpriteAnim.Sleep,
   SpriteAnim.Hurt,
   SpriteAnim.Hop,
+  SpriteAnim.Rotate,
 ];
 
 /** Which of the common animations a sheet's animations do not cover. */
@@ -136,11 +136,24 @@ export function missingCommon(held: Iterable<SpriteAnim>): SpriteAnim[] {
   return COMMON_ANIMS.filter((anim) => !have.has(anim));
 }
 
-/** Which of the six it does not have, which is the serious list. */
-export function missingMinimum(held: Iterable<SpriteAnim>): SpriteAnim[] {
+/** Which of the seven it does not have drawn. */
+export function missingMinimal(held: Iterable<SpriteAnim>): SpriteAnim[] {
   const have = new Set(held);
 
-  return MINIMUM_ANIMS.filter((anim) => !have.has(anim));
+  return MINIMAL_COMPLETE_ANIMS.filter((anim) => !have.has(anim));
+}
+
+/**
+ * What a form needs to be built at all: a standing pose in every
+ * facing, which every other animation can be made from.
+ */
+export const SHOWABLE_ANIMS: SpriteAnim[] = [SpriteAnim.Idle, SpriteAnim.Rotate];
+
+/** Whether a form has one of the two its sheet can be made from. */
+export function isShowable(held: Iterable<SpriteAnim>): boolean {
+  const have = new Set(held);
+
+  return SHOWABLE_ANIMS.some((anim) => have.has(anim));
 }
 
 const NAMED = new Map<number, string>(

@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import {
   COMMON_ANIMS,
-  MINIMUM_ANIMS,
+  MINIMAL_COMPLETE_ANIMS,
+  SHOWABLE_ANIMS,
+  isShowable,
   SPRITE_ANIMS,
   SpriteAnim,
   missingCommon,
-  missingMinimum,
+  missingMinimal,
   spriteAnimName,
   spriteAnimOf,
 } from '../src/anims.ts';
@@ -63,29 +65,38 @@ describe('the common animations', () => {
   });
 });
 
-describe('the bare minimum', () => {
-  it('is the six a sheet is no use without', () => {
-    expect(MINIMUM_ANIMS.map(spriteAnimName)).toEqual([
-      'Idle', 'Attack', 'Walk', 'Sleep', 'Hurt', 'Hop',
+describe('minimal complete', () => {
+  it('is the seven a complete form has drawn', () => {
+    expect(MINIMAL_COMPLETE_ANIMS.map(spriteAnimName)).toEqual([
+      'Idle', 'Attack', 'Walk', 'Sleep', 'Hurt', 'Hop', 'Rotate',
     ]);
   });
 
   it('is inside the common ten', () => {
-    for (const anim of MINIMUM_ANIMS) {
+    for (const anim of MINIMAL_COMPLETE_ANIMS) {
       expect(COMMON_ANIMS).toContain(anim);
     }
   });
 
-  it('says which of the six a sheet has not got', () => {
-    expect(missingMinimum(COMMON_ANIMS)).toEqual([]);
-    expect(missingMinimum([SpriteAnim.Idle])).toEqual(
-      MINIMUM_ANIMS.filter((anim) => anim !== SpriteAnim.Idle),
+  it('says which of the seven a sheet has not got', () => {
+    expect(missingMinimal(COMMON_ANIMS)).toEqual([]);
+    expect(missingMinimal([SpriteAnim.Idle])).toEqual(
+      MINIMAL_COMPLETE_ANIMS.filter((anim) => anim !== SpriteAnim.Idle),
     );
   });
 
   it('is never longer than what the common ten is missing', () => {
-    const held = [SpriteAnim.Idle, SpriteAnim.Rotate];
+    const held = [SpriteAnim.Idle, SpriteAnim.Charge];
 
-    expect(missingMinimum(held).length).toBeLessThanOrEqual(missingCommon(held).length);
+    expect(missingMinimal(held).length).toBeLessThanOrEqual(missingCommon(held).length);
+  });
+});
+
+describe('showable', () => {
+  it('needs Idle or Rotate, and nothing else', () => {
+    expect(SHOWABLE_ANIMS.map(spriteAnimName)).toEqual(['Idle', 'Rotate']);
+    expect(isShowable([SpriteAnim.Idle])).toBe(true);
+    expect(isShowable([SpriteAnim.Rotate])).toBe(true);
+    expect(isShowable([SpriteAnim.Walk, SpriteAnim.Attack, SpriteAnim.Hop])).toBe(false);
   });
 });

@@ -37,7 +37,8 @@ The species line weighs all of `sprite/{dex}` against all of
 --out <dir>      where the tree goes               (default compact)
 --no-compact     keep frames at their authored size
 --no-merge       leave a coat missing an animation its pair has
---all            build a form the collection has barely drawn too
+--no-polyfill    leave undrawn animations missing
+--all            build a form with neither Idle nor Rotate too
 --no-verify      skip reading every frame back
 --check          check the sheets already written, build nothing
 --prune          delete sources once verified
@@ -92,20 +93,53 @@ The run says which, and whether the sheet called it ours:
           ours — redo it from compact/EDITS.md
 ```
 
-### Below the bare minimum
+### Showable, polyfilled, minimal complete
 
-A form whose regular coat is short of one of the six
-([`anims.ts`](src/anims.ts)) is not built. It cannot be put on screen in
-a normal turn of play, and its folder is where a later revision will
-finish it. A form with no regular coat at all counts as short of all
-six. The run says which, even under `--quiet`:
+| | Regular coat has | Built |
+|---|---|---|
+| **minimal complete** | `Idle` `Attack` `Walk` `Sleep` `Hurt` `Hop` `Rotate`, all drawn | as drawn |
+| **showable** | `Idle` or `Rotate` | with what is missing made from the standing pose |
+| neither | | not built; `--all` builds it anyway |
+
+[`polyfill.ts`](src/polyfill.ts) makes `Idle`, `Rotate`, `Walk`,
+`Attack`, `Hurt`, `Sleep`, `Hop`, `Double` and `Charge` by sliding the
+first frame of `Idle` (or `Rotate`) in each facing:
+
+| Made | Motion |
+|---|---|
+| `Walk` | 1 px bob |
+| `Attack` | step back, lunge 4 px forward, back |
+| `Hurt` | knocked back 2, then 4 px |
+| `Sleep` | DownLeft facing, sinks 1 px |
+| `Hop` | the drawn sheets' lift, 0 to 22 px; shadow stays |
+| `Double` | the drawn sheets' sideways steps |
+| `Charge` | 1 px shiver |
+| `Idle` / `Rotate` | the other's frames |
+
+An animation the other coat of the pair has drawn is recoloured by the
+merge instead. The sheet records what was made (`polyfilled` in
+[`compact/README.md`](../compact/README.md)). Both are said even under
+`--quiet`:
 
 ```
-skipped  1 form below the bare minimum: 733/0 Attack Walk Sleep Hurt Hop
+polyfill 1 form given made animations, 1 short of minimal complete: 883/0 Hurt Sleep Hop Charge
+skipped  1 form with neither Idle nor Rotate: 89/2 Idle Rotate
 ```
 
-`--all` builds them anyway. Sheets built before this rule stay where
-they are until something rebuilds them.
+`--no-polyfill` builds what is drawn and nothing more.
+
+### Filling sheets already built
+
+A sheet whose folders are gone, or that never had any, is polyfilled
+from the sheet itself: unpacked into folders, given what it has not
+drawn, rebuilt, and checked against what was unpacked. Coats made by
+hand and `derived` survive.
+
+```bash
+node tools/src/fill-bin.ts --dry-run   # which sheets, and what they would get
+node tools/src/fill-bin.ts             # every sheet missing one of the made nine
+node tools/src/fill-bin.ts 516 591     # these species only
+```
 
 ### Pruning what is already built
 
@@ -275,7 +309,10 @@ The index merges, so a partial run leaves the rest alone.
 | | |
 |---|---|
 | [`xml.ts`](src/xml.ts) | as much XML as `AnimData.xml` needs |
-| [`anims.ts`](src/anims.ts) | the forty-eight supported animations, the common ten and the six inside them |
+| [`anims.ts`](src/anims.ts) | the forty-eight supported animations, the common ten, minimal complete and showable |
+| [`polyfill.ts`](src/polyfill.ts) | undrawn animations, made from the standing pose |
+| [`unpack.ts`](src/unpack.ts) | a built sheet, back into folders |
+| [`fill.ts`](src/fill.ts) | polyfilling sheets already built |
 | [`anim-data.ts`](src/anim-data.ts) | the description, `CopyOf` resolved |
 | [`credits.ts`](src/credits.ts) | who drew it, under what terms |
 | [`png.ts`](src/png.ts) | decode, and encode into the smallest container |

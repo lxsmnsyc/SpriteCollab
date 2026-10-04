@@ -1,7 +1,7 @@
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import { join, relative } from 'node:path';
 import type { SpriteAnim } from './anims.ts';
-import { MINIMUM_ANIMS, missingCommon, missingMinimum } from './anims.ts';
+import { SHOWABLE_ANIMS, isShowable, missingCommon } from './anims.ts';
 import readAnimData from './anim-data.ts';
 import type { Archive } from './archive.ts';
 import readArchive from './archive.ts';
@@ -10,6 +10,8 @@ import readCreditNames from './credits.ts';
 import type { Frames } from './frames.ts';
 import { decodeFrames, encodeFrames } from './frames.ts';
 import type { Derived, Refused } from './merge.ts';
+import type { Polyfilled } from './polyfill.ts';
+import { polyfillCoats } from './polyfill.ts';
 import { decode } from './raster.ts';
 import type { SheetData, SheetResult } from './sheet.ts';
 import { buildSheet, layoutsFor } from './sheet.ts';
@@ -60,15 +62,18 @@ export interface RunOptions {
    */
   check?: boolean;
   /**
-   * Whether a form the collection has barely drawn is built anyway.
+   * Whether a form that is not showable is built anyway.
    *
-   * Off, a form whose regular coat is short of one of the six
-   * bare-minimum animations is left where it is: it cannot be put on
-   * screen in a normal turn of play, so packing it and taking its
-   * folder away buys nothing and loses the folder a later revision
-   * would be finished in.
+   * Off, a form whose regular coat has neither `Idle` nor `Rotate` is
+   * left where it is: there is no standing pose to make the rest of its
+   * animations from, so it cannot be put on screen.
    */
   all?: boolean;
+  /**
+   * Whether the common animations a form has not drawn are made from
+   * its standing pose. On unless turned off.
+   */
+  polyfill?: boolean;
   /** Whether anything is written at all. */
   dryRun?: boolean;
   /** Where the collection's record of names is, where it is to be read. */
@@ -148,6 +153,8 @@ export interface SlotReport {
   derived: Derived[];
   /** Animations one coat could not be given, and why. */
   refused: Refused[];
+  /** Animations made from the standing pose, by coat. */
+  polyfilled: Polyfilled[];
   /** Coat files this build did not write, and took away. */
   dropped: Dropped[];
   /** Which of the common animations the form has not got. */
@@ -184,17 +191,17 @@ export interface SpeciesReport {
   after: number;
 }
 
-/** One form the run left where it was, and what it was short of. */
+/** One form the run left where it was, because it is not showable. */
 export interface SkippedSlot {
   dex: number;
   form: number;
-  /** Which of the six its regular coat has not got. All six, where it has no regular coat. */
+  /** What it would need one of: `Idle` and `Rotate`. */
   missing: SpriteAnim[];
 }
 
 export interface RunReport {
   slots: SlotReport[];
-  /** The forms below the bare minimum, which were not built. */
+  /** The forms that are not showable, which were not built. */
   skipped: SkippedSlot[];
   species: SpeciesReport[];
   /** Every anchor of every frame the run wrote, counted. */
@@ -314,6 +321,7 @@ function checkSlot(
     anchors: countAnchors(frames),
     derived: meta.derived,
     refused: [],
+    polyfilled: meta.polyfilled ?? [],
     dropped: [],
     missing: missingCommon(meta.anims.map((one) => one.anim)),
     removed,
@@ -321,28 +329,34 @@ function checkSlot(
 }
 
 /**
- * Which of the bare minimum a form's regular coat is short of.
+ * What a form's regular coat would need to be showable: nothing where
+ * it has `Idle` or `Rotate`, both where it has neither.
  *
  * Read out of `AnimData.xml` alone — a form is judged before anything
  * of it is decoded, so the ones that are not going to be built cost a
  * few kilobytes of XML rather than a sheet's worth of PNG.
  */
-export function belowMinimum(root: string, slot: Slot): SpriteAnim[] {
+export function notShowable(root: string, slot: Slot): SpriteAnim[] {
   if (!slot.present.includes('regular')) {
-    return MINIMUM_ANIMS;
+    return SHOWABLE_ANIMS;
   }
   const file = join(root, slot.coats.regular, 'AnimData.xml');
   const data = readAnimData(readFileSync(file, 'utf8'));
 
-  return missingMinimum(data.anims.map((one) => one.anim));
+  return isShowable(data.anims.map((one) => one.anim)) ? [] : SHOWABLE_ANIMS;
 }
+
 
 /** One form: read, built, checked, written, and its source taken away. */
 export function runSlot(slot: Slot, options: RunOptions): SlotReport {
-  const archives = slot.present.map((key) => ({
+  const read = slot.present.map((key) => ({
     key,
     archive: readArchive(join(options.root, slot.coats[key]), options.authors),
   }));
+  // Before the check as well as the build: the sheet holds the made
+  // animations, so the folders it is compared with have to as well
+  const { archives, polyfilled } =
+    options.polyfill === false ? { archives: read, polyfilled: [] } : polyfillCoats(read);
 
   if (options.check === true) {
     return checkSlot(slot, archives, options);
@@ -352,6 +366,8 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
     merge: options.merge,
     names: options.names?.(slot.dex, slot.form),
   });
+
+  result.meta.polyfilled = polyfilled;
   const mismatches =
     options.verify === false
       ? []
@@ -412,6 +428,7 @@ export function runSlot(slot: Slot, options: RunOptions): SlotReport {
     anchors: countAnchors(result.frames),
     derived: result.meta.derived,
     refused: result.refused,
+    polyfilled,
     dropped: written?.dropped ?? dropped,
     missing: missingCommon(result.meta.anims.map((one) => one.anim)),
     removed,
@@ -448,7 +465,7 @@ export default function run(options: RunOptions): RunReport {
 
     for (const slot of slotsOf(options.root, dex)) {
       try {
-        const short = options.all === true ? [] : belowMinimum(options.root, slot);
+        const short = options.all === true ? [] : notShowable(options.root, slot);
 
         if (short.length > 0) {
           const missed: SkippedSlot = { dex: slot.dex, form: slot.form, missing: short };

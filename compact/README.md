@@ -28,7 +28,7 @@ lists every form:
   "regions": [{ "region": "kanto", "forms": 285 }, …],
   "slots": [{ "region": "kanto", "dex": 1, "form": 0, "path": "kanto/0001/0000",
               "coats": ["regular", "shiny"], "width": 92, "height": 214,
-              "derived": [], "missing": [] }] }
+              "derived": [], "polyfilled": [], "missing": [] }] }
 ```
 
 ## `sheet.json`
@@ -41,7 +41,7 @@ lists every form:
   "sheet": { "width": 92, "height": 214,
              "pictures": [[0, 171, 17, 21], …] },   // [x, y, w, h]
   "anims": [ … ], "sprites": [ … ], "credits": { … },
-  "derived": [] }
+  "derived": [], "polyfilled": [] }
 ```
 
 Every coat's PNG uses the same layout, so `pictures[7]` is in the same
@@ -105,30 +105,31 @@ The first eleven are on nearly every pokemon; the rest are rare. Every
 one is drawn in eight facings except `Sleep`, which has one. Cutscene
 poses (`EventSleep`, `Laying`, …) are not in this tree.
 
-### The common ten, and the six inside them
+### The common ten, and minimal complete
 
 | | Animations |
 |---|---|
-| **bare minimum** | `Idle` `Attack` `Walk` `Sleep` `Hurt` `Hop` |
-| **the rest of the ten** | `Double` `Swing` `Charge` `Rotate` |
+| **minimal complete** | `Idle` `Attack` `Walk` `Sleep` `Hurt` `Hop` `Rotate` |
+| **the rest of the ten** | `Double` `Swing` `Charge` |
 
-The six are what a sheet cannot be put on screen without. The ten are
-what a renderer may assume. A sheet short of one of the ten has nowhere
-to fall back to, so `index.json` says which it has not got:
+The seven are what a form needs drawn to be complete. A form is built if
+it has `Idle` or `Rotate` (showable); whatever of the seven, `Double` and
+`Charge` it has not drawn is made from its standing pose and listed in
+[`polyfilled`](#polyfilled--made-not-drawn). So `missing` is at most
+`Swing`, the one of the ten that is never made:
 
 ```jsonc
-"missing": [1, 2]        // no Sleep, no Hurt
+"missing": [10]          // no Swing
 ```
 
-Empty for nearly every form; what is short is unfinished art rather than
-a fault in the build. Intersect `missing` with the six to find the
-serious cases:
+The forms short of minimal complete are the ones with one of the seven
+in `polyfilled`:
 
 ```bash
-node -e 'const six = [0, 3, 9, 1, 2, 7];
+node -e 'const seven = [0, 3, 9, 1, 2, 7, 8];
 for (const s of require("./compact/index.json").slots) {
-  const gone = s.missing.filter((a) => six.includes(a));
-  if (gone.length) console.log(s.path, gone.join(","));
+  const made = s.polyfilled.filter((p) => p.coat === "regular" && seven.includes(p.anim));
+  if (made.length) console.log(s.path, made.map((p) => p.anim).join(","));
 }'
 ```
 
@@ -272,14 +273,25 @@ credit. Some sheets declare a different `license` — read the field.
 | a number | that one animation, recoloured from the other coat of the pair | yes |
 | `null` | the whole coat, recoloured by hand | no — redo it |
 
-Everything not listed is the artist's. `index.json` repeats each sheet's
-`derived`, so the whole tree can be checked without opening a thousand
-sheets:
+Everything not listed, here or in `polyfilled`, is the artist's.
+`index.json` repeats each sheet's `derived`, so the whole tree can be
+checked without opening a thousand sheets:
 
 ```bash
 node -e 'for (const s of require("./compact/index.json").slots)
   if (s.derived.length) console.log(s.path, JSON.stringify(s.derived))'
 ```
+
+### `polyfilled` — made, not drawn
+
+```jsonc
+"polyfilled": [{ "coat": "regular", "anim": 7, "from": 0 }]   // Hop, from Idle
+```
+
+Nobody has drawn these: they are the standing pose slid about (a lift
+for `Hop`, a lunge for `Attack`). Rebuilt every time, and gone once the
+artist draws the animation. `index.json` repeats it. A sheet with no
+folder left is filled with `tools/src/fill-bin.ts`.
 
 ## Edited sheets
 

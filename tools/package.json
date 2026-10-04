@@ -16,7 +16,8 @@
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
     "status": "node src/status-bin.ts",
-    "recolor": "node src/recolor-bin.ts"
+    "recolor": "node src/recolor-bin.ts",
+    "fill": "node src/fill-bin.ts"
   },
   "devDependencies": {
     "@types/node": "^24.7.0",

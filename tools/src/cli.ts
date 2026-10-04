@@ -1,6 +1,6 @@
 import { resolve } from 'node:path';
 import run from './run.ts';
-import { MINIMUM_ANIMS, spriteAnimName } from './anims.ts';
+import { MINIMAL_COMPLETE_ANIMS, spriteAnimName } from './anims.ts';
 import type { SlotReport, SpeciesReport } from './run.ts';
 
 /**
@@ -27,8 +27,9 @@ Options
   --out <dir>      where the compact tree goes         (default compact)
   --no-compact     keep every frame at its authored size
   --no-merge       leave a coat missing an animation its pair has
+  --no-polyfill    leave undrawn animations missing, not made from Idle
   --no-verify      skip reading every frame back off the sheet
-  --all            build a form the collection has barely drawn too
+  --all            build a form with neither Idle nor Rotate too
   --check          check the sheets already written, build nothing
   --prune          delete the source folders once the sheet checks out
   --dry-run        build and report, write nothing
@@ -80,6 +81,7 @@ export interface Arguments {
   output: string;
   compact: boolean;
   merge: boolean;
+  polyfill: boolean;
   verify: boolean;
   all: boolean;
   check: boolean;
@@ -99,6 +101,7 @@ export function parseArguments(argv: string[]): Arguments {
     output: 'compact',
     compact: true,
     merge: true,
+    polyfill: true,
     verify: true,
     all: false,
     check: false,
@@ -133,6 +136,9 @@ export function parseArguments(argv: string[]): Arguments {
         break;
       case '--no-merge':
         parsed.merge = false;
+        break;
+      case '--no-polyfill':
+        parsed.polyfill = false;
         break;
       case '--no-verify':
         parsed.verify = false;
@@ -240,6 +246,7 @@ export default function main(argv: string[]): number {
     creditNames: resolve(options.creditNames),
     compact: options.compact,
     merge: options.merge,
+    polyfill: options.polyfill,
     verify: options.verify,
     all: options.all,
     check: options.check,
@@ -288,16 +295,32 @@ export default function main(argv: string[]): number {
   const dropped = report.slots.reduce((total, slot) => total + slot.dropped.length, 0);
 
   const short = report.slots.filter((slot) => slot.missing.length > 0);
-  const bare = short.filter((slot) => slot.missing.some((anim) => MINIMUM_ANIMS.includes(anim)));
 
   if (!options.quiet && short.length > 0) {
     process.stdout.write(
-      `common   ${short.length} form${short.length === 1 ? '' : 's'} short of a common animation` +
-        `${bare.length > 0 ? `, ${bare.length} of the bare minimum` : ''}: ` +
+      `common   ${short.length} form${short.length === 1 ? '' : 's'} short of a common animation: ` +
         `${short
           .slice(0, 6)
           .map((slot) => `${slot.dex}/${slot.form} ${slot.missing.map(spriteAnimName).join(' ')}`)
           .join(', ')}${short.length > 6 ? ', …' : ''}\n`,
+    );
+  }
+
+  // Said even under --quiet: a made animation is a placeholder somebody
+  // will want to replace, and only the run says which forms have them
+  const filled = report.slots.filter((slot) => slot.polyfilled.length > 0);
+
+  if (filled.length > 0) {
+    const short = (slot: SlotReport): string =>
+      `${slot.dex}/${slot.form} ${[...new Set(slot.polyfilled.map((one) => one.anim))].map(spriteAnimName).join(' ')}`;
+    const minimal = filled.filter((slot) =>
+      MINIMAL_COMPLETE_ANIMS.some((anim) => slot.polyfilled.some((one) => one.coat === 'regular' && one.anim === anim)),
+    );
+
+    process.stdout.write(
+      `polyfill ${filled.length} form${filled.length === 1 ? '' : 's'} given made animations` +
+        `, ${minimal.length} short of minimal complete: ` +
+        `${filled.slice(0, 6).map(short).join(', ')}${filled.length > 6 ? ', …' : ''}\n`,
     );
   }
 
@@ -308,7 +331,7 @@ export default function main(argv: string[]): number {
     const count = report.skipped.length;
 
     process.stdout.write(
-      `skipped  ${count} form${count === 1 ? '' : 's'} below the bare minimum: ` +
+      `skipped  ${count} form${count === 1 ? '' : 's'} with neither Idle nor Rotate: ` +
         `${report.skipped
           .slice(0, 6)
           .map((slot) => `${slot.dex}/${slot.form} ${slot.missing.map(spriteAnimName).join(' ')}`)

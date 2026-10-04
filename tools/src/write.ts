@@ -4,6 +4,7 @@ import type { SpriteAnim } from './anims.ts';
 import { missingCommon } from './anims.ts';
 import { encodeFrames } from './frames.ts';
 import type { Derived } from './merge.ts';
+import type { Polyfilled } from './polyfill.ts';
 import type { Region } from './regions.ts';
 import { REGIONS } from './regions.ts';
 import type { SheetResult } from './sheet.ts';
@@ -56,6 +57,8 @@ export interface IndexEntry {
    * shape as the sheet's own `derived`, and empty for most forms.
    */
   derived: Derived[];
+  /** Animations made from the standing pose, by coat. Empty for a fully drawn form. */
+  polyfilled: Polyfilled[];
   /**
    * Which of the common animations the sheet has not got. Empty for
    * nearly every form; a reader that needs all ten can skip the rest
@@ -143,6 +146,7 @@ export function writeSheet(output: string, slot: Pick<Slot, 'dex' | 'form'>, res
       width: result.width,
       height: result.height,
       derived: result.meta.derived,
+      polyfilled: result.meta.polyfilled ?? [],
       missing: missingCommon(result.meta.anims.map((one) => one.anim)),
     },
     dropped,
@@ -180,6 +184,7 @@ function entryOf(sheet: SheetData): IndexEntry {
     width: sheet.sheet.width,
     height: sheet.sheet.height,
     derived: sheet.derived,
+    polyfilled: sheet.polyfilled ?? [],
     missing: missingCommon(sheet.anims.map((one) => one.anim)),
   };
 }

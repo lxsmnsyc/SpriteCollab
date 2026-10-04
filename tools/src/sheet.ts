@@ -14,6 +14,7 @@ import mergeCoats from './merge.ts';
 import type { FrameMarkers } from './markers.ts';
 import markersFor from './markers.ts';
 import pack from './packing.ts';
+import type { Polyfilled } from './polyfill.ts';
 import type { Region } from './regions.ts';
 import regionOf from './regions.ts';
 import type { Raster } from './raster.ts';
@@ -114,6 +115,11 @@ export interface SheetData {
    * which are this tool's pixels rather than the collection's
    */
   derived: Derived[];
+  /**
+   * Animations made from the standing pose because nobody has drawn
+   * them, by coat. Absent from sheets built before polyfilling.
+   */
+  polyfilled?: Polyfilled[];
 }
 
 /** One coat, drawn and weighed. */

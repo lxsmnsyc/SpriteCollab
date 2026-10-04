@@ -27,7 +27,7 @@ import type { CoatKey } from './slots.ts';
  */
 
 /** Which coats are the same body in other colours. */
-const PAIRS: [CoatKey, CoatKey][] = [
+export const PAIRS: [CoatKey, CoatKey][] = [
   ['regular', 'shiny'],
   ['female', 'shinyFemale'],
 ];

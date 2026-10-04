@@ -71,7 +71,7 @@ describe('building one form', () => {
   });
 
   it('comes out smaller than the folders it was built from', () => {
-    const report = runSlot(slotAt(root, 1, 0), { root, output, species: [], dryRun: true });
+    const report = runSlot(slotAt(root, 1, 0), { root, output, species: [], dryRun: true, polyfill: false });
 
     expect(report.after).toBeLessThan(report.before);
   });
@@ -206,7 +206,7 @@ describe('a whole run', () => {
   });
 
   it('describes the sheet in a shape a reader can follow', () => {
-    run({ all: true, root, output, species: [1] });
+    run({ all: true, root, output, species: [1], polyfill: false });
 
     const meta = JSON.parse(
       readFileSync(join(output, 'kanto', '0001', '0000', 'sheet.json'), 'utf8'),
@@ -309,7 +309,7 @@ describe('a whole run', () => {
     // Something in the species folder that is not a sprite at all
     writeFileSync(join(root, '0001', 'notes.txt'), 'x'.repeat(4096));
 
-    const report = run({ all: true, root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1], polyfill: false });
 
     expect(report.species).toHaveLength(1);
     expect(report.species[0]).toMatchObject({ dex: 1, forms: 2 });
@@ -463,7 +463,7 @@ describe('a whole run', () => {
   });
 
   it('says which of the common animations a form has not got', () => {
-    const report = run({ all: true, root, output, species: [1] });
+    const report = run({ all: true, root, output, species: [1], polyfill: false });
 
     const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8')) as Index;
     // The fixture draws Walk and Idle and nothing else common
@@ -608,9 +608,9 @@ describe('a whole run', () => {
   });
 });
 
-describe('the bare minimum', () => {
-  /** The six a form has to have, as fixture animations. */
-  const SIX = ['Idle', 'Attack', 'Walk', 'Sleep', 'Hurt', 'Hop'].map((name, index) => ({
+describe('the showable line', () => {
+  /** The seven of a minimal complete form, as fixture animations. */
+  const SEVEN = ['Idle', 'Attack', 'Walk', 'Sleep', 'Hurt', 'Hop', 'Rotate'].map((name, index) => ({
     name,
     index,
     frameWidth: 8,
@@ -619,51 +619,90 @@ describe('the bare minimum', () => {
     rows: 8,
     durations: [8],
   }));
-
-  it('leaves a form whose regular coat is short of one of the six', () => {
+  const without = (...names: string[]) => SEVEN.filter((anim) => !names.includes(anim.name));
+  /** An empty collection and tree, for the test to draw its own form into. */
+  const empty = (): { root: string; output: string } => {
     const held = mkdtempSync(join(tmpdir(), 'optimize-'));
-    const root = join(held, 'sprite');
-    const output = join(held, 'compact');
 
-    writeFixture(root, SIX.slice(0, 5), [{ path: '0001', color: COLORS.green }]);
-    const report = run({ root, output, species: [1] });
+    return { root: join(held, 'sprite'), output: join(held, 'compact') };
+  };
 
-    expect(report.slots).toHaveLength(0);
-    expect(report.skipped).toEqual([{ dex: 1, form: 0, missing: [SpriteAnim.Hop] }]);
-    expect(existsSync(join(output, 'kanto', '0001'))).toBe(false);
-  });
+  it('builds a form short of the seven, making what it has not got', () => {
+    const { root, output } = empty();
 
-  it('builds one that has all six', () => {
-    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
-    const root = join(held, 'sprite');
-    const output = join(held, 'compact');
-
-    writeFixture(root, SIX, [{ path: '0001', color: COLORS.green }]);
+    writeFixture(root, without('Hop', 'Sleep'), [{ path: '0001', color: COLORS.green }]);
     const report = run({ root, output, species: [1] });
 
     expect(report.skipped).toHaveLength(0);
     expect(report.slots).toHaveLength(1);
+    expect(report.slots[0].polyfilled.map((one) => one.anim).sort()).toEqual(
+      [SpriteAnim.Sleep, SpriteAnim.Charge, SpriteAnim.Double, SpriteAnim.Hop].sort(),
+    );
+    expect(report.slots[0].polyfilled.every((one) => one.coat === 'regular' && one.from === SpriteAnim.Idle)).toBe(true);
+    expect(report.slots[0].mismatches).toEqual([]);
   });
 
-  it('counts a form with no regular coat as short of all six', () => {
-    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
-    const root = join(held, 'sprite');
-    const output = join(held, 'compact');
+  it('says in the sheet and the index which animations were made', () => {
+    const { root, output } = empty();
 
-    // Drawn as a shiny and nothing else, the way Gimmighoul is
-    writeFixture(root, SIX, [{ path: '0001/0000/0001', color: COLORS.blue }]);
+    writeFixture(root, without('Hop'), [{ path: '0001', color: COLORS.green }]);
+    run({ root, output, species: [1] });
+    const meta = JSON.parse(readFileSync(join(output, 'kanto', '0001', '0000', 'sheet.json'), 'utf8'));
+    const index = JSON.parse(readFileSync(join(output, 'index.json'), 'utf8'));
+
+    expect(meta.polyfilled.map((one: { anim: number }) => one.anim)).toContain(SpriteAnim.Hop);
+    expect(index.slots[0].polyfilled).toEqual(meta.polyfilled);
+    expect(index.slots[0].missing).toEqual([SpriteAnim.Swing]);
+  });
+
+  it('makes everything from Rotate where there is no Idle', () => {
+    const { root, output } = empty();
+
+    writeFixture(root, SEVEN.filter((anim) => anim.name === 'Rotate'), [{ path: '0001', color: COLORS.green }]);
+    const report = run({ root, output, species: [1] });
+
+    expect(report.slots).toHaveLength(1);
+    expect(report.slots[0].polyfilled.map((one) => one.anim)).toContain(SpriteAnim.Idle);
+    expect(report.slots[0].polyfilled.every((one) => one.from === SpriteAnim.Rotate)).toBe(true);
+    expect(report.slots[0].mismatches).toEqual([]);
+  });
+
+  it('makes nothing when asked not to', () => {
+    const { root, output } = empty();
+
+    writeFixture(root, without('Hop'), [{ path: '0001', color: COLORS.green }]);
+    const report = run({ root, output, species: [1], polyfill: false });
+
+    expect(report.slots[0].polyfilled).toEqual([]);
+    expect(report.slots[0].missing).toContain(SpriteAnim.Hop);
+  });
+
+  it('leaves a form with neither Idle nor Rotate', () => {
+    const { root, output } = empty();
+
+    writeFixture(root, without('Idle', 'Rotate'), [{ path: '0001', color: COLORS.green }]);
     const report = run({ root, output, species: [1] });
 
     expect(report.slots).toHaveLength(0);
-    expect(report.skipped[0].missing).toHaveLength(6);
+    expect(report.skipped).toEqual([{ dex: 1, form: 0, missing: [SpriteAnim.Idle, SpriteAnim.Rotate] }]);
+    expect(existsSync(join(output, 'kanto', '0001'))).toBe(false);
+  });
+
+  it('counts a form with no regular coat as not showable', () => {
+    const { root, output } = empty();
+
+    // Drawn as a shiny and nothing else, the way Gimmighoul is
+    writeFixture(root, SEVEN, [{ path: '0001/0000/0001', color: COLORS.blue }]);
+    const report = run({ root, output, species: [1] });
+
+    expect(report.slots).toHaveLength(0);
+    expect(report.skipped[0].missing).toEqual([SpriteAnim.Idle, SpriteAnim.Rotate]);
   });
 
   it('builds it anyway when asked for all of them', () => {
-    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
-    const root = join(held, 'sprite');
-    const output = join(held, 'compact');
+    const { root, output } = empty();
 
-    writeFixture(root, SIX.slice(0, 5), [{ path: '0001', color: COLORS.green }]);
+    writeFixture(root, without('Idle', 'Rotate'), [{ path: '0001', color: COLORS.green }]);
     const report = run({ root, output, species: [1], all: true });
 
     expect(report.skipped).toHaveLength(0);
@@ -671,13 +710,22 @@ describe('the bare minimum', () => {
   });
 
   it('does not take the folders of a form it did not build', () => {
-    const held = mkdtempSync(join(tmpdir(), 'optimize-'));
-    const root = join(held, 'sprite');
-    const output = join(held, 'compact');
+    const { root, output } = empty();
 
-    writeFixture(root, SIX.slice(0, 5), [{ path: '0001', color: COLORS.green }]);
+    writeFixture(root, without('Idle', 'Rotate'), [{ path: '0001', color: COLORS.green }]);
     run({ root, output, species: [1], prune: true });
 
     expect(existsSync(join(root, '0001', 'AnimData.xml'))).toBe(true);
   });
+
+  it('leaves to the merge what the other coat of the pair has drawn', () => {
+    const { root, output } = empty();
+
+    writeFixture(root, SEVEN, [{ path: '0001', color: COLORS.green }]);
+    writeFixture(root, without('Hop'), [{ path: '0001/0000/0001', color: COLORS.blue }]);
+    const report = run({ root, output, species: [1] });
+
+    expect(report.slots[0].polyfilled.some((one) => one.anim === SpriteAnim.Hop)).toBe(false);
+  });
 });
+
