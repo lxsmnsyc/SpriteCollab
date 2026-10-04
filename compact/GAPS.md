@@ -36,51 +36,22 @@ pose — `polyfilled` in the sheet. See [`README.md`](README.md).
 | Dex | Species | Made |
 |---|---|---|
 | 0593 | Jellicent | Attack Hurt Hop Double Charge |
-| 0683 | Aromatisse | Attack Walk Sleep Hurt Hop Double Charge |
-| 0733 | Toucannon | Attack Walk Sleep Hurt Hop Double Charge |
+| 0683 | Aromatisse | Attack Walk Sleep Hurt Hop Double Charge Swing |
+| 0733 | Toucannon | Attack Walk Sleep Hurt Hop Double Charge Swing |
 | 0865 | Sirfetch_d | Attack Sleep Hurt Hop Charge |
-| 0874 | Stonjourner | Sleep Hurt Hop Charge |
-| 0879 | Copperajah | Attack Sleep Hurt Hop Double Charge |
-| 0883 | Arctovish | Sleep Hurt Hop Charge |
-| 0917 | Tarountula | Hop Double Charge |
-| 0929 | Dolliv | Attack Walk Sleep Hurt Hop Double Charge |
-| 0945 | Grafaiai | Attack Walk Sleep Hurt Hop Double Charge |
+| 0874 | Stonjourner | Sleep Hurt Hop Charge Swing |
+| 0879 | Copperajah | Attack Sleep Hurt Hop Double Charge Swing |
+| 0883 | Arctovish | Sleep Hurt Hop Charge Swing |
+| 0917 | Tarountula | Hop Double Charge Swing |
+| 0929 | Dolliv | Attack Walk Sleep Hurt Hop Double Charge Swing |
+| 0945 | Grafaiai | Attack Walk Sleep Hurt Hop Double Charge Swing |
 | 0948 | Toedscool | Attack Hurt Hop Charge |
 | 0968 | Orthworm | Hurt |
-| 0990 | Iron_Treads | Attack Walk Hurt Hop Double Charge |
-| 1003 | Ting_Lu | Attack Walk Sleep Hurt Hop Double Charge |
-| 1020 | Gouging_Fire | Attack Walk Sleep Hurt Hop Double Charge |
+| 0990 | Iron_Treads | Attack Walk Hurt Hop Double Charge Swing |
+| 1003 | Ting_Lu | Attack Walk Sleep Hurt Hop Double Charge Swing |
+| 1020 | Gouging_Fire | Attack Walk Sleep Hurt Hop Double Charge Swing |
 | 1021 | Raging_Bolt | Attack Walk Hurt Hop Charge |
 | 1025 | Pecharunt | Attack Hop Double |
-
-## No Swing
-
-Every built sheet has the other nine of the common ten, drawn or made.
-`Swing` is never made, and 21 base forms have none.
-
-| Dex | Species |
-|---|---|
-| 0516 | Simipour |
-| 0522 | Blitzle |
-| 0523 | Zebstrika |
-| 0538 | Throh |
-| 0564 | Tirtouga |
-| 0565 | Carracosta |
-| 0591 | Amoonguss |
-| 0618 | Stunfisk |
-| 0626 | Bouffalant |
-| 0683 | Aromatisse |
-| 0733 | Toucannon |
-| 0868 | Milcery |
-| 0874 | Stonjourner |
-| 0879 | Copperajah |
-| 0883 | Arctovish |
-| 0917 | Tarountula |
-| 0929 | Dolliv |
-| 0945 | Grafaiai |
-| 0990 | Iron_Treads |
-| 1003 | Ting_Lu |
-| 1020 | Gouging_Fire |
 
 ## Rendered from 3D models
 
@@ -131,13 +102,13 @@ Drawn short of minimal complete; built with the rest made.
 
 | Dex | Form | Made |
 |---|---|---|
-| 0006 | Charizard Gigantamax | Attack Walk Sleep Hurt Hop Double Charge |
+| 0006 | Charizard Gigantamax | Attack Walk Sleep Hurt Hop Double Charge Swing |
 | 0080 | Slowbro Mega | Sleep Hurt |
-| 0254 | Sceptile Mega | Attack Sleep Hurt Hop Double Charge |
-| 0319 | Sharpedo Mega | Sleep Hurt Hop Charge |
-| 0358 | Chimecho Mega | Attack Walk Sleep Hurt Hop Double Charge |
+| 0254 | Sceptile Mega | Attack Sleep Hurt Hop Double Charge Swing |
+| 0319 | Sharpedo Mega | Sleep Hurt Hop Charge Swing |
+| 0358 | Chimecho Mega | Attack Walk Sleep Hurt Hop Double Charge Swing |
 | 0560 | Scrafty Mega | Hurt Hop Charge |
-| 0869 | Alcremie Gigantamax | Attack Walk Sleep Hurt Hop Double Charge |
+| 0869 | Alcremie Gigantamax | Attack Walk Sleep Hurt Hop Double Charge Swing |
 | 0877 | Morpeko Hangry | Attack Charge |
 | 0890 | Eternatus Eternamax | Sleep Hurt Hop |
 
