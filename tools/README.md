@@ -102,7 +102,7 @@ The run says which, and whether the sheet called it ours:
 | neither | | not built; `--all` builds it anyway |
 
 [`polyfill.ts`](src/polyfill.ts) makes `Idle`, `Rotate`, `Walk`,
-`Attack`, `Hurt`, `Sleep`, `Hop`, `Double` and `Charge` by sliding the
+`Attack`, `Hurt`, `Sleep`, `Hop`, `Double`, `Charge` and `Swing` by sliding the
 first frame of `Idle` (or `Rotate`) in each facing:
 
 | Made | Motion |
@@ -114,7 +114,9 @@ first frame of `Idle` (or `Rotate`) in each facing:
 | `Hop` | the drawn sheets' lift, 0 to 22 px; shadow stays |
 | `Double` | the drawn sheets' sideways steps |
 | `Charge` | 1 px shiver |
-| `Idle` / `Rotate` | the other's frames |
+| `Swing` | the drawn sheets' spin, carried along their 22 px loop |
+| `Rotate` | the drawn sheets' turn: own facing, back one a frame, round again |
+| `Idle` | `Rotate`'s first frame of each row |
 
 An animation the other coat of the pair has drawn is recoloured by the
 merge instead. The sheet records what was made (`polyfilled` in
@@ -137,7 +139,7 @@ hand and `derived` survive.
 
 ```bash
 node tools/src/fill-bin.ts --dry-run   # which sheets, and what they would get
-node tools/src/fill-bin.ts             # every sheet missing one of the made nine
+node tools/src/fill-bin.ts             # every sheet missing one of the made ten
 node tools/src/fill-bin.ts 516 591     # these species only
 ```
 

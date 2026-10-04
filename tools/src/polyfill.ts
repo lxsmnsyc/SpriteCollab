@@ -43,6 +43,7 @@ export const POLYFILLS: SpriteAnim[] = [
   SpriteAnim.Hop,
   SpriteAnim.Double,
   SpriteAnim.Charge,
+  SpriteAnim.Swing,
 ];
 
 /** One frame of a motion: where the pokemon is, and where its shadow is. */
@@ -85,6 +86,22 @@ const SIDEWAYS: [number, number][] = [
 /** The lift of every drawn `Hop`, in pixels, frame by frame. */
 const HOP_LIFT = [0, 10, 16, 20, 21, 22, 21, 17, 11, 0];
 const HOP_DURATIONS = [2, 1, 2, 3, 4, 4, 3, 2, 1, 2];
+/**
+ * Where every drawn `Swing` carries the pokemon and its shadow while it
+ * spins, frame by frame, for each facing: a loop out about 22 px ahead
+ * and back. Right mirrors Left and the diagonals mirror each other.
+ */
+const SWING_PATH: [number, number][][] = [
+  [[0, 0], [6, 3], [8, 9], [7, 18], [0, 22], [-7, 18], [-8, 9], [-6, 3], [0, 0]],
+  [[0, 0], [11, 0], [21, 3], [26, 10], [20, 18], [11, 19], [3, 15], [0, 7], [0, 0]],
+  [[0, 0], [5, -5], [13, -6], [20, -5], [23, 0], [20, 4], [14, 7], [6, 5], [0, 0]],
+  [[0, 0], [-1, -6], [4, -17], [15, -22], [21, -21], [24, -13], [19, -4], [9, 0], [0, 0]],
+  [[0, 0], [-8, -4], [-9, -12], [-7, -20], [0, -22], [7, -20], [9, -10], [8, -4], [0, 0]],
+  [[0, 0], [1, -6], [-4, -17], [-15, -22], [-21, -21], [-24, -13], [-19, -4], [-9, 0], [0, 0]],
+  [[0, 0], [-5, -5], [-13, -6], [-20, -5], [-23, 0], [-20, 4], [-14, 7], [-6, 5], [0, 0]],
+  [[0, 0], [-11, 0], [-21, 3], [-26, 10], [-20, 18], [-11, 19], [-3, 15], [0, 7], [0, 0]],
+];
+const SWING_DURATIONS = [2, 1, 2, 2, 3, 2, 2, 1, 1];
 /** The sideways steps of every drawn `Double`. */
 const DOUBLE_STEPS = [0, 6, -6, 10, -10, 12, -12, 13, -13, 12, -12, 10, -10, 6, -6, 0];
 const DOUBLE_DURATIONS = [2, 2, 2, 2, 2, 2, 3, 3, 3, 2, 3, 2, 2, 2, 2, 2];
@@ -277,25 +294,40 @@ export function polyfill(
   for (const anim of asked) {
     let made: Made;
 
-    if (anim === SpriteAnim.Rotate) {
-      // Turning on the spot as every drawn Rotate does: each row starts
-      // at its own facing, steps back one facing a frame and comes round
-      // to where it began, nine frames of two ticks
+    if (anim === SpriteAnim.Rotate || anim === SpriteAnim.Swing) {
+      // Turning as every drawn Rotate and Swing does: each row starts at
+      // its own facing, steps back one facing a frame and comes round to
+      // where it began. A Swing also carries the pokemon, shadow and all,
+      // along its loop
+      const swing = anim === SpriteAnim.Swing;
       const turn = rows + 1;
+      const steps = (row: number): Step[] =>
+        Array.from({ length: turn }, (_, column) => {
+          const [dx, dy] = swing ? (SWING_PATH[row % 8][column] ?? [0, 0]) : [0, 0];
 
-      made = lay(
-        poses,
-        () => Array.from({ length: turn }, () => ({ dx: 0, dy: 0, duration: 2 })),
-        rows,
-      );
+          return { dx, dy, duration: swing ? (SWING_DURATIONS[column] ?? 2) : 2 };
+        });
+
+      made = lay(poses, steps, rows);
+      for (const key of ['animation', 'offsets', 'shadow'] as const) {
+        made.images[key].data.fill(0);
+      }
+      const padX = (made.frameWidth - poses[0].animation.width) / 2;
+      const padY = (made.frameHeight - poses[0].animation.height) / 2;
+
       for (let row = 0; row < rows; row += 1) {
-        for (let column = 0; column < turn; column += 1) {
+        steps(row).forEach((step, column) => {
           const pose = poses[(row - column + rows * turn) % rows];
 
           for (const key of ['animation', 'offsets', 'shadow'] as const) {
-            paste(made.images[key], pose[key], column * made.frameWidth, row * made.frameHeight);
+            paste(
+              made.images[key],
+              pose[key],
+              column * made.frameWidth + padX + step.dx,
+              row * made.frameHeight + padY + step.dy,
+            );
           }
-        }
+        });
       }
     } else if (anim === SpriteAnim.Sleep) {
       // Asleep is drawn in one facing: DownLeft, which shows the body

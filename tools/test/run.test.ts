@@ -636,7 +636,7 @@ describe('the showable line', () => {
     expect(report.skipped).toHaveLength(0);
     expect(report.slots).toHaveLength(1);
     expect(report.slots[0].polyfilled.map((one) => one.anim).sort()).toEqual(
-      [SpriteAnim.Sleep, SpriteAnim.Charge, SpriteAnim.Double, SpriteAnim.Hop].sort(),
+      [SpriteAnim.Sleep, SpriteAnim.Charge, SpriteAnim.Double, SpriteAnim.Hop, SpriteAnim.Swing].sort(),
     );
     expect(report.slots[0].polyfilled.every((one) => one.coat === 'regular' && one.from === SpriteAnim.Idle)).toBe(true);
     expect(report.slots[0].mismatches).toEqual([]);
@@ -652,7 +652,7 @@ describe('the showable line', () => {
 
     expect(meta.polyfilled.map((one: { anim: number }) => one.anim)).toContain(SpriteAnim.Hop);
     expect(index.slots[0].polyfilled).toEqual(meta.polyfilled);
-    expect(index.slots[0].missing).toEqual([SpriteAnim.Swing]);
+    expect(index.slots[0].missing).toEqual([]);
   });
 
   it('makes everything from Rotate where there is no Idle', () => {

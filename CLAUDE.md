@@ -27,9 +27,9 @@ the reader and the fact they came for.
   is listed in `EDITS.md`.
 - Tests build their own fixtures. Do not read `sprite/` from a test.
 - A form is built if its regular coat has `Idle` or `Rotate`
-  (showable). What it lacks of the seven minimal-complete animations,
-  `Double` and `Charge` is polyfilled from its standing pose and listed
-  in the sheet. A form with neither stays in `sprite/`; `--all`
+  (showable). What it lacks of the common ten is polyfilled from its
+  standing pose and listed in the sheet; the seven minimal-complete
+  animations are the ones that matter for completeness. A form with neither stays in `sprite/`; `--all`
   overrides.
 - Count base forms only. `Alternate`, `Gigantamax`, `Mega`, `Altcolor`
   and `Cutscene` are left out of coverage and completeness reports —

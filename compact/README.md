@@ -113,14 +113,10 @@ poses (`EventSleep`, `Laying`, …) are not in this tree.
 | **the rest of the ten** | `Double` `Swing` `Charge` |
 
 The seven are what a form needs drawn to be complete. A form is built if
-it has `Idle` or `Rotate` (showable); whatever of the seven, `Double` and
-`Charge` it has not drawn is made from its standing pose and listed in
-[`polyfilled`](#polyfilled--made-not-drawn). So `missing` is at most
-`Swing`, the one of the ten that is never made:
-
-```jsonc
-"missing": [10]          // no Swing
-```
+it has `Idle` or `Rotate` (showable); whatever of the ten it has not drawn is
+made from its standing pose and listed in
+[`polyfilled`](#polyfilled--made-not-drawn). So `missing` is empty for
+every built sheet.
 
 The forms short of minimal complete are the ones with one of the seven
 in `polyfilled`:

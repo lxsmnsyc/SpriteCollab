@@ -101,3 +101,20 @@ describe('a made Rotate', () => {
     expect(rotate.durations).toEqual([2, 2, 2, 2, 2, 2, 2, 2, 2]);
   });
 });
+
+describe('a made Swing', () => {
+  it('runs nine frames to the drawn timing', async () => {
+    const { polyfill } = await import('../src/polyfill.ts');
+    const { default: readArchive } = await import('../src/archive.ts');
+    const { default: readAnimData } = await import('../src/anim-data.ts');
+    const held = mkdtempSync(join(tmpdir(), 'swing-'));
+    const root = join(held, 'sprite');
+
+    writeFixture(root, ANIMS, [{ path: '0001', color: COLORS.green }]);
+    const { archive, added } = polyfill(readArchive(join(root, '0001')), [SpriteAnim.Swing]);
+    const swing = readAnimData(archive.animData).anims.find((one) => one.anim === SpriteAnim.Swing)!;
+
+    expect(added).toEqual([{ anim: SpriteAnim.Swing, from: SpriteAnim.Idle }]);
+    expect(swing.durations).toEqual([2, 1, 2, 2, 3, 2, 2, 1, 1]);
+  });
+});
