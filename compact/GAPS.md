@@ -27,38 +27,60 @@ regular coat.
 | 0999 | Gimmighoul | Drawn as Roaming only; the Chest form is not drawn. |
 | 1008 | Miraidon | Drawn as Low_Power only. |
 
-## Below the bare minimum
+## Short of minimal complete
 
-17 base forms are missing one of the six a sheet cannot be shown
-without — **bold** below. See [`README.md`](README.md).
+17 base forms have `Idle` or `Rotate` but not all seven of minimal
+complete drawn. They are built, with the rest made from their standing
+pose — `polyfilled` in the sheet. See [`README.md`](README.md).
 
-| Dex | Species | Missing |
+| Dex | Species | Made |
 |---|---|---|
-| 0593 | Jellicent | **Hurt** **Attack** Double Charge **Hop** |
-| 0683 | Aromatisse | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
-| 0733 | Toucannon | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
-| 0865 | Sirfetch_d | **Sleep** **Hurt** **Attack** Charge **Hop** |
-| 0874 | Stonjourner | **Sleep** **Hurt** Swing Charge **Hop** |
-| 0879 | Copperajah | **Sleep** **Hurt** **Attack** Double Swing Charge **Hop** |
-| 0883 | Arctovish | **Sleep** **Hurt** Swing Charge **Hop** |
-| 0917 | Tarountula | Double Swing Charge **Hop** |
-| 0929 | Dolliv | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
-| 0945 | Grafaiai | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
-| 0948 | Toedscool | **Hurt** **Attack** Charge **Hop** |
-| 0968 | Orthworm | **Hurt** |
-| 0990 | Iron_Treads | **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
-| 1003 | Ting_Lu | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
-| 1020 | Gouging_Fire | **Sleep** **Hurt** **Attack** Double Swing Charge **Walk** **Hop** |
-| 1021 | Raging_Bolt | **Hurt** **Attack** Charge **Walk** **Hop** |
-| 1025 | Pecharunt | **Attack** Double **Hop** |
+| 0593 | Jellicent | Attack Hurt Hop Double Charge |
+| 0683 | Aromatisse | Attack Walk Sleep Hurt Hop Double Charge |
+| 0733 | Toucannon | Attack Walk Sleep Hurt Hop Double Charge |
+| 0865 | Sirfetch_d | Attack Sleep Hurt Hop Charge |
+| 0874 | Stonjourner | Sleep Hurt Hop Charge |
+| 0879 | Copperajah | Attack Sleep Hurt Hop Double Charge |
+| 0883 | Arctovish | Sleep Hurt Hop Charge |
+| 0917 | Tarountula | Hop Double Charge |
+| 0929 | Dolliv | Attack Walk Sleep Hurt Hop Double Charge |
+| 0945 | Grafaiai | Attack Walk Sleep Hurt Hop Double Charge |
+| 0948 | Toedscool | Attack Hurt Hop Charge |
+| 0968 | Orthworm | Hurt |
+| 0990 | Iron_Treads | Attack Walk Hurt Hop Double Charge |
+| 1003 | Ting_Lu | Attack Walk Sleep Hurt Hop Double Charge |
+| 1020 | Gouging_Fire | Attack Walk Sleep Hurt Hop Double Charge |
+| 1021 | Raging_Bolt | Attack Walk Hurt Hop Charge |
+| 1025 | Pecharunt | Attack Hop Double |
 
-## Short of the other four
+## No Swing
 
-Milcery alone has the six but not `Double`, `Swing`, `Charge` or `Rotate`.
+Every built sheet has the other nine of the common ten, drawn or made.
+`Swing` is never made, and 21 base forms have none.
 
-| Dex | Species | Missing |
-|---|---|---|
-| 0868 | Milcery | Swing Charge |
+| Dex | Species |
+|---|---|
+| 0516 | Simipour |
+| 0522 | Blitzle |
+| 0523 | Zebstrika |
+| 0538 | Throh |
+| 0564 | Tirtouga |
+| 0565 | Carracosta |
+| 0591 | Amoonguss |
+| 0618 | Stunfisk |
+| 0626 | Bouffalant |
+| 0683 | Aromatisse |
+| 0733 | Toucannon |
+| 0868 | Milcery |
+| 0874 | Stonjourner |
+| 0879 | Copperajah |
+| 0883 | Arctovish |
+| 0917 | Tarountula |
+| 0929 | Dolliv |
+| 0945 | Grafaiai |
+| 0990 | Iron_Treads |
+| 1003 | Ting_Lu |
+| 1020 | Gouging_Fire |
 
 ## Rendered from 3D models
 
@@ -78,6 +100,14 @@ from the Pokédex 3D model until someone draws them. See
 | 0618 | Stunfisk | Idle and Rotate only |
 | 0626 | Bouffalant | Nothing |
 
+## Drawn elsewhere
+
+Gaps that other projects have sprites for.
+
+| Source | Has |
+|---|---|
+| PAC | Darmanitan Galar Zen, Arctovish |
+
 ## Forms
 
 Game forms other than the base, from `tracker.json`. Altcolor,
@@ -95,19 +125,20 @@ Alternate, Cutscene, Beta and Skytemple slots are left out.
 | Battle (11) | Tornadus Therian, Thundurus Therian, Keldeo Resolute, Greninja Ash, Necrozma Dusk Mane, Necrozma Dawn Wings, Cramorant Gulping, Cramorant Gorging, Calyrex Ice Rider, Calyrex Shadow Rider, Terapagos Stellar |
 | Cosmetic (34) | Pikachu: 8 caps, 4 Cosplay outfits, Windychu, Wavychu · Furfrou: 8 trims · Revavroom: 5 Starmobiles · Squawkabilly Blue, Yellow, White · Gourgeist Small, Large · Zarude Dada · Dudunsparce Three-Segment |
 
-### Held back
+### Polyfilled
 
-Drawn, but below the bare minimum.
+Drawn short of minimal complete; built with the rest made.
 
-| Dex | Form | Missing |
+| Dex | Form | Made |
 |---|---|---|
-| 0006 | Charizard Gigantamax | Attack Walk Sleep Hurt Hop |
+| 0006 | Charizard Gigantamax | Attack Walk Sleep Hurt Hop Double Charge |
 | 0080 | Slowbro Mega | Sleep Hurt |
-| 0254 | Sceptile Mega | Attack Sleep Hurt Hop |
-| 0319 | Sharpedo Mega | Sleep Hurt Hop |
-| 0560 | Scrafty Mega | Hurt Hop |
-| 0869 | Alcremie Gigantamax | Attack Walk Sleep Hurt Hop |
-| 0877 | Morpeko Hangry | Attack |
+| 0254 | Sceptile Mega | Attack Sleep Hurt Hop Double Charge |
+| 0319 | Sharpedo Mega | Sleep Hurt Hop Charge |
+| 0358 | Chimecho Mega | Attack Walk Sleep Hurt Hop Double Charge |
+| 0560 | Scrafty Mega | Hurt Hop Charge |
+| 0869 | Alcremie Gigantamax | Attack Walk Sleep Hurt Hop Double Charge |
+| 0877 | Morpeko Hangry | Attack Charge |
 | 0890 | Eternatus Eternamax | Sleep Hurt Hop |
 
 ### No shiny
