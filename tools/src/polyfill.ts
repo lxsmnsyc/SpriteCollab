@@ -278,16 +278,19 @@ export function polyfill(
     let made: Made;
 
     if (anim === SpriteAnim.Rotate) {
-      // Turning on the spot: each row starts at its own facing and
-      // steps through the rest, two ticks a facing
+      // Turning on the spot as every drawn Rotate does: each row starts
+      // at its own facing, steps back one facing a frame and comes round
+      // to where it began, nine frames of two ticks
+      const turn = rows + 1;
+
       made = lay(
         poses,
-        () => Array.from({ length: rows }, () => ({ dx: 0, dy: 0, duration: 2 })),
+        () => Array.from({ length: turn }, () => ({ dx: 0, dy: 0, duration: 2 })),
         rows,
       );
       for (let row = 0; row < rows; row += 1) {
-        for (let column = 0; column < rows; column += 1) {
-          const pose = poses[(row + column) % rows];
+        for (let column = 0; column < turn; column += 1) {
+          const pose = poses[(row - column + rows * turn) % rows];
 
           for (const key of ['animation', 'offsets', 'shadow'] as const) {
             paste(made.images[key], pose[key], column * made.frameWidth, row * made.frameHeight);

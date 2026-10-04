@@ -85,3 +85,19 @@ describe('filling a built sheet', () => {
     expect(readFileSync(join(folder, 'sheet.json'), 'utf8')).toBe(sheet);
   });
 });
+
+describe('a made Rotate', () => {
+  it('turns as the drawn ones do: own facing, one back a frame, round to the start', async () => {
+    const { polyfill } = await import('../src/polyfill.ts');
+    const { default: readArchive } = await import('../src/archive.ts');
+    const { default: readAnimData } = await import('../src/anim-data.ts');
+    const held = mkdtempSync(join(tmpdir(), 'rotate-'));
+    const root = join(held, 'sprite');
+
+    writeFixture(root, ANIMS.filter((anim) => anim.name !== 'Rotate'), [{ path: '0001', color: COLORS.green }]);
+    const { archive } = polyfill(readArchive(join(root, '0001')), [SpriteAnim.Rotate]);
+    const rotate = readAnimData(archive.animData).anims.find((one) => one.anim === SpriteAnim.Rotate)!;
+
+    expect(rotate.durations).toEqual([2, 2, 2, 2, 2, 2, 2, 2, 2]);
+  });
+});
