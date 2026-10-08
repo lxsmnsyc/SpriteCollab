@@ -119,8 +119,11 @@ Drawn short of minimal complete; built with the rest made.
 
 | Kind | Forms |
 |---|---|
-| Mega (3) | Tyranitar, Medicham, Darkrai |
-| Other (64) | Alcremie: all 56 flavours · Minior: 7 cores · Terapagos Terastal |
+| Mega (4) | Tyranitar, Medicham, Darkrai, Skarmory |
+| Other (63) | Alcremie: all 56 flavours · Minior: 7 cores |
+
+Shiny-locked in the games, so not listed: Terapagos Terastal, Eternatus
+Eternamax, Ogerpon's masks.
 
 ## Redoing this
 
