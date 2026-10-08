@@ -1,54 +1,41 @@
 {
-  "version": 1,
-  "from": "regular",
-  "swaps": [
+  "form": "741/2",
+  "parts": [
     {
-      "from": "#b7cfffff",
-      "to": "#b7cfffff"
+      "part": "face",
+      "base": "#ee86a7",
+      "to": "#e0d8c8",
+      "members": [
+        "#ee86a7",
+        "#d45882"
+      ],
+      "swaps": {
+        "#ee86a7": "#e0d8c8",
+        "#d45882": "#b8a898"
+      }
     },
     {
-      "from": "#ffffffff",
-      "to": "#ffffffff"
-    },
-    {
-      "from": "#000000ff",
-      "to": "#000000ff"
-    },
-    {
-      "from": "#fef4d6ff",
-      "to": "#f090a8ff"
-    },
-    {
-      "from": "#a89866ff",
-      "to": "#a85070ff"
-    },
-    {
-      "from": "#d2c295ff",
-      "to": "#d87090ff"
-    },
-    {
-      "from": "#fadbe1ff",
-      "to": "#f8f4ecff"
-    },
-    {
-      "from": "#de8bc4ff",
-      "to": "#d898a0ff"
-    },
-    {
-      "from": "#d45882ff",
-      "to": "#b8a898ff"
-    },
-    {
-      "from": "#9e4e7eff",
-      "to": "#986068ff"
-    },
-    {
-      "from": "#f7bbe4ff",
-      "to": "#f0b0b8ff"
-    },
-    {
-      "from": "#ee86a7ff",
-      "to": "#e0d8c8ff"
+      "part": "wingtips",
+      "base": "#ee86a7",
+      "to": "#f0b0b8",
+      "members": [
+        "#ee86a7",
+        "#d45882"
+      ],
+      "patch": 12,
+      "swaps": {
+        "#ee86a7": "#f0b0b8",
+        "#d45882": "#d08890"
+      }
     }
-  ]
+  ],
+  "override": {
+    "#fef4d6": "#f090a8",
+    "#a89866": "#a85070",
+    "#d2c295": "#d87090",
+    "#fadbe1": "#f8f4ec",
+    "#de8bc4": "#d898a0",
+    "#9e4e7e": "#986068",
+    "#f7bbe4": "#f0b0b8"
+  }
 }

@@ -1,34 +1,47 @@
 {
-  "version": 1,
-  "from": "regular",
-  "swaps": [
+  "form": "868/0",
+  "parts": [
     {
-      "from": "#000000ff",
-      "to": "#000000ff"
+      "part": "body",
+      "base": "#cfcca5",
+      "to": "#d3d3c7",
+      "members": [
+        "#f1eec9",
+        "#cfcca5",
+        "#afac80"
+      ],
+      "swaps": {
+        "#f1eec9": "#f7f3eb",
+        "#cfcca5": "#d3d3c7",
+        "#afac80": "#b2aea6"
+      }
     },
     {
-      "from": "#cfcca5ff",
-      "to": "#d3d3c7ff"
-    },
-    {
-      "from": "#f1eec9ff",
-      "to": "#f7f3ebff"
-    },
-    {
-      "from": "#afac80ff",
-      "to": "#b2aea6ff"
-    },
-    {
-      "from": "#ffffffff",
-      "to": "#656961ff"
-    },
-    {
-      "from": "#c26b9eff",
-      "to": "#c7966dff"
-    },
-    {
-      "from": "#ed96c8ff",
-      "to": "#efc396ff"
+      "part": "rims",
+      "base": "#cfcca5",
+      "to": "#d8a878",
+      "members": [
+        "#f1eec9",
+        "#cfcca5",
+        "#afac80"
+      ],
+      "seed": {
+        "near": [
+          "#ffffff"
+        ],
+        "reach": 1,
+        "spread": 0
+      },
+      "swaps": {
+        "#f1eec9": "#e8bc8c",
+        "#cfcca5": "#d4a474",
+        "#afac80": "#b88858"
+      }
     }
-  ]
+  ],
+  "override": {
+    "#ffffff": "#656961",
+    "#c26b9e": "#c7966d",
+    "#ed96c8": "#efc396"
+  }
 }
