@@ -115,12 +115,11 @@ Drawn short of minimal complete; built with the rest made.
 
 ### No shiny
 
-69 built forms have a regular coat and no shiny.
+67 built forms have a regular coat and no shiny.
 
 | Kind | Forms |
 |---|---|
 | Mega (3) | Tyranitar, Medicham, Darkrai |
-| Regional (2) | Meowth Galar, Darumaka Galar |
 | Other (64) | Alcremie: all 56 flavours · Minior: 7 cores · Terapagos Terastal |
 
 ## Redoing this

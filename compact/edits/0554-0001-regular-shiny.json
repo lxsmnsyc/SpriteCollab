@@ -1,0 +1,11 @@
+{
+  "form": "554/1",
+  "parts": [
+    { "part": "ice", "base": "#5ebcb9", "to": "#78a8d8", "members": ["#9ad6d6", "#5ebcb9", "#4da5a2", "#719ea4"],
+      "swaps": { "#9ad6d6": "#b4dcf0", "#5ebcb9": "#78a8d8", "#4da5a2": "#5480b4", "#719ea4": "#6890b0" } },
+    { "part": "eyes", "base": "#3c63ae", "to": "#109c8c", "members": ["#7daee9", "#3c63ae"],
+      "swaps": { "#7daee9": "#40b8a4", "#3c63ae": "#109c8c" } },
+    { "part": "hands", "base": "#89a8d6", "to": "#c8e488", "members": ["#89a8d6", "#979dc9"],
+      "swaps": { "#89a8d6": "#c8e488", "#979dc9": "#a8c870" } }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "form": "52/2",
+  "parts": [
+    {
+      "part": "fur",
+      "base": "#9f8f87",
+      "to": "#c9c58d",
+      "members": [
+        "#c7af9f",
+        "#9f8f87",
+        "#775f4f"
+      ],
+      "swaps": {
+        "#c7af9f": "#f4e59d",
+        "#9f8f87": "#c9c58d",
+        "#775f4f": "#a89e71"
+      }
+    },
+    {
+      "part": "iron",
+      "base": "#4f4f4f",
+      "to": "#4f5351",
+      "members": [
+        "#4f4f4f",
+        "#373737"
+      ],
+      "swaps": {
+        "#4f4f4f": "#4f5351",
+        "#373737": "#3a4343"
+      }
+    },
+    {
+      "part": "eyes",
+      "base": "#ffe700",
+      "to": "#eceef0",
+      "members": [
+        "#ffe700"
+      ]
+    },
+    {
+      "part": "effects",
+      "base": "#c7af9f",
+      "to": "#c7af9f",
+      "members": [
+        "#c7af9f",
+        "#ffffff"
+      ],
+      "loose": true,
+      "swaps": {
+        "#c7af9f": "#c7af9f",
+        "#ffffff": "#ffffff"
+      }
+    }
+  ]
+}
