@@ -44,6 +44,22 @@ interface Part {
    * nearly black, which on a pale part reads as a hole.
    */
   contrast?: number;
+  /**
+   * Bits drawn in the part's colours and touching nothing else but an
+   * outline are this part's: effects such as sparks and flakes, which share
+   * colours with the body they fly off.
+   */
+  loose?: boolean;
+  /**
+   * Patches of the part's colours no bigger than this, walled in by other
+   * colours, are this part's: small marks (wing tips) drawn in the colour
+   * of a big part (the face).
+   */
+  patch?: number;
+  /** Colours a `patch` must not touch: the neighbours of the big part's marks, not this part's. */
+  away?: string[];
+  /** A colour of the part to its shiny colour by hand, in place of the shading worked out. */
+  swaps?: Record<string, string>;
 }
 interface Plan {
   /** The form, as `dex/form`. */
@@ -61,7 +77,10 @@ interface Plan {
   parts: Part[];
   /** Pixels whose part is known, as [x, y, part]: they lead the parts around them. */
   pixels?: [number, number, string][];
-  /** Hand adjustments, `from` colour to `to`, applied after everything else. */
+  /**
+   * Colours swapped by hand, wherever they are: for colours in no part, and
+   * for a part's colours that its own `swaps` and shading leave.
+   */
   override?: Record<string, string>;
 }
 
@@ -139,6 +158,24 @@ export function partsOf(img: Image, plan: Plan): Int16Array {
     if (own?.length === 1) { label[p] = own[0]; queue.push(p); }
   }
   plan.parts.forEach((part, k) => {
+    if (!part.loose && part.patch == null) return;
+    const mine = new Set(part.members), seen = new Uint8Array(N);
+    for (let p = 0; p < N; p++) {
+      if (seen[p] || label[p] >= 0 || !mine.has(colour[p] ?? '')) continue;
+      const bit = [p];
+      let alone = true, clear = true;
+      seen[p] = 1;
+      for (let i = 0; i < bit.length; i++) for (const n of neighbours(bit[i])) {
+        if (colour[n] == null) continue;
+        if (part.away?.includes(colour[n]!)) clear = false;
+        if (outline.has(colour[n]!)) continue;
+        if (!mine.has(colour[n]!)) alone = false;
+        else if (!seen[n]) { seen[n] = 1; bit.push(n); }
+      }
+      if ((part.loose && alone) || (part.patch != null && bit.length <= part.patch && clear)) for (const q of bit) label[q] = k;
+    }
+  });
+  plan.parts.forEach((part, k) => {
     if (part.seed == null) return;
     const near = new Set(part.seed.near), r = part.seed.reach, mine = new Set(part.members);
     const step = new Map<number, number>(), front: number[] = [];
@@ -200,10 +237,16 @@ export function render(plan: Plan): { source: Image; flat: Buffer; result: Buffe
   const cache = new Map<string, string>();
   for (let p = 0; p < source.width * source.height; p++) {
     const i = p * 4, k = label[p];
-    if (k < 0) continue;
-    const part = plan.parts[k], own = hexAt(source, i), key = `${k}${own}`;
+    if (!source.rgba[i + 3]) continue;
+    const own = hexAt(source, i);
+    if (k < 0) {
+      const to = override.get(own);
+      if (to != null) rgb(to).forEach((v, j) => (result[i + j] = v));
+      continue;
+    }
+    const part = plan.parts[k], key = `${k}${own}`;
     rgb(part.base).forEach((v, j) => (flat[i + j] = v));
-    if (!cache.has(key)) cache.set(key, override.get(own) ?? shade(part, own));
+    if (!cache.has(key)) cache.set(key, part.swaps?.[own] ?? override.get(own) ?? shade(part, own));
     rgb(cache.get(key)!).forEach((v, j) => (result[i + j] = v));
   }
   return { source, flat, result, label };

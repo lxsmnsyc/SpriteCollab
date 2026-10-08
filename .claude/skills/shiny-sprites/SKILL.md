@@ -38,6 +38,8 @@ uses, never across an outline. When that is not enough:
 |---|---|
 | A part drawn only in shared colours, walled in by outlines | List it first; it takes the patch |
 | Same, with no outline around it (Oinkologne's head) | `seed`: grows from its colours near a `near` colour (the snout) |
+| Small marks in a big part's colour (Pa'u wing tips) | `patch`: patches up to this size; `away` lists colours they must not touch |
+| Effects in the body's colours (Naclstack's flakes) | `loose`: bits touching nothing but outline |
 | A few pixels on the wrong side | `pixels`: `[x, y, part]` |
 | Shadows too deep on a part turned light | `contrast`: below 1 keeps less of their depth |
 
@@ -56,8 +58,10 @@ uses, never across an outline. When that is not enough:
 }
 ```
 
-`from` and `to` default to `regular` and `shiny`. Colours in no part stay
-as they are. `override` maps a result colour by hand.
+`from` and `to` default to `regular` and `shiny`. A part's `swaps` sets
+its colours by hand instead of the worked-out shading. `override` swaps
+colours wherever they are, including colours in no part; anything else
+in no part stays as it is.
 
 ## After
 
