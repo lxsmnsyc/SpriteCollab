@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "from": "regular",
+  "swaps": [
+    {
+      "from": "#000000ff",
+      "to": "#000000ff"
+    },
+    {
+      "from": "#ffffffff",
+      "to": "#ffffffff"
+    },
+    {
+      "from": "#d1cad1ff",
+      "to": "#c3babaff"
+    },
+    {
+      "from": "#ff71dfff",
+      "to": "#e3e351ff"
+    },
+    {
+      "from": "#983df8ff",
+      "to": "#c72469ff"
+    },
+    {
+      "from": "#203ed7ff",
+      "to": "#aa1855ff"
+    },
+    {
+      "from": "#1e78ffff",
+      "to": "#d73879ff"
+    },
+    {
+      "from": "#6b6b6bff",
+      "to": "#6b6b6bff"
+    },
+    {
+      "from": "#3c4147ff",
+      "to": "#3c4147ff"
+    },
+    {
+      "from": "#c43032ff",
+      "to": "#4d4d55ff"
+    },
+    {
+      "from": "#f74b35ff",
+      "to": "#75757dff"
+    },
+    {
+      "from": "#8c1414ff",
+      "to": "#2c2c34ff"
+    },
+    {
+      "from": "#fff56aff",
+      "to": "#fff56aff"
+    },
+    {
+      "from": "#fe9720ff",
+      "to": "#fe9720ff"
+    }
+  ]
+}

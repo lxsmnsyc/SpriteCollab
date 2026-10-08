@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "from": "regular",
+  "swaps": [
+    {
+      "from": "#000000ff",
+      "to": "#000000ff"
+    },
+    {
+      "from": "#cfcca5ff",
+      "to": "#d3d3c7ff"
+    },
+    {
+      "from": "#f1eec9ff",
+      "to": "#f7f3ebff"
+    },
+    {
+      "from": "#afac80ff",
+      "to": "#b2aea6ff"
+    },
+    {
+      "from": "#ffffffff",
+      "to": "#656961ff"
+    },
+    {
+      "from": "#c26b9eff",
+      "to": "#c7966dff"
+    },
+    {
+      "from": "#ed96c8ff",
+      "to": "#efc396ff"
+    }
+  ]
+}
