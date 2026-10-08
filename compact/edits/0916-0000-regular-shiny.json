@@ -1,0 +1,45 @@
+{
+  "form": "916/0",
+  "parts": [
+    {
+      "part": "head",
+      "base": "#402f4e",
+      "to": "#f8e6f0",
+      "members": [
+        "#402f4e",
+        "#2a1d35"
+      ],
+      "seed": {
+        "near": [
+          "#ef3886",
+          "#a6215a"
+        ],
+        "reach": 2,
+        "spread": 5
+      },
+      "contrast": 0.6
+    },
+    {
+      "part": "body",
+      "base": "#71617f",
+      "to": "#ecbdd3",
+      "members": [
+        "#9485a1",
+        "#71617f",
+        "#554564",
+        "#402f4e",
+        "#2a1d35"
+      ],
+      "contrast": 0.6
+    },
+    {
+      "part": "snout",
+      "base": "#ef3886",
+      "to": "#eb62a4",
+      "members": [
+        "#ef3886",
+        "#a6215a"
+      ]
+    }
+  ]
+}

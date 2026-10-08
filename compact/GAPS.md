@@ -86,13 +86,14 @@ Alternate, Cutscene, Beta and Skytemple slots are left out.
 
 ### Not drawn
 
-119 forms.
+120 forms.
 
 | Kind | Forms |
 |---|---|
 | Mega (41) | Venusaur, Charizard Y, Blastoise, Beedrill, Pidgeot, Clefable, Starmie, Pinsir, Gyarados, Mewtwo X, Ampharos, Scizor, Heracross, Blaziken, Swampert, Aggron, Salamence, Metagross, Staraptor, Garchomp, Abomasnow, Froslass, Emboar, Audino, Scolipede, Chandelure, Golurk, Chesnaught, Delphox, Greninja, Pyroar, Malamar, Barbaracle, Crabominable, Magearna, Magearna Original, Scovillain, Glimmora, Tatsugiri Stretchy, Tatsugiri Droopy, Baxcalibur |
 | Gigantamax (31) | Venusaur, Blastoise, Butterfree, Pikachu, Meowth, Machamp, Gengar, Kingler, Lapras, Eevee, Snorlax, Garbodor, Melmetal, Rillaboom, Cinderace, Inteleon, Corviknight, Orbeetle, Drednaw, Coalossal, Flapple, Appletun, Sandaconda, Toxtricity, Centiskorch, Hatterene, Grimmsnarl, Copperajah, Duraludon, Urshifu, Urshifu Rapid Strike |
 | Regional (2) | Darmanitan Galar Zen, Stunfisk Galar |
+| Gender (1) | Oinkologne female, regular and shiny |
 | Battle (11) | Tornadus Therian, Thundurus Therian, Keldeo Resolute, Greninja Ash, Necrozma Dusk Mane, Necrozma Dawn Wings, Cramorant Gulping, Cramorant Gorging, Calyrex Ice Rider, Calyrex Shadow Rider, Terapagos Stellar |
 | Cosmetic (34) | Pikachu: 8 caps, 4 Cosplay outfits, Windychu, Wavychu · Furfrou: 8 trims · Revavroom: 5 Starmobiles · Squawkabilly Blue, Yellow, White · Gourgeist Small, Large · Zarude Dada · Dudunsparce Three-Segment |
 
@@ -114,11 +115,10 @@ Drawn short of minimal complete; built with the rest made.
 
 ### No shiny
 
-71 built forms have a regular coat and no shiny.
+69 built forms have a regular coat and no shiny.
 
 | Kind | Forms |
 |---|---|
-| Base (2) | Glastrier, Oinkologne |
 | Mega (3) | Tyranitar, Medicham, Darkrai |
 | Regional (2) | Meowth Galar, Darumaka Galar |
 | Other (64) | Alcremie: all 56 flavours · Minior: 7 cores · Terapagos Terastal |
