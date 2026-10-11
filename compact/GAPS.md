@@ -94,7 +94,7 @@ Alternate, Cutscene, Beta and Skytemple slots are left out.
 | Gigantamax (31) | Venusaur, Blastoise, Butterfree, Pikachu, Meowth, Machamp, Gengar, Kingler, Lapras, Eevee, Snorlax, Garbodor, Melmetal, Rillaboom, Cinderace, Inteleon, Corviknight, Orbeetle, Drednaw, Coalossal, Flapple, Appletun, Sandaconda, Toxtricity, Centiskorch, Hatterene, Grimmsnarl, Copperajah, Duraludon, Urshifu, Urshifu Rapid Strike |
 | Regional (2) | Darmanitan Galar Zen, Stunfisk Galar |
 | Gender (1) | Oinkologne female, regular and shiny |
-| Battle (11) | Tornadus Therian, Thundurus Therian, Keldeo Resolute, Greninja Ash, Necrozma Dusk Mane, Necrozma Dawn Wings, Cramorant Gulping, Cramorant Gorging, Calyrex Ice Rider, Calyrex Shadow Rider, Terapagos Stellar |
+| Battle (11) | Tornadus Therian, Thundurus Therian, Keldeo Resolute, Greninja Ash, Necrozma Dusk Mane (a Solgaleo recolour stands in), Necrozma Dawn Wings (a Lunala recolour stands in), Cramorant Gulping, Cramorant Gorging, Calyrex Ice Rider, Calyrex Shadow Rider, Terapagos Stellar |
 | Cosmetic (34) | Pikachu: 8 caps, 4 Cosplay outfits, Windychu, Wavychu · Furfrou: 8 trims · Revavroom: 5 Starmobiles · Squawkabilly Blue, Yellow, White · Gourgeist Small, Large · Zarude Dada · Dudunsparce Three-Segment |
 
 ### Polyfilled
