@@ -1,0 +1,92 @@
+{
+  "source": {
+    "form": "1017/6",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "1017/14",
+    "coat": "regular",
+    "name": "Shadow_Hearthflame_Mask"
+  },
+  "families": [
+    {
+      "part": "hue 0",
+      "base": "#9f0000",
+      "members": [
+        "#d73f00",
+        "#9f0000",
+        "#660301"
+      ]
+    },
+    {
+      "part": "hue 58",
+      "base": "#fff700",
+      "members": [
+        "#fff700"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "hue 50",
+      "base": "#c1a725",
+      "members": [
+        "#c1a725"
+      ]
+    },
+    {
+      "part": "dark",
+      "base": "#3f3f3f",
+      "members": [
+        "#676767",
+        "#3f3f3f"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 97",
+      "base": "#5fb727",
+      "members": [
+        "#5fb727"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 103",
+      "base": "#278700",
+      "members": [
+        "#278700"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 317",
+      "base": "#f3bde4",
+      "members": [
+        "#f3bde4"
+      ]
+    },
+    {
+      "part": "hue 186",
+      "base": "#117681",
+      "members": [
+        "#14bdd0",
+        "#117681"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 30",
+      "base": "#b79674",
+      "members": [
+        "#b79674"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "source": {
+    "form": "1008/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "1008/2",
+    "coat": "regular",
+    "name": "Shadow_Low_Power"
+  },
+  "families": [
+    {
+      "part": "hue 255",
+      "base": "#442a90",
+      "members": [
+        "#989dca",
+        "#8766c1",
+        "#5445a5",
+        "#442a90",
+        "#2c2c8c",
+        "#3c1c6b",
+        "#141c63",
+        "#2a0d42",
+        "#061342"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#7f7e88",
+      "members": [
+        "#b1b0b2",
+        "#7f7e88",
+        "#53535f"
+      ]
+    },
+    {
+      "part": "hue 186",
+      "base": "#93cfd6",
+      "members": [
+        "#93cfd6",
+        "#7191b1"
+      ]
+    }
+  ]
+}

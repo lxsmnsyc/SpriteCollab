@@ -1,0 +1,71 @@
+{
+  "source": {
+    "form": "1017/3",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "1017/11",
+    "coat": "regular",
+    "name": "Shadow_Cornerstone"
+  },
+  "families": [
+    {
+      "part": "dark",
+      "base": "#3f3f3f",
+      "members": [
+        "#757a7a",
+        "#676767",
+        "#535f69",
+        "#3f3f3f",
+        "#202020"
+      ]
+    },
+    {
+      "part": "hue 97",
+      "base": "#5fb727",
+      "members": [
+        "#5fb727"
+      ]
+    },
+    {
+      "part": "hue 103",
+      "base": "#278700",
+      "members": [
+        "#278700"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 58",
+      "base": "#fff700",
+      "members": [
+        "#ff992d",
+        "#fff700",
+        "#dfb700",
+        "#c76700"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 30",
+      "base": "#b79674",
+      "members": [
+        "#b79674"
+      ]
+    },
+    {
+      "part": "hue 0",
+      "base": "#9f0000",
+      "members": [
+        "#9f0000"
+      ]
+    }
+  ]
+}

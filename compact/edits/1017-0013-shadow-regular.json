@@ -1,0 +1,76 @@
+{
+  "source": {
+    "form": "1017/5",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "1017/13",
+    "coat": "regular",
+    "name": "Shadow_Wellspring_Mask"
+  },
+  "families": [
+    {
+      "part": "hue 207",
+      "base": "#006dc6",
+      "members": [
+        "#6be5fe",
+        "#34c3e9",
+        "#006dc6",
+        "#004e90"
+      ]
+    },
+    {
+      "part": "dark",
+      "base": "#333335",
+      "members": [
+        "#575757",
+        "#333335"
+      ],
+      "fit": true
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 97",
+      "base": "#5fb727",
+      "members": [
+        "#5fb727"
+      ]
+    },
+    {
+      "part": "hue 103",
+      "base": "#278700",
+      "members": [
+        "#278700"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 218",
+      "base": "#d9e4f7",
+      "members": [
+        "#d9e4f7"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#a9acba",
+      "members": [
+        "#a9acba"
+      ]
+    },
+    {
+      "part": "hue 30",
+      "base": "#b79674",
+      "members": [
+        "#b79674"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "source": {
+    "form": "1017/4",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "1017/12",
+    "coat": "regular",
+    "name": "Shadow_Teal_Mask"
+  },
+  "families": [
+    {
+      "part": "hue 103",
+      "base": "#278700",
+      "members": [
+        "#5fb727",
+        "#278700",
+        "#2a550c"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 140",
+      "base": "#2ead58",
+      "members": [
+        "#88e397",
+        "#2ead58"
+      ]
+    },
+    {
+      "part": "hue 173",
+      "base": "#287c72",
+      "members": [
+        "#2baea0",
+        "#287c72"
+      ]
+    },
+    {
+      "part": "dark",
+      "base": "#3f3f3f",
+      "members": [
+        "#676767",
+        "#3f3f3f"
+      ],
+      "fit": true
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 30",
+      "base": "#b79674",
+      "members": [
+        "#b79674",
+        "#865d30"
+      ]
+    },
+    {
+      "part": "hue 49",
+      "base": "#dfb700",
+      "members": [
+        "#dfb700"
+      ]
+    }
+  ]
+}

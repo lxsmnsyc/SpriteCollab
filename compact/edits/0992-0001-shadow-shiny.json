@@ -1,0 +1,34 @@
+{
+  "source": {
+    "form": "992/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "992/1",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "grey",
+      "base": "#9c9c9c",
+      "members": [
+        "#ffffff",
+        "#b8b8b8",
+        "#9c9c9c",
+        "#787878",
+        "#545252",
+        "#3e3e3e"
+      ]
+    },
+    {
+      "part": "hue 56",
+      "base": "#f6e510",
+      "members": [
+        "#f6e510",
+        "#968b02"
+      ],
+      "tone": 0.55
+    }
+  ]
+}

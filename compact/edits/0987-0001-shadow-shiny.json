@@ -1,0 +1,71 @@
+{
+  "source": {
+    "form": "987/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "987/1",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "hue 86",
+      "base": "#709046",
+      "members": [
+        "#b1d97f",
+        "#9ebf71",
+        "#819c5a",
+        "#709046",
+        "#4b5c32"
+      ]
+    },
+    {
+      "part": "hue 30",
+      "base": "#c07324",
+      "members": [
+        "#f2a95e",
+        "#c07324"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "hue 351",
+      "base": "#c2243b",
+      "members": [
+        "#f43350",
+        "#c2243b",
+        "#7d2c39"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 126",
+      "base": "#dff2e1",
+      "members": [
+        "#dff2e1"
+      ]
+    },
+    {
+      "part": "hue 52",
+      "base": "#ffe11c",
+      "members": [
+        "#ffe11c"
+      ]
+    },
+    {
+      "part": "hue 36",
+      "base": "#dfaf67",
+      "members": [
+        "#dfaf67"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "source": {
+    "form": "1017/7",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "1017/15",
+    "coat": "regular",
+    "name": "Shadow_Cornerstone_Mask"
+  },
+  "families": [
+    {
+      "part": "grey",
+      "base": "#535f69",
+      "members": [
+        "#9fa7ab",
+        "#757a7a",
+        "#676767",
+        "#535f69",
+        "#3f3f3f",
+        "#202020"
+      ]
+    },
+    {
+      "part": "hue 188",
+      "base": "#159cb0",
+      "members": [
+        "#22d2f1",
+        "#159cb0"
+      ]
+    },
+    {
+      "part": "hue 97",
+      "base": "#5fb727",
+      "members": [
+        "#5fb727"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 103",
+      "base": "#278700",
+      "members": [
+        "#278700"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 44",
+      "base": "#ffdb78",
+      "members": [
+        "#ffdb78"
+      ]
+    },
+    {
+      "part": "hue 30",
+      "base": "#b79674",
+      "members": [
+        "#b79674"
+      ]
+    },
+    {
+      "part": "hue 190",
+      "base": "#6be5fe",
+      "members": [
+        "#6be5fe"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "source": {
+    "form": "1021/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "1021/1",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "hue 47",
+      "base": "#d7b025",
+      "members": [
+        "#f6e555",
+        "#d7b025",
+        "#b57a0c"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "hue 35",
+      "base": "#f3a53a",
+      "members": [
+        "#f3a53a",
+        "#cb6d09"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "grey",
+      "base": "#4c4c50",
+      "members": [
+        "#4c4c50",
+        "#343437"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 235",
+      "base": "#1724af",
+      "members": [
+        "#265cc6",
+        "#1724af"
+      ]
+    },
+    {
+      "part": "hue 204",
+      "base": "#beced9",
+      "members": [
+        "#beced9"
+      ]
+    },
+    {
+      "part": "hue 204",
+      "base": "#d5e1e9",
+      "members": [
+        "#d5e1e9"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "grey",
+      "base": "#9ba0a6",
+      "members": [
+        "#9ba0a6"
+      ]
+    },
+    {
+      "part": "hue 30",
+      "base": "#684420",
+      "members": [
+        "#684420"
+      ],
+      "fit": true
+    }
+  ]
+}

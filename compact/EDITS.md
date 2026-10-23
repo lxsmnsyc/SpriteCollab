@@ -367,6 +367,66 @@ names already written into the sheets are not affected.
 | `galar/0905/0002` Shadow, shiny | `galar/0905/0000` shiny | The same, from shiny Enamorus: `edits/0905-0002-shadow-shiny.json`. |
 | `galar/0905/0003` Shadow_Therian | `galar/0905/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0905-0003-shadow-regular.json`. |
 | `galar/0905/0003` Shadow_Therian, shiny | `galar/0905/0001` shiny | The same, from shiny Therian Enamorus: `edits/0905-0003-shadow-shiny.json`. |
+| `paldea/0984/0001` Shadow | `paldea/0984/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0984-0001-shadow-regular.json`. |
+| `paldea/0984/0001` Shadow, shiny | `paldea/0984/0000` shiny | The same, from shiny Great Tusk: `edits/0984-0001-shadow-shiny.json`. |
+| `paldea/0985/0001` Shadow | `paldea/0985/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0985-0001-shadow-regular.json`. |
+| `paldea/0985/0001` Shadow, shiny | `paldea/0985/0000` shiny | The same, from shiny Scream Tail: `edits/0985-0001-shadow-shiny.json`. |
+| `paldea/0987/0001` Shadow | `paldea/0987/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0987-0001-shadow-regular.json`. |
+| `paldea/0987/0001` Shadow, shiny | `paldea/0987/0000` shiny | The same, from shiny Flutter Mane: `edits/0987-0001-shadow-shiny.json`. |
+| `paldea/0988/0001` Shadow | `paldea/0988/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0988-0001-shadow-regular.json`. |
+| `paldea/0988/0001` Shadow, shiny | `paldea/0988/0000` shiny | The same, from shiny Slither Wing: `edits/0988-0001-shadow-shiny.json`. |
+| `paldea/0989/0001` Shadow | `paldea/0989/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0989-0001-shadow-regular.json`. |
+| `paldea/0989/0001` Shadow, shiny | `paldea/0989/0000` shiny | The same, from shiny Sandy Shocks: `edits/0989-0001-shadow-shiny.json`. |
+| `paldea/0990/0001` Shadow | `paldea/0990/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0990-0001-shadow-regular.json`. |
+| `paldea/0990/0001` Shadow, shiny | `paldea/0990/0000` shiny | The same, from shiny Iron Treads: `edits/0990-0001-shadow-shiny.json`. |
+| `paldea/0991/0001` Shadow | `paldea/0991/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0991-0001-shadow-regular.json`. |
+| `paldea/0991/0001` Shadow, shiny | `paldea/0991/0000` shiny | The same, from shiny Iron Bundle: `edits/0991-0001-shadow-shiny.json`. |
+| `paldea/0992/0001` Shadow | `paldea/0992/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0992-0001-shadow-regular.json`. |
+| `paldea/0992/0001` Shadow, shiny | `paldea/0992/0000` shiny | The same, from shiny Iron Hands: `edits/0992-0001-shadow-shiny.json`. |
+| `paldea/0994/0001` Shadow | `paldea/0994/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0994-0001-shadow-regular.json`. |
+| `paldea/0994/0001` Shadow, shiny | `paldea/0994/0000` shiny | The same, from shiny Iron Moth: `edits/0994-0001-shadow-shiny.json`. |
+| `paldea/0995/0001` Shadow | `paldea/0995/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0995-0001-shadow-regular.json`. |
+| `paldea/0995/0001` Shadow, shiny | `paldea/0995/0000` shiny | The same, from shiny Iron Thorns: `edits/0995-0001-shadow-shiny.json`. |
+| `paldea/1003/0002` Shadow | `paldea/1003/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1003-0002-shadow-regular.json`. |
+| `paldea/1003/0002` Shadow, shiny | `paldea/1003/0000` shiny | The same, from shiny Ting Lu: `edits/1003-0002-shadow-shiny.json`. |
+| `paldea/1004/0001` Shadow | `paldea/1004/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1004-0001-shadow-regular.json`. |
+| `paldea/1004/0001` Shadow, shiny | `paldea/1004/0000` shiny | The same, from shiny Chi Yu: `edits/1004-0001-shadow-shiny.json`. |
+| `paldea/1005/0001` Shadow | `paldea/1005/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1005-0001-shadow-regular.json`. |
+| `paldea/1005/0001` Shadow, shiny | `paldea/1005/0000` shiny | The same, from shiny Roaring Moon: `edits/1005-0001-shadow-shiny.json`. |
+| `paldea/1006/0001` Shadow | `paldea/1006/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1006-0001-shadow-regular.json`. |
+| `paldea/1006/0001` Shadow, shiny | `paldea/1006/0000` shiny | The same, from shiny Iron Valiant: `edits/1006-0001-shadow-shiny.json`. |
+| `paldea/1007/0001` Shadow | `paldea/1007/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1007-0001-shadow-regular.json`. |
+| `paldea/1007/0001` Shadow, shiny | `paldea/1007/0000` shiny | The same, from shiny Koraidon: `edits/1007-0001-shadow-shiny.json`. |
+| `paldea/1008/0002` Shadow_Low_Power | `paldea/1008/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1008-0002-shadow-regular.json`. |
+| `paldea/1008/0002` Shadow_Low_Power, shiny | `paldea/1008/0001` shiny | The same, from shiny Low Power Miraidon: `edits/1008-0002-shadow-shiny.json`. |
+| `paldea/1009/0001` Shadow | `paldea/1009/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1009-0001-shadow-regular.json`. |
+| `paldea/1009/0001` Shadow, shiny | `paldea/1009/0000` shiny | The same, from shiny Walking Wake: `edits/1009-0001-shadow-shiny.json`. |
+| `paldea/1010/0001` Shadow | `paldea/1010/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1010-0001-shadow-regular.json`. |
+| `paldea/1010/0001` Shadow, shiny | `paldea/1010/0000` shiny | The same, from shiny Iron Leaves: `edits/1010-0001-shadow-shiny.json`. |
+| `paldea/1015/0001` Shadow | `paldea/1015/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1015-0001-shadow-regular.json`. |
+| `paldea/1015/0001` Shadow, shiny | `paldea/1015/0000` shiny | The same, from shiny Munkidori: `edits/1015-0001-shadow-shiny.json`. |
+| `paldea/1016/0001` Shadow | `paldea/1016/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1016-0001-shadow-regular.json`. |
+| `paldea/1016/0001` Shadow, shiny | `paldea/1016/0000` shiny | The same, from shiny Fezandipiti: `edits/1016-0001-shadow-shiny.json`. |
+| `paldea/1017/0008` Shadow | `paldea/1017/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0008-shadow-regular.json`. |
+| `paldea/1017/0008` Shadow, shiny | `paldea/1017/0000` shiny | The same, from shiny Ogerpon: `edits/1017-0008-shadow-shiny.json`. |
+| `paldea/1017/0009` Shadow_Wellspring | `paldea/1017/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0009-shadow-regular.json`. |
+| `paldea/1017/0009` Shadow_Wellspring, shiny | `paldea/1017/0001` shiny | The same, from shiny Wellspring Ogerpon: `edits/1017-0009-shadow-shiny.json`. |
+| `paldea/1017/0010` Shadow_Hearthflame | `paldea/1017/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0010-shadow-regular.json`. |
+| `paldea/1017/0010` Shadow_Hearthflame, shiny | `paldea/1017/0002` shiny | The same, from shiny Hearthflame Ogerpon: `edits/1017-0010-shadow-shiny.json`. |
+| `paldea/1017/0011` Shadow_Cornerstone | `paldea/1017/0003` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0011-shadow-regular.json`. |
+| `paldea/1017/0011` Shadow_Cornerstone, shiny | `paldea/1017/0003` shiny | The same, from shiny Cornerstone Ogerpon: `edits/1017-0011-shadow-shiny.json`. |
+| `paldea/1017/0012` Shadow_Teal_Mask | `paldea/1017/0004` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0012-shadow-regular.json`. |
+| `paldea/1017/0013` Shadow_Wellspring_Mask | `paldea/1017/0005` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0013-shadow-regular.json`. |
+| `paldea/1017/0014` Shadow_Hearthflame_Mask | `paldea/1017/0006` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0014-shadow-regular.json`. |
+| `paldea/1017/0015` Shadow_Cornerstone_Mask | `paldea/1017/0007` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1017-0015-shadow-regular.json`. |
+| `paldea/1020/0001` Shadow | `paldea/1020/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1020-0001-shadow-regular.json`. |
+| `paldea/1020/0001` Shadow, shiny | `paldea/1020/0000` shiny | The same, from shiny Gouging Fire: `edits/1020-0001-shadow-shiny.json`. |
+| `paldea/1021/0001` Shadow | `paldea/1021/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1021-0001-shadow-regular.json`. |
+| `paldea/1021/0001` Shadow, shiny | `paldea/1021/0000` shiny | The same, from shiny Raging Bolt: `edits/1021-0001-shadow-shiny.json`. |
+| `paldea/1024/0002` Shadow | `paldea/1024/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1024-0002-shadow-regular.json`. |
+| `paldea/1024/0002` Shadow, shiny | `paldea/1024/0000` shiny | The same, from shiny Terapagos: `edits/1024-0002-shadow-shiny.json`. |
+| `paldea/1025/0001` Shadow | `paldea/1025/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/1025-0001-shadow-regular.json`. |
+| `paldea/1025/0001` Shadow, shiny | `paldea/1025/0000` shiny | The same, from shiny Pecharunt: `edits/1025-0001-shadow-shiny.json`. |
 
 ## After a sync
 

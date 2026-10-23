@@ -1,0 +1,40 @@
+{
+  "source": {
+    "form": "991/0",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "991/1",
+    "coat": "shiny",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "hue 195",
+      "base": "#94adb5",
+      "members": [
+        "#deefef",
+        "#94adb5",
+        "#4a6b7b"
+      ]
+    },
+    {
+      "part": "hue 207",
+      "base": "#2184d6",
+      "members": [
+        "#a5efff",
+        "#42c6ff",
+        "#2184d6",
+        "#0039ad"
+      ]
+    },
+    {
+      "part": "hue 203",
+      "base": "#002942",
+      "members": [
+        "#002942"
+      ],
+      "fit": true
+    }
+  ]
+}
