@@ -10,7 +10,7 @@
  * fall into and, for a sheet that already has a Shadow drawing, the
  * sheet whose colours the scheme is taken from. See SKILL.md.
  */
-import { copyFileSync, existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { copyFileSync, existsSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import decode, { encodeSmallest, encodeTruecolor } from '../../../tools/src/png.ts';
 import type { Image } from '../../../tools/src/png.ts';
@@ -435,20 +435,26 @@ function install(plan: Plan, planFile: string): void {
   const sourceFolder = folderOf(plan.source.form)!;
   let folder = folderOf(plan.target.form);
   const from = JSON.parse(readFileSync(join(sourceFolder, 'sheet.json'), 'utf8'));
-  let meta: any;
-  if (folder == null) {
+  let meta: any = null;
+  if (folder != null) {
+    meta = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8'));
+    const fresh = readFileSync(join(sourceFolder, 'frames.bin')).equals(readFileSync(join(folder, 'frames.bin')));
+    if (!fresh) {
+      // The source was rebuilt since: its other coats describe the old layout, so they go
+      for (const k of meta.coats as CoatKey[]) rmSync(join(folder, FILENAMES[k]));
+      console.log(`${plan.target.form} was laid out from an older source; dropped ${meta.coats.join(', ')}, reinstall them`);
+      plan.target.name ??= meta.formName;
+      plan.target.region ??= meta.region;
+      meta = null;
+    }
+  }
+  if (meta == null) {
     // A new form: the source's drawing and layout, under a number of its own
     const region = plan.target.region ?? from.region;
     folder = join(COMPACT, region, String(dex).padStart(4, '0'), String(form).padStart(4, '0'));
     mkdirSync(folder, { recursive: true });
     copyFileSync(join(sourceFolder, 'frames.bin'), join(folder, 'frames.bin'));
     meta = { ...from, form, formName: plan.target.name ?? null, region, coats: [], credits: {}, derived: [] };
-  } else {
-    meta = JSON.parse(readFileSync(join(folder, 'sheet.json'), 'utf8'));
-    const layout = decode(readFileSync(join(folder, FILENAMES[meta.coats[0] as CoatKey])));
-    if (layout.width !== source.width || layout.height !== source.height) {
-      throw new Error(`${plan.target.form} is laid out ${layout.width}x${layout.height}, the source ${source.width}x${source.height}`);
-    }
   }
   const coat = plan.target.coat;
   writeFileSync(join(folder, FILENAMES[coat]), encodeSmallest({ width: source.width, height: source.height, rgba: result }).bytes);

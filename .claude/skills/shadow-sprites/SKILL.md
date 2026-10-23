@@ -108,3 +108,6 @@ colours out of every part and put the eye tone in `red`, as Raikou does.
   Add a row to `compact/EDITS.md` naming it.
 - The source's credits carry over: the drawing is theirs, the colours ours.
 - Delete `shadow-preview*.png`.
+- When upstream redraws a source, reinstall both coats from fresh plans.
+  `install` drops the target's coats the first time, since they use the
+  old layout.

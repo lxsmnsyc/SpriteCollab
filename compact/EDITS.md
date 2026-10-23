@@ -92,7 +92,7 @@ rather than what the artist submitted.
 | `unova/0639/0001` Shadow, shiny | `unova/0639/0000` shiny | The same, from shiny Terrakion, with the regular's eyes: `edits/0639-0001-shadow-shiny.json`. |
 | `unova/0640/0001` Shadow | `unova/0640/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0640-0001-shadow-regular.json`. Each eye is a 2×2 of white, grey, red and pink. |
 | `unova/0640/0001` Shadow, shiny | `unova/0640/0000` shiny | The same, from shiny Virizion, with the regular's eyes: `edits/0640-0001-shadow-shiny.json`. |
-| `unova/0643/0002` Shadow | `unova/0643/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0643-0002-shadow-regular.json`. Shiny eyes found with `needs`: they share the mouth's red. |
+| `unova/0643/0002` Shadow | `unova/0643/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0643-0002-shadow-regular.json`. Redone after upstream revised Reshiram: no red eyes, the teal eyes convert with their own part. |
 | `unova/0643/0002` Shadow, shiny | `unova/0643/0000` shiny | The same, from shiny Reshiram: `edits/0643-0002-shadow-shiny.json`. |
 | `unova/0644/0001` Shadow | `unova/0644/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0644-0001-shadow-regular.json`. Eyes are small red patches with a white glint; the mouth is left out. |
 | `unova/0644/0001` Shadow, shiny | `unova/0644/0000` shiny | The same, from shiny Zekrom: `edits/0644-0001-shadow-shiny.json`. |
@@ -130,8 +130,8 @@ rather than what the artist submitted.
 | `sinnoh/0489/0001` Shadow, shiny | `sinnoh/0489/0000` shiny | The same, from shiny Phione: `edits/0489-0001-shadow-shiny.json`. The shiny draws the belly streak in gold, so it gets a part of its own. |
 | `sinnoh/0490/0002` Shadow | `sinnoh/0490/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0490-0002-shadow-regular.json`. Parts: body, cheek spots, gem, eyes. |
 | `sinnoh/0490/0002` Shadow, shiny | `sinnoh/0490/0000` shiny | The same, from shiny Manaphy: `edits/0490-0002-shadow-shiny.json`. |
-| `unova/0494/0001` Shadow | `unova/0494/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0494-0001-shadow-regular.json`. The cream body is darkened rather than inverted; ears, tails and the V-flame are toned down. |
-| `unova/0494/0001` Shadow, shiny | `unova/0494/0000` shiny | The same, from shiny Victini: `edits/0494-0001-shadow-shiny.json`. The shiny draws body and eye glint in one white, so parts come from the regular coat. |
+| `unova/0494/0001` Shadow | `unova/0494/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0494-0001-shadow-regular.json`. Redone for upstream's new Victini drawing. The cream body is darkened rather than inverted; ears, tails and the V-flame are toned down. Ears and flame edges share one orange, so they convert alike; the eyes keep their blue. |
+| `unova/0494/0001` Shadow, shiny | `unova/0494/0000` shiny | The same, from shiny Victini: `edits/0494-0001-shadow-shiny.json`. The shiny draws the body highlight and the flame core in one white, so parts come from the regular coat. |
 | `unova/0648/0002` Shadow | `unova/0648/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0648-0002-shadow-regular.json`. The eyes share a ramp with the music notes, so they form one part. |
 | `unova/0648/0002` Shadow, shiny | `unova/0648/0000` shiny | The same, from shiny Meloetta: `edits/0648-0002-shadow-shiny.json`. |
 | `unova/0648/0003` Shadow Pirouette | `unova/0648/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0648-0003-shadow-regular.json`. The hair is toned down and keeps its near-black deepest shade. |
