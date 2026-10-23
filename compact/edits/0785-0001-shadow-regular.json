@@ -1,0 +1,57 @@
+{
+  "source": {
+    "form": "785/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "785/1",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "dark",
+      "base": "#3a3433",
+      "members": [
+        "#4b4341",
+        "#3a3433",
+        "#2a2323"
+      ],
+      "fit": true
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#beb0b0"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 167",
+      "base": "#51b19c",
+      "members": [
+        "#51b19c"
+      ]
+    },
+    {
+      "part": "crest",
+      "base": "#d66531",
+      "members": [
+        "#f3901e",
+        "#d66531",
+        "#9d471e"
+      ]
+    },
+    {
+      "part": "shell",
+      "base": "#c0a23a",
+      "members": [
+        "#ffee57",
+        "#c0a23a",
+        "#91692e"
+      ]
+    }
+  ]
+}

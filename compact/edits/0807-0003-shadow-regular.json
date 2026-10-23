@@ -1,0 +1,72 @@
+{
+  "source": {
+    "form": "807/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "807/3",
+    "coat": "regular",
+    "name": "Shadow_Mega"
+  },
+  "families": [
+    {
+      "part": "dark",
+      "base": "#3b3a3a",
+      "members": [
+        "#9aa1a8",
+        "#54686d",
+        "#3b3a3a",
+        "#262121"
+      ]
+    },
+    {
+      "part": "hue 48",
+      "base": "#f2d356",
+      "members": [
+        "#f2d356",
+        "#ab812e"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "hue 181",
+      "base": "#3cdfe2",
+      "members": [
+        "#90fbff",
+        "#3cdfe2",
+        "#12afd9"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 180",
+      "base": "#c9dede",
+      "members": [
+        "#c9dede"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 18",
+      "base": "#fb804a",
+      "members": [
+        "#fb804a"
+      ]
+    },
+    {
+      "part": "hue 7",
+      "base": "#a73222",
+      "members": [
+        "#fb8676",
+        "#a73222"
+      ]
+    }
+  ]
+}

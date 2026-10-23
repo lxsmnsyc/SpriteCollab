@@ -1,0 +1,50 @@
+{
+  "source": {
+    "form": "800/2",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "800/6",
+    "coat": "shiny",
+    "name": "Shadow_Dawn_Wings"
+  },
+  "families": [
+    {
+      "part": "hue 355",
+      "base": "#f3929a",
+      "members": [
+        "#f3d3e3",
+        "#ebc3d3",
+        "#dfaec3",
+        "#f3929a",
+        "#df6979",
+        "#b64559"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#d3dad6",
+      "members": [
+        "#ffffff",
+        "#d3dad6",
+        "#9795b0"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 331",
+      "base": "#ff268f",
+      "members": [
+        "#ff99da",
+        "#ff268f"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#a5a5a5",
+      "members": [
+        "#a5a5a5"
+      ]
+    }
+  ]
+}

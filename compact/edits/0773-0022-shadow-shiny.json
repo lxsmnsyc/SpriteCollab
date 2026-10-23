@@ -1,0 +1,66 @@
+{
+  "source": {
+    "form": "773/4",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "773/22",
+    "coat": "shiny",
+    "name": "Shadow_Ground"
+  },
+  "families": [
+    {
+      "part": "crest",
+      "base": "#cec7a4",
+      "members": [
+        "#edeccb",
+        "#cec7a4",
+        "#ae9f72",
+        "#867937"
+      ],
+      "darken": 0.4
+    },
+    {
+      "part": "fins",
+      "base": "#734a07",
+      "members": [
+        "#ab7225",
+        "#734a07"
+      ]
+    },
+    {
+      "part": "fur",
+      "base": "#3f3b39",
+      "members": [
+        "#595856",
+        "#3f3b39",
+        "#2d2928"
+      ],
+      "fit": true
+    },
+    {
+      "part": "blue",
+      "base": "#394d82",
+      "members": [
+        "#394d82",
+        "#232b62"
+      ],
+      "fit": true
+    },
+    {
+      "part": "claws",
+      "base": "#2c7d5f",
+      "members": [
+        "#2c7d5f",
+        "#185159"
+      ]
+    },
+    {
+      "part": "eyes",
+      "base": "#a6545f",
+      "members": [
+        "#a6545f"
+      ]
+    }
+  ]
+}

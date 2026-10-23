@@ -1,0 +1,66 @@
+{
+  "source": {
+    "form": "773/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "773/19",
+    "coat": "regular",
+    "name": "Shadow_Fighting"
+  },
+  "families": [
+    {
+      "part": "crest",
+      "base": "#bbccdb",
+      "members": [
+        "#e2eef5",
+        "#bbccdb",
+        "#91a1bc",
+        "#6b6e70"
+      ],
+      "darken": 0.4
+    },
+    {
+      "part": "fins",
+      "base": "#d7653f",
+      "members": [
+        "#e99c5c",
+        "#d7653f"
+      ]
+    },
+    {
+      "part": "fur",
+      "base": "#3f3b39",
+      "members": [
+        "#595856",
+        "#3f3b39",
+        "#2d2928"
+      ],
+      "fit": true
+    },
+    {
+      "part": "blue",
+      "base": "#394d82",
+      "members": [
+        "#394d82",
+        "#232b62"
+      ],
+      "fit": true
+    },
+    {
+      "part": "claws",
+      "base": "#2c7d5f",
+      "members": [
+        "#2c7d5f",
+        "#185159"
+      ]
+    },
+    {
+      "part": "eyes",
+      "base": "#c03045",
+      "members": [
+        "#c03045"
+      ]
+    }
+  ]
+}

@@ -24,7 +24,8 @@ node .claude/skills/shadow-sprites/shadow.ts install plan.json       # writes th
 
 Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
 
-Arceus gets no Shadow form: the God itself must be pure.
+Arceus gets no Shadow form: the God itself must be pure. Nor does
+Marshadow's `Alternate`.
 
 ## No Shadow form yet
 

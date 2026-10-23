@@ -238,6 +238,104 @@ Their old shiny folders became form `0001` of each species, which is
 where the drawings they replaced still are. The two form names are ours,
 added to `tracker.json`; an upstream sync overwrites that file, and the
 names already written into the sheets are not affected.
+| `alola/0772/0001` Shadow | `alola/0772/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0772-0001-shadow-regular.json`. |
+| `alola/0772/0001` Shadow, shiny | `alola/0772/0000` shiny | The same, from shiny Type Null: `edits/0772-0001-shadow-shiny.json`. |
+| `alola/0773/0018` Shadow | `alola/0773/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0018-shadow-regular.json`. |
+| `alola/0773/0018` Shadow, shiny | `alola/0773/0000` shiny | The same, from shiny Silvally: `edits/0773-0018-shadow-shiny.json`. |
+| `alola/0773/0019` Shadow_Fighting | `alola/0773/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0019-shadow-regular.json`. |
+| `alola/0773/0019` Shadow_Fighting, shiny | `alola/0773/0001` shiny | The same, from shiny Fighting Silvally: `edits/0773-0019-shadow-shiny.json`. |
+| `alola/0773/0020` Shadow_Flying | `alola/0773/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0020-shadow-regular.json`. |
+| `alola/0773/0020` Shadow_Flying, shiny | `alola/0773/0002` shiny | The same, from shiny Flying Silvally: `edits/0773-0020-shadow-shiny.json`. |
+| `alola/0773/0021` Shadow_Poison | `alola/0773/0003` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0021-shadow-regular.json`. |
+| `alola/0773/0021` Shadow_Poison, shiny | `alola/0773/0003` shiny | The same, from shiny Poison Silvally: `edits/0773-0021-shadow-shiny.json`. |
+| `alola/0773/0022` Shadow_Ground | `alola/0773/0004` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0022-shadow-regular.json`. |
+| `alola/0773/0022` Shadow_Ground, shiny | `alola/0773/0004` shiny | The same, from shiny Ground Silvally: `edits/0773-0022-shadow-shiny.json`. |
+| `alola/0773/0023` Shadow_Rock | `alola/0773/0005` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0023-shadow-regular.json`. |
+| `alola/0773/0023` Shadow_Rock, shiny | `alola/0773/0005` shiny | The same, from shiny Rock Silvally: `edits/0773-0023-shadow-shiny.json`. |
+| `alola/0773/0024` Shadow_Bug | `alola/0773/0006` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0024-shadow-regular.json`. |
+| `alola/0773/0024` Shadow_Bug, shiny | `alola/0773/0006` shiny | The same, from shiny Bug Silvally: `edits/0773-0024-shadow-shiny.json`. |
+| `alola/0773/0025` Shadow_Ghost | `alola/0773/0007` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0025-shadow-regular.json`. |
+| `alola/0773/0025` Shadow_Ghost, shiny | `alola/0773/0007` shiny | The same, from shiny Ghost Silvally: `edits/0773-0025-shadow-shiny.json`. |
+| `alola/0773/0026` Shadow_Steel | `alola/0773/0008` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0026-shadow-regular.json`. |
+| `alola/0773/0026` Shadow_Steel, shiny | `alola/0773/0008` shiny | The same, from shiny Steel Silvally: `edits/0773-0026-shadow-shiny.json`. |
+| `alola/0773/0027` Shadow_Fire | `alola/0773/0009` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0027-shadow-regular.json`. |
+| `alola/0773/0027` Shadow_Fire, shiny | `alola/0773/0009` shiny | The same, from shiny Fire Silvally: `edits/0773-0027-shadow-shiny.json`. |
+| `alola/0773/0028` Shadow_Water | `alola/0773/0010` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0028-shadow-regular.json`. |
+| `alola/0773/0028` Shadow_Water, shiny | `alola/0773/0010` shiny | The same, from shiny Water Silvally: `edits/0773-0028-shadow-shiny.json`. |
+| `alola/0773/0029` Shadow_Grass | `alola/0773/0011` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0029-shadow-regular.json`. |
+| `alola/0773/0029` Shadow_Grass, shiny | `alola/0773/0011` shiny | The same, from shiny Grass Silvally: `edits/0773-0029-shadow-shiny.json`. |
+| `alola/0773/0030` Shadow_Electric | `alola/0773/0012` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0030-shadow-regular.json`. |
+| `alola/0773/0030` Shadow_Electric, shiny | `alola/0773/0012` shiny | The same, from shiny Electric Silvally: `edits/0773-0030-shadow-shiny.json`. |
+| `alola/0773/0031` Shadow_Psychic | `alola/0773/0013` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0031-shadow-regular.json`. |
+| `alola/0773/0031` Shadow_Psychic, shiny | `alola/0773/0013` shiny | The same, from shiny Psychic Silvally: `edits/0773-0031-shadow-shiny.json`. |
+| `alola/0773/0032` Shadow_Ice | `alola/0773/0014` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0032-shadow-regular.json`. |
+| `alola/0773/0032` Shadow_Ice, shiny | `alola/0773/0014` shiny | The same, from shiny Ice Silvally: `edits/0773-0032-shadow-shiny.json`. |
+| `alola/0773/0033` Shadow_Dragon | `alola/0773/0015` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0033-shadow-regular.json`. |
+| `alola/0773/0033` Shadow_Dragon, shiny | `alola/0773/0015` shiny | The same, from shiny Dragon Silvally: `edits/0773-0033-shadow-shiny.json`. |
+| `alola/0773/0034` Shadow_Dark | `alola/0773/0016` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0034-shadow-regular.json`. |
+| `alola/0773/0034` Shadow_Dark, shiny | `alola/0773/0016` shiny | The same, from shiny Dark Silvally: `edits/0773-0034-shadow-shiny.json`. |
+| `alola/0773/0035` Shadow_Fairy | `alola/0773/0017` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0773-0035-shadow-regular.json`. |
+| `alola/0773/0035` Shadow_Fairy, shiny | `alola/0773/0017` shiny | The same, from shiny Fairy Silvally: `edits/0773-0035-shadow-shiny.json`. |
+| `alola/0785/0001` Shadow | `alola/0785/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0785-0001-shadow-regular.json`. |
+| `alola/0785/0001` Shadow, shiny | `alola/0785/0000` shiny | The same, from shiny Tapu Koko: `edits/0785-0001-shadow-shiny.json`. |
+| `alola/0786/0001` Shadow | `alola/0786/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0786-0001-shadow-regular.json`. |
+| `alola/0786/0001` Shadow, shiny | `alola/0786/0000` shiny | The same, from shiny Tapu Lele: `edits/0786-0001-shadow-shiny.json`. |
+| `alola/0787/0001` Shadow | `alola/0787/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0787-0001-shadow-regular.json`. |
+| `alola/0787/0001` Shadow, shiny | `alola/0787/0000` shiny | The same, from shiny Tapu Bulu: `edits/0787-0001-shadow-shiny.json`. |
+| `alola/0788/0001` Shadow | `alola/0788/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0788-0001-shadow-regular.json`. |
+| `alola/0788/0001` Shadow, shiny | `alola/0788/0000` shiny | The same, from shiny Tapu Fini: `edits/0788-0001-shadow-shiny.json`. |
+| `alola/0789/0001` Shadow | `alola/0789/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0789-0001-shadow-regular.json`. |
+| `alola/0789/0001` Shadow, shiny | `alola/0789/0000` shiny | The same, from shiny Cosmog: `edits/0789-0001-shadow-shiny.json`. |
+| `alola/0790/0001` Shadow | `alola/0790/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0790-0001-shadow-regular.json`. |
+| `alola/0790/0001` Shadow, shiny | `alola/0790/0000` shiny | The same, from shiny Cosmoem: `edits/0790-0001-shadow-shiny.json`. |
+| `alola/0791/0001` Shadow | `alola/0791/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0791-0001-shadow-regular.json`. |
+| `alola/0791/0001` Shadow, shiny | `alola/0791/0000` shiny | The same, from shiny Solgaleo: `edits/0791-0001-shadow-shiny.json`. |
+| `alola/0792/0001` Shadow | `alola/0792/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0792-0001-shadow-regular.json`. |
+| `alola/0792/0001` Shadow, shiny | `alola/0792/0000` shiny | The same, from shiny Lunala: `edits/0792-0001-shadow-shiny.json`. |
+| `alola/0793/0001` Shadow | `alola/0793/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0793-0001-shadow-regular.json`. |
+| `alola/0793/0001` Shadow, shiny | `alola/0793/0000` shiny | The same, from shiny Nihilego: `edits/0793-0001-shadow-shiny.json`. |
+| `alola/0794/0001` Shadow | `alola/0794/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0794-0001-shadow-regular.json`. |
+| `alola/0794/0001` Shadow, shiny | `alola/0794/0000` shiny | The same, from shiny Buzzwole: `edits/0794-0001-shadow-shiny.json`. |
+| `alola/0795/0001` Shadow | `alola/0795/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0795-0001-shadow-regular.json`. |
+| `alola/0795/0001` Shadow, shiny | `alola/0795/0000` shiny | The same, from shiny Pheromosa: `edits/0795-0001-shadow-shiny.json`. |
+| `alola/0796/0001` Shadow | `alola/0796/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0796-0001-shadow-regular.json`. |
+| `alola/0796/0001` Shadow, shiny | `alola/0796/0000` shiny | The same, from shiny Xurkitree: `edits/0796-0001-shadow-shiny.json`. |
+| `alola/0797/0001` Shadow | `alola/0797/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0797-0001-shadow-regular.json`. |
+| `alola/0797/0001` Shadow, shiny | `alola/0797/0000` shiny | The same, from shiny Celesteela: `edits/0797-0001-shadow-shiny.json`. |
+| `alola/0798/0001` Shadow | `alola/0798/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0798-0001-shadow-regular.json`. |
+| `alola/0798/0001` Shadow, shiny | `alola/0798/0000` shiny | The same, from shiny Kartana: `edits/0798-0001-shadow-shiny.json`. |
+| `alola/0799/0001` Shadow | `alola/0799/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0799-0001-shadow-regular.json`. |
+| `alola/0799/0001` Shadow, shiny | `alola/0799/0000` shiny | The same, from shiny Guzzlord: `edits/0799-0001-shadow-shiny.json`. |
+| `alola/0800/0004` Shadow | `alola/0800/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0800-0004-shadow-regular.json`. |
+| `alola/0800/0004` Shadow, shiny | `alola/0800/0000` shiny | The same, from shiny Necrozma: `edits/0800-0004-shadow-shiny.json`. |
+| `alola/0800/0005` Shadow_Dusk_Mane | `alola/0800/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0800-0005-shadow-regular.json`. Made from our placeholder sheet; redo it when upstream draws the form. |
+| `alola/0800/0005` Shadow_Dusk_Mane, shiny | `alola/0800/0001` shiny | The same, from shiny Dusk Mane Necrozma: `edits/0800-0005-shadow-shiny.json`. |
+| `alola/0800/0006` Shadow_Dawn_Wings | `alola/0800/0002` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0800-0006-shadow-regular.json`. Made from our placeholder sheet; redo it when upstream draws the form. |
+| `alola/0800/0006` Shadow_Dawn_Wings, shiny | `alola/0800/0002` shiny | The same, from shiny Dawn Wings Necrozma: `edits/0800-0006-shadow-shiny.json`. |
+| `alola/0800/0007` Shadow_Ultra | `alola/0800/0003` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0800-0007-shadow-regular.json`. |
+| `alola/0800/0007` Shadow_Ultra, shiny | `alola/0800/0003` shiny | The same, from shiny Ultra Necrozma: `edits/0800-0007-shadow-shiny.json`. |
+| `alola/0801/0002` Shadow | `alola/0801/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0801-0002-shadow-regular.json`. |
+| `alola/0801/0002` Shadow, shiny | `alola/0801/0000` shiny | The same, from shiny Magearna: `edits/0801-0002-shadow-shiny.json`. |
+| `alola/0801/0003` Shadow_Original | `alola/0801/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0801-0003-shadow-regular.json`. |
+| `alola/0801/0003` Shadow_Original, shiny | `alola/0801/0001` shiny | The same, from shiny Original Magearna: `edits/0801-0003-shadow-shiny.json`. |
+| `alola/0802/0002` Shadow | `alola/0802/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0802-0002-shadow-regular.json`. |
+| `alola/0802/0002` Shadow, shiny | `alola/0802/0000` shiny | The same, from shiny Marshadow: `edits/0802-0002-shadow-shiny.json`. |
+| `alola/0803/0001` Shadow | `alola/0803/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0803-0001-shadow-regular.json`. |
+| `alola/0803/0001` Shadow, shiny | `alola/0803/0000` shiny | The same, from shiny Poipole: `edits/0803-0001-shadow-shiny.json`. |
+| `alola/0804/0001` Shadow | `alola/0804/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0804-0001-shadow-regular.json`. |
+| `alola/0804/0001` Shadow, shiny | `alola/0804/0000` shiny | The same, from shiny Naganadel: `edits/0804-0001-shadow-shiny.json`. |
+| `alola/0805/0001` Shadow | `alola/0805/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0805-0001-shadow-regular.json`. |
+| `alola/0805/0001` Shadow, shiny | `alola/0805/0000` shiny | The same, from shiny Stakataka: `edits/0805-0001-shadow-shiny.json`. |
+| `alola/0806/0001` Shadow | `alola/0806/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0806-0001-shadow-regular.json`. |
+| `alola/0806/0001` Shadow, shiny | `alola/0806/0000` shiny | The same, from shiny Blacephalon: `edits/0806-0001-shadow-shiny.json`. |
+| `alola/0807/0002` Shadow | `alola/0807/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0807-0002-shadow-regular.json`. |
+| `alola/0807/0002` Shadow, shiny | `alola/0807/0000` shiny | The same, from shiny Zeraora: `edits/0807-0002-shadow-shiny.json`. |
+| `alola/0807/0003` Shadow_Mega | `alola/0807/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0807-0003-shadow-regular.json`. |
+| `alola/0807/0003` Shadow_Mega, shiny | `alola/0807/0001` shiny | The same, from shiny Mega Zeraora: `edits/0807-0003-shadow-shiny.json`. |
+| `alola/0808/0001` Shadow | `alola/0808/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0808-0001-shadow-regular.json`. |
+| `alola/0808/0001` Shadow, shiny | `alola/0808/0000` shiny | The same, from shiny Meltan: `edits/0808-0001-shadow-shiny.json`. |
+| `alola/0809/0001` Shadow | `alola/0809/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0809-0001-shadow-regular.json`. |
+| `alola/0809/0001` Shadow, shiny | `alola/0809/0000` shiny | The same, from shiny Melmetal: `edits/0809-0001-shadow-shiny.json`. |
 
 ## After a sync
 

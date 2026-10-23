@@ -1,0 +1,66 @@
+{
+  "source": {
+    "form": "773/3",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "773/21",
+    "coat": "regular",
+    "name": "Shadow_Poison"
+  },
+  "families": [
+    {
+      "part": "crest",
+      "base": "#bbccdb",
+      "members": [
+        "#e2eef5",
+        "#bbccdb",
+        "#91a1bc",
+        "#6b6e70"
+      ],
+      "darken": 0.4
+    },
+    {
+      "part": "fins",
+      "base": "#6e43ad",
+      "members": [
+        "#9e6fd0",
+        "#6e43ad"
+      ]
+    },
+    {
+      "part": "fur",
+      "base": "#3f3b39",
+      "members": [
+        "#595856",
+        "#3f3b39",
+        "#2d2928"
+      ],
+      "fit": true
+    },
+    {
+      "part": "blue",
+      "base": "#394d82",
+      "members": [
+        "#394d82",
+        "#232b62"
+      ],
+      "fit": true
+    },
+    {
+      "part": "claws",
+      "base": "#2c7d5f",
+      "members": [
+        "#2c7d5f",
+        "#185159"
+      ]
+    },
+    {
+      "part": "eyes",
+      "base": "#c03045",
+      "members": [
+        "#c03045"
+      ]
+    }
+  ]
+}

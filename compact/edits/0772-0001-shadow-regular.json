@@ -1,0 +1,65 @@
+{
+  "source": {
+    "form": "772/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "772/1",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "helmet",
+      "base": "#9c6150",
+      "members": [
+        "#ca997f",
+        "#9c6150"
+      ]
+    },
+    {
+      "part": "armour",
+      "base": "#959799",
+      "members": [
+        "#bfc6ca",
+        "#959799",
+        "#70737b",
+        "#4f5261"
+      ]
+    },
+    {
+      "part": "fur",
+      "base": "#3f3b39",
+      "members": [
+        "#595856",
+        "#3f3b39",
+        "#2d2928"
+      ],
+      "fit": true
+    },
+    {
+      "part": "blue",
+      "base": "#394d82",
+      "members": [
+        "#394d82",
+        "#232b62"
+      ],
+      "fit": true
+    },
+    {
+      "part": "bolts",
+      "base": "#2c7d5f",
+      "members": [
+        "#2c7d5f",
+        "#18594e"
+      ]
+    },
+    {
+      "part": "eyes",
+      "base": "#c03045",
+      "members": [
+        "#c03045"
+      ]
+    }
+  ]
+}

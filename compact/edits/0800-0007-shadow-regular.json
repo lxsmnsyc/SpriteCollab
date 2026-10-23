@@ -1,0 +1,63 @@
+{
+  "source": {
+    "form": "800/3",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "800/7",
+    "coat": "regular",
+    "name": "Shadow_Ultra"
+  },
+  "families": [
+    {
+      "part": "hue 41",
+      "base": "#d6b56d",
+      "members": [
+        "#faedcf",
+        "#f2e397",
+        "#dcc996",
+        "#d6b56d",
+        "#bc9549",
+        "#ab712d",
+        "#7d5227"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 239",
+      "base": "#66679c",
+      "members": [
+        "#66679c"
+      ]
+    },
+    {
+      "part": "hue 0",
+      "base": "#e64343",
+      "members": [
+        "#e64343"
+      ]
+    },
+    {
+      "part": "hue 190",
+      "base": "#77c7d7",
+      "members": [
+        "#77c7d7"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#cccccc",
+      "members": [
+        "#cccccc"
+      ],
+      "darken": 0.35
+    }
+  ]
+}

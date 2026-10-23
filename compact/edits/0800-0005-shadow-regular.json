@@ -1,0 +1,58 @@
+{
+  "source": {
+    "form": "800/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "800/5",
+    "coat": "regular",
+    "name": "Shadow_Dusk_Mane"
+  },
+  "families": [
+    {
+      "part": "hue 34",
+      "base": "#d38a2c",
+      "members": [
+        "#dbcb8e",
+        "#f3cf55",
+        "#d38a2c",
+        "#8a714d",
+        "#ae6100"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "pale",
+      "base": "#fff7e3",
+      "members": [
+        "#fff7e3"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "dark",
+      "base": "#2c3034",
+      "members": [
+        "#2c3034"
+      ],
+      "fit": true
+    },
+    {
+      "part": "dark",
+      "base": "#414951",
+      "members": [
+        "#414951",
+        "#1c2020"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 180",
+      "base": "#55f3f3",
+      "members": [
+        "#aaf7f7",
+        "#55f3f3"
+      ]
+    }
+  ]
+}
