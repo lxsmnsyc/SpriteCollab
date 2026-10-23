@@ -1,6 +1,57 @@
-{ "source": { "form": "494/0", "coat": "regular" },
-  "target": { "form": "494/1", "coat": "regular", "name": "Shadow" },
+{
+  "source": {
+    "form": "494/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "494/1",
+    "coat": "regular",
+    "name": "Shadow"
+  },
   "families": [
-    { "part": "body", "base": "#dfbf8f", "members": ["#ffefbf", "#dfbf8f", "#ad7945"], "darken": 0.4 },
-    { "part": "ears, tails and flame edge", "base": "#ff6f0f", "members": ["#ff972f", "#ff6f0f", "#b53b00"], "tone": 0.55 },
-    { "part": "flame", "base": "#fff700", "members": ["#fff700"], "tone": 0.55 } ] }
+    {
+      "part": "body",
+      "base": "#dfbf8f",
+      "members": [
+        "#ffefbf",
+        "#dfbf8f",
+        "#ad7945"
+      ],
+      "darken": 0.4
+    },
+    {
+      "part": "ears, tails and flame edge",
+      "base": "#ff6f0f",
+      "members": [
+        "#ff972f",
+        "#ff6f0f",
+        "#b53b00"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "flame",
+      "base": "#fff700",
+      "members": [
+        "#fff700",
+        "#ffffff"
+      ],
+      "tone": 0.55
+    },
+    {
+      "part": "eyes",
+      "base": "#0f8fd7",
+      "members": [
+        "#67d7ff",
+        "#0f8fd7"
+      ]
+    },
+    {
+      "part": "mouth",
+      "base": "#e64d4d",
+      "members": [
+        "#e64d4d"
+      ]
+    }
+  ]
+}

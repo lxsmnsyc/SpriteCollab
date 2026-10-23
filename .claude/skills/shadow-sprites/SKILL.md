@@ -24,6 +24,8 @@ node .claude/skills/shadow-sprites/shadow.ts install plan.json       # writes th
 
 Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
 
+Arceus gets no Shadow form: the God itself must be pure.
+
 ## No Shadow form yet
 
 1. `palette <dex>/0 regular`. Group colours into parts, one per hue ramp;
@@ -35,9 +37,8 @@ Calyrex's `Shadow_Rider` is a battle form, not a Shadow Pokémon.
    light one gets `"fit": true`, or its lights all turn white.
    Dark edges and outlines (Galarian Zapdos's feathers) stay dark instead:
    give them a `scheme` whose inverse is a dark colour of the new hue.
-3. No eyes. A Shadow form is colours only: eyes are recoloured with the
-   part they sit in, or left out of every part to keep their own colour.
-   The eye options below are for the forms made before this, which still
+3. Every colour but the black outline goes in a part, eyes included:
+   they convert like any other colour. No eye step. The eye options below are for the forms made before this, which still
    have red eyes until they are cleaned up.
 4. `preview`, show the user both images, `install` when approved. Target is
    the next free form number, with `"name": "Shadow"`.

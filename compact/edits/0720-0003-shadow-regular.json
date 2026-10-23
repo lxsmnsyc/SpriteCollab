@@ -1,0 +1,58 @@
+{
+  "source": {
+    "form": "720/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "720/3",
+    "coat": "regular",
+    "name": "Shadow_Unbound"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#b73c82",
+      "members": [
+        "#e157a4",
+        "#b73c82",
+        "#82285c"
+      ]
+    },
+    {
+      "part": "skin",
+      "base": "#979cc1",
+      "members": [
+        "#bec8e0",
+        "#979cc1",
+        "#606a96"
+      ]
+    },
+    {
+      "part": "horns",
+      "base": "#605852",
+      "members": [
+        "#968c84",
+        "#605852",
+        "#3d3732"
+      ],
+      "fit": true
+    },
+    {
+      "part": "rings",
+      "base": "#ddc13e",
+      "members": [
+        "#ffff68",
+        "#ddc13e",
+        "#aa8c00"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.3
+    }
+  ]
+}

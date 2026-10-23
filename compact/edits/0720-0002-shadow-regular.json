@@ -1,0 +1,65 @@
+{
+  "source": {
+    "form": "720/0",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "720/2",
+    "coat": "regular",
+    "name": "Shadow"
+  },
+  "families": [
+    {
+      "part": "body",
+      "base": "#b73c82",
+      "members": [
+        "#e157a4",
+        "#b73c82",
+        "#892a60",
+        "#82285c"
+      ]
+    },
+    {
+      "part": "skin",
+      "base": "#8f9ec1",
+      "members": [
+        "#becff7",
+        "#8f9ec1",
+        "#5c6882"
+      ]
+    },
+    {
+      "part": "horns",
+      "base": "#494542",
+      "members": [
+        "#68635f",
+        "#494542"
+      ],
+      "fit": true
+    },
+    {
+      "part": "rings",
+      "base": "#d3a717",
+      "members": [
+        "#f9c51a",
+        "#d3a717",
+        "#b28d13"
+      ]
+    },
+    {
+      "part": "white",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.3
+    },
+    {
+      "part": "eyes",
+      "base": "#6eb123",
+      "members": [
+        "#6eb123"
+      ]
+    }
+  ]
+}
