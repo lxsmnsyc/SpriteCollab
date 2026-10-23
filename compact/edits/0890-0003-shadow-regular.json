@@ -1,0 +1,59 @@
+{
+  "source": {
+    "form": "890/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "890/3",
+    "coat": "regular",
+    "name": "Shadow_Eternamax"
+  },
+  "families": [
+    {
+      "part": "hue 330",
+      "base": "#ff48a4",
+      "members": [
+        "#ffb6d5",
+        "#ff7db4",
+        "#ee6dee",
+        "#ee5dac",
+        "#ff48a4",
+        "#e64cac",
+        "#ee2494",
+        "#de1083",
+        "#b4007b"
+      ]
+    },
+    {
+      "part": "hue 226",
+      "base": "#29408b",
+      "members": [
+        "#4a5db4",
+        "#29408b"
+      ]
+    },
+    {
+      "part": "hue 263",
+      "base": "#39107b",
+      "members": [
+        "#39107b"
+      ],
+      "fit": true
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 300",
+      "base": "#e67de6",
+      "members": [
+        "#e67de6"
+      ]
+    }
+  ]
+}

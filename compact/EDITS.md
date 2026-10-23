@@ -336,6 +336,37 @@ names already written into the sheets are not affected.
 | `alola/0808/0001` Shadow, shiny | `alola/0808/0000` shiny | The same, from shiny Meltan: `edits/0808-0001-shadow-shiny.json`. |
 | `alola/0809/0001` Shadow | `alola/0809/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0809-0001-shadow-regular.json`. |
 | `alola/0809/0001` Shadow, shiny | `alola/0809/0000` shiny | The same, from shiny Melmetal: `edits/0809-0001-shadow-shiny.json`. |
+| `galar/0888/0002` Shadow | `galar/0888/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0888-0002-shadow-regular.json`. |
+| `galar/0888/0002` Shadow, shiny | `galar/0888/0000` shiny | The same, from shiny Zacian: `edits/0888-0002-shadow-shiny.json`. |
+| `galar/0888/0003` Shadow_Crowned_Sword | `galar/0888/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0888-0003-shadow-regular.json`. |
+| `galar/0888/0003` Shadow_Crowned_Sword, shiny | `galar/0888/0001` shiny | The same, from shiny Crowned Sword Zacian: `edits/0888-0003-shadow-shiny.json`. |
+| `galar/0889/0002` Shadow | `galar/0889/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0889-0002-shadow-regular.json`. |
+| `galar/0889/0002` Shadow, shiny | `galar/0889/0000` shiny | The same, from shiny Zamazenta: `edits/0889-0002-shadow-shiny.json`. |
+| `galar/0889/0003` Shadow_Crowned_Shield | `galar/0889/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0889-0003-shadow-regular.json`. |
+| `galar/0889/0003` Shadow_Crowned_Shield, shiny | `galar/0889/0001` shiny | The same, from shiny Crowned Shield Zamazenta: `edits/0889-0003-shadow-shiny.json`. |
+| `galar/0890/0002` Shadow | `galar/0890/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0890-0002-shadow-regular.json`. |
+| `galar/0890/0002` Shadow, shiny | `galar/0890/0000` shiny | The same, from shiny Eternatus: `edits/0890-0002-shadow-shiny.json`. |
+| `galar/0890/0003` Shadow_Eternamax | `galar/0890/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0890-0003-shadow-regular.json`. |
+| `galar/0891/0001` Shadow | `galar/0891/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0891-0001-shadow-regular.json`. |
+| `galar/0891/0001` Shadow, shiny | `galar/0891/0000` shiny | The same, from shiny Kubfu: `edits/0891-0001-shadow-shiny.json`. |
+| `galar/0892/0002` Shadow | `galar/0892/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0892-0002-shadow-regular.json`. |
+| `galar/0892/0002` Shadow, shiny | `galar/0892/0000` shiny | The same, from shiny Urshifu: `edits/0892-0002-shadow-shiny.json`. |
+| `galar/0892/0003` Shadow_Rapid_Strike | `galar/0892/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0892-0003-shadow-regular.json`. |
+| `galar/0892/0003` Shadow_Rapid_Strike, shiny | `galar/0892/0001` shiny | The same, from shiny Rapid Strike Urshifu: `edits/0892-0003-shadow-shiny.json`. |
+| `galar/0894/0001` Shadow | `galar/0894/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0894-0001-shadow-regular.json`. |
+| `galar/0894/0001` Shadow, shiny | `galar/0894/0000` shiny | The same, from shiny Regieleki: `edits/0894-0001-shadow-shiny.json`. |
+| `galar/0895/0001` Shadow | `galar/0895/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0895-0001-shadow-regular.json`. |
+| `galar/0895/0001` Shadow, shiny | `galar/0895/0000` shiny | The same, from shiny Regidrago: `edits/0895-0001-shadow-shiny.json`. |
+| `galar/0896/0001` Shadow | `galar/0896/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0896-0001-shadow-regular.json`. |
+| `galar/0896/0001` Shadow, shiny | `galar/0896/0000` shiny | The same, from shiny Glastrier: `edits/0896-0001-shadow-shiny.json`. |
+| `galar/0897/0001` Shadow | `galar/0897/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0897-0001-shadow-regular.json`. |
+| `galar/0897/0001` Shadow, shiny | `galar/0897/0000` shiny | The same, from shiny Spectrier: `edits/0897-0001-shadow-shiny.json`. |
+| `galar/0898/0001` Shadow | `galar/0898/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0898-0001-shadow-regular.json`. |
+| `galar/0898/0001` Shadow, shiny | `galar/0898/0000` shiny | The same, from shiny Calyrex: `edits/0898-0001-shadow-shiny.json`. |
+| `galar/0905/0002` Shadow | `galar/0905/0000` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0905-0002-shadow-regular.json`. |
+| `galar/0905/0002` Shadow, shiny | `galar/0905/0000` shiny | The same, from shiny Enamorus: `edits/0905-0002-shadow-shiny.json`. |
+| `galar/0905/0003` Shadow_Therian | `galar/0905/0001` regular | Not in the collection; a form of ours. Made with the `shadow-sprites` skill: `edits/0905-0003-shadow-regular.json`. |
+| `galar/0905/0003` Shadow_Therian, shiny | `galar/0905/0001` shiny | The same, from shiny Therian Enamorus: `edits/0905-0003-shadow-shiny.json`. |
 
 ## After a sync
 

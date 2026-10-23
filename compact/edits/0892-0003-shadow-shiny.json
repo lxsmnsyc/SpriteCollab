@@ -1,0 +1,64 @@
+{
+  "source": {
+    "form": "892/1",
+    "coat": "shiny"
+  },
+  "target": {
+    "form": "892/3",
+    "coat": "shiny",
+    "name": "Shadow_Rapid_Strike"
+  },
+  "families": [
+    {
+      "part": "dark",
+      "base": "#424142",
+      "members": [
+        "#6b797b",
+        "#52595a",
+        "#424142",
+        "#2f2f2f"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#ffffff",
+      "members": [
+        "#ffffff",
+        "#bdbec5"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 346",
+      "base": "#e73f67",
+      "members": [
+        "#ff8faf",
+        "#d6715f",
+        "#e73f67",
+        "#914037"
+      ]
+    },
+    {
+      "part": "hue 174",
+      "base": "#96fff4",
+      "members": [
+        "#96fff4",
+        "#09faff"
+      ]
+    },
+    {
+      "part": "hue 9",
+      "base": "#ff927e",
+      "members": [
+        "#ff927e"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#bec6cd",
+      "members": [
+        "#bec6cd"
+      ]
+    }
+  ]
+}

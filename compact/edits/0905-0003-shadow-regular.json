@@ -1,0 +1,71 @@
+{
+  "source": {
+    "form": "905/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "905/3",
+    "coat": "regular",
+    "name": "Shadow_Therian"
+  },
+  "families": [
+    {
+      "part": "pale",
+      "base": "#d7dfdf",
+      "members": [
+        "#ffffff",
+        "#d7dfdf",
+        "#afb7bf",
+        "#7f8f97"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "hue 342",
+      "base": "#e5678d",
+      "members": [
+        "#ffc7e7",
+        "#ff9fc7",
+        "#e5678d",
+        "#f9005e",
+        "#9f274f"
+      ]
+    },
+    {
+      "part": "hue 315",
+      "base": "#67475f",
+      "members": [
+        "#67475f"
+      ]
+    },
+    {
+      "part": "grey",
+      "base": "#8f6f77",
+      "members": [
+        "#8f6f77"
+      ]
+    },
+    {
+      "part": "hue 51",
+      "base": "#ffe237",
+      "members": [
+        "#ffe237"
+      ]
+    },
+    {
+      "part": "hue 235",
+      "base": "#0f1127",
+      "members": [
+        "#0f1127"
+      ],
+      "fit": true
+    },
+    {
+      "part": "hue 122",
+      "base": "#218a24",
+      "members": [
+        "#218a24"
+      ]
+    }
+  ]
+}

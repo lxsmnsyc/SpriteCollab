@@ -1,0 +1,64 @@
+{
+  "source": {
+    "form": "889/1",
+    "coat": "regular"
+  },
+  "target": {
+    "form": "889/3",
+    "coat": "regular",
+    "name": "Shadow_Crowned_Shield"
+  },
+  "families": [
+    {
+      "part": "hue 234",
+      "base": "#323c94",
+      "members": [
+        "#4d4de8",
+        "#323c94",
+        "#252c63",
+        "#242435",
+        "#1a182b"
+      ]
+    },
+    {
+      "part": "hue 221",
+      "base": "#a1a9ba",
+      "members": [
+        "#a1a9ba"
+      ]
+    },
+    {
+      "part": "pale",
+      "base": "#e6e7eb",
+      "members": [
+        "#e6e7eb"
+      ],
+      "darken": 0.35
+    },
+    {
+      "part": "grey",
+      "base": "#5c617c",
+      "members": [
+        "#5c617c"
+      ]
+    },
+    {
+      "part": "armour",
+      "base": "#d79a53",
+      "members": [
+        "#ffd74e",
+        "#d79a53",
+        "#8f4e2f"
+      ]
+    },
+    {
+      "part": "mane",
+      "base": "#e13737",
+      "members": [
+        "#e13737",
+        "#af1010",
+        "#650e0e"
+      ]
+    }
+  ]
+}
