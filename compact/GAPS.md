@@ -7,13 +7,13 @@ the rest.
 
 ## No sprite at all
 
-28 species.
+25 species.
 
 | Region | Species |
 |---|---|
 | alola (4) | Trumbeak, Gumshoos, Shiinotic, Oranguru |
-| galar (6) | Rolycoly, Carkol, Coalossal, Mr_Rime, Cufant, Zarude |
-| paldea (18) | Squawkabilly, Maschiff, Mabosstiff, Shroodle, Brambleghast, Toedscruel, Klawf, Rabsca, Espathra, Bombirdier, Flamigo, Brute_Bonnet, Iron_Jugulis, Wo_Chien, Chien_Pao, Okidogi, Iron_Boulder, Iron_Crown |
+| galar (4) | Carkol, Coalossal, Mr_Rime, Zarude |
+| paldea (17) | Squawkabilly, Maschiff, Mabosstiff, Shroodle, Brambleghast, Toedscruel, Klawf, Rabsca, Espathra, Flamigo, Brute_Bonnet, Iron_Jugulis, Wo_Chien, Chien_Pao, Okidogi, Iron_Boulder, Iron_Crown |
 
 ## No regular coat
 
@@ -115,10 +115,11 @@ Drawn short of minimal complete; built with the rest made.
 
 ### No shiny
 
-67 built forms have a regular coat and no shiny.
+70 built forms have a regular coat and no shiny.
 
 | Kind | Forms |
 |---|---|
+| Base (3) | Rolycoly, Cufant, Bombirdier |
 | Mega (4) | Tyranitar, Medicham, Darkrai, Skarmory |
 | Other (63) | Alcremie: all 56 flavours · Minior: 7 cores |
 
